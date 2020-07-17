@@ -5,4 +5,5 @@ The R examples use a package we've bundled for you which you can install using d
 devtools::install_github("icepack-co/iceR")
 ```
 
-If you get any compilation errors, check the package installation instructions [here](https://github.com/Icepack-co/iceR)
+If you get any compilation errors, check the package installation instructions [here](https://github.com/Icepack-co/iceR).
+
