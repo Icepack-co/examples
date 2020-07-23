@@ -9,7 +9,7 @@ namespace csharp
     static void Main(string[] args)
     {
       // Matrix examples:
-      var data = dataRow.LoadData("../../sample_data/publist.csv");
+      var data = dataRow.LoadData("../sample_data/publist.csv");
 
       matrix1basic mat1 = new matrix1basic(data);
       mat1.Run();
@@ -30,7 +30,7 @@ namespace csharp
       basicCvrp.Run();
 
       // // IVR7 Examples
-      data = dataRow.LoadData("../../sample_data/publist_orders.csv");
+      data = dataRow.LoadData("../sample_data/publist_orders.csv");
       ivr7basic basicIvr7 = new ivr7basic(data);
       basicIvr7.Run();
 
