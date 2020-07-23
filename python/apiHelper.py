@@ -51,7 +51,7 @@ class apiHelper:
     globals()[self.modelType + "_pb2"] = __import__(self.modelType + "_pb2") # this one we do programatically.
   
   def EndPoint(self):
-      return ('http://' + self.config['endpoint'] + self.route)
+      return (self.config['endpoint'] + self.route)
 
   def Token(self):
       return (self.config['apiToken'])

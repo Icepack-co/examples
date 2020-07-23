@@ -8,7 +8,7 @@ library(iceR)
 
 source('../examples/R/ivr8-model-helper.R')
 # create an api-helper object with the model type you'd like to solve.
-api <- new("apiHelper", modelType = 'ivr8-yni1c9k2swof')
+api <- new("apiHelper", modelType = 'ivr8-yni1c9k2swof', configFile = '../config.json')
 
 model <- new (IVR8.Model)
 data <- read.csv('../sample_data/publist_orders.csv')

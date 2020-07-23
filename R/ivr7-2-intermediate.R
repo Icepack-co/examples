@@ -18,7 +18,7 @@ library(iceR)
 source('../examples/R/ivr7-model-helper.R')
 
 # create an api-helper object with the model type you'd like to solve.
-api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif')
+api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../config.json')
 
 sr <- new (IVR7.SolveRequest)
 sr$model <- new (IVR7.Model)

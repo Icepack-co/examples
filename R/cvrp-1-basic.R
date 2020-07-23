@@ -3,7 +3,7 @@
 library(iceR)
 
 # create an api-helper object with the model type you'd like to solve.
-api <- new("apiHelper", modelType = 'cvrp-jkfdoctmp51n')
+api <- new("apiHelper", modelType = 'cvrp-jkfdoctmp51n', configFile = '../config.json')
 
 sr <- new (CVRP.SolveRequest)
 sr$model <- new (CVRP.CVRP)

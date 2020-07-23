@@ -12,7 +12,7 @@ library(iceR)
 # just up some pre-defined functions which wrap the data into pbf
 source('../examples/R/ivr7-model-helper.R')
 
-api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif')
+api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../config.json')
 model <- new (IVR7.Model)
 data <- read.csv('../sample_data/publist_orders.csv')
 data$id %<>% as.character()
@@ -34,7 +34,7 @@ model$vehicles <- lapply(1:5, function(i){
 
 # okay, so that's a basic model. Lets now use the objects, but submit them to the api
 # through a different mechanism.
-data_api <- new("apiHelper", modelType = 'ivrdata-o43e0dvs78zq')
+data_api <- new("apiHelper", modelType = 'ivrdata-o43e0dvs78zq', configFile = '../config.json')
 # so the data api allows us to push just the data, without anything else.
 data_model <- new (IVRData.CachedModel)
 data_model$model <- model$serialize(NULL) # epic: we just saved our model as a byte stream

@@ -12,7 +12,7 @@ library(iceR)
 # just up some pre-defined functions which wrap the data into pbf
 source('../examples/R/ivr7-model-helper.R')
 
-api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif')
+api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../config.json')
 sr <- new (IVR7.SolveRequest)
 sr$model <- new (IVR7.Model)
 data <- read.csv('../sample_data/publist_orders.csv')
@@ -63,7 +63,7 @@ if(dataUpload){
     ts$transits<- append(ts$transits, tv)
   }
   # lets upload this transit set.
-  data_api <- new("apiHelper", modelType = 'ivrdata-o43e0dvs78zq')
+  data_api <- new("apiHelper", modelType = 'ivrdata-o43e0dvs78zq', configFile = '../config.json')
   data_model <- new (IVRData.CachedTransitSet)
   data_model$transitSet <-ts
   rm(ts) # delete this to illustrate the point

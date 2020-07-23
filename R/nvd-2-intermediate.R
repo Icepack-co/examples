@@ -1,12 +1,10 @@
 # test script NVD Intermediate: multiple reps, single solve.
 
-#library(iceR)
-devtools::load_all()
+library(iceR)
 library(gridExtra) # just for the plots at the end.
 
 # create an api-helper object with the model type you'd like to solve.
-api <- new("apiHelper", modelType = 'nvd-hap0j2y4zlm1')
-api$endpoint <- 'localhost:8080/vehicle-router/solve/'
+api <- new("apiHelper", modelType = 'nvd-hap0j2y4zlm1', configFile = '../config.json')
 
 data <- read.csv('../sample_data/publist_orders.csv', stringsAsFactors = F)
 ggplot() + geom_point(data = data, aes(x = X, y = Y)) + theme_bw()
@@ -80,18 +78,6 @@ for(i in which(!(data$id %in% repHomeLocations))){
   }
   m$visits[[length(m$visits) + 1]]<- v
 }
-
-sr <- new (NVD.SolveRequest)
-sr$model <- m
-sr$solveType <- 0
-
-# p <- new(problem.ProblemEnvelope)
-# p$content <- sr$serialize(NULL)
-# p$type <- api$modelType
-# p$subType <- 0
-# p$serialize('../../vehicle-router/solver-models/translator/nvd_2_terr_test.pbf')
-resp <- read(NVD.SolutionResponse, '../../vehicle-router/solver-models/translator/nvd-out-check.pbf')
-resp$frontier
 
 requestID <- api %>% postSolveRequest(sr)         # submit the model to the api
 resp <- api %>% getResponse(requestID)            # retrieve the model response. Takes around a minute to solve

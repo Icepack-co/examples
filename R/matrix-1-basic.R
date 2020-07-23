@@ -1,7 +1,7 @@
 ### An easy example of how to use the matrix api to generate distance/time matricies
 library(iceR)
 
-api <- new("apiHelper", modelType = 'matrix-vyv95n7wchpl')
+api <- new("apiHelper", modelType = 'matrix-vyv95n7wchpl', configFile = '../config.json')
 
 data <- read.csv('../sample_data/publist.csv', stringsAsFactors = F)
 data<- data[1:5,] #just grab the first 5 locations for this example
