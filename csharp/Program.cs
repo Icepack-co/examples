@@ -29,7 +29,7 @@ namespace csharp
       cvrp1basic basicCvrp = new cvrp1basic(data);
       basicCvrp.Run();
 
-      // // IVR7 Examples
+      // IVR7 Examples
       data = dataRow.LoadData("../sample_data/publist_orders.csv");
       ivr7basic basicIvr7 = new ivr7basic(data);
       basicIvr7.Run();

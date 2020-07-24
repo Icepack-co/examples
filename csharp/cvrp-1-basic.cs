@@ -54,7 +54,7 @@ class cvrp1basic : IRunner
     // configure the distance metric (although road network is the default)
     sr.Model.Distancetype = Cvrp.Cvrp.eDistanceType.RoadNetwork;
     sr.Model.VehicleCapacity = 100;  // set a vehicle capacity of 100
-    sr.Model.NumberOfVehicles = 3;   // allow the use of at-most, three vehicles.
+    sr.Model.NumberOfVehicles = 2;   // allow the use of at-most, two vehicles.
 
 
     // now it's just sending the 

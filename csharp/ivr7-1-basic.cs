@@ -57,10 +57,10 @@ class ivr7basic : IRunner
     sr.Model.vehicleClasses.Add(ivr7helper.makeVcSimple("vc1", 1, 1, 1, 1));
 
     // now we can just specify the vehicles.
-    // lets provide 5 x 2 ton vehicles. Although this is probably more than we need.
+    // lets provide 2 x 2 ton vehicles. Although this is probably more than we need.
     // the reason for this is that we're modelling a full-blown pickup+dropoff model, so if there's
     // time to reload, a vehicle can return to the depot and grab more goodies!
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 2; i++)
     {
       sr.Model.Vehicles.Add(ivr7helper.makeVehicleCap("vehicle_" + i, // unique id for the vehicle.
                                                       "vc1",  // the vehicle class

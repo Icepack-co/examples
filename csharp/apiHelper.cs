@@ -69,7 +69,7 @@ public class ApiHelper<iT, oT>
     string res = PostProblem(p).Result;
     if (res == "")
     {
-      throw new Exception("unable to retrieve a request id from the api");
+      throw new Exception("unable to retrieve a request id from the api. Is the URL correct? Is the model being rate limited? Have you enabled the service for the key being used?");
     }
     else
     {

@@ -31,7 +31,7 @@ class ivr7intermediate2 : IRunner
     ivr7helper.makeJobTimeCap(sr.Model, data, ivr7helper.Rep(0, data.Count - 1), ivr7helper.Seq(1, data.Count));
     sr.Model.vehicleCostClasses.Add(ivr7helper.makeVccSimple("vcc1", 1000, 0.01f, 0.01f, 0.01f, 1, 3));
     sr.Model.vehicleClasses.Add(ivr7helper.makeVcSimple("vc1", 1, 1, 1, 1));
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 4; i++)
     {
       sr.Model.Vehicles.Add(ivr7helper.makeVehicleCap("vehicle_" + i, // unique id for the vehicle.
                                                       "vc1",  // the vehicle class
