@@ -69,6 +69,8 @@ class apiHelper:
     post_resp = requests.post(self.EndPoint(), p.SerializeToString(), headers = req_head)
     # if the POST request was successful, get the request ID
     if post_resp.status_code != 200:
+        print('Unexpected http error code: ' + str(post_resp.status_code))
+        print(post_resp.content)
         if post_resp.status_code == 405 and len(post_resp.content) == 0:
           sys.exit('Unexpected http error code: ', post_resp.status_code, "\nDid you specify the end-point correctly?\n")
         else:
