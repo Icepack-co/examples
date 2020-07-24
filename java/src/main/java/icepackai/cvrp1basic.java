@@ -5,13 +5,14 @@ import icepackai.CVRP.CvrpJkfdoctmp51N.SolveRequest.SolveType;
 import icepackai.CVRP.CvrpJkfdoctmp51N.CVRP.eDistanceType;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import dnl.utils.text.table.TextTable;
 
 // A simple example of how to build and run a simple TSP model.
 public class cvrp1basic {
   public cvrp1basic(List<dataRow> inputdata, String config) throws Exception {
     this.configFile = config;
-    this.data = inputdata;
+    this.data = inputdata.stream().limit(10).collect(Collectors.toList()); // grabs just the first 10 items.;
   }
 
   public void Run() throws Exception {
@@ -37,7 +38,7 @@ public class cvrp1basic {
     // configure the distance metric (although road network is the default)
     model.setDistancetype(eDistanceType.RoadNetwork);
     model.setVehicleCapacity(100); // set a vehicle capacity of 100
-    model.setNumberOfVehicles(3); // allow the use of at-most, three vehicles.
+    model.setNumberOfVehicles(2); // allow the use of at-most, two vehicles.
     model.build();
 
     // create a solve request

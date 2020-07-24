@@ -28,22 +28,22 @@ public class App {
       ivr7_1_basic basicIvr7_1 = new ivr7_1_basic(data, configFile);
       basicIvr7_1.Run();
 
-      ivr7_2_intermediate intermediateIvr7_2 = new ivr7_2_intermediate(data,
-      configFile);
+      ivr7_2_intermediate intermediateIvr7_2 = new ivr7_2_intermediate(data, configFile);
       intermediateIvr7_2.Run();
 
-      ivr7_3_intermediate2 intermediateIvr7_3 = new ivr7_3_intermediate2(data,
-      configFile);
+      ivr7_3_intermediate2 intermediateIvr7_3 = new ivr7_3_intermediate2(data, configFile);
       intermediateIvr7_3.Run();
 
-      ivr7_4_advanced1 advancedIvr74 = new ivr7_4_advanced1(data, configFile);
-      advancedIvr74.Run();
+      ivr7_4_advanced1 advancedIvr7_4 = new ivr7_4_advanced1(data, configFile);
+      advancedIvr7_4.Run();
+
+      ivr7_5_advanced2 advancedIvr7_5 = new ivr7_5_advanced2(data, configFile);
+      advancedIvr7_5.Run();
 
       ivr8_1_basic basicIvr8 = new ivr8_1_basic(data, configFile);
       basicIvr8.Run();
 
-      ivr8_2_intermediate intermediateIvr8 = new ivr8_2_intermediate(data,
-      configFile);
+      ivr8_2_intermediate intermediateIvr8 = new ivr8_2_intermediate(data, configFile);
       intermediateIvr8.Run();
 
       ivr8_3_advanced advancedIvr8 = new ivr8_3_advanced(data, configFile);

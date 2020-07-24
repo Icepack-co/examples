@@ -31,7 +31,7 @@ public class ivr7_3_intermediate2 {
     model.addVehicleCostClasses(ivr7helper.makeVccSimple("vcc1", 1000, 0.01f, 0.01f, 0.01f, 1, 3));
     model.addVehicleClasses(ivr7helper.makeVcSimple("vc1", 1, 1, 1, 1));
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 4; i++) {
       model.addVehicles(ivr7helper.makeVehicleCap("vehicle_" + i, // unique id for the vehicle.
           "vc1", // the vehicle class
           "vcc1", // the vehicle cost class

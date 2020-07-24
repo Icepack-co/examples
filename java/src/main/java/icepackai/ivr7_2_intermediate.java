@@ -12,7 +12,7 @@ import java.util.*;
 // Pickup-dropoff tasks (with task-times)
 // One vehicle class (same travel profile)
 // Two vehicle-cost classes
-// Multiple vehicles (2xc1, 3xc2)
+// Multiple vehicles (2xc1, 2xc2)
 // Heterogeneous fleet (2 ton and 3 ton capacity)
 // Lunch breaks (1 hour break around 12:00)
 public class ivr7_2_intermediate {
@@ -45,11 +45,11 @@ public class ivr7_2_intermediate {
     model.addVehicleClasses(ivr7helper.makeVcSimple("vc1", 1, 1, 1, 1));
 
     // now we can just specify the vehicles.
-    // lets provide 2 x 2 ton vehicles and 3 x 3 ton vehicles. Although this is
+    // lets provide 2 x 2 ton vehicles and 2 x 3 ton vehicles. Although this is
     // probably more than we need. the reason for this is that we're modelling a
     // full-blown pickup+dropoff model, so if there's time to reload, a vehicle can
     // return to the depot and grab more goodies!
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 4; i++) {
       String vcc = "vcc1";
       float cap = 2000f;
       if (i > 1) {

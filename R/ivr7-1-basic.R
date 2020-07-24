@@ -64,7 +64,7 @@ sr$model$vehicleClasses <- make_vc_simple('vc1', 1, 1, 1, 1)
 sr$model$vehicleClasses[[1]]$toString() %>% cat
 
 # now we can just specify the vehicles.
-# lets provide 5 x 2 ton vehicles. Although this is probably more than we need.
+# lets provide 2 x 2 ton vehicles. Although this is probably more than we need.
 # the reason for this is that we're modelling a full-blown pickup+dropoff model, so if there's
 # time to reload, a vehicle can return to the depot and grab more goodies!
 
