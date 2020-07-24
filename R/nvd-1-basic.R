@@ -92,6 +92,7 @@ resp %>% plotResponse(sr)
 
 # this is the cheapest solution
 instanceCheap <-  api %>% getSolutionInstance(sr, reps, solutionIndex = 1)
+
 instanceCheap %>% plotResponse(sr)
 
 # this is the most balanced solution

@@ -10,7 +10,7 @@ rm(list = ls()) #clean up
 library(iceR)
 
 # just up some pre-defined functions which wrap the data into pbf
-source('../examples/R/ivr7-model-helper.R')
+source('ivr7-model-helper.R')
 
 api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../config.json')
 sr <- new (IVR7.SolveRequest)
@@ -35,7 +35,7 @@ sr$model$locations[[length(sr$model$locations)]]$id <- "vehicle-site"
 sr$model$jobs <- make_job_time_cap(data, src = rep(1, nrow(data) - 1), dest = 2:nrow(data))
 sr$model$vehicleCostClasses <- make_vcc_simple('vcc1', 1000, 0.01, 0.01, 0.01, 1, 3)
 sr$model$vehicleClasses <- make_vc_simple('vc1', 1, 1, 1, 1)
-sr$model$vehicles <- lapply(1:5, function(i){
+sr$model$vehicles <- lapply(1:4, function(i){
   make_vehicle_cap(paste0("vehicle_", i), 'vc1', 'vcc1',
                    2000, # the vehicle capacity
                    "vehicle-site", # start location

@@ -8,7 +8,7 @@ rm(list = ls())
 library(iceR)
 
 # just up some pre-defined functions which wrap the data into pbf
-source('../examples/R/ivr7-model-helper.R')
+source('ivr7-model-helper.R')
 
 api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../config.json')
 sr <- new (IVR7.SolveRequest)
@@ -22,7 +22,7 @@ sr$model$locations <- make_locations(data)
 sr$model$jobs <- make_job_time_cap(data, src = rep(1, nrow(data) - 1), dest = 2:nrow(data))
 sr$model$vehicleCostClasses <- make_vcc_simple('vcc1', 1000, 0.01, 0.01, 0.01, 1, 3)
 sr$model$vehicleClasses <- make_vc_simple('vc1', 1, 1, 1, 1)
-sr$model$vehicles <- lapply(1:5, function(i){
+sr$model$vehicles <- lapply(1:4, function(i){
   make_vehicle_cap( paste0("vehicle_", i), 'vc1', 'vcc1',
                     2000, # the vehicle capacity
                     data$id[1], # start location
@@ -169,10 +169,3 @@ window_constrained_resp$objective > resp$objective # so we expect the new soluti
 window_constrained_resp$infeasibilities            # there won't be any infeasibilities because the
 # request was to "optimise" not "evaluate" and this problem instance is largely unconstrained (i.e. it's
 # easy for the solver to find a way to satisfy all the tasks)
-
-
-
-
-
-
-

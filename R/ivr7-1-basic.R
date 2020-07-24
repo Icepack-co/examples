@@ -4,14 +4,14 @@
 # Pickup-dropoff tasks (with task times)
 # single vehicle class
 # single vehicle-cost class
-# multiple vehicles.
+# multiple vehicles (2)
 
 rm(list = ls())
 
 # test script
 library(iceR)
 
-source('../examples/R/ivr7-model-helper.R')
+source('ivr7-model-helper.R')
 
 # create an api-helper object with the model type you'd like to solve.
 api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../config.json')
@@ -68,7 +68,7 @@ sr$model$vehicleClasses[[1]]$toString() %>% cat
 # the reason for this is that we're modelling a full-blown pickup+dropoff model, so if there's
 # time to reload, a vehicle can return to the depot and grab more goodies!
 
-for(i in 1:5){
+for(i in 1:2){
   sr$model$vehicles[[i]] <- make_vehicle_cap( paste0("vehicle_", i), 'vc1', 'vcc1',
                                               2000, # the vehicle capacity
                                               data$id[1], # start location

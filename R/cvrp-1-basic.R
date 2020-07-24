@@ -1,4 +1,3 @@
-# .proto
 # CVRP - test script
 library(iceR)
 
@@ -35,7 +34,7 @@ data$quantity <- 20
 sr$model$points <-sapply(2:nrow(data), makePoint)
 # sr$model$toString() %>% cat # if you want to display what the model looks like at this point.
 
-sr$model$NumberOfVehicles <- 3
+sr$model$NumberOfVehicles <- 5
 sr$model$VehicleCapacity <- 100
 sr$model$distancetype <- 1 # 1 for road network, 2 for euclidean, 3 for haversine.
 

@@ -5,8 +5,8 @@
 # Pickup-dropoff tasks (with task-times)
 # One vehicle class (same travel profile)
 # Two vehicle-cost classes
-# Multiple vehicles (2xc1, 3xc2)
-# Heterogeneous fleet (2 ton and 3 ton capacity)
+# Multiple vehicles (4)
+# Heterogeneous fleet (2x2 ton and 2x3 ton capacity)
 # Lunch breaks (1 hour break around 12:00)
 
 rm(list = ls())
@@ -15,7 +15,7 @@ rm(list = ls())
 library(iceR)
 
 # just up some pre-defined functions which wrap the data into pbf
-source('../examples/R/ivr7-model-helper.R')
+source('ivr7-model-helper.R')
 
 # create an api-helper object with the model type you'd like to solve.
 api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../config.json')
@@ -71,14 +71,14 @@ sr$model$vehicleClasses <- make_vc_simple('vc1', 1, 1, 1, 1)
 sr$model$vehicleClasses[[1]]$toString() %>% cat
 
 # now we can just specify the vehicles.
-# lets provide 2 x 2 ton vehicles and 3x3 ton vehicles. Although this is probably more than we need.
+# lets provide 1 x 2 ton vehicles and 1x3 ton vehicles. 
 # the reason for this is that we're modelling a full-blown pickup+dropoff model, so if there's
 # time to reload, a vehicle can return to the depot and grab more goodies!
 
-for(i in 1:5){
+for(i in 1:4){
   vcc <- 'vcc1'
   vcap <- 2000
-  if(i >= 3){ # make 2x2ton vehicles and 3x3ton vehicles.
+  if(i >= 3){ # make 1x2ton vehicles and 2x3ton vehicles.
     vcc <- 'vcc2'
     vcap <- 3000
   }
