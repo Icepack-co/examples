@@ -2,7 +2,7 @@
 library(iceR)
 
 # create an api-helper object with the model type you'd like to solve.
-api <- new("apiHelper", modelType = 'tsp-mcvfz472gty6')
+api <- new("apiHelper", modelType = 'tsp-mcvfz472gty6', configFile = '../config.json')
 
 # create your model
 sr <- new (TSP.SolveRequest)
