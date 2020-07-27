@@ -21,10 +21,14 @@ public class App {
       tsptw1basic basicTsptw = new tsptw1basic(data, configFile);
       basicTsptw.Run();
 
+      data = dataRow.LoadData("../sample_data/publist_orders.csv");
+
       cvrp1basic basicCvrp = new cvrp1basic(data, configFile);
       basicCvrp.Run();
 
-      data = dataRow.LoadData("../sample_data/publist_orders.csv");
+      cvrptw1basic basicCvrptw = new cvrptw1basic(data, configFile);
+      basicCvrptw.Run();
+
       ivr7_1_basic basicIvr7_1 = new ivr7_1_basic(data, configFile);
       basicIvr7_1.Run();
 

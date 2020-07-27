@@ -202,7 +202,10 @@ namespace Cvrptw
             public global::System.Collections.Generic.List<Edge> Edges { get; } = new global::System.Collections.Generic.List<Edge>();
 
             [global::ProtoBuf.ProtoMember(3)]
-            public float[] visitDistances { get; set; }
+            public float[] visitCapacities { get; set; }
+
+            [global::ProtoBuf.ProtoMember(4)]
+            public float[] arrivalTimes { get; set; }
 
         }
 

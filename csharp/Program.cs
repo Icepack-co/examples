@@ -25,12 +25,16 @@ namespace csharp
       tsptw1basic basicTsptw = new tsptw1basic(data);
       basicTsptw.Run();
 
+      data = dataRow.LoadData("../sample_data/publist_orders.csv");
+
       // CVRP Examples
       cvrp1basic basicCvrp = new cvrp1basic(data);
       basicCvrp.Run();
 
+      cvrptw1basic basicCvrptw = new cvrptw1basic(data);
+      basicCvrptw.Run();
+
       // IVR7 Examples
-      data = dataRow.LoadData("../sample_data/publist_orders.csv");
       ivr7basic basicIvr7 = new ivr7basic(data);
       basicIvr7.Run();
 

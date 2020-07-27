@@ -13,7 +13,7 @@ sr$model <- new (CVRP.CVRP)
 
 # lets make the first location the depot, and the balance of the locations the visit points.
 
-data <- read.csv('../sample_data/publist.csv')[1:10,]
+data <- read.csv('../sample_data/publist_orders.csv')[1:10,]
 data$id %<>% as.character()
 data$quantity <- 0
 makePoint <- function(i){

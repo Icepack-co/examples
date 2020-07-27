@@ -114,6 +114,9 @@ class apiHelper:
             if self.modelType == 'cvrp_jkfdoctmp51n':
               m = cvrp_jkfdoctmp51n_pb2.SolutionResponse()
               return (m.FromString(solRes.solution))
+            if self.modelType == 'cvrptw_acyas3nzweqb':
+              m = cvrptw_acyas3nzweqb_pb2.SolutionResponse()
+              return (m.FromString(solRes.solution))
             if self.modelType == 'ivr7_kt461v8eoaif':
               m = ivr7_kt461v8eoaif_pb2.SolutionResponse()
               return(m.FromString(solRes.solution))

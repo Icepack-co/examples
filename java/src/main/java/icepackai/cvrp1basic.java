@@ -8,7 +8,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 import dnl.utils.text.table.TextTable;
 
-// A simple example of how to build and run a simple TSP model.
+// A simple example of how to build and run a simple CVRP model
+// A classic cvrp has a heterogeneous fleet. This means we need only specify the size of the
+// vehicle and the number of vehicles available. The other aspect of this model is to include
+// the location of the depot.
+
 public class cvrp1basic {
   public cvrp1basic(List<dataRow> inputdata, String config) throws Exception {
     this.configFile = config;
@@ -63,25 +67,26 @@ public class cvrp1basic {
     totalStops = 0;
     for (int i = 0; i < solution.getRoutesCount(); i++) {
       CvrpJkfdoctmp51N.SolutionResponse.Route r = solution.getRoutes(i);
-
-      float totalDistance = 0.0f;
-      float cumulCap = r.getVisitCapacities(0);
-      tabData[totalStops] = new Object[] { "Route_" + i, r.getSequence(0), 0.0f, 0.0f, cumulCap };
-      totalStops++;
-      for (int j = 1; j < r.getSequenceCount(); j++) {
-        CvrpJkfdoctmp51N.Edge e = r.getEdges(j - 1);
-        cumulCap += r.getVisitCapacities(j);
-        totalDistance += e.getDistance();
-        tabData[totalStops] = new Object[] { "Route_" + i, r.getSequence(j), e.getDistance(), totalDistance, cumulCap };
+      if(r.getVisitCapacitiesCount() > 0){
+        float totalDistance = 0.0f;
+        float cumulCap = r.getVisitCapacities(0);
+        tabData[totalStops] = new Object[] { "Route_" + i, r.getSequence(0), 0.0f, 0.0f, cumulCap };
         totalStops++;
-        for (int k = 0; k < e.getGeometryCount(); k++) {
-          // so each one of these items forms part of the road-network used for a
-          // particular route.
-          // so the list of points (x,y) can be interpreted as the sequence through
-          // the network and forms a line-string. For proper visualisations of this
-          // response
-          // see the R/Python examples which have leaflet and ipyleaflet plots
-          // respectively.
+        for (int j = 1; j < r.getSequenceCount(); j++) {
+          CvrpJkfdoctmp51N.Edge e = r.getEdges(j - 1);
+          cumulCap += r.getVisitCapacities(j);
+          totalDistance += e.getDistance();
+          tabData[totalStops] = new Object[] { "Route_" + i, r.getSequence(j), e.getDistance(), totalDistance, cumulCap };
+          totalStops++;
+          for (int k = 0; k < e.getGeometryCount(); k++) {
+            // so each one of these items forms part of the road-network used for a
+            // particular route.
+            // so the list of points (x,y) can be interpreted as the sequence through
+            // the network and forms a line-string. For proper visualisations of this
+            // response
+            // see the R/Python examples which have leaflet and ipyleaflet plots
+            // respectively.
+          }
         }
       }
     }
