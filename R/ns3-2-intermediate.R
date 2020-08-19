@@ -1,13 +1,16 @@
-### A basic network sourcing model
+### An intermediate network sourcing model
 ### uses one production, two intermediate and multiple consumption locations.
 ### We're moving one product "Beer" measured in the dimension "weight"
 ### How are movements in the network costed?
-### - We have two lane rates between our main production center and the two warehouses
-### - and a distribution "Cost Model" between the sources (proudction + 2 x warehouses) and consumption nodes
-### - Lane rates between Production and Intermediate nodes are costed on a cost per km basis.
-### - Cost models to distribute the quantities further is also based on a (more expensive) cost per km.
-### - It's typical that high utilisation vehicles move between warehouses (and typically larger vehicles, achieving a lower cost per km / cost per ton)
-### - And that smaller vehicles handle the secondary distribution (at a higher cost per ton)
+### - Same configuration as the basic-1 example:
+###   * We have two lane rates between our main production center and the two warehouses
+###   * and a distribution "Cost Model" between the sources (proudction + 2 x warehouses) and consumption nodes
+###   * Lane rates between Production and Intermediate nodes are costed on a cost per km basis.
+###   * Cost models to distribute the quantities further is also based on a (more expensive) cost per km.
+###   * It's typical that high utilisation vehicles move between warehouses (and typically larger vehicles, achieving a lower cost per km / cost per ton)
+###   * And that smaller vehicles handle the secondary distribution (at a higher cost per ton)
+### - adding a fixed cost trigger for using a warehouse
+### - the allows modelling selecting between the two warehouses, or potentially using both.
 
 rm(list =ls())
 library(iceR)
@@ -36,6 +39,15 @@ demandNodes <- d %>% filter(demand > 0)
 
 p_nodes <- make_nodes(productionNodes)
 w_nodes <- make_nodes(warehouseNodes)
+
+# here is where we add the fixed costs to the warehouse nodes.
+for(i in 1:length(w_nodes)){
+  w_nodes[[i]]$flow <- new (NS3.Node.Flow)
+  w_nodes[[i]]$flow$FixedDimensionCosts <- new (NS3.FixedDimensionCost)
+  w_nodes[[i]]$flow$FixedDimensionCosts[[1]]$dimensionIds <- 'weight'
+  w_nodes[[i]]$flow$FixedDimensionCosts[[1]]$fixedCost <- 10000
+}
+
 d_nodes <- make_nodes(demandNodes)
 
 p_nodes %>% display # so we've just defined the Guiness storehouse
@@ -106,10 +118,14 @@ requestID <- api %>% postSolveRequest(sr)
 resp <- api %>% getResponse(requestID)
 resp %>% plotResponse(sr)
 resp %>% plotResponseLeaflet(sr)
+# So this is very interesting when contrast to the simple initial model.
+# Essentially, it would be cheaper to use the Limerick warehouse than the Galway warehouse
+# So the model chooses to rather run the limerick warehouse (which it could have also closed)
+# in conjunction with deliveries from the Guiness storehouse in Dublin.
 
 tab <- resp %>% tabulate(sr)
 tab$assignments %>% head
-tab$nodeFlow %>% head
+tab$nodeFlow %>% head # here you can see there is no node flow for the Galway warehouse
 tab$nodeProductFlow %>% head
 tab$routes %>% head
 
