@@ -10,7 +10,7 @@
 ###   * It's typical that high utilisation vehicles move between warehouses (and typically larger vehicles, achieving a lower cost per km / cost per ton)
 ###   * And that smaller vehicles handle the secondary distribution (at a higher cost per ton)
 ### - adding a fixed cost trigger for using a warehouse
-### - the allows modelling selecting between the two warehouses, or potentially using both.
+### - this allows the model to select between the two warehouses, or potentially using both.
 
 rm(list =ls())
 library(iceR)

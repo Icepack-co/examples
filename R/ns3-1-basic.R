@@ -106,10 +106,10 @@ requestID <- api %>% postSolveRequest(sr)
 resp <- api %>% getResponse(requestID)
 resp %>% plotResponse(sr)
 resp %>% plotResponseLeaflet(sr)
+tab$assignments %>% head
 
 tab <- resp %>% tabulate(sr)
 tab$assignments %>% head
 tab$nodeFlow %>% head
 tab$nodeProductFlow %>% head
 tab$routes %>% head
-
