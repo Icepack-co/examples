@@ -22,11 +22,12 @@ public class ivr7_2_intermediate {
   }
 
   public void Run() throws Exception {
-    api = new apiHelper<Ivr7Kt461V8Eoaif.SolutionResponse>(Ivr7Kt461V8Eoaif.SolutionResponse.class, "ivr7-kt461v8eoaif",
-        configFile);
+    api = new apiHelper<Ivr7Kt461V8Eoaif.SolutionResponse>(
+        Ivr7Kt461V8Eoaif.SolutionResponse.class, "ivr7-kt461v8eoaif", configFile);
     Ivr7Kt461V8Eoaif.SolveRequest.Builder builder = Ivr7Kt461V8Eoaif.SolveRequest.newBuilder();
     // so here we're going to build the model
-    Ivr7Kt461V8Eoaif.Model.Builder model = builder.getModel().toBuilder(); // this is the actual model container.
+    Ivr7Kt461V8Eoaif.Model.Builder model =
+        builder.getModel().toBuilder(); // this is the actual model container.
 
     // we're going to reuse the helpers described in the ivr7basic example. Please
     // see that for a reference.
@@ -35,13 +36,15 @@ public class ivr7_2_intermediate {
     // we're going to add time windows to the locations. 08:00 - 14:00. In java it's
     // easiest to do this as you compile the object
     ivr7helper.makeLocations(model, data, 8 * 60f, 14 * 60f);
-    System.out.println(model.getLocations(0).toString()); // not that we now have an arrival attribute which has been
-                                                          // populated
+    System.out.println(model.getLocations(0).toString()); // not that we now have an arrival
+                                                          // attribute which has been populated
 
-    ivr7helper.makeJobTimeCap(model, data, ivr7helper.Rep(0, data.size() - 1), ivr7helper.Seq(1, data.size()));
+    ivr7helper.makeJobTimeCap(
+        model, data, ivr7helper.Rep(0, data.size() - 1), ivr7helper.Seq(1, data.size()));
 
     model.addVehicleCostClasses(ivr7helper.makeVccSimple("vcc1", 1000, 0.01f, 0.01f, 0.01f, 1, 3));
-    model.addVehicleCostClasses(ivr7helper.makeVccSimple("vcc2", 1200, 0.1f, 0.1f, 0.1f, 0.6f, 2.5f));
+    model.addVehicleCostClasses(
+        ivr7helper.makeVccSimple("vcc2", 1200, 0.1f, 0.1f, 0.1f, 0.6f, 2.5f));
     model.addVehicleClasses(ivr7helper.makeVcSimple("vc1", 1, 1, 1, 1));
 
     // now we can just specify the vehicles.
@@ -64,24 +67,27 @@ public class ivr7_2_intermediate {
           data.get(0).id, // end location for the vehicle
           7 * 60, // start time: 7 AM
           18 * 60 // end time: 6 PM
-      ));
+          ));
     }
 
     // Lunch breaks.
     // so this is a touch more complex, we want to link our transit-rule to the time
     // dimension, and when a certain amount has accumulated on the dimension, we
     // trigger the rule.
-    model.addTransitRules(ivr7helper.makeLunchBreakRule("lunch_break_rule", "lunchy_munchy_", 12 * 60.0f, 60.0f));
+    model.addTransitRules(
+        ivr7helper.makeLunchBreakRule("lunch_break_rule", "lunchy_munchy_", 12 * 60.0f, 60.0f));
 
     // now link the transit rule to the vehicle classes
-    model.setVehicleClasses(0, model.getVehicleClasses(0).toBuilder().addTransitRuleIds("lunch_break_rule"));
+    model.setVehicleClasses(
+        0, model.getVehicleClasses(0).toBuilder().addTransitRuleIds("lunch_break_rule"));
     System.out.println(model.getVehicleClasses(0).toString());
 
     builder.setModel(model.build());
     builder.setSolveType(SolveType.Optimise);
 
     String requestId = api.Post(builder.build()); // send the model to the api
-    Ivr7Kt461V8Eoaif.SolutionResponse solution = api.Get(requestId); // get the response (which is cast internally)
+    Ivr7Kt461V8Eoaif.SolutionResponse solution =
+        api.Get(requestId); // get the response (which is cast internally)
     System.out.println(String.format("Solution cost: %02f", solution.getObjective()));
 
     ivr7helper.printSolution(solution, true, true, true, true);

@@ -16,25 +16,35 @@ import dnl.utils.text.table.TextTable;
 public class cvrp1basic {
   public cvrp1basic(List<dataRow> inputdata, String config) throws Exception {
     this.configFile = config;
-    this.data = inputdata.stream().limit(10).collect(Collectors.toList()); // grabs just the first 10 items.;
+    this.data = inputdata.stream().limit(10).collect(
+        Collectors.toList()); // grabs just the first 10 items.;
   }
 
   public void Run() throws Exception {
-    api = new apiHelper<CvrpJkfdoctmp51N.SolutionResponse>(CvrpJkfdoctmp51N.SolutionResponse.class, "cvrp-jkfdoctmp51n",
-        configFile);
+    api = new apiHelper<CvrpJkfdoctmp51N.SolutionResponse>(
+        CvrpJkfdoctmp51N.SolutionResponse.class, "cvrp-jkfdoctmp51n", configFile);
     CvrpJkfdoctmp51N.SolveRequest.Builder builder = CvrpJkfdoctmp51N.SolveRequest.newBuilder();
     // so here we're going to build the model
-    CvrpJkfdoctmp51N.CVRP.Builder model = builder.getModel().toBuilder(); // this is the actual model container.
+    CvrpJkfdoctmp51N.CVRP.Builder model =
+        builder.getModel().toBuilder(); // this is the actual model container.
 
     // add locations to the matrix request
     for (int i = 0; i < data.size(); i++) {
       dataRow row = data.get(i);
       if (i == 0) { // treat the first point as the depot.
-        model.setDepot(
-            CvrpJkfdoctmp51N.Geocode.newBuilder().setId(row.id).setX(row.X).setY(row.Y).setQuantity(0.0f).build());
+        model.setDepot(CvrpJkfdoctmp51N.Geocode.newBuilder()
+                           .setId(row.id)
+                           .setX(row.X)
+                           .setY(row.Y)
+                           .setQuantity(0.0f)
+                           .build());
       } else {
-        model.addPoints(
-            CvrpJkfdoctmp51N.Geocode.newBuilder().setId(row.id).setX(row.X).setY(row.Y).setQuantity(20.0f).build());
+        model.addPoints(CvrpJkfdoctmp51N.Geocode.newBuilder()
+                            .setId(row.id)
+                            .setX(row.X)
+                            .setY(row.Y)
+                            .setQuantity(20.0f)
+                            .build());
         // add the points as demand points. Assume that each point has a demand quantity
         // of 20
       }
@@ -52,7 +62,8 @@ public class cvrp1basic {
 
     String requestId = api.Post(builder.build()); // send the model to the api
 
-    CvrpJkfdoctmp51N.SolutionResponse solution = api.Get(requestId); // get the response (which is cast internally)
+    CvrpJkfdoctmp51N.SolutionResponse solution =
+        api.Get(requestId); // get the response (which is cast internally)
 
     // total stops
     Integer totalStops = 0;
@@ -62,21 +73,23 @@ public class cvrp1basic {
 
     Object[][] tabData = new Object[totalStops][];
 
-    String[] columnNames = { "Vehicle", "Stop", "Distance Travelled", "Cumulative Distance", "Cumulative load" };
+    String[] columnNames = {
+        "Vehicle", "Stop", "Distance Travelled", "Cumulative Distance", "Cumulative load"};
 
     totalStops = 0;
     for (int i = 0; i < solution.getRoutesCount(); i++) {
       CvrpJkfdoctmp51N.SolutionResponse.Route r = solution.getRoutes(i);
-      if(r.getVisitCapacitiesCount() > 0){
+      if (r.getVisitCapacitiesCount() > 0) {
         float totalDistance = 0.0f;
         float cumulCap = r.getVisitCapacities(0);
-        tabData[totalStops] = new Object[] { "Route_" + i, r.getSequence(0), 0.0f, 0.0f, cumulCap };
+        tabData[totalStops] = new Object[] {"Route_" + i, r.getSequence(0), 0.0f, 0.0f, cumulCap};
         totalStops++;
         for (int j = 1; j < r.getSequenceCount(); j++) {
           CvrpJkfdoctmp51N.Edge e = r.getEdges(j - 1);
           cumulCap += r.getVisitCapacities(j);
           totalDistance += e.getDistance();
-          tabData[totalStops] = new Object[] { "Route_" + i, r.getSequence(j), e.getDistance(), totalDistance, cumulCap };
+          tabData[totalStops] = new Object[] {
+              "Route_" + i, r.getSequence(j), e.getDistance(), totalDistance, cumulCap};
           totalStops++;
           for (int k = 0; k < e.getGeometryCount(); k++) {
             // so each one of these items forms part of the road-network used for a

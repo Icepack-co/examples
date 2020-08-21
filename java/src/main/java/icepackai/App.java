@@ -12,8 +12,7 @@ public class App {
       matrix1basic basicMatrix = new matrix1basic(data, configFile);
       basicMatrix.Run();
 
-      matrix1intermediate intermediateMatrix = new matrix1intermediate(data,
-      configFile);
+      matrix1intermediate intermediateMatrix = new matrix1intermediate(data, configFile);
       intermediateMatrix.Run();
 
       // TSP Examples
@@ -67,7 +66,7 @@ public class App {
 
       ns3_2_intermediate intermidiateNs3 = new ns3_2_intermediate(data, configFile);
       intermidiateNs3.Run();
-      
+
       ns3_3_advanced advancedNs3 = new ns3_3_advanced(data, configFile);
       advancedNs3.Run();
 

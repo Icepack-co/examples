@@ -17,17 +17,19 @@ public class ivr7_3_intermediate2 {
   }
 
   public void Run() throws Exception {
-    api = new apiHelper<Ivr7Kt461V8Eoaif.SolutionResponse>(Ivr7Kt461V8Eoaif.SolutionResponse.class, "ivr7-kt461v8eoaif",
-        configFile);
+    api = new apiHelper<Ivr7Kt461V8Eoaif.SolutionResponse>(
+        Ivr7Kt461V8Eoaif.SolutionResponse.class, "ivr7-kt461v8eoaif", configFile);
     Ivr7Kt461V8Eoaif.SolveRequest.Builder builder = Ivr7Kt461V8Eoaif.SolveRequest.newBuilder();
     // so here we're going to build the model
-    Ivr7Kt461V8Eoaif.Model.Builder model = builder.getModel().toBuilder(); // this is the actual model container.
+    Ivr7Kt461V8Eoaif.Model.Builder model =
+        builder.getModel().toBuilder(); // this is the actual model container.
 
     // we're going to reuse the helpers described in the ivr7basic example. Please
     // see that for a reference.
     ivr7helper.makeDistanceTimeCapDims(model);
     ivr7helper.makeLocations(model, data);
-    ivr7helper.makeJobTimeCap(model, data, ivr7helper.Rep(0, data.size() - 1), ivr7helper.Seq(1, data.size()));
+    ivr7helper.makeJobTimeCap(
+        model, data, ivr7helper.Rep(0, data.size() - 1), ivr7helper.Seq(1, data.size()));
     model.addVehicleCostClasses(ivr7helper.makeVccSimple("vcc1", 1000, 0.01f, 0.01f, 0.01f, 1, 3));
     model.addVehicleClasses(ivr7helper.makeVcSimple("vc1", 1, 1, 1, 1));
 
@@ -40,14 +42,15 @@ public class ivr7_3_intermediate2 {
           data.get(0).id, // end location for the vehicle
           7 * 60, // start time: 7 AM
           18 * 60 // end time: 6 PM
-      ));
+          ));
     }
     builder.setModel(model.build());
     builder.setSolveType(SolveType.Optimise);
 
     String requestId = api.Post(builder.build()); // send the model to the api
-    Ivr7Kt461V8Eoaif.SolutionResponse initialSolution = api.Get(requestId); // get the response (which is cast
-                                                                            // internally)
+    Ivr7Kt461V8Eoaif.SolutionResponse initialSolution =
+        api.Get(requestId); // get the response (which is cast
+                            // internally)
 
     // so we can do a few things here, we can add constraints which weren't in the
     // original model, evaluate the same sequence and see if any constraints are
@@ -56,9 +59,11 @@ public class ivr7_3_intermediate2 {
     // and see what that does.
     for (int i = 0; i < model.getLocationsCount(); i++) {
       model.setLocations(i,
-          model.getLocations(i).toBuilder()
-              .addAttributes(Ivr7Kt461V8Eoaif.Location.Attribute.newBuilder().setDimensionId("time")
-                  .addArrivalWindows(Ivr7Kt461V8Eoaif.Window.newBuilder().setStart(8 * 60f).setEnd(14 * 60f))));
+          model.getLocations(i).toBuilder().addAttributes(
+              Ivr7Kt461V8Eoaif.Location.Attribute.newBuilder()
+                  .setDimensionId("time")
+                  .addArrivalWindows(
+                      Ivr7Kt461V8Eoaif.Window.newBuilder().setStart(8 * 60f).setEnd(14 * 60f))));
       // this effectively adds a window onto each location.
     }
 
@@ -88,10 +93,12 @@ public class ivr7_3_intermediate2 {
     }
 
     builder.setModel(model.build());
-    builder.setSolveType(SolveType.Evaluate); // tell the api to evaluate this sequence with the new constraints.
+    builder.setSolveType(
+        SolveType.Evaluate); // tell the api to evaluate this sequence with the new constraints.
 
     requestId = api.Post(builder.build()); // send the model to the api
-    Ivr7Kt461V8Eoaif.SolutionResponse evalSolution = api.Get(requestId); // get the response (which is cast internally)
+    Ivr7Kt461V8Eoaif.SolutionResponse evalSolution =
+        api.Get(requestId); // get the response (which is cast internally)
 
     System.out.println(String.format("Solution cost: %02f", initialSolution.getObjective()));
 
@@ -111,7 +118,8 @@ public class ivr7_3_intermediate2 {
     // will be the amount by which the vehicle is late. we can check the arrival
     // time of the task to verify this.
     HashSet<String> infeasibleTasks = new HashSet<String>();
-    for (Ivr7Kt461V8Eoaif.SolutionResponse.Infeasibility t : evalSolution.getInfeasibilitiesList()) {
+    for (Ivr7Kt461V8Eoaif.SolutionResponse.Infeasibility t :
+        evalSolution.getInfeasibilitiesList()) {
       infeasibleTasks.add(t.getTaskId());
     }
     for (Ivr7Kt461V8Eoaif.SolutionResponse.Route r : initialSolution.getRoutesList()) {
@@ -120,7 +128,8 @@ public class ivr7_3_intermediate2 {
           for (Ivr7Kt461V8Eoaif.SolutionResponse.StopAttribute a : s.getAttributesList()) {
             if (a.getDimId() == "time") {
               if (!(a.getStartValue() > 14 * 60.0f)) {
-                throw new Exception("Hmmm. a stop was marked as infeasible but it's arrival time looks okay?");
+                throw new Exception(
+                    "Hmmm. a stop was marked as infeasible but it's arrival time looks okay?");
                 // don't worry, this won't happen unless the solver is broken, or you're
                 // checking against
                 // the incorrect solution reference.
@@ -136,14 +145,15 @@ public class ivr7_3_intermediate2 {
 
     for (int i = 0; i < model.getTaskSequenceCount(); i++) {
       Ivr7Kt461V8Eoaif.TaskSequence ts = model.getTaskSequence(i);
-      Ivr7Kt461V8Eoaif.TaskSequence.Builder nts = Ivr7Kt461V8Eoaif.TaskSequence.newBuilder()
-          .setVehicleId(ts.getVehicleId());
+      Ivr7Kt461V8Eoaif.TaskSequence.Builder nts =
+          Ivr7Kt461V8Eoaif.TaskSequence.newBuilder().setVehicleId(ts.getVehicleId());
       for (String tskId : ts.getTaskIdList()) {
         if (!infeasibleTasks.contains(tskId)) {
           nts.addTaskId(tskId);
         }
       }
-      model.setTaskSequence(i, nts); // so this rebuilds the task sequence without the infeasible tasks.
+      model.setTaskSequence(
+          i, nts); // so this rebuilds the task sequence without the infeasible tasks.
     }
 
     builder.setModel(model.build()); // update the solve request with the modified model
@@ -158,19 +168,21 @@ public class ivr7_3_intermediate2 {
     // a bunch of constraints.
 
     // so lets apply the same trick and remove these stops.
-    for (Ivr7Kt461V8Eoaif.SolutionResponse.Infeasibility t : evalSolution.getInfeasibilitiesList()) {
+    for (Ivr7Kt461V8Eoaif.SolutionResponse.Infeasibility t :
+        evalSolution.getInfeasibilitiesList()) {
       infeasibleTasks.add(t.getTaskId());
     }
     for (int i = 0; i < model.getTaskSequenceCount(); i++) {
       Ivr7Kt461V8Eoaif.TaskSequence ts = model.getTaskSequence(i);
-      Ivr7Kt461V8Eoaif.TaskSequence.Builder nts = Ivr7Kt461V8Eoaif.TaskSequence.newBuilder()
-          .setVehicleId(ts.getVehicleId());
+      Ivr7Kt461V8Eoaif.TaskSequence.Builder nts =
+          Ivr7Kt461V8Eoaif.TaskSequence.newBuilder().setVehicleId(ts.getVehicleId());
       for (String tskId : ts.getTaskIdList()) {
         if (!infeasibleTasks.contains(tskId)) {
           nts.addTaskId(tskId);
         }
       }
-      model.setTaskSequence(i, nts); // so this rebuilds the task sequence without the infeasible tasks.
+      model.setTaskSequence(
+          i, nts); // so this rebuilds the task sequence without the infeasible tasks.
     }
     builder.setModel(model.build()); // update the solve request with the modified model
     requestId = api.Post(builder.build()); // send the model to the api
@@ -185,7 +197,8 @@ public class ivr7_3_intermediate2 {
     builder.setSolveType(SolveType.Optimise); // switch back to optimising this model.
 
     requestId = api.Post(builder.build()); // send the model to the api
-    Ivr7Kt461V8Eoaif.SolutionResponse Solution = api.Get(requestId); // get the response (which is cast internally)
+    Ivr7Kt461V8Eoaif.SolutionResponse Solution =
+        api.Get(requestId); // get the response (which is cast internally)
 
     if (prevSolution.getObjective() < Solution.getObjective()) {
       throw new Exception("Whoa, this doesn't make any sense :-)");

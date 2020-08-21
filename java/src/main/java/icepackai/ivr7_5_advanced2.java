@@ -9,7 +9,8 @@ import java.util.*;
 // IVR7 Advanced example:
 // Purpose: illustrate the usage of the data-upload as well as model versioning.
 // * Builds a simple pickup/dropoff (similar to the basic model).
-// * Configures "open routing" - i.e. do not cost the return legs for the vehicles to the end-location
+// * Configures "open routing" - i.e. do not cost the return legs for the vehicles to the
+// end-location
 // * Illustrates how to reference matrix data in a (potentially) versioned model.
 // * or load overriding elements on a particular matrix directly.
 //     (one can provide a complete matrix in this manner too)
@@ -21,11 +22,12 @@ public class ivr7_5_advanced2 {
   }
 
   public void Run() throws Exception {
-    api = new apiHelper<Ivr7Kt461V8Eoaif.SolutionResponse>(Ivr7Kt461V8Eoaif.SolutionResponse.class, "ivr7-kt461v8eoaif",
-        configFile);
+    api = new apiHelper<Ivr7Kt461V8Eoaif.SolutionResponse>(
+        Ivr7Kt461V8Eoaif.SolutionResponse.class, "ivr7-kt461v8eoaif", configFile);
     Ivr7Kt461V8Eoaif.SolveRequest.Builder builder = Ivr7Kt461V8Eoaif.SolveRequest.newBuilder();
     // so here we're going to build the model
-    Ivr7Kt461V8Eoaif.Model.Builder model = builder.getModel().toBuilder(); // this is the actual model container.
+    Ivr7Kt461V8Eoaif.Model.Builder model =
+        builder.getModel().toBuilder(); // this is the actual model container.
     // we're going to reuse the helpers described in the ivr7basic example. Please
     // see that for an initial reference.
     // We want "Open Routing" which basically means that if a vehicle finishes it's
@@ -42,10 +44,15 @@ public class ivr7_5_advanced2 {
 
     // we're going to add an exta location; the "vehicle-site"
     // and use the geocode of the Guiness storehouse.
-    model.addLocations(Ivr7Kt461V8Eoaif.Location.newBuilder().setId("vehicle-site").setGeocode(
-        Ivr7Kt461V8Eoaif.Geocode.newBuilder().setLongitude(data.get(0).X).setLatitude(data.get(0).Y).build()));
+    model.addLocations(Ivr7Kt461V8Eoaif.Location.newBuilder()
+                           .setId("vehicle-site")
+                           .setGeocode(Ivr7Kt461V8Eoaif.Geocode.newBuilder()
+                                           .setLongitude(data.get(0).X)
+                                           .setLatitude(data.get(0).Y)
+                                           .build()));
 
-    ivr7helper.makeJobTimeCap(model, data, ivr7helper.Rep(0, data.size() - 1), ivr7helper.Seq(1, data.size()));
+    ivr7helper.makeJobTimeCap(
+        model, data, ivr7helper.Rep(0, data.size() - 1), ivr7helper.Seq(1, data.size()));
     model.addVehicleCostClasses(ivr7helper.makeVccSimple("vcc1", 1000, 0.01f, 0.01f, 0.01f, 1, 3));
     model.addVehicleClasses(ivr7helper.makeVcSimple("vc1", 1, 1, 1, 1));
     for (int i = 0; i < 4; i++) {
@@ -57,7 +64,7 @@ public class ivr7_5_advanced2 {
           "vehicle-site", // end location for the vehicle
           7 * 60, // start time: 7 AM
           18 * 60 // end time: 6 PM
-      ));
+          ));
     }
     // okay, so that's a basic model. Lets now use the objects, but submit them to
     // the api through a different mechanism.
@@ -78,38 +85,51 @@ public class ivr7_5_advanced2 {
     if (dataUpload) {
       IvrdataO43E0Dvs78Zq.TransitSet.Builder ts = IvrdataO43E0Dvs78Zq.TransitSet.newBuilder();
       for (int i = 0; i < model.getLocationsCount(); i++) {
-        ts.addTransits(IvrdataO43E0Dvs78Zq.TransitSet.TransitValue.newBuilder().setFromId(model.getLocations(i).getId())
-            .setToId("vehilce-site").setValue(0.0f).build());
+        ts.addTransits(IvrdataO43E0Dvs78Zq.TransitSet.TransitValue.newBuilder()
+                           .setFromId(model.getLocations(i).getId())
+                           .setToId("vehilce-site")
+                           .setValue(0.0f)
+                           .build());
       }
-      IvrdataO43E0Dvs78Zq.CachedTransitSet datamodel = IvrdataO43E0Dvs78Zq.CachedTransitSet.newBuilder()
-          .setTransitSet(ts).build();
+      IvrdataO43E0Dvs78Zq.CachedTransitSet datamodel =
+          IvrdataO43E0Dvs78Zq.CachedTransitSet.newBuilder().setTransitSet(ts).build();
       System.out.println(datamodel.toString());
-      apiHelper<IvrdataO43E0Dvs78Zq.CachedTransitSet> data_api = new apiHelper<IvrdataO43E0Dvs78Zq.CachedTransitSet>(
-          IvrdataO43E0Dvs78Zq.CachedTransitSet.class, "ivrdata-o43e0dvs78zq", configFile);
+      apiHelper<IvrdataO43E0Dvs78Zq.CachedTransitSet> data_api =
+          new apiHelper<IvrdataO43E0Dvs78Zq.CachedTransitSet>(
+              IvrdataO43E0Dvs78Zq.CachedTransitSet.class, "ivrdata-o43e0dvs78zq", configFile);
 
       // epic: we just saved our model as a byte stream into this data payload.
       String transitModelID = data_api.Post(datamodel);
 
       // now create the additional transit generators and link them to the data that
       // has been uploaded
-      model.addTransitGenerators(
-          Ivr7Kt461V8Eoaif.TransitGenerator.newBuilder().setId("custom_distance").setRequestId(transitModelID).build());
-      model.addTransitGenerators(
-          Ivr7Kt461V8Eoaif.TransitGenerator.newBuilder().setId("custom_time").setRequestId(transitModelID).build());
+      model.addTransitGenerators(Ivr7Kt461V8Eoaif.TransitGenerator.newBuilder()
+                                     .setId("custom_distance")
+                                     .setRequestId(transitModelID)
+                                     .build());
+      model.addTransitGenerators(Ivr7Kt461V8Eoaif.TransitGenerator.newBuilder()
+                                     .setId("custom_time")
+                                     .setRequestId(transitModelID)
+                                     .build());
       // Note, we're telling the API where to find the Transit-set data.
     } else {
       // embed the zero elements in the matrix in the payload directly (rather than
       // through a data-upload)
       Ivr7Kt461V8Eoaif.TransitSet.Builder ts = Ivr7Kt461V8Eoaif.TransitSet.newBuilder();
       for (int i = 0; i < model.getLocationsCount(); i++) {
-        ts.addTransits(Ivr7Kt461V8Eoaif.TransitSet.TransitValue.newBuilder().setFromId(model.getLocations(i).getId())
-            .setToId("vehilce-site").setValue(0.0f).build());
+        ts.addTransits(Ivr7Kt461V8Eoaif.TransitSet.TransitValue.newBuilder()
+                           .setFromId(model.getLocations(i).getId())
+                           .setToId("vehilce-site")
+                           .setValue(0.0f)
+                           .build());
       }
-      model.addTransitGenerators(
-          Ivr7Kt461V8Eoaif.TransitGenerator.newBuilder().setId("custom_distance").setTransitSet(ts.build()));
+      model.addTransitGenerators(Ivr7Kt461V8Eoaif.TransitGenerator.newBuilder()
+                                     .setId("custom_distance")
+                                     .setTransitSet(ts.build()));
       // or we're explicily providing all the data.
-      model.addTransitGenerators(
-          Ivr7Kt461V8Eoaif.TransitGenerator.newBuilder().setId("custom_time").setTransitSet(ts.build()));
+      model.addTransitGenerators(Ivr7Kt461V8Eoaif.TransitGenerator.newBuilder()
+                                     .setId("custom_time")
+                                     .setTransitSet(ts.build()));
     }
 
     // now the last step, we need to tell the vehicles that they should use these
@@ -117,12 +137,23 @@ public class ivr7_5_advanced2 {
     // keeping the roadnetwork distance/time in the list (the order of the list IS
     // important when layering matricies). There are 4 attributes in the
     // vehicle-class list now.
-    model.setVehicleClasses(0, model.getVehicleClasses(0).toBuilder()
-        .addAttributes(Ivr7Kt461V8Eoaif.VehicleClass.Attribute.newBuilder().setDimensionId("time")
-            .setTransitGeneratorId("custom_time").setTransitCoef(1.0f).setTaskCoef(1.0f).setLocationCoef(1.0f).build())
-        .addAttributes(Ivr7Kt461V8Eoaif.VehicleClass.Attribute.newBuilder().setDimensionId("distance")
-            .setTransitGeneratorId("custom_distance").setTransitCoef(1.0f).setTaskCoef(1.0f).setLocationCoef(1.0f)
-            .build()));
+    model.setVehicleClasses(0,
+        model.getVehicleClasses(0)
+            .toBuilder()
+            .addAttributes(Ivr7Kt461V8Eoaif.VehicleClass.Attribute.newBuilder()
+                               .setDimensionId("time")
+                               .setTransitGeneratorId("custom_time")
+                               .setTransitCoef(1.0f)
+                               .setTaskCoef(1.0f)
+                               .setLocationCoef(1.0f)
+                               .build())
+            .addAttributes(Ivr7Kt461V8Eoaif.VehicleClass.Attribute.newBuilder()
+                               .setDimensionId("distance")
+                               .setTransitGeneratorId("custom_distance")
+                               .setTransitCoef(1.0f)
+                               .setTaskCoef(1.0f)
+                               .setLocationCoef(1.0f)
+                               .build()));
 
     System.out.println(model.getVehicleClasses(0).toString());
     // so now we have a roadnetwork distance + time generator followed by a custom
@@ -136,7 +167,8 @@ public class ivr7_5_advanced2 {
     builder.setSolveType(SolveType.Optimise);
 
     String requestId = api.Post(builder.build()); // send the model to the api
-    Ivr7Kt461V8Eoaif.SolutionResponse solution = api.Get(requestId); // get the response (which is cast internally)
+    Ivr7Kt461V8Eoaif.SolutionResponse solution =
+        api.Get(requestId); // get the response (which is cast internally)
     System.out.println(String.format("Solution cost: %02f", solution.getObjective()));
 
     ivr7helper.printSolution(solution, true, true, true, true);

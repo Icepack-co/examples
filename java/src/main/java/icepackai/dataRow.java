@@ -33,18 +33,19 @@ public class dataRow {
     List<dataRow> res = new ArrayList<dataRow>();
     List<String> lines = Files.readAllLines(Paths.get(filename), Charset.defaultCharset());
 
-    Boolean ns3format = (lines.get(0).split(",")[0].equals("id") && lines.get(0).split(",")[1].equals("name"));
-    
+    Boolean ns3format =
+        (lines.get(0).split(",")[0].equals("id") && lines.get(0).split(",")[1].equals("name"));
+
     for (int i = 1; i < lines.size(); i++) {
       String line = lines.get(i);
       String[] items = line.split(",");
       if (items.length < 4) {
         res.add(new dataRow(items[0], Float.parseFloat(items[1]), Float.parseFloat(items[2])));
       } else {
-        if(ns3format){
-          res.add(new dataRow(items[0], Float.parseFloat(items[2]), Float.parseFloat(items[3]),
-                              0, 0, Float.parseFloat(items[4])));
-        }else{
+        if (ns3format) {
+          res.add(new dataRow(items[0], Float.parseFloat(items[2]), Float.parseFloat(items[3]), 0,
+              0, Float.parseFloat(items[4])));
+        } else {
           res.add(new dataRow(items[0], Float.parseFloat(items[1]), Float.parseFloat(items[2]),
               Float.parseFloat(items[3]), Float.parseFloat(items[4]), Float.parseFloat(items[5])));
         }
