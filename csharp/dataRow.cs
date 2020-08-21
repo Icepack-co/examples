@@ -20,6 +20,7 @@ public class dataRow
   {
     List<dataRow> res = new List<dataRow>();
     var lines = System.IO.File.ReadAllLines(filename);
+    bool ns3format = (lines[0].Split(",")[0] == "id" && lines[0].Split(",")[1] == "name");
     for (int i = 1; i < lines.Length; i++)
     {
       if (res.Count >= maxItems)
@@ -40,16 +41,26 @@ public class dataRow
       }
       else
       {
-        // load the pickup/dropoff times and quantites
-        res.Add(new dataRow
-        {
-          id = items[0],
-          X = float.Parse(items[1], System.Globalization.CultureInfo.InvariantCulture),
-          Y = float.Parse(items[2], System.Globalization.CultureInfo.InvariantCulture),
-          pickupTime = float.Parse(items[3], System.Globalization.CultureInfo.InvariantCulture),
-          dropoffTime = float.Parse(items[4], System.Globalization.CultureInfo.InvariantCulture),
-          quanity = float.Parse(items[5], System.Globalization.CultureInfo.InvariantCulture)
-        });
+        if(ns3format){
+          res.Add(new dataRow
+          {
+            id = items[0],
+            X = float.Parse(items[2], System.Globalization.CultureInfo.InvariantCulture),
+            Y = float.Parse(items[3], System.Globalization.CultureInfo.InvariantCulture),
+            quanity = float.Parse(items[4], System.Globalization.CultureInfo.InvariantCulture)
+          });
+        }else{
+          // load the pickup/dropoff times and quantites
+          res.Add(new dataRow
+          {
+            id = items[0],
+            X = float.Parse(items[1], System.Globalization.CultureInfo.InvariantCulture),
+            Y = float.Parse(items[2], System.Globalization.CultureInfo.InvariantCulture),
+            pickupTime = float.Parse(items[3], System.Globalization.CultureInfo.InvariantCulture),
+            dropoffTime = float.Parse(items[4], System.Globalization.CultureInfo.InvariantCulture),
+            quanity = float.Parse(items[5], System.Globalization.CultureInfo.InvariantCulture)
+          });
+        }        
       }
     }
     return res;

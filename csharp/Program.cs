@@ -50,6 +50,7 @@ namespace csharp
       ivr7advanced2 advancedIvr72 = new ivr7advanced2(data);
       advancedIvr72.Run();
 
+      // IVR8 Examples
       ivr8basic basicIvr8 = new ivr8basic(data);
       basicIvr8.Run();
 
@@ -58,6 +59,18 @@ namespace csharp
 
       ivr8advanced advancedIvr8 = new ivr8advanced(data);
       advancedIvr8.Run();
+
+      // NS3 Examples
+      data = dataRow.LoadData("../sample_data/publist_large.csv", 100);
+      ns3basic basicns3 = new ns3basic(data);
+      basicns3.Run();
+
+      ns3intermediate intermediatens3 = new ns3intermediate(data);
+      intermediatens3.Run();
+
+      ns3advanced advancedns3 = new ns3advanced(data);
+      advancedns3.Run();
+
     }
   }
 }
