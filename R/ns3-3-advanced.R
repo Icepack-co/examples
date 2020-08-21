@@ -91,8 +91,6 @@ for(i in 1:length(d_nodes)){
   d_nodes[[i]]$maximumSources <- 1
 }
 
-st_distance(demandNodes$geometry[1,], d$geometry[1], which = "Great Circle") / 1000
-
 for(i in 1:length(p_nodes)){
   pf <- new (NS3.Node.ProductFlow)
   pf$productId <- "Beer"
