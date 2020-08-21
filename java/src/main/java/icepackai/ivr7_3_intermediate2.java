@@ -110,7 +110,7 @@ public class ivr7_3_intermediate2 {
     // starts AFTER the allowable window. the limit will be often be zero, the value
     // will be the amount by which the vehicle is late. we can check the arrival
     // time of the task to verify this.
-    HashSet<String> infeasibleTasks = new HashSet();
+    HashSet<String> infeasibleTasks = new HashSet<String>();
     for (Ivr7Kt461V8Eoaif.SolutionResponse.Infeasibility t : evalSolution.getInfeasibilitiesList()) {
       infeasibleTasks.add(t.getTaskId());
     }

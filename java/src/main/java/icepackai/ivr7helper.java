@@ -162,7 +162,7 @@ public class ivr7helper {
       }
       printTable(tabData, columnNames);
     }
-    HashSet<String> dims = new HashSet();
+    HashSet<String> dims = new HashSet<String>();
     for (Ivr7Kt461V8Eoaif.SolutionResponse.Route r : solution.getRoutesList()) {
       for (Ivr7Kt461V8Eoaif.SolutionResponse.Stop s : r.getStopsList()) {
         for (Ivr7Kt461V8Eoaif.SolutionResponse.StopAttribute a : s.getAttributesList()) {

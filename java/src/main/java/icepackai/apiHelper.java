@@ -172,7 +172,9 @@ public class apiHelper<T> {
         con.disconnect();
         Problem.SolverInfo lastInfo = null;
         for (Problem.SolverInfo info : solRes.getLogsList()) {
-          System.out.printf(info.toString());
+          
+          System.out.printf(info.toString().replace("%", "%%")); // side note, java handles % signs in a particular manner
+                                                                 // so you need to convert them to a %% unless you like hanlding exceptions.
           lastInfo = info;
         }
         if (solRes.getState() != SolveState.COMPLETED

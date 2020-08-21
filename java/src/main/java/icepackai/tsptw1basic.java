@@ -1,7 +1,5 @@
 package icepackai;
 
-import icepackai.*;
-
 import java.util.*;
 
 import icepackai.TSPTW.TsptwKcxbievqo879;
