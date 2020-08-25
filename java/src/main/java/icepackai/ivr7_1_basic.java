@@ -5,7 +5,6 @@ import icepackai.IVR7.Ivr7Kt461V8Eoaif.SolveRequest.SolveType;
 
 import java.util.*;
 
-
 // IVR7 basic example:
 // Illustrates using time, distance and a single capacity dimension
 // Locations
@@ -20,16 +19,17 @@ public class ivr7_1_basic {
   }
 
   public void Run() throws Exception {
-    api = new apiHelper<Ivr7Kt461V8Eoaif.SolutionResponse>(Ivr7Kt461V8Eoaif.SolutionResponse.class, "ivr7-kt461v8eoaif",
-        configFile);
+    api = new apiHelper<Ivr7Kt461V8Eoaif.SolutionResponse>(
+        Ivr7Kt461V8Eoaif.SolutionResponse.class, "ivr7-kt461v8eoaif", configFile);
     Ivr7Kt461V8Eoaif.SolveRequest.Builder builder = Ivr7Kt461V8Eoaif.SolveRequest.newBuilder();
     // so here we're going to build the model
-    Ivr7Kt461V8Eoaif.Model.Builder model = builder.getModel().toBuilder(); // this is the actual model container.
+    Ivr7Kt461V8Eoaif.Model.Builder model =
+        builder.getModel().toBuilder(); // this is the actual model container.
 
     // the first decision we have to make is which dimensional quantities to model
     // in this example. we're going to model the distance, time, and capacity of the
     // vehicle.
-    ivr7helper.makeDistanceTimeCapDims(model);// adds distance, time & capacity
+    ivr7helper.makeDistanceTimeCapDims(model); // adds distance, time & capacity
 
     // lets pretend the first point is where vehicles are going to begin and end
     // each day. unlike the tsp/cvrp/pdp models, the ivr7 requires that you specify
@@ -44,7 +44,8 @@ public class ivr7_1_basic {
     // example, we're pickup up all orders at the guiness storehouse and delivering
     // at the list of customers. 'make_job_time_cap' is just a simple function to
     // create this particular style of request, but you can make your own.
-    ivr7helper.makeJobTimeCap(model, data, ivr7helper.Rep(0, data.size() - 1), ivr7helper.Seq(1, data.size()));
+    ivr7helper.makeJobTimeCap(
+        model, data, ivr7helper.Rep(0, data.size() - 1), ivr7helper.Seq(1, data.size()));
 
     // we're going to do the vehicle-configuration now.
     // we need to specify the cost classes available, the vehicle classes available,
@@ -74,7 +75,7 @@ public class ivr7_1_basic {
           data.get(0).id, // end location for the vehicle
           7 * 60, // start time: 7 AM
           18 * 60 // end time: 6 PM
-      ));
+          ));
     }
 
     System.out.println(model.build().toString());
@@ -82,7 +83,8 @@ public class ivr7_1_basic {
     builder.setSolveType(SolveType.Optimise); // Optimise the solve request.
 
     String requestId = api.Post(builder.build()); // send the model to the api
-    Ivr7Kt461V8Eoaif.SolutionResponse solution = api.Get(requestId); // get the response (which is cast internally)
+    Ivr7Kt461V8Eoaif.SolutionResponse solution =
+        api.Get(requestId); // get the response (which is cast internally)
     System.out.println(String.format("Solution cost: %02f", solution.getObjective()));
 
     ivr7helper.printSolution(solution, true, true, true, true);

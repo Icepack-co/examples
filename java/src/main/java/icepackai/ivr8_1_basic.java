@@ -13,22 +13,25 @@ import java.util.stream.Collectors;
 public class ivr8_1_basic {
   public ivr8_1_basic(List<dataRow> inputdata, String config) throws Exception {
     this.configFile = config;
-    this.data = inputdata.stream().limit(9).collect(Collectors.toList()); // grabs just the first 9 items.;
+    this.data =
+        inputdata.stream().limit(9).collect(Collectors.toList()); // grabs just the first 9 items.;
   }
 
   public void Run() throws Exception {
-    api = new apiHelper<Ivr8Yni1C9K2Swof.SolutionResponse>(Ivr8Yni1C9K2Swof.SolutionResponse.class, "ivr8-yni1c9k2swof",
-        configFile);
+    api = new apiHelper<Ivr8Yni1C9K2Swof.SolutionResponse>(
+        Ivr8Yni1C9K2Swof.SolutionResponse.class, "ivr8-yni1c9k2swof", configFile);
     Ivr8Yni1C9K2Swof.SolveRequest.Builder builder = Ivr8Yni1C9K2Swof.SolveRequest.newBuilder();
     // so here we're going to build the model
-    Ivr8Yni1C9K2Swof.Model.Builder model = builder.getModel().toBuilder(); // this is the actual model container.
+    Ivr8Yni1C9K2Swof.Model.Builder model =
+        builder.getModel().toBuilder(); // this is the actual model container.
 
     // see ivr7 basic examples for notes around each of these methods.
     // the ivr7/8 models are interchangeable, except that the IVR8 model supports
     // compartment modelling.
-    ivr8helper.makeDistanceTimeCapDims(model);// adds distance, time & capacity
+    ivr8helper.makeDistanceTimeCapDims(model); // adds distance, time & capacity
     ivr8helper.makeLocations(model, data); // adds all the locations to the model
-    ivr8helper.makeJobTimeCap(model, data, ivr8helper.Rep(0, data.size() - 1), ivr8helper.Seq(1, data.size()));
+    ivr8helper.makeJobTimeCap(
+        model, data, ivr8helper.Rep(0, data.size() - 1), ivr8helper.Seq(1, data.size()));
     model.addVehicleCostClasses(ivr8helper.makeVccSimple("vcc1", 1000, 0.01f, 0.01f, 0.01f, 1, 3));
     model.addVehicleClasses(ivr8helper.makeVcSimple("vc1", 1, 1, 1, 1));
     model.addVehicles(ivr8helper.makeVehicleCap("vehicle_0", // unique id for the vehicle.
@@ -39,7 +42,7 @@ public class ivr8_1_basic {
         data.get(0).id, // end location for the vehicle
         7 * 60, // start time: 7 AM
         18 * 60 // end time: 6 PM
-    ));
+        ));
 
     // lets pretend for a moment that we have a vehicle which is layed out as
     // follows:
@@ -49,17 +52,20 @@ public class ivr8_1_basic {
     // compartment could be filled to max)
 
     for (int i = 0; i < 8; i++) {
-      model.addCompartments(Ivr8Yni1C9K2Swof.Compartment.newBuilder().setId("c" + (i + 1))
-          .addCapacities(Ivr8Yni1C9K2Swof.Compartment.Capacity.newBuilder().setDimensionId("capacity")
-              .setCapacity(i < 4 ? 100f : 400).build())// switch between top and bottom rack
-          .build());
+      model.addCompartments(Ivr8Yni1C9K2Swof.Compartment.newBuilder()
+                                .setId("c" + (i + 1))
+                                .addCapacities(Ivr8Yni1C9K2Swof.Compartment.Capacity.newBuilder()
+                                                   .setDimensionId("capacity")
+                                                   .setCapacity(i < 4 ? 100f : 400)
+                                                   .build()) // switch between top and bottom rack
+                                .build());
     }
     {
       // now we can define a compartment set (a container for the individual
       // compartments) which is attached to a vehicle (or a vehicle class if you
       // prefer).
-      Ivr8Yni1C9K2Swof.CompartmentSet.Builder cset = Ivr8Yni1C9K2Swof.CompartmentSet.newBuilder()
-          .setId("double-decker");
+      Ivr8Yni1C9K2Swof.CompartmentSet.Builder cset =
+          Ivr8Yni1C9K2Swof.CompartmentSet.newBuilder().setId("double-decker");
       for (int i = 0; i < 8; i++) {
         // add all the defined compartments to the compartment set
         cset.addCompartmentIds("c" + (i + 1)).build();
@@ -67,7 +73,8 @@ public class ivr8_1_basic {
       model.addCompartmentSets(cset.build());
       // then we assign the "double-decker" compartment set to the vehicle class.
       // we could have added it to each vehicle if we wanted, this is simply easier.
-      model.setVehicleClasses(0, model.getVehicleClasses(0).toBuilder().setCompartmentSetId("double-decker").build());
+      model.setVehicleClasses(
+          0, model.getVehicleClasses(0).toBuilder().setCompartmentSetId("double-decker").build());
     }
 
     System.out.println(model.getCompartmentSets(0).toString());
@@ -79,7 +86,8 @@ public class ivr8_1_basic {
     builder.setSolveType(SolveType.Optimise); // Optimise the solve request.
 
     String requestId = api.Post(builder.build()); // send the model to the api
-    Ivr8Yni1C9K2Swof.SolutionResponse solution = api.Get(requestId); // get the response (which is cast internally)
+    Ivr8Yni1C9K2Swof.SolutionResponse solution =
+        api.Get(requestId); // get the response (which is cast internally)
     System.out.println(String.format("Solution cost: %02f", solution.getObjective()));
 
     ivr8helper.printSolution(solution, true, true, true, true);
@@ -98,11 +106,16 @@ public class ivr8_1_basic {
     // we're going to clear the compartments, populate a new list and run the model.
     model.clearCompartments();
     for (int i = 0; i < 8; i++) {
-      model.addCompartments(Ivr8Yni1C9K2Swof.Compartment.newBuilder().setId("c" + (i + 1))
-          .addCapacities(Ivr8Yni1C9K2Swof.Compartment.Capacity.newBuilder().setDimensionId("capacity")
-              .setCapacity(i < 4 ? 150f : 350f).build())// switch between top and bottom rack
-                                                        // bottom rack is at 350 - which is less than the biggest order
-          .build());
+      model.addCompartments(
+          Ivr8Yni1C9K2Swof.Compartment.newBuilder()
+              .setId("c" + (i + 1))
+              .addCapacities(
+                  Ivr8Yni1C9K2Swof.Compartment.Capacity.newBuilder()
+                      .setDimensionId("capacity")
+                      .setCapacity(i < 4 ? 150f : 350f)
+                      .build()) // switch between top and bottom rack
+                                // bottom rack is at 350 - which is less than the biggest order
+              .build());
     }
     builder.setModel(model.build());
     builder.setSolveType(SolveType.Optimise); // Optimise the solve request.

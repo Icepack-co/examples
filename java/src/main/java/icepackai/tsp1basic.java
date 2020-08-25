@@ -15,16 +15,18 @@ public class tsp1basic {
   }
 
   public void Run() throws Exception {
-    api = new apiHelper<TspMcvfz472Gty6.SolutionResponse>(TspMcvfz472Gty6.SolutionResponse.class, "tsp-mcvfz472gty6",
-        configFile);
+    api = new apiHelper<TspMcvfz472Gty6.SolutionResponse>(
+        TspMcvfz472Gty6.SolutionResponse.class, "tsp-mcvfz472gty6", configFile);
     TspMcvfz472Gty6.SolveRequest.Builder builder = TspMcvfz472Gty6.SolveRequest.newBuilder();
     // so here we're going to build the model
-    TspMcvfz472Gty6.TSP.Builder model = builder.getModel().toBuilder(); // this is the actual model container.
+    TspMcvfz472Gty6.TSP.Builder model =
+        builder.getModel().toBuilder(); // this is the actual model container.
 
     // add locations to the matrix request
     for (int i = 0; i < data.size(); i++) {
       dataRow row = data.get(i);
-      model.addPoints(TspMcvfz472Gty6.Geocode.newBuilder().setId(row.id).setX(row.X).setY(row.Y).build());
+      model.addPoints(
+          TspMcvfz472Gty6.Geocode.newBuilder().setId(row.id).setX(row.X).setY(row.Y).build());
     }
     // configure the distance metric (although road network is the default)
     model.setDistancetype(eDistanceType.RoadNetwork);
@@ -37,18 +39,20 @@ public class tsp1basic {
 
     String requestId = api.Post(builder.build()); // send the model to the api
 
-    TspMcvfz472Gty6.SolutionResponse solution = api.Get(requestId); // get the response (which is cast internally)
+    TspMcvfz472Gty6.SolutionResponse solution =
+        api.Get(requestId); // get the response (which is cast internally)
     System.out.println("Number of tour items: " + solution.getTourCount());
     float totalDistance = 0.0f;
     Object[][] tabData = new Object[solution.getTourCount()][];
 
-    String[] columnNames = { "Stop", "Distance Travelled", "Cumulative Distance" };
+    String[] columnNames = {"Stop", "Distance Travelled", "Cumulative Distance"};
 
-    tabData[0] = new Object[] { solution.getTour(0), 0.0f, 0.0f };
+    tabData[0] = new Object[] {solution.getTour(0), 0.0f, 0.0f};
     for (int i = 1; i < solution.getTourCount(); i++) {
-      TspMcvfz472Gty6.Edge e = solution.getEdges(i - 1); // there is one less edge than the number of stops in a tour.
+      TspMcvfz472Gty6.Edge e =
+          solution.getEdges(i - 1); // there is one less edge than the number of stops in a tour.
       totalDistance += e.getDistance();
-      tabData[i] = new Object[] { solution.getTour(i), e.getDistance(), totalDistance };
+      tabData[i] = new Object[] {solution.getTour(i), e.getDistance(), totalDistance};
       for (int j = 0; j < e.getGeometryCount(); j++) {
         // so each one of these items forms part of the road-network used.
         // so the list of points (x,y) can be interpreted as the sequence through

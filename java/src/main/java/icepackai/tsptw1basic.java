@@ -1,7 +1,5 @@
 package icepackai;
 
-import icepackai.*;
-
 import java.util.*;
 
 import icepackai.TSPTW.TsptwKcxbievqo879;
@@ -20,11 +18,12 @@ public class tsptw1basic {
   }
 
   public void Run() throws Exception {
-    api = new apiHelper<TsptwKcxbievqo879.SolutionResponse>(TsptwKcxbievqo879.SolutionResponse.class,
-        "tsptw-kcxbievqo879", configFile);
+    api = new apiHelper<TsptwKcxbievqo879.SolutionResponse>(
+        TsptwKcxbievqo879.SolutionResponse.class, "tsptw-kcxbievqo879", configFile);
     TsptwKcxbievqo879.SolveRequest.Builder builder = TsptwKcxbievqo879.SolveRequest.newBuilder();
     // so here we're going to build the model
-    TsptwKcxbievqo879.TSP.Builder model = builder.getModel().toBuilder(); // this is the actual model container.
+    TsptwKcxbievqo879.TSP.Builder model =
+        builder.getModel().toBuilder(); // this is the actual model container.
 
     Random rand = new Random();
     // add locations to the matrix request
@@ -35,8 +34,13 @@ public class tsptw1basic {
       double ws = rand.nextDouble() * rupper;
       double we = ws + rupper; // we don't accept backwards windows, so we'll just set these to some
                                // positive width upper amount.
-      model.addPoints(TsptwKcxbievqo879.Geocode.newBuilder().setId(row.id).setX(row.X).setY(row.Y)
-          .setWindowStart((float) ws).setWindowEnd((float) we).build());
+      model.addPoints(TsptwKcxbievqo879.Geocode.newBuilder()
+                          .setId(row.id)
+                          .setX(row.X)
+                          .setY(row.Y)
+                          .setWindowStart((float) ws)
+                          .setWindowEnd((float) we)
+                          .build());
     }
     // configure the distance metric (although road network is the default)
     model.setDistancetype(eDistanceType.RoadNetwork);
@@ -49,18 +53,21 @@ public class tsptw1basic {
 
     String requestId = api.Post(builder.build()); // send the model to the api
 
-    TsptwKcxbievqo879.SolutionResponse solution = api.Get(requestId); // get the response (which is cast internally)
+    TsptwKcxbievqo879.SolutionResponse solution =
+        api.Get(requestId); // get the response (which is cast internally)
     System.out.println("Number of tour items: " + solution.getTourCount());
     float totalDistance = 0.0f;
     Object[][] tabData = new Object[solution.getTourCount()][];
 
-    String[] columnNames = { "Stop", "Distance Travelled", "Cumulative Distance", "Arrival Time" };
+    String[] columnNames = {"Stop", "Distance Travelled", "Cumulative Distance", "Arrival Time"};
 
-    tabData[0] = new Object[] { solution.getTour(0), 0.0f, 0.0f, 0.0f };
+    tabData[0] = new Object[] {solution.getTour(0), 0.0f, 0.0f, 0.0f};
     for (int i = 1; i < solution.getTourCount(); i++) {
-      TsptwKcxbievqo879.Edge e = solution.getEdges(i - 1); // there is one less edge than the number of stops in a tour.
+      TsptwKcxbievqo879.Edge e =
+          solution.getEdges(i - 1); // there is one less edge than the number of stops in a tour.
       totalDistance += e.getDistance();
-      tabData[i] = new Object[] { solution.getTour(i), e.getDistance(), totalDistance, solution.getArrivalTimes(i) };
+      tabData[i] = new Object[] {
+          solution.getTour(i), e.getDistance(), totalDistance, solution.getArrivalTimes(i)};
       for (int j = 0; j < e.getGeometryCount(); j++) {
         // so each one of these items forms part of the road-network used.
         // so the list of points (x,y) can be interpreted as the sequence through

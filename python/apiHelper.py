@@ -108,27 +108,38 @@ class apiHelper:
             if self.modelType == 'tsp_mcvfz472gty6': # python pb2 only does underscores :-/ sad.
               m = tsp_mcvfz472gty6_pb2.SolutionResponse()
               return (m.FromString(solRes.solution))
+            
             if self.modelType == 'tsptw_kcxbievqo879':
               m = tsptw_kcxbievqo879_pb2.SolutionResponse()
               return (m.FromString(solRes.solution))
+            
             if self.modelType == 'cvrp_jkfdoctmp51n':
               m = cvrp_jkfdoctmp51n_pb2.SolutionResponse()
               return (m.FromString(solRes.solution))
+            
             if self.modelType == 'cvrptw_acyas3nzweqb':
               m = cvrptw_acyas3nzweqb_pb2.SolutionResponse()
               return (m.FromString(solRes.solution))
+            
             if self.modelType == 'ivr7_kt461v8eoaif':
               m = ivr7_kt461v8eoaif_pb2.SolutionResponse()
               return(m.FromString(solRes.solution))
+            
             if self.modelType == 'ivrdata_o43e0dvs78zq':
               m = ivrdata_o43e0dvs78zq_pb2.SolutionResponse()
               return(m.FromString(solRes.solution))
+            
             if self.modelType == 'ivr8_yni1c9k2swof':
               m = ivr8_yni1c9k2swof_pb2.SolutionResponse()
               return(m.FromString(solRes.solution))
+            
             if self.modelType == 'matrix_vyv95n7wchpl':
               m = matrix_vyv95n7wchpl_pb2.MatrixResponse()
               return(m.FromString(solRes.solution))
+            
+            if self.modelType == 'ns3_tbfvuwtge2iq':
+              m = ns3_tbfvuwtge2iq_pb2.SolutionResponse()
+              return (m.FromString(solRes.solution))
             return 
 
 def makeCompartmentSummary(m, ns):
@@ -202,6 +213,49 @@ def makeCompartmentSummary(m, ns):
                   res[v + ' dimension:' + d] = compCaps
   return res
 
+def tablulate_ns(sr, resp):
+  assignments = pandas.DataFrame(columns = ['source', 'destination', 'productId', 'amount', 'cost', 'laneRateId', 'costModelId', 'distance', 'duration'])
+  idx = 0
+  for _, e in enumerate(resp.assignments):
+    assignments.loc[idx] = list([e.source, e.destination, e.productId, e.amount, e.cost, e.laneRateId, e.costModelId, e.distance, e.duration])
+    idx+=1
+
+  idx = 0
+  nodeflows = pandas.DataFrame(columns = ['nodeId','inFlow','outFlow','flowCost','fixedCost','productFlowCost','productFixedCost','productionAmount','productionPenalty','productionCost','consumptionAmount','consumptionPenalty','consumptionCost'])
+  for _, e in enumerate(resp.nodeFlows):
+    nodeflows.loc[idx] = list([e.nodeId,e.inFlow,e.outFlow,e.flowCost,e.fixedCost,e.productFlowCost,e.productFixedCost,e.productionAmount,e.productionPenalty,e.productionCost,e.consumptionAmount,e.consumptionPenalty,e.consumptionCost])
+    idx+=1
+
+  idx = 0
+  nodepflows = pandas.DataFrame(columns = ['nodeId','productId','inFlow','outFlow','flowCost','fixedCost','productionAmount','productionPenalty','productionCost','consumptionAmount','consumptionPenalty','consumptionCost', ])
+  for _, e in enumerate(resp.nodeProductFlows):
+    nodepflows.loc[idx] = list([e.nodeId, e.productId, e.inFlow, e.outFlow, e.flowCost, e.fixedCost, e.productionAmount, e.productionPenalty, e.productionCost, e.consumptionAmount, e.consumptionPenalty, e.consumptionCost])
+    idx+=1
+
+  nodes = pandas.DataFrame(columns = ['id', 'x', 'y'])  
+  idx = 0
+  for _, e in enumerate(sr.model.nodes):
+    nodes.loc[idx] = list([e.id, e.geocode.longitude, e.geocode.latitude])
+    idx+=1
+
+  routes = pandas.DataFrame(columns = ['fromId', 'toId', 'geometry'])
+  idx = 0
+  for _, r in enumerate(resp.routes):
+    gv = list()
+    for _, ri in enumerate(r.geometrySequence):
+      g = resp.geometrySequence[ri]
+      for index, _ in enumerate(g.x):
+        gv.append([g.y[index],g.x[index]]) # note, leaflet in python assumes the y,x format instead of a cartesian format
+    
+    routes.loc[idx] = list([r.fromId, r.toId, gv])
+    idx+=1
+
+  return { "nodes" : nodes,
+           "assignments": assignments, 
+           "nodeFlows": nodeflows,
+           "nodeProductFlows" : nodepflows,
+           "routes" : routes }
+
 # a tabulate function for a solve request and a solve-response
 def tabulate(sr, resp):
   # so we may as well tabulate matrix models here as well. The only catch is we may not have 
@@ -214,6 +268,10 @@ def tabulate(sr, resp):
         idx+=1
     return matrix
   
+  # so that one can use the same interface to tabulate all model types. Just switch here to the ns interpretation of the response.
+  if str(type(resp)) == "<class 'ns3_tbfvuwtge2iq_pb2.SolutionResponse'>":
+    return tablulate_ns(sr, resp)
+   
   m = sr.model
   # we have certain fields we can guarentee:
   # stopId, sequence, locationId, taskId, jobId, vehicleId, x, y

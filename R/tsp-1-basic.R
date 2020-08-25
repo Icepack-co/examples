@@ -1,6 +1,7 @@
-# test script
-library(iceR)
+# Simple TSP model. Visit all point in such a way as to minimise the distance.
+# this example uses a publist for the input data.
 
+library(iceR)
 # create an api-helper object with the model type you'd like to solve.
 api <- new("apiHelper", modelType = 'tsp-mcvfz472gty6', configFile = '../config.json')
 
