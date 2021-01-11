@@ -82,6 +82,6 @@ def make_cost_model_distance(src, costperkm):
     cm.id = "costmodel: " + src + ":Beer"
     cm.source = src
     cm.productGroupIds.append("Beer") # you can also leave this blank if all products can be used by this costmodel
-    cm.unitDimensionCost.append(make_udc("distance", 1.0, costperkm))
+    cm.unitDimensionCosts.append(make_udc("distance", 1.0, costperkm))
     return(cm)  
 
