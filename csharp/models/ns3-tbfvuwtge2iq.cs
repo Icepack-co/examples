@@ -203,6 +203,9 @@ namespace Ns3
         [global::ProtoBuf.ProtoMember(9)]
         public global::System.Collections.Generic.List<FlowDimensionalConstraint> flowConstraints { get; } = new global::System.Collections.Generic.List<FlowDimensionalConstraint>();
 
+        [global::ProtoBuf.ProtoMember(10)]
+        public global::System.Collections.Generic.List<ProductTransform> productTransforms { get; } = new global::System.Collections.Generic.List<ProductTransform>();
+
         [global::ProtoBuf.ProtoContract()]
         public partial class ProductFlow : global::ProtoBuf.IExtensible
         {
@@ -239,6 +242,48 @@ namespace Ns3
 
             [global::ProtoBuf.ProtoMember(3)]
             public global::System.Collections.Generic.List<UnitDimensionCost> unitDimensionCosts { get; } = new global::System.Collections.Generic.List<UnitDimensionCost>();
+
+        }
+
+        [global::ProtoBuf.ProtoContract()]
+        public partial class ProductTransform : global::ProtoBuf.IExtensible
+        {
+            private global::ProtoBuf.IExtension __pbn__extensionData;
+            global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+                => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+            [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+            public string productTransformId { get; set; }
+
+            [global::ProtoBuf.ProtoMember(2)]
+            public global::System.Collections.Generic.List<Item> inputItems { get; } = new global::System.Collections.Generic.List<Item>();
+
+            [global::ProtoBuf.ProtoMember(3)]
+            public global::System.Collections.Generic.List<Item> outputItems { get; } = new global::System.Collections.Generic.List<Item>();
+
+            [global::ProtoBuf.ProtoContract()]
+            public partial class Item : global::ProtoBuf.IExtensible
+            {
+                private global::ProtoBuf.IExtension __pbn__extensionData;
+                global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+                    => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+                [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+                public string productId { get; set; }
+
+                [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+                public int productRatio { get; set; }
+
+                [global::ProtoBuf.ProtoMember(3)]
+                public global::System.Collections.Generic.List<DimensionRange> dimensionRanges { get; } = new global::System.Collections.Generic.List<DimensionRange>();
+
+                [global::ProtoBuf.ProtoMember(4)]
+                public global::System.Collections.Generic.List<FixedDimensionCost> fixedDimensionCosts { get; } = new global::System.Collections.Generic.List<FixedDimensionCost>();
+
+                [global::ProtoBuf.ProtoMember(5)]
+                public global::System.Collections.Generic.List<UnitDimensionCost> unitDimensionCosts { get; } = new global::System.Collections.Generic.List<UnitDimensionCost>();
+
+            }
 
         }
 
@@ -326,7 +371,7 @@ namespace Ns3
         [global::ProtoBuf.ProtoMember(3)]
         public global::System.Collections.Generic.List<string> productGroupIds { get; } = new global::System.Collections.Generic.List<string>();
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"unitDimensionCost")]
+        [global::ProtoBuf.ProtoMember(4)]
         public global::System.Collections.Generic.List<UnitDimensionCost> unitDimensionCosts { get; } = new global::System.Collections.Generic.List<UnitDimensionCost>();
 
         [global::ProtoBuf.ProtoMember(5)]
@@ -460,6 +505,9 @@ namespace Ns3
 
         [global::ProtoBuf.ProtoMember(8, Name = @"routes")]
         public global::System.Collections.Generic.List<Route> Routes { get; } = new global::System.Collections.Generic.List<Route>();
+
+        [global::ProtoBuf.ProtoMember(9)]
+        public global::System.Collections.Generic.List<NodeProductTransformAssignment> nodeProductTransformAssignments { get; } = new global::System.Collections.Generic.List<NodeProductTransformAssignment>();
 
         [global::ProtoBuf.ProtoContract()]
         public partial class Assignment : global::ProtoBuf.IExtensible
@@ -636,6 +684,54 @@ namespace Ns3
 
             [global::ProtoBuf.ProtoMember(3, Name = @"geometrySequence")]
             public int[] geometrySequences { get; set; }
+
+        }
+
+        [global::ProtoBuf.ProtoContract()]
+        public partial class NodeProductTransformAssignment : global::ProtoBuf.IExtensible
+        {
+            private global::ProtoBuf.IExtension __pbn__extensionData;
+            global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+                => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+            [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+            public string nodeId { get; set; }
+
+            [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+            public string productTransformId { get; set; }
+
+            [global::ProtoBuf.ProtoMember(3)]
+            public global::System.Collections.Generic.List<Item> inputItems { get; } = new global::System.Collections.Generic.List<Item>();
+
+            [global::ProtoBuf.ProtoMember(4)]
+            public global::System.Collections.Generic.List<Item> outputItems { get; } = new global::System.Collections.Generic.List<Item>();
+
+            [global::ProtoBuf.ProtoContract()]
+            public partial class Item : global::ProtoBuf.IExtensible
+            {
+                private global::ProtoBuf.IExtension __pbn__extensionData;
+                global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+                    => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+                [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+                public string productId { get; set; }
+
+                [global::ProtoBuf.ProtoMember(2, Name = @"amount", IsRequired = true)]
+                public float Amount { get; set; }
+
+                [global::ProtoBuf.ProtoMember(3, Name = @"cost", IsRequired = true)]
+                public float Cost { get; set; }
+
+                [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+                public float fixedCost { get; set; }
+
+                [global::ProtoBuf.ProtoMember(5, IsRequired = true)]
+                public float penaltyAmount { get; set; }
+
+                [global::ProtoBuf.ProtoMember(6, IsRequired = true)]
+                public float penaltyCost { get; set; }
+
+            }
 
         }
 

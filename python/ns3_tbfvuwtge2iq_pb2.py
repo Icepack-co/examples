@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='NS3',
   syntax='proto2',
   serialized_options=_b('\n\ricepackai.NS3'),
-  serialized_pb=_b('\n\x16ns3-tbfvuwtge2iq.proto\x12\x03NS3\"\xbf\x01\n\x11InternalDimension\x12\n\n\x02id\x18\x01 \x02(\t\x12@\n\x0fmeasurementUnit\x18\x02 \x02(\x0e\x32\'.NS3.InternalDimension.eMeasurementUnit\"\\\n\x10\x65MeasurementUnit\x12\x0b\n\x07SECONDS\x10\x00\x12\x0b\n\x07MINUTES\x10\x01\x12\t\n\x05HOURS\x10\x02\x12\x08\n\x04\x44\x41YS\x10\x03\x12\x0e\n\nKILOMETRES\x10\x04\x12\t\n\x05MILES\x10\x05\"*\n\rUserDimension\x12\n\n\x02id\x18\x01 \x02(\t\x12\r\n\x05units\x18\x02 \x02(\t\"\xa0\x01\n\x16\x44imensionConfiguration\x12*\n\ntimeConfig\x18\x01 \x01(\x0b\x32\x16.NS3.InternalDimension\x12.\n\x0e\x64istanceConfig\x18\x02 \x01(\x0b\x32\x16.NS3.InternalDimension\x12*\n\x0euserDimensions\x18\x03 \x03(\x0b\x32\x12.NS3.UserDimension\".\n\x07Geocode\x12\x11\n\tlongitude\x18\x01 \x02(\x02\x12\x10\n\x08latitude\x18\x02 \x02(\x02\"]\n\x11UnitDimensionCost\x12\x14\n\x0c\x64imensionIds\x18\x01 \x03(\t\x12\x1d\n\x15\x64imensionCoefficients\x18\x02 \x03(\x02\x12\x13\n\x0b\x63ostPerUnit\x18\x03 \x02(\x02\"=\n\x12\x46ixedDimensionCost\x12\x14\n\x0c\x64imensionIds\x18\x01 \x03(\t\x12\x11\n\tfixedCost\x18\x02 \x02(\x02\"r\n\x19\x46lowDimensionalConstraint\x12\x14\n\x0c\x64imensionIds\x18\x01 \x03(\t\x12\x1d\n\x15\x64imensionCoefficients\x18\x02 \x03(\x02\x12\x0f\n\x07\x66lowMin\x18\x03 \x02(\x02\x12\x0f\n\x07\x66lowMax\x18\x04 \x02(\x02\"d\n\x0e\x44imensionRange\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x13\n\x08minRange\x18\x02 \x02(\x02:\x01\x30\x12\x10\n\x08maxRange\x18\x03 \x02(\x02\x12\x16\n\x0b\x66lowPenalty\x18\x04 \x02(\x02:\x01\x30\"\x9e\x05\n\x04Node\x12\n\n\x02id\x18\x01 \x02(\t\x12\x1d\n\x07geocode\x18\x02 \x02(\x0b\x32\x0c.NS3.Geocode\x12)\n\nproduction\x18\x03 \x03(\x0b\x32\x15.NS3.Node.ProductFlow\x12*\n\x0b\x63onsumption\x18\x04 \x03(\x0b\x32\x15.NS3.Node.ProductFlow\x12\x1c\n\x04\x66low\x18\x05 \x01(\x0b\x32\x0e.NS3.Node.Flow\x12+\n\x0cproductFlows\x18\x06 \x03(\x0b\x32\x15.NS3.Node.ProductFlow\x12\x18\n\x10\x61llowableSources\x18\x07 \x03(\t\x12\x1a\n\x0emaximumSources\x18\x08 \x01(\x05:\x02-1\x12\x37\n\x0f\x66lowConstraints\x18\t \x03(\x0b\x32\x1e.NS3.FlowDimensionalConstraint\x1a\xb8\x01\n\x0bProductFlow\x12\x11\n\tproductId\x18\x01 \x02(\t\x12,\n\x0f\x64imensionRanges\x18\x02 \x03(\x0b\x32\x13.NS3.DimensionRange\x12\x34\n\x13\x46ixedDimensionCosts\x18\x03 \x03(\x0b\x32\x17.NS3.FixedDimensionCost\x12\x32\n\x12unitDimensionCosts\x18\x04 \x03(\x0b\x32\x16.NS3.UnitDimensionCost\x1a\x9e\x01\n\x04\x46low\x12,\n\x0f\x64imensionRanges\x18\x01 \x03(\x0b\x32\x13.NS3.DimensionRange\x12\x34\n\x13\x46ixedDimensionCosts\x18\x02 \x03(\x0b\x32\x17.NS3.FixedDimensionCost\x12\x32\n\x12unitDimensionCosts\x18\x03 \x03(\x0b\x32\x16.NS3.UnitDimensionCost\"\xde\x01\n\x0cProductGroup\x12\x11\n\tproductId\x18\x01 \x02(\t\x12\x16\n\x0eproductGroupId\x18\x02 \x02(\t\x12\x44\n\x14productSpecification\x18\x03 \x03(\x0b\x32&.NS3.ProductGroup.ProductSpecification\x1a]\n\x14ProductSpecification\x12\x15\n\rbaseDimension\x18\x01 \x02(\t\x12\x17\n\x0ftargetDimension\x18\x02 \x03(\t\x12\x15\n\rtargetPerBase\x18\x03 \x03(\x02\"\xd5\x01\n\x08LaneRate\x12\n\n\x02id\x18\x01 \x02(\t\x12\x0e\n\x06source\x18\x03 \x02(\t\x12\x13\n\x0b\x64\x65stination\x18\x04 \x02(\t\x12\x12\n\nproductIds\x18\x05 \x03(\t\x12\x17\n\x0fproductGroupIds\x18\x06 \x03(\t\x12\x32\n\x12unitDimensionCosts\x18\x07 \x03(\x0b\x32\x16.NS3.UnitDimensionCost\x12\x37\n\x0f\x66lowConstraints\x18\x08 \x03(\x0b\x32\x1e.NS3.FlowDimensionalConstraint\"\xac\x01\n\tCostModel\x12\n\n\x02id\x18\x01 \x02(\t\x12\x0e\n\x06source\x18\x02 \x02(\t\x12\x17\n\x0fproductGroupIds\x18\x03 \x03(\t\x12\x31\n\x11unitDimensionCost\x18\x04 \x03(\x0b\x32\x16.NS3.UnitDimensionCost\x12\x37\n\x0f\x66lowConstraints\x18\x05 \x03(\x0b\x32\x1e.NS3.FlowDimensionalConstraint\"\xc2\x01\n\x05Model\x12/\n\ndimensions\x18\x01 \x02(\x0b\x32\x1b.NS3.DimensionConfiguration\x12\x18\n\x05nodes\x18\x02 \x03(\x0b\x32\t.NS3.Node\x12 \n\tlaneRates\x18\x03 \x03(\x0b\x32\r.NS3.LaneRate\x12\"\n\ncostModels\x18\x04 \x03(\x0b\x32\x0e.NS3.CostModel\x12(\n\rproductGroups\x18\x05 \x03(\x0b\x32\x11.NS3.ProductGroup\"\xfa\x01\n\x0cSolveRequest\x12\x19\n\x05model\x18\x01 \x01(\x0b\x32\n.NS3.Model\x12\x0f\n\x07modelID\x18\x02 \x01(\t\x12\x38\n\tsolveType\x18\x04 \x01(\x0e\x32\x1b.NS3.SolveRequest.SolveType:\x08Optimise\x12>\n\x0egeometryOutput\x18\x05 \x01(\x0e\x32 .NS3.SolveRequest.GeometryOutput:\x04None\"\x19\n\tSolveType\x12\x0c\n\x08Optimise\x10\x00\")\n\x0eGeometryOutput\x12\x08\n\x04None\x10\x00\x12\r\n\tAggregate\x10\x01\"\xd4\t\n\x10SolutionResponse\x12\x11\n\tobjective\x18\x01 \x02(\x02\x12\x12\n\nlowerBound\x18\x02 \x01(\x02\x12\x15\n\roptimalityGap\x18\x03 \x01(\x02\x12\x35\n\x0b\x61ssignments\x18\x04 \x03(\x0b\x32 .NS3.SolutionResponse.Assignment\x12\x31\n\tnodeFlows\x18\x05 \x03(\x0b\x32\x1e.NS3.SolutionResponse.NodeFlow\x12?\n\x10nodeProductFlows\x18\x06 \x03(\x0b\x32%.NS3.SolutionResponse.NodeProductFlow\x12@\n\x10geometrySequence\x18\x07 \x03(\x0b\x32&.NS3.SolutionResponse.GeometrySequence\x12+\n\x06routes\x18\x08 \x03(\x0b\x32\x1b.NS3.SolutionResponse.Route\x1a\xaf\x01\n\nAssignment\x12\x0e\n\x06source\x18\x01 \x02(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x02(\t\x12\x11\n\tproductId\x18\x03 \x02(\t\x12\x0e\n\x06\x61mount\x18\x04 \x02(\x02\x12\x0c\n\x04\x63ost\x18\x05 \x02(\x02\x12\x12\n\nlaneRateId\x18\x06 \x01(\t\x12\x13\n\x0b\x63ostModelId\x18\x07 \x01(\t\x12\x10\n\x08\x64istance\x18\x08 \x02(\x02\x12\x10\n\x08\x64uration\x18\t \x02(\x02\x1a\x97\x02\n\x0fNodeProductFlow\x12\x0e\n\x06nodeId\x18\x01 \x02(\t\x12\x11\n\tproductId\x18\x02 \x02(\t\x12\x0e\n\x06inFlow\x18\x03 \x02(\x02\x12\x0f\n\x07outFlow\x18\x04 \x02(\x02\x12\x10\n\x08\x66lowCost\x18\x05 \x02(\x02\x12\x11\n\tfixedCost\x18\x06 \x02(\x02\x12\x18\n\x10productionAmount\x18\x07 \x02(\x02\x12\x19\n\x11productionPenalty\x18\x08 \x02(\x02\x12\x16\n\x0eproductionCost\x18\t \x02(\x02\x12\x19\n\x11\x63onsumptionAmount\x18\n \x02(\x02\x12\x1a\n\x12\x63onsumptionPenalty\x18\x0b \x02(\x02\x12\x17\n\x0f\x63onsumptionCost\x18\x0c \x02(\x02\x1a\xb0\x02\n\x08NodeFlow\x12\x0e\n\x06nodeId\x18\x01 \x02(\t\x12\x0e\n\x06inFlow\x18\x02 \x02(\x02\x12\x0f\n\x07outFlow\x18\x03 \x02(\x02\x12\x10\n\x08\x66lowCost\x18\x04 \x02(\x02\x12\x11\n\tfixedCost\x18\x05 \x02(\x02\x12\x17\n\x0fproductFlowCost\x18\x06 \x02(\x02\x12\x18\n\x10productFixedCost\x18\x07 \x02(\x02\x12\x18\n\x10productionAmount\x18\x08 \x02(\x02\x12\x19\n\x11productionPenalty\x18\t \x02(\x02\x12\x16\n\x0eproductionCost\x18\n \x02(\x02\x12\x19\n\x11\x63onsumptionAmount\x18\x0b \x02(\x02\x12\x1a\n\x12\x63onsumptionPenalty\x18\x0c \x02(\x02\x12\x17\n\x0f\x63onsumptionCost\x18\r \x02(\x02\x1a(\n\x10GeometrySequence\x12\t\n\x01x\x18\x01 \x03(\x02\x12\t\n\x01y\x18\x02 \x03(\x02\x1a?\n\x05Route\x12\x0e\n\x06\x66romId\x18\x01 \x02(\t\x12\x0c\n\x04toId\x18\x02 \x02(\t\x12\x18\n\x10geometrySequence\x18\x03 \x03(\x05\x42\x0f\n\ricepackai.NS3')
+  serialized_pb=_b('\n\x16ns3-tbfvuwtge2iq.proto\x12\x03NS3\"\xbf\x01\n\x11InternalDimension\x12\n\n\x02id\x18\x01 \x02(\t\x12@\n\x0fmeasurementUnit\x18\x02 \x02(\x0e\x32\'.NS3.InternalDimension.eMeasurementUnit\"\\\n\x10\x65MeasurementUnit\x12\x0b\n\x07SECONDS\x10\x00\x12\x0b\n\x07MINUTES\x10\x01\x12\t\n\x05HOURS\x10\x02\x12\x08\n\x04\x44\x41YS\x10\x03\x12\x0e\n\nKILOMETRES\x10\x04\x12\t\n\x05MILES\x10\x05\"*\n\rUserDimension\x12\n\n\x02id\x18\x01 \x02(\t\x12\r\n\x05units\x18\x02 \x02(\t\"\xa0\x01\n\x16\x44imensionConfiguration\x12*\n\ntimeConfig\x18\x01 \x01(\x0b\x32\x16.NS3.InternalDimension\x12.\n\x0e\x64istanceConfig\x18\x02 \x01(\x0b\x32\x16.NS3.InternalDimension\x12*\n\x0euserDimensions\x18\x03 \x03(\x0b\x32\x12.NS3.UserDimension\".\n\x07Geocode\x12\x11\n\tlongitude\x18\x01 \x02(\x02\x12\x10\n\x08latitude\x18\x02 \x02(\x02\"]\n\x11UnitDimensionCost\x12\x14\n\x0c\x64imensionIds\x18\x01 \x03(\t\x12\x1d\n\x15\x64imensionCoefficients\x18\x02 \x03(\x02\x12\x13\n\x0b\x63ostPerUnit\x18\x03 \x02(\x02\"=\n\x12\x46ixedDimensionCost\x12\x14\n\x0c\x64imensionIds\x18\x01 \x03(\t\x12\x11\n\tfixedCost\x18\x02 \x02(\x02\"r\n\x19\x46lowDimensionalConstraint\x12\x14\n\x0c\x64imensionIds\x18\x01 \x03(\t\x12\x1d\n\x15\x64imensionCoefficients\x18\x02 \x03(\x02\x12\x0f\n\x07\x66lowMin\x18\x03 \x02(\x02\x12\x0f\n\x07\x66lowMax\x18\x04 \x02(\x02\"d\n\x0e\x44imensionRange\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x13\n\x08minRange\x18\x02 \x02(\x02:\x01\x30\x12\x10\n\x08maxRange\x18\x03 \x02(\x02\x12\x16\n\x0b\x66lowPenalty\x18\x04 \x02(\x02:\x01\x30\"\xbb\x08\n\x04Node\x12\n\n\x02id\x18\x01 \x02(\t\x12\x1d\n\x07geocode\x18\x02 \x02(\x0b\x32\x0c.NS3.Geocode\x12)\n\nproduction\x18\x03 \x03(\x0b\x32\x15.NS3.Node.ProductFlow\x12*\n\x0b\x63onsumption\x18\x04 \x03(\x0b\x32\x15.NS3.Node.ProductFlow\x12\x1c\n\x04\x66low\x18\x05 \x01(\x0b\x32\x0e.NS3.Node.Flow\x12+\n\x0cproductFlows\x18\x06 \x03(\x0b\x32\x15.NS3.Node.ProductFlow\x12\x18\n\x10\x61llowableSources\x18\x07 \x03(\t\x12\x1a\n\x0emaximumSources\x18\x08 \x01(\x05:\x02-1\x12\x37\n\x0f\x66lowConstraints\x18\t \x03(\x0b\x32\x1e.NS3.FlowDimensionalConstraint\x12\x35\n\x11productTransforms\x18\n \x03(\x0b\x32\x1a.NS3.Node.ProductTransform\x1a\xb8\x01\n\x0bProductFlow\x12\x11\n\tproductId\x18\x01 \x02(\t\x12,\n\x0f\x64imensionRanges\x18\x02 \x03(\x0b\x32\x13.NS3.DimensionRange\x12\x34\n\x13\x46ixedDimensionCosts\x18\x03 \x03(\x0b\x32\x17.NS3.FixedDimensionCost\x12\x32\n\x12unitDimensionCosts\x18\x04 \x03(\x0b\x32\x16.NS3.UnitDimensionCost\x1a\x9e\x01\n\x04\x46low\x12,\n\x0f\x64imensionRanges\x18\x01 \x03(\x0b\x32\x13.NS3.DimensionRange\x12\x34\n\x13\x46ixedDimensionCosts\x18\x02 \x03(\x0b\x32\x17.NS3.FixedDimensionCost\x12\x32\n\x12unitDimensionCosts\x18\x03 \x03(\x0b\x32\x16.NS3.UnitDimensionCost\x1a\xe3\x02\n\x10ProductTransform\x12\x1a\n\x12productTransformId\x18\x01 \x02(\t\x12\x33\n\ninputItems\x18\x02 \x03(\x0b\x32\x1f.NS3.Node.ProductTransform.Item\x12\x34\n\x0boutputItems\x18\x03 \x03(\x0b\x32\x1f.NS3.Node.ProductTransform.Item\x1a\xc7\x01\n\x04Item\x12\x11\n\tproductId\x18\x01 \x02(\t\x12\x14\n\x0cproductRatio\x18\x02 \x02(\x05\x12,\n\x0f\x64imensionRanges\x18\x03 \x03(\x0b\x32\x13.NS3.DimensionRange\x12\x34\n\x13\x66ixedDimensionCosts\x18\x04 \x03(\x0b\x32\x17.NS3.FixedDimensionCost\x12\x32\n\x12unitDimensionCosts\x18\x05 \x03(\x0b\x32\x16.NS3.UnitDimensionCost\"\xde\x01\n\x0cProductGroup\x12\x11\n\tproductId\x18\x01 \x02(\t\x12\x16\n\x0eproductGroupId\x18\x02 \x02(\t\x12\x44\n\x14productSpecification\x18\x03 \x03(\x0b\x32&.NS3.ProductGroup.ProductSpecification\x1a]\n\x14ProductSpecification\x12\x15\n\rbaseDimension\x18\x01 \x02(\t\x12\x17\n\x0ftargetDimension\x18\x02 \x03(\t\x12\x15\n\rtargetPerBase\x18\x03 \x03(\x02\"\xd5\x01\n\x08LaneRate\x12\n\n\x02id\x18\x01 \x02(\t\x12\x0e\n\x06source\x18\x03 \x02(\t\x12\x13\n\x0b\x64\x65stination\x18\x04 \x02(\t\x12\x12\n\nproductIds\x18\x05 \x03(\t\x12\x17\n\x0fproductGroupIds\x18\x06 \x03(\t\x12\x32\n\x12unitDimensionCosts\x18\x07 \x03(\x0b\x32\x16.NS3.UnitDimensionCost\x12\x37\n\x0f\x66lowConstraints\x18\x08 \x03(\x0b\x32\x1e.NS3.FlowDimensionalConstraint\"\xad\x01\n\tCostModel\x12\n\n\x02id\x18\x01 \x02(\t\x12\x0e\n\x06source\x18\x02 \x02(\t\x12\x17\n\x0fproductGroupIds\x18\x03 \x03(\t\x12\x32\n\x12unitDimensionCosts\x18\x04 \x03(\x0b\x32\x16.NS3.UnitDimensionCost\x12\x37\n\x0f\x66lowConstraints\x18\x05 \x03(\x0b\x32\x1e.NS3.FlowDimensionalConstraint\"\xc2\x01\n\x05Model\x12/\n\ndimensions\x18\x01 \x02(\x0b\x32\x1b.NS3.DimensionConfiguration\x12\x18\n\x05nodes\x18\x02 \x03(\x0b\x32\t.NS3.Node\x12 \n\tlaneRates\x18\x03 \x03(\x0b\x32\r.NS3.LaneRate\x12\"\n\ncostModels\x18\x04 \x03(\x0b\x32\x0e.NS3.CostModel\x12(\n\rproductGroups\x18\x05 \x03(\x0b\x32\x11.NS3.ProductGroup\"\xfa\x01\n\x0cSolveRequest\x12\x19\n\x05model\x18\x01 \x01(\x0b\x32\n.NS3.Model\x12\x0f\n\x07modelID\x18\x02 \x01(\t\x12\x38\n\tsolveType\x18\x04 \x01(\x0e\x32\x1b.NS3.SolveRequest.SolveType:\x08Optimise\x12>\n\x0egeometryOutput\x18\x05 \x01(\x0e\x32 .NS3.SolveRequest.GeometryOutput:\x04None\"\x19\n\tSolveType\x12\x0c\n\x08Optimise\x10\x00\")\n\x0eGeometryOutput\x12\x08\n\x04None\x10\x00\x12\r\n\tAggregate\x10\x01\"\x99\r\n\x10SolutionResponse\x12\x11\n\tobjective\x18\x01 \x02(\x02\x12\x12\n\nlowerBound\x18\x02 \x01(\x02\x12\x15\n\roptimalityGap\x18\x03 \x01(\x02\x12\x35\n\x0b\x61ssignments\x18\x04 \x03(\x0b\x32 .NS3.SolutionResponse.Assignment\x12\x31\n\tnodeFlows\x18\x05 \x03(\x0b\x32\x1e.NS3.SolutionResponse.NodeFlow\x12?\n\x10nodeProductFlows\x18\x06 \x03(\x0b\x32%.NS3.SolutionResponse.NodeProductFlow\x12@\n\x10geometrySequence\x18\x07 \x03(\x0b\x32&.NS3.SolutionResponse.GeometrySequence\x12+\n\x06routes\x18\x08 \x03(\x0b\x32\x1b.NS3.SolutionResponse.Route\x12]\n\x1fnodeProductTransformAssignments\x18\t \x03(\x0b\x32\x34.NS3.SolutionResponse.NodeProductTransformAssignment\x1a\xaf\x01\n\nAssignment\x12\x0e\n\x06source\x18\x01 \x02(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x02(\t\x12\x11\n\tproductId\x18\x03 \x02(\t\x12\x0e\n\x06\x61mount\x18\x04 \x02(\x02\x12\x0c\n\x04\x63ost\x18\x05 \x02(\x02\x12\x12\n\nlaneRateId\x18\x06 \x01(\t\x12\x13\n\x0b\x63ostModelId\x18\x07 \x01(\t\x12\x10\n\x08\x64istance\x18\x08 \x02(\x02\x12\x10\n\x08\x64uration\x18\t \x02(\x02\x1a\x97\x02\n\x0fNodeProductFlow\x12\x0e\n\x06nodeId\x18\x01 \x02(\t\x12\x11\n\tproductId\x18\x02 \x02(\t\x12\x0e\n\x06inFlow\x18\x03 \x02(\x02\x12\x0f\n\x07outFlow\x18\x04 \x02(\x02\x12\x10\n\x08\x66lowCost\x18\x05 \x02(\x02\x12\x11\n\tfixedCost\x18\x06 \x02(\x02\x12\x18\n\x10productionAmount\x18\x07 \x02(\x02\x12\x19\n\x11productionPenalty\x18\x08 \x02(\x02\x12\x16\n\x0eproductionCost\x18\t \x02(\x02\x12\x19\n\x11\x63onsumptionAmount\x18\n \x02(\x02\x12\x1a\n\x12\x63onsumptionPenalty\x18\x0b \x02(\x02\x12\x17\n\x0f\x63onsumptionCost\x18\x0c \x02(\x02\x1a\xb0\x02\n\x08NodeFlow\x12\x0e\n\x06nodeId\x18\x01 \x02(\t\x12\x0e\n\x06inFlow\x18\x02 \x02(\x02\x12\x0f\n\x07outFlow\x18\x03 \x02(\x02\x12\x10\n\x08\x66lowCost\x18\x04 \x02(\x02\x12\x11\n\tfixedCost\x18\x05 \x02(\x02\x12\x17\n\x0fproductFlowCost\x18\x06 \x02(\x02\x12\x18\n\x10productFixedCost\x18\x07 \x02(\x02\x12\x18\n\x10productionAmount\x18\x08 \x02(\x02\x12\x19\n\x11productionPenalty\x18\t \x02(\x02\x12\x16\n\x0eproductionCost\x18\n \x02(\x02\x12\x19\n\x11\x63onsumptionAmount\x18\x0b \x02(\x02\x12\x1a\n\x12\x63onsumptionPenalty\x18\x0c \x02(\x02\x12\x17\n\x0f\x63onsumptionCost\x18\r \x02(\x02\x1a(\n\x10GeometrySequence\x12\t\n\x01x\x18\x01 \x03(\x02\x12\t\n\x01y\x18\x02 \x03(\x02\x1a?\n\x05Route\x12\x0e\n\x06\x66romId\x18\x01 \x02(\t\x12\x0c\n\x04toId\x18\x02 \x02(\t\x12\x18\n\x10geometrySequence\x18\x03 \x03(\x05\x1a\xe3\x02\n\x1eNodeProductTransformAssignment\x12\x0e\n\x06nodeId\x18\x01 \x02(\t\x12\x1a\n\x12productTransformId\x18\x02 \x02(\t\x12M\n\ninputItems\x18\x03 \x03(\x0b\x32\x39.NS3.SolutionResponse.NodeProductTransformAssignment.Item\x12N\n\x0boutputItems\x18\x04 \x03(\x0b\x32\x39.NS3.SolutionResponse.NodeProductTransformAssignment.Item\x1av\n\x04Item\x12\x11\n\tproductId\x18\x01 \x02(\t\x12\x0e\n\x06\x61mount\x18\x02 \x02(\x02\x12\x0c\n\x04\x63ost\x18\x03 \x02(\x02\x12\x11\n\tfixedCost\x18\x04 \x02(\x02\x12\x15\n\rpenaltyAmount\x18\x05 \x02(\x02\x12\x13\n\x0bpenaltyCost\x18\x06 \x02(\x02\x42\x0f\n\ricepackai.NS3')
 )
 
 
@@ -75,8 +75,8 @@ _SOLVEREQUEST_SOLVETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2525,
-  serialized_end=2550,
+  serialized_start=2939,
+  serialized_end=2964,
 )
 _sym_db.RegisterEnumDescriptor(_SOLVEREQUEST_SOLVETYPE)
 
@@ -97,8 +97,8 @@ _SOLVEREQUEST_GEOMETRYOUTPUT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2552,
-  serialized_end=2593,
+  serialized_start=2966,
+  serialized_end=3007,
 )
 _sym_db.RegisterEnumDescriptor(_SOLVEREQUEST_GEOMETRYOUTPUT)
 
@@ -497,8 +497,8 @@ _NODE_PRODUCTFLOW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1182,
-  serialized_end=1366,
+  serialized_start=1237,
+  serialized_end=1421,
 )
 
 _NODE_FLOW = _descriptor.Descriptor(
@@ -541,8 +541,110 @@ _NODE_FLOW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1369,
-  serialized_end=1527,
+  serialized_start=1424,
+  serialized_end=1582,
+)
+
+_NODE_PRODUCTTRANSFORM_ITEM = _descriptor.Descriptor(
+  name='Item',
+  full_name='NS3.Node.ProductTransform.Item',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='productId', full_name='NS3.Node.ProductTransform.Item.productId', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='productRatio', full_name='NS3.Node.ProductTransform.Item.productRatio', index=1,
+      number=2, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='dimensionRanges', full_name='NS3.Node.ProductTransform.Item.dimensionRanges', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='fixedDimensionCosts', full_name='NS3.Node.ProductTransform.Item.fixedDimensionCosts', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='unitDimensionCosts', full_name='NS3.Node.ProductTransform.Item.unitDimensionCosts', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1741,
+  serialized_end=1940,
+)
+
+_NODE_PRODUCTTRANSFORM = _descriptor.Descriptor(
+  name='ProductTransform',
+  full_name='NS3.Node.ProductTransform',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='productTransformId', full_name='NS3.Node.ProductTransform.productTransformId', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='inputItems', full_name='NS3.Node.ProductTransform.inputItems', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='outputItems', full_name='NS3.Node.ProductTransform.outputItems', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_NODE_PRODUCTTRANSFORM_ITEM, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1585,
+  serialized_end=1940,
 )
 
 _NODE = _descriptor.Descriptor(
@@ -615,10 +717,17 @@ _NODE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='productTransforms', full_name='NS3.Node.productTransforms', index=9,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_NODE_PRODUCTFLOW, _NODE_FLOW, ],
+  nested_types=[_NODE_PRODUCTFLOW, _NODE_FLOW, _NODE_PRODUCTTRANSFORM, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -628,7 +737,7 @@ _NODE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=857,
-  serialized_end=1527,
+  serialized_end=1940,
 )
 
 
@@ -672,8 +781,8 @@ _PRODUCTGROUP_PRODUCTSPECIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1659,
-  serialized_end=1752,
+  serialized_start=2072,
+  serialized_end=2165,
 )
 
 _PRODUCTGROUP = _descriptor.Descriptor(
@@ -716,8 +825,8 @@ _PRODUCTGROUP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1530,
-  serialized_end=1752,
+  serialized_start=1943,
+  serialized_end=2165,
 )
 
 
@@ -789,8 +898,8 @@ _LANERATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1755,
-  serialized_end=1968,
+  serialized_start=2168,
+  serialized_end=2381,
 )
 
 
@@ -823,7 +932,7 @@ _COSTMODEL = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='unitDimensionCost', full_name='NS3.CostModel.unitDimensionCost', index=3,
+      name='unitDimensionCosts', full_name='NS3.CostModel.unitDimensionCosts', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -848,8 +957,8 @@ _COSTMODEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1971,
-  serialized_end=2143,
+  serialized_start=2384,
+  serialized_end=2557,
 )
 
 
@@ -907,8 +1016,8 @@ _MODEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2146,
-  serialized_end=2340,
+  serialized_start=2560,
+  serialized_end=2754,
 )
 
 
@@ -961,8 +1070,8 @@ _SOLVEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2343,
-  serialized_end=2593,
+  serialized_start=2757,
+  serialized_end=3007,
 )
 
 
@@ -1048,8 +1157,8 @@ _SOLUTIONRESPONSE_ASSIGNMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2961,
-  serialized_end=3136,
+  serialized_start=3470,
+  serialized_end=3645,
 )
 
 _SOLUTIONRESPONSE_NODEPRODUCTFLOW = _descriptor.Descriptor(
@@ -1155,8 +1264,8 @@ _SOLUTIONRESPONSE_NODEPRODUCTFLOW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3139,
-  serialized_end=3418,
+  serialized_start=3648,
+  serialized_end=3927,
 )
 
 _SOLUTIONRESPONSE_NODEFLOW = _descriptor.Descriptor(
@@ -1269,8 +1378,8 @@ _SOLUTIONRESPONSE_NODEFLOW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3421,
-  serialized_end=3725,
+  serialized_start=3930,
+  serialized_end=4234,
 )
 
 _SOLUTIONRESPONSE_GEOMETRYSEQUENCE = _descriptor.Descriptor(
@@ -1306,8 +1415,8 @@ _SOLUTIONRESPONSE_GEOMETRYSEQUENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3727,
-  serialized_end=3767,
+  serialized_start=4236,
+  serialized_end=4276,
 )
 
 _SOLUTIONRESPONSE_ROUTE = _descriptor.Descriptor(
@@ -1350,8 +1459,124 @@ _SOLUTIONRESPONSE_ROUTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3769,
-  serialized_end=3832,
+  serialized_start=4278,
+  serialized_end=4341,
+)
+
+_SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT_ITEM = _descriptor.Descriptor(
+  name='Item',
+  full_name='NS3.SolutionResponse.NodeProductTransformAssignment.Item',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='productId', full_name='NS3.SolutionResponse.NodeProductTransformAssignment.Item.productId', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='amount', full_name='NS3.SolutionResponse.NodeProductTransformAssignment.Item.amount', index=1,
+      number=2, type=2, cpp_type=6, label=2,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='cost', full_name='NS3.SolutionResponse.NodeProductTransformAssignment.Item.cost', index=2,
+      number=3, type=2, cpp_type=6, label=2,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='fixedCost', full_name='NS3.SolutionResponse.NodeProductTransformAssignment.Item.fixedCost', index=3,
+      number=4, type=2, cpp_type=6, label=2,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='penaltyAmount', full_name='NS3.SolutionResponse.NodeProductTransformAssignment.Item.penaltyAmount', index=4,
+      number=5, type=2, cpp_type=6, label=2,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='penaltyCost', full_name='NS3.SolutionResponse.NodeProductTransformAssignment.Item.penaltyCost', index=5,
+      number=6, type=2, cpp_type=6, label=2,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4581,
+  serialized_end=4699,
+)
+
+_SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT = _descriptor.Descriptor(
+  name='NodeProductTransformAssignment',
+  full_name='NS3.SolutionResponse.NodeProductTransformAssignment',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nodeId', full_name='NS3.SolutionResponse.NodeProductTransformAssignment.nodeId', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='productTransformId', full_name='NS3.SolutionResponse.NodeProductTransformAssignment.productTransformId', index=1,
+      number=2, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='inputItems', full_name='NS3.SolutionResponse.NodeProductTransformAssignment.inputItems', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='outputItems', full_name='NS3.SolutionResponse.NodeProductTransformAssignment.outputItems', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT_ITEM, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4344,
+  serialized_end=4699,
 )
 
 _SOLUTIONRESPONSE = _descriptor.Descriptor(
@@ -1417,10 +1642,17 @@ _SOLUTIONRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='nodeProductTransformAssignments', full_name='NS3.SolutionResponse.nodeProductTransformAssignments', index=8,
+      number=9, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_SOLUTIONRESPONSE_ASSIGNMENT, _SOLUTIONRESPONSE_NODEPRODUCTFLOW, _SOLUTIONRESPONSE_NODEFLOW, _SOLUTIONRESPONSE_GEOMETRYSEQUENCE, _SOLUTIONRESPONSE_ROUTE, ],
+  nested_types=[_SOLUTIONRESPONSE_ASSIGNMENT, _SOLUTIONRESPONSE_NODEPRODUCTFLOW, _SOLUTIONRESPONSE_NODEFLOW, _SOLUTIONRESPONSE_GEOMETRYSEQUENCE, _SOLUTIONRESPONSE_ROUTE, _SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -1429,8 +1661,8 @@ _SOLUTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2596,
-  serialized_end=3832,
+  serialized_start=3010,
+  serialized_end=4699,
 )
 
 _INTERNALDIMENSION.fields_by_name['measurementUnit'].enum_type = _INTERNALDIMENSION_EMEASUREMENTUNIT
@@ -1446,17 +1678,25 @@ _NODE_FLOW.fields_by_name['dimensionRanges'].message_type = _DIMENSIONRANGE
 _NODE_FLOW.fields_by_name['FixedDimensionCosts'].message_type = _FIXEDDIMENSIONCOST
 _NODE_FLOW.fields_by_name['unitDimensionCosts'].message_type = _UNITDIMENSIONCOST
 _NODE_FLOW.containing_type = _NODE
+_NODE_PRODUCTTRANSFORM_ITEM.fields_by_name['dimensionRanges'].message_type = _DIMENSIONRANGE
+_NODE_PRODUCTTRANSFORM_ITEM.fields_by_name['fixedDimensionCosts'].message_type = _FIXEDDIMENSIONCOST
+_NODE_PRODUCTTRANSFORM_ITEM.fields_by_name['unitDimensionCosts'].message_type = _UNITDIMENSIONCOST
+_NODE_PRODUCTTRANSFORM_ITEM.containing_type = _NODE_PRODUCTTRANSFORM
+_NODE_PRODUCTTRANSFORM.fields_by_name['inputItems'].message_type = _NODE_PRODUCTTRANSFORM_ITEM
+_NODE_PRODUCTTRANSFORM.fields_by_name['outputItems'].message_type = _NODE_PRODUCTTRANSFORM_ITEM
+_NODE_PRODUCTTRANSFORM.containing_type = _NODE
 _NODE.fields_by_name['geocode'].message_type = _GEOCODE
 _NODE.fields_by_name['production'].message_type = _NODE_PRODUCTFLOW
 _NODE.fields_by_name['consumption'].message_type = _NODE_PRODUCTFLOW
 _NODE.fields_by_name['flow'].message_type = _NODE_FLOW
 _NODE.fields_by_name['productFlows'].message_type = _NODE_PRODUCTFLOW
 _NODE.fields_by_name['flowConstraints'].message_type = _FLOWDIMENSIONALCONSTRAINT
+_NODE.fields_by_name['productTransforms'].message_type = _NODE_PRODUCTTRANSFORM
 _PRODUCTGROUP_PRODUCTSPECIFICATION.containing_type = _PRODUCTGROUP
 _PRODUCTGROUP.fields_by_name['productSpecification'].message_type = _PRODUCTGROUP_PRODUCTSPECIFICATION
 _LANERATE.fields_by_name['unitDimensionCosts'].message_type = _UNITDIMENSIONCOST
 _LANERATE.fields_by_name['flowConstraints'].message_type = _FLOWDIMENSIONALCONSTRAINT
-_COSTMODEL.fields_by_name['unitDimensionCost'].message_type = _UNITDIMENSIONCOST
+_COSTMODEL.fields_by_name['unitDimensionCosts'].message_type = _UNITDIMENSIONCOST
 _COSTMODEL.fields_by_name['flowConstraints'].message_type = _FLOWDIMENSIONALCONSTRAINT
 _MODEL.fields_by_name['dimensions'].message_type = _DIMENSIONCONFIGURATION
 _MODEL.fields_by_name['nodes'].message_type = _NODE
@@ -1473,11 +1713,16 @@ _SOLUTIONRESPONSE_NODEPRODUCTFLOW.containing_type = _SOLUTIONRESPONSE
 _SOLUTIONRESPONSE_NODEFLOW.containing_type = _SOLUTIONRESPONSE
 _SOLUTIONRESPONSE_GEOMETRYSEQUENCE.containing_type = _SOLUTIONRESPONSE
 _SOLUTIONRESPONSE_ROUTE.containing_type = _SOLUTIONRESPONSE
+_SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT_ITEM.containing_type = _SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT
+_SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT.fields_by_name['inputItems'].message_type = _SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT_ITEM
+_SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT.fields_by_name['outputItems'].message_type = _SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT_ITEM
+_SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT.containing_type = _SOLUTIONRESPONSE
 _SOLUTIONRESPONSE.fields_by_name['assignments'].message_type = _SOLUTIONRESPONSE_ASSIGNMENT
 _SOLUTIONRESPONSE.fields_by_name['nodeFlows'].message_type = _SOLUTIONRESPONSE_NODEFLOW
 _SOLUTIONRESPONSE.fields_by_name['nodeProductFlows'].message_type = _SOLUTIONRESPONSE_NODEPRODUCTFLOW
 _SOLUTIONRESPONSE.fields_by_name['geometrySequence'].message_type = _SOLUTIONRESPONSE_GEOMETRYSEQUENCE
 _SOLUTIONRESPONSE.fields_by_name['routes'].message_type = _SOLUTIONRESPONSE_ROUTE
+_SOLUTIONRESPONSE.fields_by_name['nodeProductTransformAssignments'].message_type = _SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT
 DESCRIPTOR.message_types_by_name['InternalDimension'] = _INTERNALDIMENSION
 DESCRIPTOR.message_types_by_name['UserDimension'] = _USERDIMENSION
 DESCRIPTOR.message_types_by_name['DimensionConfiguration'] = _DIMENSIONCONFIGURATION
@@ -1566,6 +1811,20 @@ Node = _reflection.GeneratedProtocolMessageType('Node', (_message.Message,), dic
     # @@protoc_insertion_point(class_scope:NS3.Node.Flow)
     ))
   ,
+
+  ProductTransform = _reflection.GeneratedProtocolMessageType('ProductTransform', (_message.Message,), dict(
+
+    Item = _reflection.GeneratedProtocolMessageType('Item', (_message.Message,), dict(
+      DESCRIPTOR = _NODE_PRODUCTTRANSFORM_ITEM,
+      __module__ = 'ns3_tbfvuwtge2iq_pb2'
+      # @@protoc_insertion_point(class_scope:NS3.Node.ProductTransform.Item)
+      ))
+    ,
+    DESCRIPTOR = _NODE_PRODUCTTRANSFORM,
+    __module__ = 'ns3_tbfvuwtge2iq_pb2'
+    # @@protoc_insertion_point(class_scope:NS3.Node.ProductTransform)
+    ))
+  ,
   DESCRIPTOR = _NODE,
   __module__ = 'ns3_tbfvuwtge2iq_pb2'
   # @@protoc_insertion_point(class_scope:NS3.Node)
@@ -1573,6 +1832,8 @@ Node = _reflection.GeneratedProtocolMessageType('Node', (_message.Message,), dic
 _sym_db.RegisterMessage(Node)
 _sym_db.RegisterMessage(Node.ProductFlow)
 _sym_db.RegisterMessage(Node.Flow)
+_sym_db.RegisterMessage(Node.ProductTransform)
+_sym_db.RegisterMessage(Node.ProductTransform.Item)
 
 ProductGroup = _reflection.GeneratedProtocolMessageType('ProductGroup', (_message.Message,), dict(
 
@@ -1653,6 +1914,20 @@ SolutionResponse = _reflection.GeneratedProtocolMessageType('SolutionResponse', 
     # @@protoc_insertion_point(class_scope:NS3.SolutionResponse.Route)
     ))
   ,
+
+  NodeProductTransformAssignment = _reflection.GeneratedProtocolMessageType('NodeProductTransformAssignment', (_message.Message,), dict(
+
+    Item = _reflection.GeneratedProtocolMessageType('Item', (_message.Message,), dict(
+      DESCRIPTOR = _SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT_ITEM,
+      __module__ = 'ns3_tbfvuwtge2iq_pb2'
+      # @@protoc_insertion_point(class_scope:NS3.SolutionResponse.NodeProductTransformAssignment.Item)
+      ))
+    ,
+    DESCRIPTOR = _SOLUTIONRESPONSE_NODEPRODUCTTRANSFORMASSIGNMENT,
+    __module__ = 'ns3_tbfvuwtge2iq_pb2'
+    # @@protoc_insertion_point(class_scope:NS3.SolutionResponse.NodeProductTransformAssignment)
+    ))
+  ,
   DESCRIPTOR = _SOLUTIONRESPONSE,
   __module__ = 'ns3_tbfvuwtge2iq_pb2'
   # @@protoc_insertion_point(class_scope:NS3.SolutionResponse)
@@ -1663,6 +1938,8 @@ _sym_db.RegisterMessage(SolutionResponse.NodeProductFlow)
 _sym_db.RegisterMessage(SolutionResponse.NodeFlow)
 _sym_db.RegisterMessage(SolutionResponse.GeometrySequence)
 _sym_db.RegisterMessage(SolutionResponse.Route)
+_sym_db.RegisterMessage(SolutionResponse.NodeProductTransformAssignment)
+_sym_db.RegisterMessage(SolutionResponse.NodeProductTransformAssignment.Item)
 
 
 DESCRIPTOR._options = None

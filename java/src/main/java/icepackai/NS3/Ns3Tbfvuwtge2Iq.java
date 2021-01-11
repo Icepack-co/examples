@@ -3653,8 +3653,8 @@ public final class Ns3Tbfvuwtge2Iq {
      * kg's *f_1 * costperunit (i.e. cost per ton)
      * example 2: distance * f_1, kg's * f_2
      * (km's*f_1 * kg's * f_2)*costperunit (i.e. ton km's)
-     * no more than two of the dimensionids may be variable (can be multiple constants)
-     * if factors omitted, assumes a constant of 1.0 for each factor.
+     * no more than two of the dimensionids may be variable (can be multiple
+     * constants) if factors omitted, assumes a constant of 1.0 for each factor.
      * </pre>
      *
      * <code>required float costPerUnit = 3;</code>
@@ -3666,8 +3666,8 @@ public final class Ns3Tbfvuwtge2Iq {
      * kg's *f_1 * costperunit (i.e. cost per ton)
      * example 2: distance * f_1, kg's * f_2
      * (km's*f_1 * kg's * f_2)*costperunit (i.e. ton km's)
-     * no more than two of the dimensionids may be variable (can be multiple constants)
-     * if factors omitted, assumes a constant of 1.0 for each factor.
+     * no more than two of the dimensionids may be variable (can be multiple
+     * constants) if factors omitted, assumes a constant of 1.0 for each factor.
      * </pre>
      *
      * <code>required float costPerUnit = 3;</code>
@@ -3853,8 +3853,8 @@ public final class Ns3Tbfvuwtge2Iq {
      * kg's *f_1 * costperunit (i.e. cost per ton)
      * example 2: distance * f_1, kg's * f_2
      * (km's*f_1 * kg's * f_2)*costperunit (i.e. ton km's)
-     * no more than two of the dimensionids may be variable (can be multiple constants)
-     * if factors omitted, assumes a constant of 1.0 for each factor.
+     * no more than two of the dimensionids may be variable (can be multiple
+     * constants) if factors omitted, assumes a constant of 1.0 for each factor.
      * </pre>
      *
      * <code>required float costPerUnit = 3;</code>
@@ -3868,8 +3868,8 @@ public final class Ns3Tbfvuwtge2Iq {
      * kg's *f_1 * costperunit (i.e. cost per ton)
      * example 2: distance * f_1, kg's * f_2
      * (km's*f_1 * kg's * f_2)*costperunit (i.e. ton km's)
-     * no more than two of the dimensionids may be variable (can be multiple constants)
-     * if factors omitted, assumes a constant of 1.0 for each factor.
+     * no more than two of the dimensionids may be variable (can be multiple
+     * constants) if factors omitted, assumes a constant of 1.0 for each factor.
      * </pre>
      *
      * <code>required float costPerUnit = 3;</code>
@@ -4439,8 +4439,8 @@ public final class Ns3Tbfvuwtge2Iq {
        * kg's *f_1 * costperunit (i.e. cost per ton)
        * example 2: distance * f_1, kg's * f_2
        * (km's*f_1 * kg's * f_2)*costperunit (i.e. ton km's)
-       * no more than two of the dimensionids may be variable (can be multiple constants)
-       * if factors omitted, assumes a constant of 1.0 for each factor.
+       * no more than two of the dimensionids may be variable (can be multiple
+       * constants) if factors omitted, assumes a constant of 1.0 for each factor.
        * </pre>
        *
        * <code>required float costPerUnit = 3;</code>
@@ -4454,8 +4454,8 @@ public final class Ns3Tbfvuwtge2Iq {
        * kg's *f_1 * costperunit (i.e. cost per ton)
        * example 2: distance * f_1, kg's * f_2
        * (km's*f_1 * kg's * f_2)*costperunit (i.e. ton km's)
-       * no more than two of the dimensionids may be variable (can be multiple constants)
-       * if factors omitted, assumes a constant of 1.0 for each factor.
+       * no more than two of the dimensionids may be variable (can be multiple
+       * constants) if factors omitted, assumes a constant of 1.0 for each factor.
        * </pre>
        *
        * <code>required float costPerUnit = 3;</code>
@@ -4469,8 +4469,8 @@ public final class Ns3Tbfvuwtge2Iq {
        * kg's *f_1 * costperunit (i.e. cost per ton)
        * example 2: distance * f_1, kg's * f_2
        * (km's*f_1 * kg's * f_2)*costperunit (i.e. ton km's)
-       * no more than two of the dimensionids may be variable (can be multiple constants)
-       * if factors omitted, assumes a constant of 1.0 for each factor.
+       * no more than two of the dimensionids may be variable (can be multiple
+       * constants) if factors omitted, assumes a constant of 1.0 for each factor.
        * </pre>
        *
        * <code>required float costPerUnit = 3;</code>
@@ -4487,8 +4487,8 @@ public final class Ns3Tbfvuwtge2Iq {
        * kg's *f_1 * costperunit (i.e. cost per ton)
        * example 2: distance * f_1, kg's * f_2
        * (km's*f_1 * kg's * f_2)*costperunit (i.e. ton km's)
-       * no more than two of the dimensionids may be variable (can be multiple constants)
-       * if factors omitted, assumes a constant of 1.0 for each factor.
+       * no more than two of the dimensionids may be variable (can be multiple
+       * constants) if factors omitted, assumes a constant of 1.0 for each factor.
        * </pre>
        *
        * <code>required float costPerUnit = 3;</code>
@@ -6416,9 +6416,9 @@ public final class Ns3Tbfvuwtge2Iq {
   }
   /**
    * <pre>
-   * so for each node, we define its location in the network (for routing network calculations)
-   * as well as (optionally) flow constraints on the node, either as flow input (production), 
-   * or flow output (demand consumption nodes)
+   * so for each node, we define its location in the network (for routing network
+   * calculations) as well as (optionally) flow constraints on the node, either as
+   * flow input (production), or flow output (demand consumption nodes)
    * https://docs.icepack.ai/ns3/dimension-range/
    * </pre>
    *
@@ -6848,9 +6848,9 @@ public final class Ns3Tbfvuwtge2Iq {
     }
     /**
      * <pre>
-     * so for each node, we define its location in the network (for routing network calculations)
-     * as well as (optionally) flow constraints on the node, either as flow input (production), 
-     * or flow output (demand consumption nodes)
+     * so for each node, we define its location in the network (for routing network
+     * calculations) as well as (optionally) flow constraints on the node, either as
+     * flow input (production), or flow output (demand consumption nodes)
      * https://docs.icepack.ai/ns3/dimension-range/
      * </pre>
      *
@@ -7531,6 +7531,50 @@ public final class Ns3Tbfvuwtge2Iq {
      */
     icepackai.NS3.Ns3Tbfvuwtge2Iq.FlowDimensionalConstraintOrBuilder getFlowConstraintsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * set of product transformer which may be used to satisfy other flows.
+     * </pre>
+     *
+     * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+     */
+    java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform> 
+        getProductTransformsList();
+    /**
+     * <pre>
+     * set of product transformer which may be used to satisfy other flows.
+     * </pre>
+     *
+     * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+     */
+    icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform getProductTransforms(int index);
+    /**
+     * <pre>
+     * set of product transformer which may be used to satisfy other flows.
+     * </pre>
+     *
+     * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+     */
+    int getProductTransformsCount();
+    /**
+     * <pre>
+     * set of product transformer which may be used to satisfy other flows.
+     * </pre>
+     *
+     * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+     */
+    java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransformOrBuilder> 
+        getProductTransformsOrBuilderList();
+    /**
+     * <pre>
+     * set of product transformer which may be used to satisfy other flows.
+     * </pre>
+     *
+     * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+     */
+    icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransformOrBuilder getProductTransformsOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -7556,6 +7600,7 @@ public final class Ns3Tbfvuwtge2Iq {
       allowableSources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       maximumSources_ = -1;
       flowConstraints_ = java.util.Collections.emptyList();
+      productTransforms_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -7664,6 +7709,15 @@ public final class Ns3Tbfvuwtge2Iq {
                   input.readMessage(icepackai.NS3.Ns3Tbfvuwtge2Iq.FlowDimensionalConstraint.PARSER, extensionRegistry));
               break;
             }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+                productTransforms_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform>();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              productTransforms_.add(
+                  input.readMessage(icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.PARSER, extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -7693,6 +7747,9 @@ public final class Ns3Tbfvuwtge2Iq {
         }
         if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
           flowConstraints_ = java.util.Collections.unmodifiableList(flowConstraints_);
+        }
+        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+          productTransforms_ = java.util.Collections.unmodifiableList(productTransforms_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -11104,6 +11161,3512 @@ public final class Ns3Tbfvuwtge2Iq {
 
     }
 
+    public interface ProductTransformOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:NS3.Node.ProductTransform)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * in order to identify the item in the outputs
+       * </pre>
+       *
+       * <code>required string productTransformId = 1;</code>
+       */
+      boolean hasProductTransformId();
+      /**
+       * <pre>
+       * in order to identify the item in the outputs
+       * </pre>
+       *
+       * <code>required string productTransformId = 1;</code>
+       */
+      java.lang.String getProductTransformId();
+      /**
+       * <pre>
+       * in order to identify the item in the outputs
+       * </pre>
+       *
+       * <code>required string productTransformId = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getProductTransformIdBytes();
+
+      /**
+       * <pre>
+       * input product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+       */
+      java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item> 
+          getInputItemsList();
+      /**
+       * <pre>
+       * input product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+       */
+      icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item getInputItems(int index);
+      /**
+       * <pre>
+       * input product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+       */
+      int getInputItemsCount();
+      /**
+       * <pre>
+       * input product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+       */
+      java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder> 
+          getInputItemsOrBuilderList();
+      /**
+       * <pre>
+       * input product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+       */
+      icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder getInputItemsOrBuilder(
+          int index);
+
+      /**
+       * <pre>
+       * output product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+       */
+      java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item> 
+          getOutputItemsList();
+      /**
+       * <pre>
+       * output product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+       */
+      icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item getOutputItems(int index);
+      /**
+       * <pre>
+       * output product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+       */
+      int getOutputItemsCount();
+      /**
+       * <pre>
+       * output product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+       */
+      java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder> 
+          getOutputItemsOrBuilderList();
+      /**
+       * <pre>
+       * output product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+       */
+      icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder getOutputItemsOrBuilder(
+          int index);
+    }
+    /**
+     * <pre>
+     * essentially a Node.ProductTransform which may be applied at this node.
+     * this means that the node MAY convert the input products (in their respective ratios)
+     * into the output products (in their respective ratios). Costing at a transformer flow level can 
+     * be applied however granular.
+     * </pre>
+     *
+     * Protobuf type {@code NS3.Node.ProductTransform}
+     */
+    public  static final class ProductTransform extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:NS3.Node.ProductTransform)
+        ProductTransformOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use ProductTransform.newBuilder() to construct.
+      private ProductTransform(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private ProductTransform() {
+        productTransformId_ = "";
+        inputItems_ = java.util.Collections.emptyList();
+        outputItems_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private ProductTransform(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000001;
+                productTransformId_ = bs;
+                break;
+              }
+              case 18: {
+                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                  inputItems_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item>();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                inputItems_.add(
+                    input.readMessage(icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.PARSER, extensionRegistry));
+                break;
+              }
+              case 26: {
+                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                  outputItems_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item>();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                outputItems_.add(
+                    input.readMessage(icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.PARSER, extensionRegistry));
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+            inputItems_ = java.util.Collections.unmodifiableList(inputItems_);
+          }
+          if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+            outputItems_ = java.util.Collections.unmodifiableList(outputItems_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_Node_ProductTransform_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_Node_ProductTransform_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.class, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Builder.class);
+      }
+
+      public interface ItemOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:NS3.Node.ProductTransform.Item)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>required string productId = 1;</code>
+         */
+        boolean hasProductId();
+        /**
+         * <code>required string productId = 1;</code>
+         */
+        java.lang.String getProductId();
+        /**
+         * <code>required string productId = 1;</code>
+         */
+        com.google.protobuf.ByteString
+            getProductIdBytes();
+
+        /**
+         * <code>required int32 productRatio = 2;</code>
+         */
+        boolean hasProductRatio();
+        /**
+         * <code>required int32 productRatio = 2;</code>
+         */
+        int getProductRatio();
+
+        /**
+         * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+         */
+        java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange> 
+            getDimensionRangesList();
+        /**
+         * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+         */
+        icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange getDimensionRanges(int index);
+        /**
+         * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+         */
+        int getDimensionRangesCount();
+        /**
+         * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+         */
+        java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRangeOrBuilder> 
+            getDimensionRangesOrBuilderList();
+        /**
+         * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+         */
+        icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRangeOrBuilder getDimensionRangesOrBuilder(
+            int index);
+
+        /**
+         * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+         */
+        java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost> 
+            getFixedDimensionCostsList();
+        /**
+         * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+         */
+        icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost getFixedDimensionCosts(int index);
+        /**
+         * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+         */
+        int getFixedDimensionCostsCount();
+        /**
+         * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+         */
+        java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCostOrBuilder> 
+            getFixedDimensionCostsOrBuilderList();
+        /**
+         * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+         */
+        icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCostOrBuilder getFixedDimensionCostsOrBuilder(
+            int index);
+
+        /**
+         * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+         */
+        java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> 
+            getUnitDimensionCostsList();
+        /**
+         * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+         */
+        icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost getUnitDimensionCosts(int index);
+        /**
+         * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+         */
+        int getUnitDimensionCostsCount();
+        /**
+         * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+         */
+        java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder> 
+            getUnitDimensionCostsOrBuilderList();
+        /**
+         * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+         */
+        icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder getUnitDimensionCostsOrBuilder(
+            int index);
+      }
+      /**
+       * Protobuf type {@code NS3.Node.ProductTransform.Item}
+       */
+      public  static final class Item extends
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:NS3.Node.ProductTransform.Item)
+          ItemOrBuilder {
+      private static final long serialVersionUID = 0L;
+        // Use Item.newBuilder() to construct.
+        private Item(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+        private Item() {
+          productId_ = "";
+          productRatio_ = 0;
+          dimensionRanges_ = java.util.Collections.emptyList();
+          fixedDimensionCosts_ = java.util.Collections.emptyList();
+          unitDimensionCosts_ = java.util.Collections.emptyList();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+          return this.unknownFields;
+        }
+        private Item(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          int mutable_bitField0_ = 0;
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
+                  bitField0_ |= 0x00000001;
+                  productId_ = bs;
+                  break;
+                }
+                case 16: {
+                  bitField0_ |= 0x00000002;
+                  productRatio_ = input.readInt32();
+                  break;
+                }
+                case 26: {
+                  if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                    dimensionRanges_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange>();
+                    mutable_bitField0_ |= 0x00000004;
+                  }
+                  dimensionRanges_.add(
+                      input.readMessage(icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange.PARSER, extensionRegistry));
+                  break;
+                }
+                case 34: {
+                  if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                    fixedDimensionCosts_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost>();
+                    mutable_bitField0_ |= 0x00000008;
+                  }
+                  fixedDimensionCosts_.add(
+                      input.readMessage(icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost.PARSER, extensionRegistry));
+                  break;
+                }
+                case 42: {
+                  if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                    unitDimensionCosts_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost>();
+                    mutable_bitField0_ |= 0x00000010;
+                  }
+                  unitDimensionCosts_.add(
+                      input.readMessage(icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.PARSER, extensionRegistry));
+                  break;
+                }
+                default: {
+                  if (!parseUnknownField(
+                      input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(
+                e).setUnfinishedMessage(this);
+          } finally {
+            if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              dimensionRanges_ = java.util.Collections.unmodifiableList(dimensionRanges_);
+            }
+            if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              fixedDimensionCosts_ = java.util.Collections.unmodifiableList(fixedDimensionCosts_);
+            }
+            if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              unitDimensionCosts_ = java.util.Collections.unmodifiableList(unitDimensionCosts_);
+            }
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_Node_ProductTransform_Item_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_Node_ProductTransform_Item_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.class, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder.class);
+        }
+
+        private int bitField0_;
+        public static final int PRODUCTID_FIELD_NUMBER = 1;
+        private volatile java.lang.Object productId_;
+        /**
+         * <code>required string productId = 1;</code>
+         */
+        public boolean hasProductId() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>required string productId = 1;</code>
+         */
+        public java.lang.String getProductId() {
+          java.lang.Object ref = productId_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = 
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              productId_ = s;
+            }
+            return s;
+          }
+        }
+        /**
+         * <code>required string productId = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getProductIdBytes() {
+          java.lang.Object ref = productId_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            productId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int PRODUCTRATIO_FIELD_NUMBER = 2;
+        private int productRatio_;
+        /**
+         * <code>required int32 productRatio = 2;</code>
+         */
+        public boolean hasProductRatio() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>required int32 productRatio = 2;</code>
+         */
+        public int getProductRatio() {
+          return productRatio_;
+        }
+
+        public static final int DIMENSIONRANGES_FIELD_NUMBER = 3;
+        private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange> dimensionRanges_;
+        /**
+         * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+         */
+        public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange> getDimensionRangesList() {
+          return dimensionRanges_;
+        }
+        /**
+         * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+         */
+        public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRangeOrBuilder> 
+            getDimensionRangesOrBuilderList() {
+          return dimensionRanges_;
+        }
+        /**
+         * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+         */
+        public int getDimensionRangesCount() {
+          return dimensionRanges_.size();
+        }
+        /**
+         * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange getDimensionRanges(int index) {
+          return dimensionRanges_.get(index);
+        }
+        /**
+         * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRangeOrBuilder getDimensionRangesOrBuilder(
+            int index) {
+          return dimensionRanges_.get(index);
+        }
+
+        public static final int FIXEDDIMENSIONCOSTS_FIELD_NUMBER = 4;
+        private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost> fixedDimensionCosts_;
+        /**
+         * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+         */
+        public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost> getFixedDimensionCostsList() {
+          return fixedDimensionCosts_;
+        }
+        /**
+         * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+         */
+        public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCostOrBuilder> 
+            getFixedDimensionCostsOrBuilderList() {
+          return fixedDimensionCosts_;
+        }
+        /**
+         * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+         */
+        public int getFixedDimensionCostsCount() {
+          return fixedDimensionCosts_.size();
+        }
+        /**
+         * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost getFixedDimensionCosts(int index) {
+          return fixedDimensionCosts_.get(index);
+        }
+        /**
+         * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCostOrBuilder getFixedDimensionCostsOrBuilder(
+            int index) {
+          return fixedDimensionCosts_.get(index);
+        }
+
+        public static final int UNITDIMENSIONCOSTS_FIELD_NUMBER = 5;
+        private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> unitDimensionCosts_;
+        /**
+         * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+         */
+        public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> getUnitDimensionCostsList() {
+          return unitDimensionCosts_;
+        }
+        /**
+         * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+         */
+        public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder> 
+            getUnitDimensionCostsOrBuilderList() {
+          return unitDimensionCosts_;
+        }
+        /**
+         * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+         */
+        public int getUnitDimensionCostsCount() {
+          return unitDimensionCosts_.size();
+        }
+        /**
+         * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost getUnitDimensionCosts(int index) {
+          return unitDimensionCosts_.get(index);
+        }
+        /**
+         * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder getUnitDimensionCostsOrBuilder(
+            int index) {
+          return unitDimensionCosts_.get(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          if (!hasProductId()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+          if (!hasProductRatio()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+          for (int i = 0; i < getDimensionRangesCount(); i++) {
+            if (!getDimensionRanges(i).isInitialized()) {
+              memoizedIsInitialized = 0;
+              return false;
+            }
+          }
+          for (int i = 0; i < getFixedDimensionCostsCount(); i++) {
+            if (!getFixedDimensionCosts(i).isInitialized()) {
+              memoizedIsInitialized = 0;
+              return false;
+            }
+          }
+          for (int i = 0; i < getUnitDimensionCostsCount(); i++) {
+            if (!getUnitDimensionCosts(i).isInitialized()) {
+              memoizedIsInitialized = 0;
+              return false;
+            }
+          }
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                            throws java.io.IOException {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, productId_);
+          }
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            output.writeInt32(2, productRatio_);
+          }
+          for (int i = 0; i < dimensionRanges_.size(); i++) {
+            output.writeMessage(3, dimensionRanges_.get(i));
+          }
+          for (int i = 0; i < fixedDimensionCosts_.size(); i++) {
+            output.writeMessage(4, fixedDimensionCosts_.get(i));
+          }
+          for (int i = 0; i < unitDimensionCosts_.size(); i++) {
+            output.writeMessage(5, unitDimensionCosts_.get(i));
+          }
+          unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, productId_);
+          }
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeInt32Size(2, productRatio_);
+          }
+          for (int i = 0; i < dimensionRanges_.size(); i++) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(3, dimensionRanges_.get(i));
+          }
+          for (int i = 0; i < fixedDimensionCosts_.size(); i++) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(4, fixedDimensionCosts_.get(i));
+          }
+          for (int i = 0; i < unitDimensionCosts_.size(); i++) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(5, unitDimensionCosts_.get(i));
+          }
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+           return true;
+          }
+          if (!(obj instanceof icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item)) {
+            return super.equals(obj);
+          }
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item other = (icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item) obj;
+
+          boolean result = true;
+          result = result && (hasProductId() == other.hasProductId());
+          if (hasProductId()) {
+            result = result && getProductId()
+                .equals(other.getProductId());
+          }
+          result = result && (hasProductRatio() == other.hasProductRatio());
+          if (hasProductRatio()) {
+            result = result && (getProductRatio()
+                == other.getProductRatio());
+          }
+          result = result && getDimensionRangesList()
+              .equals(other.getDimensionRangesList());
+          result = result && getFixedDimensionCostsList()
+              .equals(other.getFixedDimensionCostsList());
+          result = result && getUnitDimensionCostsList()
+              .equals(other.getUnitDimensionCostsList());
+          result = result && unknownFields.equals(other.unknownFields);
+          return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (hasProductId()) {
+            hash = (37 * hash) + PRODUCTID_FIELD_NUMBER;
+            hash = (53 * hash) + getProductId().hashCode();
+          }
+          if (hasProductRatio()) {
+            hash = (37 * hash) + PRODUCTRATIO_FIELD_NUMBER;
+            hash = (53 * hash) + getProductRatio();
+          }
+          if (getDimensionRangesCount() > 0) {
+            hash = (37 * hash) + DIMENSIONRANGES_FIELD_NUMBER;
+            hash = (53 * hash) + getDimensionRangesList().hashCode();
+          }
+          if (getFixedDimensionCostsCount() > 0) {
+            hash = (37 * hash) + FIXEDDIMENSIONCOSTS_FIELD_NUMBER;
+            hash = (53 * hash) + getFixedDimensionCostsList().hashCode();
+          }
+          if (getUnitDimensionCostsCount() > 0) {
+            hash = (37 * hash) + UNITDIMENSIONCOSTS_FIELD_NUMBER;
+            hash = (53 * hash) + getUnitDimensionCostsList().hashCode();
+          }
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() { return newBuilder(); }
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+        public static Builder newBuilder(icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE
+              ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         * Protobuf type {@code NS3.Node.ProductTransform.Item}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:NS3.Node.ProductTransform.Item)
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor
+              getDescriptor() {
+            return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_Node_ProductTransform_Item_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_Node_ProductTransform_Item_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.class, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder.class);
+          }
+
+          // Construct using icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+              getDimensionRangesFieldBuilder();
+              getFixedDimensionCostsFieldBuilder();
+              getUnitDimensionCostsFieldBuilder();
+            }
+          }
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            productId_ = "";
+            bitField0_ = (bitField0_ & ~0x00000001);
+            productRatio_ = 0;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            if (dimensionRangesBuilder_ == null) {
+              dimensionRanges_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              dimensionRangesBuilder_.clear();
+            }
+            if (fixedDimensionCostsBuilder_ == null) {
+              fixedDimensionCosts_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              fixedDimensionCostsBuilder_.clear();
+            }
+            if (unitDimensionCostsBuilder_ == null) {
+              unitDimensionCosts_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              unitDimensionCostsBuilder_.clear();
+            }
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor
+              getDescriptorForType() {
+            return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_Node_ProductTransform_Item_descriptor;
+          }
+
+          @java.lang.Override
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item getDefaultInstanceForType() {
+            return icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item build() {
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item buildPartial() {
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item result = new icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item(this);
+            int from_bitField0_ = bitField0_;
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+              to_bitField0_ |= 0x00000001;
+            }
+            result.productId_ = productId_;
+            if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+              to_bitField0_ |= 0x00000002;
+            }
+            result.productRatio_ = productRatio_;
+            if (dimensionRangesBuilder_ == null) {
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                dimensionRanges_ = java.util.Collections.unmodifiableList(dimensionRanges_);
+                bitField0_ = (bitField0_ & ~0x00000004);
+              }
+              result.dimensionRanges_ = dimensionRanges_;
+            } else {
+              result.dimensionRanges_ = dimensionRangesBuilder_.build();
+            }
+            if (fixedDimensionCostsBuilder_ == null) {
+              if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                fixedDimensionCosts_ = java.util.Collections.unmodifiableList(fixedDimensionCosts_);
+                bitField0_ = (bitField0_ & ~0x00000008);
+              }
+              result.fixedDimensionCosts_ = fixedDimensionCosts_;
+            } else {
+              result.fixedDimensionCosts_ = fixedDimensionCostsBuilder_.build();
+            }
+            if (unitDimensionCostsBuilder_ == null) {
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                unitDimensionCosts_ = java.util.Collections.unmodifiableList(unitDimensionCosts_);
+                bitField0_ = (bitField0_ & ~0x00000010);
+              }
+              result.unitDimensionCosts_ = unitDimensionCosts_;
+            } else {
+              result.unitDimensionCosts_ = unitDimensionCostsBuilder_.build();
+            }
+            result.bitField0_ = to_bitField0_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return (Builder) super.clone();
+          }
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return (Builder) super.setField(field, value);
+          }
+          @java.lang.Override
+          public Builder clearField(
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return (Builder) super.clearField(field);
+          }
+          @java.lang.Override
+          public Builder clearOneof(
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return (Builder) super.clearOneof(oneof);
+          }
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
+            return (Builder) super.setRepeatedField(field, index, value);
+          }
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return (Builder) super.addRepeatedField(field, value);
+          }
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item) {
+              return mergeFrom((icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item)other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item other) {
+            if (other == icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.getDefaultInstance()) return this;
+            if (other.hasProductId()) {
+              bitField0_ |= 0x00000001;
+              productId_ = other.productId_;
+              onChanged();
+            }
+            if (other.hasProductRatio()) {
+              setProductRatio(other.getProductRatio());
+            }
+            if (dimensionRangesBuilder_ == null) {
+              if (!other.dimensionRanges_.isEmpty()) {
+                if (dimensionRanges_.isEmpty()) {
+                  dimensionRanges_ = other.dimensionRanges_;
+                  bitField0_ = (bitField0_ & ~0x00000004);
+                } else {
+                  ensureDimensionRangesIsMutable();
+                  dimensionRanges_.addAll(other.dimensionRanges_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.dimensionRanges_.isEmpty()) {
+                if (dimensionRangesBuilder_.isEmpty()) {
+                  dimensionRangesBuilder_.dispose();
+                  dimensionRangesBuilder_ = null;
+                  dimensionRanges_ = other.dimensionRanges_;
+                  bitField0_ = (bitField0_ & ~0x00000004);
+                  dimensionRangesBuilder_ = 
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                       getDimensionRangesFieldBuilder() : null;
+                } else {
+                  dimensionRangesBuilder_.addAllMessages(other.dimensionRanges_);
+                }
+              }
+            }
+            if (fixedDimensionCostsBuilder_ == null) {
+              if (!other.fixedDimensionCosts_.isEmpty()) {
+                if (fixedDimensionCosts_.isEmpty()) {
+                  fixedDimensionCosts_ = other.fixedDimensionCosts_;
+                  bitField0_ = (bitField0_ & ~0x00000008);
+                } else {
+                  ensureFixedDimensionCostsIsMutable();
+                  fixedDimensionCosts_.addAll(other.fixedDimensionCosts_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.fixedDimensionCosts_.isEmpty()) {
+                if (fixedDimensionCostsBuilder_.isEmpty()) {
+                  fixedDimensionCostsBuilder_.dispose();
+                  fixedDimensionCostsBuilder_ = null;
+                  fixedDimensionCosts_ = other.fixedDimensionCosts_;
+                  bitField0_ = (bitField0_ & ~0x00000008);
+                  fixedDimensionCostsBuilder_ = 
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                       getFixedDimensionCostsFieldBuilder() : null;
+                } else {
+                  fixedDimensionCostsBuilder_.addAllMessages(other.fixedDimensionCosts_);
+                }
+              }
+            }
+            if (unitDimensionCostsBuilder_ == null) {
+              if (!other.unitDimensionCosts_.isEmpty()) {
+                if (unitDimensionCosts_.isEmpty()) {
+                  unitDimensionCosts_ = other.unitDimensionCosts_;
+                  bitField0_ = (bitField0_ & ~0x00000010);
+                } else {
+                  ensureUnitDimensionCostsIsMutable();
+                  unitDimensionCosts_.addAll(other.unitDimensionCosts_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.unitDimensionCosts_.isEmpty()) {
+                if (unitDimensionCostsBuilder_.isEmpty()) {
+                  unitDimensionCostsBuilder_.dispose();
+                  unitDimensionCostsBuilder_ = null;
+                  unitDimensionCosts_ = other.unitDimensionCosts_;
+                  bitField0_ = (bitField0_ & ~0x00000010);
+                  unitDimensionCostsBuilder_ = 
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                       getUnitDimensionCostsFieldBuilder() : null;
+                } else {
+                  unitDimensionCostsBuilder_.addAllMessages(other.unitDimensionCosts_);
+                }
+              }
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            if (!hasProductId()) {
+              return false;
+            }
+            if (!hasProductRatio()) {
+              return false;
+            }
+            for (int i = 0; i < getDimensionRangesCount(); i++) {
+              if (!getDimensionRanges(i).isInitialized()) {
+                return false;
+              }
+            }
+            for (int i = 0; i < getFixedDimensionCostsCount(); i++) {
+              if (!getFixedDimensionCosts(i).isInitialized()) {
+                return false;
+              }
+            }
+            for (int i = 0; i < getUnitDimensionCostsCount(); i++) {
+              if (!getUnitDimensionCosts(i).isInitialized()) {
+                return false;
+              }
+            }
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage = (icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item) e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+          private int bitField0_;
+
+          private java.lang.Object productId_ = "";
+          /**
+           * <code>required string productId = 1;</code>
+           */
+          public boolean hasProductId() {
+            return ((bitField0_ & 0x00000001) == 0x00000001);
+          }
+          /**
+           * <code>required string productId = 1;</code>
+           */
+          public java.lang.String getProductId() {
+            java.lang.Object ref = productId_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (bs.isValidUtf8()) {
+                productId_ = s;
+              }
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           * <code>required string productId = 1;</code>
+           */
+          public com.google.protobuf.ByteString
+              getProductIdBytes() {
+            java.lang.Object ref = productId_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b = 
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                      (java.lang.String) ref);
+              productId_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           * <code>required string productId = 1;</code>
+           */
+          public Builder setProductId(
+              java.lang.String value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+            productId_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>required string productId = 1;</code>
+           */
+          public Builder clearProductId() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            productId_ = getDefaultInstance().getProductId();
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>required string productId = 1;</code>
+           */
+          public Builder setProductIdBytes(
+              com.google.protobuf.ByteString value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+            productId_ = value;
+            onChanged();
+            return this;
+          }
+
+          private int productRatio_ ;
+          /**
+           * <code>required int32 productRatio = 2;</code>
+           */
+          public boolean hasProductRatio() {
+            return ((bitField0_ & 0x00000002) == 0x00000002);
+          }
+          /**
+           * <code>required int32 productRatio = 2;</code>
+           */
+          public int getProductRatio() {
+            return productRatio_;
+          }
+          /**
+           * <code>required int32 productRatio = 2;</code>
+           */
+          public Builder setProductRatio(int value) {
+            bitField0_ |= 0x00000002;
+            productRatio_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>required int32 productRatio = 2;</code>
+           */
+          public Builder clearProductRatio() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            productRatio_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange> dimensionRanges_ =
+            java.util.Collections.emptyList();
+          private void ensureDimensionRangesIsMutable() {
+            if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+              dimensionRanges_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange>(dimensionRanges_);
+              bitField0_ |= 0x00000004;
+             }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange, icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRangeOrBuilder> dimensionRangesBuilder_;
+
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange> getDimensionRangesList() {
+            if (dimensionRangesBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(dimensionRanges_);
+            } else {
+              return dimensionRangesBuilder_.getMessageList();
+            }
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public int getDimensionRangesCount() {
+            if (dimensionRangesBuilder_ == null) {
+              return dimensionRanges_.size();
+            } else {
+              return dimensionRangesBuilder_.getCount();
+            }
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange getDimensionRanges(int index) {
+            if (dimensionRangesBuilder_ == null) {
+              return dimensionRanges_.get(index);
+            } else {
+              return dimensionRangesBuilder_.getMessage(index);
+            }
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public Builder setDimensionRanges(
+              int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange value) {
+            if (dimensionRangesBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureDimensionRangesIsMutable();
+              dimensionRanges_.set(index, value);
+              onChanged();
+            } else {
+              dimensionRangesBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public Builder setDimensionRanges(
+              int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange.Builder builderForValue) {
+            if (dimensionRangesBuilder_ == null) {
+              ensureDimensionRangesIsMutable();
+              dimensionRanges_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              dimensionRangesBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public Builder addDimensionRanges(icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange value) {
+            if (dimensionRangesBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureDimensionRangesIsMutable();
+              dimensionRanges_.add(value);
+              onChanged();
+            } else {
+              dimensionRangesBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public Builder addDimensionRanges(
+              int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange value) {
+            if (dimensionRangesBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureDimensionRangesIsMutable();
+              dimensionRanges_.add(index, value);
+              onChanged();
+            } else {
+              dimensionRangesBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public Builder addDimensionRanges(
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange.Builder builderForValue) {
+            if (dimensionRangesBuilder_ == null) {
+              ensureDimensionRangesIsMutable();
+              dimensionRanges_.add(builderForValue.build());
+              onChanged();
+            } else {
+              dimensionRangesBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public Builder addDimensionRanges(
+              int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange.Builder builderForValue) {
+            if (dimensionRangesBuilder_ == null) {
+              ensureDimensionRangesIsMutable();
+              dimensionRanges_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              dimensionRangesBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public Builder addAllDimensionRanges(
+              java.lang.Iterable<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange> values) {
+            if (dimensionRangesBuilder_ == null) {
+              ensureDimensionRangesIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                  values, dimensionRanges_);
+              onChanged();
+            } else {
+              dimensionRangesBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public Builder clearDimensionRanges() {
+            if (dimensionRangesBuilder_ == null) {
+              dimensionRanges_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000004);
+              onChanged();
+            } else {
+              dimensionRangesBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public Builder removeDimensionRanges(int index) {
+            if (dimensionRangesBuilder_ == null) {
+              ensureDimensionRangesIsMutable();
+              dimensionRanges_.remove(index);
+              onChanged();
+            } else {
+              dimensionRangesBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange.Builder getDimensionRangesBuilder(
+              int index) {
+            return getDimensionRangesFieldBuilder().getBuilder(index);
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRangeOrBuilder getDimensionRangesOrBuilder(
+              int index) {
+            if (dimensionRangesBuilder_ == null) {
+              return dimensionRanges_.get(index);  } else {
+              return dimensionRangesBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRangeOrBuilder> 
+               getDimensionRangesOrBuilderList() {
+            if (dimensionRangesBuilder_ != null) {
+              return dimensionRangesBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(dimensionRanges_);
+            }
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange.Builder addDimensionRangesBuilder() {
+            return getDimensionRangesFieldBuilder().addBuilder(
+                icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange.getDefaultInstance());
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange.Builder addDimensionRangesBuilder(
+              int index) {
+            return getDimensionRangesFieldBuilder().addBuilder(
+                index, icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange.getDefaultInstance());
+          }
+          /**
+           * <code>repeated .NS3.DimensionRange dimensionRanges = 3;</code>
+           */
+          public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange.Builder> 
+               getDimensionRangesBuilderList() {
+            return getDimensionRangesFieldBuilder().getBuilderList();
+          }
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange, icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRangeOrBuilder> 
+              getDimensionRangesFieldBuilder() {
+            if (dimensionRangesBuilder_ == null) {
+              dimensionRangesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                  icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange, icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRange.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.DimensionRangeOrBuilder>(
+                      dimensionRanges_,
+                      ((bitField0_ & 0x00000004) == 0x00000004),
+                      getParentForChildren(),
+                      isClean());
+              dimensionRanges_ = null;
+            }
+            return dimensionRangesBuilder_;
+          }
+
+          private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost> fixedDimensionCosts_ =
+            java.util.Collections.emptyList();
+          private void ensureFixedDimensionCostsIsMutable() {
+            if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+              fixedDimensionCosts_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost>(fixedDimensionCosts_);
+              bitField0_ |= 0x00000008;
+             }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost, icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCostOrBuilder> fixedDimensionCostsBuilder_;
+
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost> getFixedDimensionCostsList() {
+            if (fixedDimensionCostsBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(fixedDimensionCosts_);
+            } else {
+              return fixedDimensionCostsBuilder_.getMessageList();
+            }
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public int getFixedDimensionCostsCount() {
+            if (fixedDimensionCostsBuilder_ == null) {
+              return fixedDimensionCosts_.size();
+            } else {
+              return fixedDimensionCostsBuilder_.getCount();
+            }
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost getFixedDimensionCosts(int index) {
+            if (fixedDimensionCostsBuilder_ == null) {
+              return fixedDimensionCosts_.get(index);
+            } else {
+              return fixedDimensionCostsBuilder_.getMessage(index);
+            }
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public Builder setFixedDimensionCosts(
+              int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost value) {
+            if (fixedDimensionCostsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureFixedDimensionCostsIsMutable();
+              fixedDimensionCosts_.set(index, value);
+              onChanged();
+            } else {
+              fixedDimensionCostsBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public Builder setFixedDimensionCosts(
+              int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost.Builder builderForValue) {
+            if (fixedDimensionCostsBuilder_ == null) {
+              ensureFixedDimensionCostsIsMutable();
+              fixedDimensionCosts_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              fixedDimensionCostsBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public Builder addFixedDimensionCosts(icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost value) {
+            if (fixedDimensionCostsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureFixedDimensionCostsIsMutable();
+              fixedDimensionCosts_.add(value);
+              onChanged();
+            } else {
+              fixedDimensionCostsBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public Builder addFixedDimensionCosts(
+              int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost value) {
+            if (fixedDimensionCostsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureFixedDimensionCostsIsMutable();
+              fixedDimensionCosts_.add(index, value);
+              onChanged();
+            } else {
+              fixedDimensionCostsBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public Builder addFixedDimensionCosts(
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost.Builder builderForValue) {
+            if (fixedDimensionCostsBuilder_ == null) {
+              ensureFixedDimensionCostsIsMutable();
+              fixedDimensionCosts_.add(builderForValue.build());
+              onChanged();
+            } else {
+              fixedDimensionCostsBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public Builder addFixedDimensionCosts(
+              int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost.Builder builderForValue) {
+            if (fixedDimensionCostsBuilder_ == null) {
+              ensureFixedDimensionCostsIsMutable();
+              fixedDimensionCosts_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              fixedDimensionCostsBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public Builder addAllFixedDimensionCosts(
+              java.lang.Iterable<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost> values) {
+            if (fixedDimensionCostsBuilder_ == null) {
+              ensureFixedDimensionCostsIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                  values, fixedDimensionCosts_);
+              onChanged();
+            } else {
+              fixedDimensionCostsBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public Builder clearFixedDimensionCosts() {
+            if (fixedDimensionCostsBuilder_ == null) {
+              fixedDimensionCosts_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000008);
+              onChanged();
+            } else {
+              fixedDimensionCostsBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public Builder removeFixedDimensionCosts(int index) {
+            if (fixedDimensionCostsBuilder_ == null) {
+              ensureFixedDimensionCostsIsMutable();
+              fixedDimensionCosts_.remove(index);
+              onChanged();
+            } else {
+              fixedDimensionCostsBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost.Builder getFixedDimensionCostsBuilder(
+              int index) {
+            return getFixedDimensionCostsFieldBuilder().getBuilder(index);
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCostOrBuilder getFixedDimensionCostsOrBuilder(
+              int index) {
+            if (fixedDimensionCostsBuilder_ == null) {
+              return fixedDimensionCosts_.get(index);  } else {
+              return fixedDimensionCostsBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCostOrBuilder> 
+               getFixedDimensionCostsOrBuilderList() {
+            if (fixedDimensionCostsBuilder_ != null) {
+              return fixedDimensionCostsBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(fixedDimensionCosts_);
+            }
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost.Builder addFixedDimensionCostsBuilder() {
+            return getFixedDimensionCostsFieldBuilder().addBuilder(
+                icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost.getDefaultInstance());
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost.Builder addFixedDimensionCostsBuilder(
+              int index) {
+            return getFixedDimensionCostsFieldBuilder().addBuilder(
+                index, icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost.getDefaultInstance());
+          }
+          /**
+           * <code>repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;</code>
+           */
+          public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost.Builder> 
+               getFixedDimensionCostsBuilderList() {
+            return getFixedDimensionCostsFieldBuilder().getBuilderList();
+          }
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost, icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCostOrBuilder> 
+              getFixedDimensionCostsFieldBuilder() {
+            if (fixedDimensionCostsBuilder_ == null) {
+              fixedDimensionCostsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                  icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost, icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCost.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.FixedDimensionCostOrBuilder>(
+                      fixedDimensionCosts_,
+                      ((bitField0_ & 0x00000008) == 0x00000008),
+                      getParentForChildren(),
+                      isClean());
+              fixedDimensionCosts_ = null;
+            }
+            return fixedDimensionCostsBuilder_;
+          }
+
+          private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> unitDimensionCosts_ =
+            java.util.Collections.emptyList();
+          private void ensureUnitDimensionCostsIsMutable() {
+            if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+              unitDimensionCosts_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost>(unitDimensionCosts_);
+              bitField0_ |= 0x00000010;
+             }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder> unitDimensionCostsBuilder_;
+
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> getUnitDimensionCostsList() {
+            if (unitDimensionCostsBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(unitDimensionCosts_);
+            } else {
+              return unitDimensionCostsBuilder_.getMessageList();
+            }
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public int getUnitDimensionCostsCount() {
+            if (unitDimensionCostsBuilder_ == null) {
+              return unitDimensionCosts_.size();
+            } else {
+              return unitDimensionCostsBuilder_.getCount();
+            }
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost getUnitDimensionCosts(int index) {
+            if (unitDimensionCostsBuilder_ == null) {
+              return unitDimensionCosts_.get(index);
+            } else {
+              return unitDimensionCostsBuilder_.getMessage(index);
+            }
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public Builder setUnitDimensionCosts(
+              int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost value) {
+            if (unitDimensionCostsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureUnitDimensionCostsIsMutable();
+              unitDimensionCosts_.set(index, value);
+              onChanged();
+            } else {
+              unitDimensionCostsBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public Builder setUnitDimensionCosts(
+              int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder builderForValue) {
+            if (unitDimensionCostsBuilder_ == null) {
+              ensureUnitDimensionCostsIsMutable();
+              unitDimensionCosts_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              unitDimensionCostsBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public Builder addUnitDimensionCosts(icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost value) {
+            if (unitDimensionCostsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureUnitDimensionCostsIsMutable();
+              unitDimensionCosts_.add(value);
+              onChanged();
+            } else {
+              unitDimensionCostsBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public Builder addUnitDimensionCosts(
+              int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost value) {
+            if (unitDimensionCostsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureUnitDimensionCostsIsMutable();
+              unitDimensionCosts_.add(index, value);
+              onChanged();
+            } else {
+              unitDimensionCostsBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public Builder addUnitDimensionCosts(
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder builderForValue) {
+            if (unitDimensionCostsBuilder_ == null) {
+              ensureUnitDimensionCostsIsMutable();
+              unitDimensionCosts_.add(builderForValue.build());
+              onChanged();
+            } else {
+              unitDimensionCostsBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public Builder addUnitDimensionCosts(
+              int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder builderForValue) {
+            if (unitDimensionCostsBuilder_ == null) {
+              ensureUnitDimensionCostsIsMutable();
+              unitDimensionCosts_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              unitDimensionCostsBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public Builder addAllUnitDimensionCosts(
+              java.lang.Iterable<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> values) {
+            if (unitDimensionCostsBuilder_ == null) {
+              ensureUnitDimensionCostsIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                  values, unitDimensionCosts_);
+              onChanged();
+            } else {
+              unitDimensionCostsBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public Builder clearUnitDimensionCosts() {
+            if (unitDimensionCostsBuilder_ == null) {
+              unitDimensionCosts_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000010);
+              onChanged();
+            } else {
+              unitDimensionCostsBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public Builder removeUnitDimensionCosts(int index) {
+            if (unitDimensionCostsBuilder_ == null) {
+              ensureUnitDimensionCostsIsMutable();
+              unitDimensionCosts_.remove(index);
+              onChanged();
+            } else {
+              unitDimensionCostsBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder getUnitDimensionCostsBuilder(
+              int index) {
+            return getUnitDimensionCostsFieldBuilder().getBuilder(index);
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder getUnitDimensionCostsOrBuilder(
+              int index) {
+            if (unitDimensionCostsBuilder_ == null) {
+              return unitDimensionCosts_.get(index);  } else {
+              return unitDimensionCostsBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder> 
+               getUnitDimensionCostsOrBuilderList() {
+            if (unitDimensionCostsBuilder_ != null) {
+              return unitDimensionCostsBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(unitDimensionCosts_);
+            }
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder addUnitDimensionCostsBuilder() {
+            return getUnitDimensionCostsFieldBuilder().addBuilder(
+                icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.getDefaultInstance());
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder addUnitDimensionCostsBuilder(
+              int index) {
+            return getUnitDimensionCostsFieldBuilder().addBuilder(
+                index, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.getDefaultInstance());
+          }
+          /**
+           * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;</code>
+           */
+          public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder> 
+               getUnitDimensionCostsBuilderList() {
+            return getUnitDimensionCostsFieldBuilder().getBuilderList();
+          }
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder> 
+              getUnitDimensionCostsFieldBuilder() {
+            if (unitDimensionCostsBuilder_ == null) {
+              unitDimensionCostsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                  icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder>(
+                      unitDimensionCosts_,
+                      ((bitField0_ & 0x00000010) == 0x00000010),
+                      getParentForChildren(),
+                      isClean());
+              unitDimensionCosts_ = null;
+            }
+            return unitDimensionCostsBuilder_;
+          }
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+
+          // @@protoc_insertion_point(builder_scope:NS3.Node.ProductTransform.Item)
+        }
+
+        // @@protoc_insertion_point(class_scope:NS3.Node.ProductTransform.Item)
+        private static final icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item DEFAULT_INSTANCE;
+        static {
+          DEFAULT_INSTANCE = new icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item();
+        }
+
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        @java.lang.Deprecated public static final com.google.protobuf.Parser<Item>
+            PARSER = new com.google.protobuf.AbstractParser<Item>() {
+          @java.lang.Override
+          public Item parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Item(input, extensionRegistry);
+          }
+        };
+
+        public static com.google.protobuf.Parser<Item> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Item> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+
+      }
+
+      private int bitField0_;
+      public static final int PRODUCTTRANSFORMID_FIELD_NUMBER = 1;
+      private volatile java.lang.Object productTransformId_;
+      /**
+       * <pre>
+       * in order to identify the item in the outputs
+       * </pre>
+       *
+       * <code>required string productTransformId = 1;</code>
+       */
+      public boolean hasProductTransformId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <pre>
+       * in order to identify the item in the outputs
+       * </pre>
+       *
+       * <code>required string productTransformId = 1;</code>
+       */
+      public java.lang.String getProductTransformId() {
+        java.lang.Object ref = productTransformId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            productTransformId_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * in order to identify the item in the outputs
+       * </pre>
+       *
+       * <code>required string productTransformId = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getProductTransformIdBytes() {
+        java.lang.Object ref = productTransformId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productTransformId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int INPUTITEMS_FIELD_NUMBER = 2;
+      private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item> inputItems_;
+      /**
+       * <pre>
+       * input product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+       */
+      public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item> getInputItemsList() {
+        return inputItems_;
+      }
+      /**
+       * <pre>
+       * input product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+       */
+      public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder> 
+          getInputItemsOrBuilderList() {
+        return inputItems_;
+      }
+      /**
+       * <pre>
+       * input product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+       */
+      public int getInputItemsCount() {
+        return inputItems_.size();
+      }
+      /**
+       * <pre>
+       * input product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item getInputItems(int index) {
+        return inputItems_.get(index);
+      }
+      /**
+       * <pre>
+       * input product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder getInputItemsOrBuilder(
+          int index) {
+        return inputItems_.get(index);
+      }
+
+      public static final int OUTPUTITEMS_FIELD_NUMBER = 3;
+      private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item> outputItems_;
+      /**
+       * <pre>
+       * output product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+       */
+      public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item> getOutputItemsList() {
+        return outputItems_;
+      }
+      /**
+       * <pre>
+       * output product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+       */
+      public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder> 
+          getOutputItemsOrBuilderList() {
+        return outputItems_;
+      }
+      /**
+       * <pre>
+       * output product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+       */
+      public int getOutputItemsCount() {
+        return outputItems_.size();
+      }
+      /**
+       * <pre>
+       * output product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item getOutputItems(int index) {
+        return outputItems_.get(index);
+      }
+      /**
+       * <pre>
+       * output product id's defining the transform (with their respective ratio) 
+       * specify at least one.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder getOutputItemsOrBuilder(
+          int index) {
+        return outputItems_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        if (!hasProductTransformId()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        for (int i = 0; i < getInputItemsCount(); i++) {
+          if (!getInputItems(i).isInitialized()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+        }
+        for (int i = 0; i < getOutputItemsCount(); i++) {
+          if (!getOutputItems(i).isInitialized()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, productTransformId_);
+        }
+        for (int i = 0; i < inputItems_.size(); i++) {
+          output.writeMessage(2, inputItems_.get(i));
+        }
+        for (int i = 0; i < outputItems_.size(); i++) {
+          output.writeMessage(3, outputItems_.get(i));
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, productTransformId_);
+        }
+        for (int i = 0; i < inputItems_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, inputItems_.get(i));
+        }
+        for (int i = 0; i < outputItems_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, outputItems_.get(i));
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform)) {
+          return super.equals(obj);
+        }
+        icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform other = (icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform) obj;
+
+        boolean result = true;
+        result = result && (hasProductTransformId() == other.hasProductTransformId());
+        if (hasProductTransformId()) {
+          result = result && getProductTransformId()
+              .equals(other.getProductTransformId());
+        }
+        result = result && getInputItemsList()
+            .equals(other.getInputItemsList());
+        result = result && getOutputItemsList()
+            .equals(other.getOutputItemsList());
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasProductTransformId()) {
+          hash = (37 * hash) + PRODUCTTRANSFORMID_FIELD_NUMBER;
+          hash = (53 * hash) + getProductTransformId().hashCode();
+        }
+        if (getInputItemsCount() > 0) {
+          hash = (37 * hash) + INPUTITEMS_FIELD_NUMBER;
+          hash = (53 * hash) + getInputItemsList().hashCode();
+        }
+        if (getOutputItemsCount() > 0) {
+          hash = (37 * hash) + OUTPUTITEMS_FIELD_NUMBER;
+          hash = (53 * hash) + getOutputItemsList().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * essentially a Node.ProductTransform which may be applied at this node.
+       * this means that the node MAY convert the input products (in their respective ratios)
+       * into the output products (in their respective ratios). Costing at a transformer flow level can 
+       * be applied however granular.
+       * </pre>
+       *
+       * Protobuf type {@code NS3.Node.ProductTransform}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:NS3.Node.ProductTransform)
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransformOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_Node_ProductTransform_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_Node_ProductTransform_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.class, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Builder.class);
+        }
+
+        // Construct using icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+            getInputItemsFieldBuilder();
+            getOutputItemsFieldBuilder();
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          productTransformId_ = "";
+          bitField0_ = (bitField0_ & ~0x00000001);
+          if (inputItemsBuilder_ == null) {
+            inputItems_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            inputItemsBuilder_.clear();
+          }
+          if (outputItemsBuilder_ == null) {
+            outputItems_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            outputItemsBuilder_.clear();
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_Node_ProductTransform_descriptor;
+        }
+
+        @java.lang.Override
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform getDefaultInstanceForType() {
+          return icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform build() {
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform buildPartial() {
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform result = new icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.productTransformId_ = productTransformId_;
+          if (inputItemsBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+              inputItems_ = java.util.Collections.unmodifiableList(inputItems_);
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.inputItems_ = inputItems_;
+          } else {
+            result.inputItems_ = inputItemsBuilder_.build();
+          }
+          if (outputItemsBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+              outputItems_ = java.util.Collections.unmodifiableList(outputItems_);
+              bitField0_ = (bitField0_ & ~0x00000004);
+            }
+            result.outputItems_ = outputItems_;
+          } else {
+            result.outputItems_ = outputItemsBuilder_.build();
+          }
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform) {
+            return mergeFrom((icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform other) {
+          if (other == icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.getDefaultInstance()) return this;
+          if (other.hasProductTransformId()) {
+            bitField0_ |= 0x00000001;
+            productTransformId_ = other.productTransformId_;
+            onChanged();
+          }
+          if (inputItemsBuilder_ == null) {
+            if (!other.inputItems_.isEmpty()) {
+              if (inputItems_.isEmpty()) {
+                inputItems_ = other.inputItems_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+              } else {
+                ensureInputItemsIsMutable();
+                inputItems_.addAll(other.inputItems_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.inputItems_.isEmpty()) {
+              if (inputItemsBuilder_.isEmpty()) {
+                inputItemsBuilder_.dispose();
+                inputItemsBuilder_ = null;
+                inputItems_ = other.inputItems_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                inputItemsBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getInputItemsFieldBuilder() : null;
+              } else {
+                inputItemsBuilder_.addAllMessages(other.inputItems_);
+              }
+            }
+          }
+          if (outputItemsBuilder_ == null) {
+            if (!other.outputItems_.isEmpty()) {
+              if (outputItems_.isEmpty()) {
+                outputItems_ = other.outputItems_;
+                bitField0_ = (bitField0_ & ~0x00000004);
+              } else {
+                ensureOutputItemsIsMutable();
+                outputItems_.addAll(other.outputItems_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.outputItems_.isEmpty()) {
+              if (outputItemsBuilder_.isEmpty()) {
+                outputItemsBuilder_.dispose();
+                outputItemsBuilder_ = null;
+                outputItems_ = other.outputItems_;
+                bitField0_ = (bitField0_ & ~0x00000004);
+                outputItemsBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getOutputItemsFieldBuilder() : null;
+              } else {
+                outputItemsBuilder_.addAllMessages(other.outputItems_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          if (!hasProductTransformId()) {
+            return false;
+          }
+          for (int i = 0; i < getInputItemsCount(); i++) {
+            if (!getInputItems(i).isInitialized()) {
+              return false;
+            }
+          }
+          for (int i = 0; i < getOutputItemsCount(); i++) {
+            if (!getOutputItems(i).isInitialized()) {
+              return false;
+            }
+          }
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.lang.Object productTransformId_ = "";
+        /**
+         * <pre>
+         * in order to identify the item in the outputs
+         * </pre>
+         *
+         * <code>required string productTransformId = 1;</code>
+         */
+        public boolean hasProductTransformId() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <pre>
+         * in order to identify the item in the outputs
+         * </pre>
+         *
+         * <code>required string productTransformId = 1;</code>
+         */
+        public java.lang.String getProductTransformId() {
+          java.lang.Object ref = productTransformId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              productTransformId_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * in order to identify the item in the outputs
+         * </pre>
+         *
+         * <code>required string productTransformId = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getProductTransformIdBytes() {
+          java.lang.Object ref = productTransformId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            productTransformId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * in order to identify the item in the outputs
+         * </pre>
+         *
+         * <code>required string productTransformId = 1;</code>
+         */
+        public Builder setProductTransformId(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          productTransformId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * in order to identify the item in the outputs
+         * </pre>
+         *
+         * <code>required string productTransformId = 1;</code>
+         */
+        public Builder clearProductTransformId() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          productTransformId_ = getDefaultInstance().getProductTransformId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * in order to identify the item in the outputs
+         * </pre>
+         *
+         * <code>required string productTransformId = 1;</code>
+         */
+        public Builder setProductTransformIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          productTransformId_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item> inputItems_ =
+          java.util.Collections.emptyList();
+        private void ensureInputItemsIsMutable() {
+          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+            inputItems_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item>(inputItems_);
+            bitField0_ |= 0x00000002;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder> inputItemsBuilder_;
+
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item> getInputItemsList() {
+          if (inputItemsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(inputItems_);
+          } else {
+            return inputItemsBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public int getInputItemsCount() {
+          if (inputItemsBuilder_ == null) {
+            return inputItems_.size();
+          } else {
+            return inputItemsBuilder_.getCount();
+          }
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item getInputItems(int index) {
+          if (inputItemsBuilder_ == null) {
+            return inputItems_.get(index);
+          } else {
+            return inputItemsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public Builder setInputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item value) {
+          if (inputItemsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureInputItemsIsMutable();
+            inputItems_.set(index, value);
+            onChanged();
+          } else {
+            inputItemsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public Builder setInputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder builderForValue) {
+          if (inputItemsBuilder_ == null) {
+            ensureInputItemsIsMutable();
+            inputItems_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            inputItemsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public Builder addInputItems(icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item value) {
+          if (inputItemsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureInputItemsIsMutable();
+            inputItems_.add(value);
+            onChanged();
+          } else {
+            inputItemsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public Builder addInputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item value) {
+          if (inputItemsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureInputItemsIsMutable();
+            inputItems_.add(index, value);
+            onChanged();
+          } else {
+            inputItemsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public Builder addInputItems(
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder builderForValue) {
+          if (inputItemsBuilder_ == null) {
+            ensureInputItemsIsMutable();
+            inputItems_.add(builderForValue.build());
+            onChanged();
+          } else {
+            inputItemsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public Builder addInputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder builderForValue) {
+          if (inputItemsBuilder_ == null) {
+            ensureInputItemsIsMutable();
+            inputItems_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            inputItemsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public Builder addAllInputItems(
+            java.lang.Iterable<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item> values) {
+          if (inputItemsBuilder_ == null) {
+            ensureInputItemsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, inputItems_);
+            onChanged();
+          } else {
+            inputItemsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public Builder clearInputItems() {
+          if (inputItemsBuilder_ == null) {
+            inputItems_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+          } else {
+            inputItemsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public Builder removeInputItems(int index) {
+          if (inputItemsBuilder_ == null) {
+            ensureInputItemsIsMutable();
+            inputItems_.remove(index);
+            onChanged();
+          } else {
+            inputItemsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder getInputItemsBuilder(
+            int index) {
+          return getInputItemsFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder getInputItemsOrBuilder(
+            int index) {
+          if (inputItemsBuilder_ == null) {
+            return inputItems_.get(index);  } else {
+            return inputItemsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder> 
+             getInputItemsOrBuilderList() {
+          if (inputItemsBuilder_ != null) {
+            return inputItemsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(inputItems_);
+          }
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder addInputItemsBuilder() {
+          return getInputItemsFieldBuilder().addBuilder(
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder addInputItemsBuilder(
+            int index) {
+          return getInputItemsFieldBuilder().addBuilder(
+              index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * input product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item inputItems = 2;</code>
+         */
+        public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder> 
+             getInputItemsBuilderList() {
+          return getInputItemsFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder> 
+            getInputItemsFieldBuilder() {
+          if (inputItemsBuilder_ == null) {
+            inputItemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder>(
+                    inputItems_,
+                    ((bitField0_ & 0x00000002) == 0x00000002),
+                    getParentForChildren(),
+                    isClean());
+            inputItems_ = null;
+          }
+          return inputItemsBuilder_;
+        }
+
+        private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item> outputItems_ =
+          java.util.Collections.emptyList();
+        private void ensureOutputItemsIsMutable() {
+          if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+            outputItems_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item>(outputItems_);
+            bitField0_ |= 0x00000004;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder> outputItemsBuilder_;
+
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item> getOutputItemsList() {
+          if (outputItemsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(outputItems_);
+          } else {
+            return outputItemsBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public int getOutputItemsCount() {
+          if (outputItemsBuilder_ == null) {
+            return outputItems_.size();
+          } else {
+            return outputItemsBuilder_.getCount();
+          }
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item getOutputItems(int index) {
+          if (outputItemsBuilder_ == null) {
+            return outputItems_.get(index);
+          } else {
+            return outputItemsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public Builder setOutputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item value) {
+          if (outputItemsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureOutputItemsIsMutable();
+            outputItems_.set(index, value);
+            onChanged();
+          } else {
+            outputItemsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public Builder setOutputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder builderForValue) {
+          if (outputItemsBuilder_ == null) {
+            ensureOutputItemsIsMutable();
+            outputItems_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            outputItemsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public Builder addOutputItems(icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item value) {
+          if (outputItemsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureOutputItemsIsMutable();
+            outputItems_.add(value);
+            onChanged();
+          } else {
+            outputItemsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public Builder addOutputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item value) {
+          if (outputItemsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureOutputItemsIsMutable();
+            outputItems_.add(index, value);
+            onChanged();
+          } else {
+            outputItemsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public Builder addOutputItems(
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder builderForValue) {
+          if (outputItemsBuilder_ == null) {
+            ensureOutputItemsIsMutable();
+            outputItems_.add(builderForValue.build());
+            onChanged();
+          } else {
+            outputItemsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public Builder addOutputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder builderForValue) {
+          if (outputItemsBuilder_ == null) {
+            ensureOutputItemsIsMutable();
+            outputItems_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            outputItemsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public Builder addAllOutputItems(
+            java.lang.Iterable<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item> values) {
+          if (outputItemsBuilder_ == null) {
+            ensureOutputItemsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, outputItems_);
+            onChanged();
+          } else {
+            outputItemsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public Builder clearOutputItems() {
+          if (outputItemsBuilder_ == null) {
+            outputItems_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000004);
+            onChanged();
+          } else {
+            outputItemsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public Builder removeOutputItems(int index) {
+          if (outputItemsBuilder_ == null) {
+            ensureOutputItemsIsMutable();
+            outputItems_.remove(index);
+            onChanged();
+          } else {
+            outputItemsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder getOutputItemsBuilder(
+            int index) {
+          return getOutputItemsFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder getOutputItemsOrBuilder(
+            int index) {
+          if (outputItemsBuilder_ == null) {
+            return outputItems_.get(index);  } else {
+            return outputItemsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder> 
+             getOutputItemsOrBuilderList() {
+          if (outputItemsBuilder_ != null) {
+            return outputItemsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(outputItems_);
+          }
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder addOutputItemsBuilder() {
+          return getOutputItemsFieldBuilder().addBuilder(
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder addOutputItemsBuilder(
+            int index) {
+          return getOutputItemsFieldBuilder().addBuilder(
+              index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * output product id's defining the transform (with their respective ratio) 
+         * specify at least one.
+         * </pre>
+         *
+         * <code>repeated .NS3.Node.ProductTransform.Item outputItems = 3;</code>
+         */
+        public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder> 
+             getOutputItemsBuilderList() {
+          return getOutputItemsFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder> 
+            getOutputItemsFieldBuilder() {
+          if (outputItemsBuilder_ == null) {
+            outputItemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Item.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.ItemOrBuilder>(
+                    outputItems_,
+                    ((bitField0_ & 0x00000004) == 0x00000004),
+                    getParentForChildren(),
+                    isClean());
+            outputItems_ = null;
+          }
+          return outputItemsBuilder_;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:NS3.Node.ProductTransform)
+      }
+
+      // @@protoc_insertion_point(class_scope:NS3.Node.ProductTransform)
+      private static final icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform();
+      }
+
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<ProductTransform>
+          PARSER = new com.google.protobuf.AbstractParser<ProductTransform>() {
+        @java.lang.Override
+        public ProductTransform parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ProductTransform(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<ProductTransform> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ProductTransform> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
@@ -11449,6 +15012,61 @@ public final class Ns3Tbfvuwtge2Iq {
       return flowConstraints_.get(index);
     }
 
+    public static final int PRODUCTTRANSFORMS_FIELD_NUMBER = 10;
+    private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform> productTransforms_;
+    /**
+     * <pre>
+     * set of product transformer which may be used to satisfy other flows.
+     * </pre>
+     *
+     * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+     */
+    public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform> getProductTransformsList() {
+      return productTransforms_;
+    }
+    /**
+     * <pre>
+     * set of product transformer which may be used to satisfy other flows.
+     * </pre>
+     *
+     * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+     */
+    public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransformOrBuilder> 
+        getProductTransformsOrBuilderList() {
+      return productTransforms_;
+    }
+    /**
+     * <pre>
+     * set of product transformer which may be used to satisfy other flows.
+     * </pre>
+     *
+     * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+     */
+    public int getProductTransformsCount() {
+      return productTransforms_.size();
+    }
+    /**
+     * <pre>
+     * set of product transformer which may be used to satisfy other flows.
+     * </pre>
+     *
+     * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+     */
+    public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform getProductTransforms(int index) {
+      return productTransforms_.get(index);
+    }
+    /**
+     * <pre>
+     * set of product transformer which may be used to satisfy other flows.
+     * </pre>
+     *
+     * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+     */
+    public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransformOrBuilder getProductTransformsOrBuilder(
+        int index) {
+      return productTransforms_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -11498,6 +15116,12 @@ public final class Ns3Tbfvuwtge2Iq {
           return false;
         }
       }
+      for (int i = 0; i < getProductTransformsCount(); i++) {
+        if (!getProductTransforms(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -11531,6 +15155,9 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       for (int i = 0; i < flowConstraints_.size(); i++) {
         output.writeMessage(9, flowConstraints_.get(i));
+      }
+      for (int i = 0; i < productTransforms_.size(); i++) {
+        output.writeMessage(10, productTransforms_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -11580,6 +15207,10 @@ public final class Ns3Tbfvuwtge2Iq {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, flowConstraints_.get(i));
       }
+      for (int i = 0; i < productTransforms_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, productTransforms_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -11626,6 +15257,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       result = result && getFlowConstraintsList()
           .equals(other.getFlowConstraintsList());
+      result = result && getProductTransformsList()
+          .equals(other.getProductTransformsList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -11672,6 +15305,10 @@ public final class Ns3Tbfvuwtge2Iq {
       if (getFlowConstraintsCount() > 0) {
         hash = (37 * hash) + FLOWCONSTRAINTS_FIELD_NUMBER;
         hash = (53 * hash) + getFlowConstraintsList().hashCode();
+      }
+      if (getProductTransformsCount() > 0) {
+        hash = (37 * hash) + PRODUCTTRANSFORMS_FIELD_NUMBER;
+        hash = (53 * hash) + getProductTransformsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -11811,6 +15448,7 @@ public final class Ns3Tbfvuwtge2Iq {
           getFlowFieldBuilder();
           getProductFlowsFieldBuilder();
           getFlowConstraintsFieldBuilder();
+          getProductTransformsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -11857,6 +15495,12 @@ public final class Ns3Tbfvuwtge2Iq {
           bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           flowConstraintsBuilder_.clear();
+        }
+        if (productTransformsBuilder_ == null) {
+          productTransforms_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+        } else {
+          productTransformsBuilder_.clear();
         }
         return this;
       }
@@ -11950,6 +15594,15 @@ public final class Ns3Tbfvuwtge2Iq {
           result.flowConstraints_ = flowConstraints_;
         } else {
           result.flowConstraints_ = flowConstraintsBuilder_.build();
+        }
+        if (productTransformsBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) == 0x00000200)) {
+            productTransforms_ = java.util.Collections.unmodifiableList(productTransforms_);
+            bitField0_ = (bitField0_ & ~0x00000200);
+          }
+          result.productTransforms_ = productTransforms_;
+        } else {
+          result.productTransforms_ = productTransformsBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -12128,6 +15781,32 @@ public final class Ns3Tbfvuwtge2Iq {
             }
           }
         }
+        if (productTransformsBuilder_ == null) {
+          if (!other.productTransforms_.isEmpty()) {
+            if (productTransforms_.isEmpty()) {
+              productTransforms_ = other.productTransforms_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+            } else {
+              ensureProductTransformsIsMutable();
+              productTransforms_.addAll(other.productTransforms_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.productTransforms_.isEmpty()) {
+            if (productTransformsBuilder_.isEmpty()) {
+              productTransformsBuilder_.dispose();
+              productTransformsBuilder_ = null;
+              productTransforms_ = other.productTransforms_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+              productTransformsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProductTransformsFieldBuilder() : null;
+            } else {
+              productTransformsBuilder_.addAllMessages(other.productTransforms_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -12166,6 +15845,11 @@ public final class Ns3Tbfvuwtge2Iq {
         }
         for (int i = 0; i < getFlowConstraintsCount(); i++) {
           if (!getFlowConstraints(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getProductTransformsCount(); i++) {
+          if (!getProductTransforms(i).isInitialized()) {
             return false;
           }
         }
@@ -13819,6 +17503,318 @@ public final class Ns3Tbfvuwtge2Iq {
           flowConstraints_ = null;
         }
         return flowConstraintsBuilder_;
+      }
+
+      private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform> productTransforms_ =
+        java.util.Collections.emptyList();
+      private void ensureProductTransformsIsMutable() {
+        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+          productTransforms_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform>(productTransforms_);
+          bitField0_ |= 0x00000200;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransformOrBuilder> productTransformsBuilder_;
+
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform> getProductTransformsList() {
+        if (productTransformsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(productTransforms_);
+        } else {
+          return productTransformsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public int getProductTransformsCount() {
+        if (productTransformsBuilder_ == null) {
+          return productTransforms_.size();
+        } else {
+          return productTransformsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform getProductTransforms(int index) {
+        if (productTransformsBuilder_ == null) {
+          return productTransforms_.get(index);
+        } else {
+          return productTransformsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public Builder setProductTransforms(
+          int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform value) {
+        if (productTransformsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductTransformsIsMutable();
+          productTransforms_.set(index, value);
+          onChanged();
+        } else {
+          productTransformsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public Builder setProductTransforms(
+          int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Builder builderForValue) {
+        if (productTransformsBuilder_ == null) {
+          ensureProductTransformsIsMutable();
+          productTransforms_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          productTransformsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public Builder addProductTransforms(icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform value) {
+        if (productTransformsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductTransformsIsMutable();
+          productTransforms_.add(value);
+          onChanged();
+        } else {
+          productTransformsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public Builder addProductTransforms(
+          int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform value) {
+        if (productTransformsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductTransformsIsMutable();
+          productTransforms_.add(index, value);
+          onChanged();
+        } else {
+          productTransformsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public Builder addProductTransforms(
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Builder builderForValue) {
+        if (productTransformsBuilder_ == null) {
+          ensureProductTransformsIsMutable();
+          productTransforms_.add(builderForValue.build());
+          onChanged();
+        } else {
+          productTransformsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public Builder addProductTransforms(
+          int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Builder builderForValue) {
+        if (productTransformsBuilder_ == null) {
+          ensureProductTransformsIsMutable();
+          productTransforms_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          productTransformsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public Builder addAllProductTransforms(
+          java.lang.Iterable<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform> values) {
+        if (productTransformsBuilder_ == null) {
+          ensureProductTransformsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, productTransforms_);
+          onChanged();
+        } else {
+          productTransformsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public Builder clearProductTransforms() {
+        if (productTransformsBuilder_ == null) {
+          productTransforms_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+          onChanged();
+        } else {
+          productTransformsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public Builder removeProductTransforms(int index) {
+        if (productTransformsBuilder_ == null) {
+          ensureProductTransformsIsMutable();
+          productTransforms_.remove(index);
+          onChanged();
+        } else {
+          productTransformsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Builder getProductTransformsBuilder(
+          int index) {
+        return getProductTransformsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransformOrBuilder getProductTransformsOrBuilder(
+          int index) {
+        if (productTransformsBuilder_ == null) {
+          return productTransforms_.get(index);  } else {
+          return productTransformsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransformOrBuilder> 
+           getProductTransformsOrBuilderList() {
+        if (productTransformsBuilder_ != null) {
+          return productTransformsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(productTransforms_);
+        }
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Builder addProductTransformsBuilder() {
+        return getProductTransformsFieldBuilder().addBuilder(
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Builder addProductTransformsBuilder(
+          int index) {
+        return getProductTransformsFieldBuilder().addBuilder(
+            index, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * set of product transformer which may be used to satisfy other flows.
+       * </pre>
+       *
+       * <code>repeated .NS3.Node.ProductTransform productTransforms = 10;</code>
+       */
+      public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Builder> 
+           getProductTransformsBuilderList() {
+        return getProductTransformsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransformOrBuilder> 
+          getProductTransformsFieldBuilder() {
+        if (productTransformsBuilder_ == null) {
+          productTransformsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransform.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.Node.ProductTransformOrBuilder>(
+                  productTransforms_,
+                  ((bitField0_ & 0x00000200) == 0x00000200),
+                  getParentForChildren(),
+                  isClean());
+          productTransforms_ = null;
+        }
+        return productTransformsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -16075,7 +20071,8 @@ public final class Ns3Tbfvuwtge2Iq {
 
     /**
      * <pre>
-     * If both product ids and product group ids are specified, the intersection of these two is used.
+     * If both product ids and product group ids are specified, the
+     * intersection of these two is used.
      * </pre>
      *
      * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -16084,7 +20081,8 @@ public final class Ns3Tbfvuwtge2Iq {
         getUnitDimensionCostsList();
     /**
      * <pre>
-     * If both product ids and product group ids are specified, the intersection of these two is used.
+     * If both product ids and product group ids are specified, the
+     * intersection of these two is used.
      * </pre>
      *
      * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -16092,7 +20090,8 @@ public final class Ns3Tbfvuwtge2Iq {
     icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost getUnitDimensionCosts(int index);
     /**
      * <pre>
-     * If both product ids and product group ids are specified, the intersection of these two is used.
+     * If both product ids and product group ids are specified, the
+     * intersection of these two is used.
      * </pre>
      *
      * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -16100,7 +20099,8 @@ public final class Ns3Tbfvuwtge2Iq {
     int getUnitDimensionCostsCount();
     /**
      * <pre>
-     * If both product ids and product group ids are specified, the intersection of these two is used.
+     * If both product ids and product group ids are specified, the
+     * intersection of these two is used.
      * </pre>
      *
      * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -16109,7 +20109,8 @@ public final class Ns3Tbfvuwtge2Iq {
         getUnitDimensionCostsOrBuilderList();
     /**
      * <pre>
-     * If both product ids and product group ids are specified, the intersection of these two is used.
+     * If both product ids and product group ids are specified, the
+     * intersection of these two is used.
      * </pre>
      *
      * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -16531,7 +20532,8 @@ public final class Ns3Tbfvuwtge2Iq {
     private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> unitDimensionCosts_;
     /**
      * <pre>
-     * If both product ids and product group ids are specified, the intersection of these two is used.
+     * If both product ids and product group ids are specified, the
+     * intersection of these two is used.
      * </pre>
      *
      * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -16541,7 +20543,8 @@ public final class Ns3Tbfvuwtge2Iq {
     }
     /**
      * <pre>
-     * If both product ids and product group ids are specified, the intersection of these two is used.
+     * If both product ids and product group ids are specified, the
+     * intersection of these two is used.
      * </pre>
      *
      * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -16552,7 +20555,8 @@ public final class Ns3Tbfvuwtge2Iq {
     }
     /**
      * <pre>
-     * If both product ids and product group ids are specified, the intersection of these two is used.
+     * If both product ids and product group ids are specified, the
+     * intersection of these two is used.
      * </pre>
      *
      * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -16562,7 +20566,8 @@ public final class Ns3Tbfvuwtge2Iq {
     }
     /**
      * <pre>
-     * If both product ids and product group ids are specified, the intersection of these two is used.
+     * If both product ids and product group ids are specified, the
+     * intersection of these two is used.
      * </pre>
      *
      * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -16572,7 +20577,8 @@ public final class Ns3Tbfvuwtge2Iq {
     }
     /**
      * <pre>
-     * If both product ids and product group ids are specified, the intersection of these two is used.
+     * If both product ids and product group ids are specified, the
+     * intersection of these two is used.
      * </pre>
      *
      * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17731,7 +21737,8 @@ public final class Ns3Tbfvuwtge2Iq {
 
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17745,7 +21752,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17759,7 +21767,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17773,7 +21782,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17794,7 +21804,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17812,7 +21823,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17832,7 +21844,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17853,7 +21866,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17871,7 +21885,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17889,7 +21904,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17908,7 +21924,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17925,7 +21942,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17942,7 +21960,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17953,7 +21972,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17967,7 +21987,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17982,7 +22003,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -17993,7 +22015,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -18005,7 +22028,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * If both product ids and product group ids are specified, the intersection of these two is used.
+       * If both product ids and product group ids are specified, the
+       * intersection of these two is used.
        * </pre>
        *
        * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 7;</code>
@@ -18461,27 +22485,27 @@ public final class Ns3Tbfvuwtge2Iq {
         getProductGroupIdsBytes(int index);
 
     /**
-     * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+     * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
      */
     java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> 
-        getUnitDimensionCostList();
+        getUnitDimensionCostsList();
     /**
-     * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+     * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
      */
-    icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost getUnitDimensionCost(int index);
+    icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost getUnitDimensionCosts(int index);
     /**
-     * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+     * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
      */
-    int getUnitDimensionCostCount();
+    int getUnitDimensionCostsCount();
     /**
-     * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+     * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
      */
     java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder> 
-        getUnitDimensionCostOrBuilderList();
+        getUnitDimensionCostsOrBuilderList();
     /**
-     * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+     * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
      */
-    icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder getUnitDimensionCostOrBuilder(
+    icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder getUnitDimensionCostsOrBuilder(
         int index);
 
     /**
@@ -18529,7 +22553,7 @@ public final class Ns3Tbfvuwtge2Iq {
       id_ = "";
       source_ = "";
       productGroupIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      unitDimensionCost_ = java.util.Collections.emptyList();
+      unitDimensionCosts_ = java.util.Collections.emptyList();
       flowConstraints_ = java.util.Collections.emptyList();
     }
 
@@ -18580,10 +22604,10 @@ public final class Ns3Tbfvuwtge2Iq {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                unitDimensionCost_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost>();
+                unitDimensionCosts_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost>();
                 mutable_bitField0_ |= 0x00000008;
               }
-              unitDimensionCost_.add(
+              unitDimensionCosts_.add(
                   input.readMessage(icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.PARSER, extensionRegistry));
               break;
             }
@@ -18615,7 +22639,7 @@ public final class Ns3Tbfvuwtge2Iq {
           productGroupIds_ = productGroupIds_.getUnmodifiableView();
         }
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          unitDimensionCost_ = java.util.Collections.unmodifiableList(unitDimensionCost_);
+          unitDimensionCosts_ = java.util.Collections.unmodifiableList(unitDimensionCosts_);
         }
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           flowConstraints_ = java.util.Collections.unmodifiableList(flowConstraints_);
@@ -18767,39 +22791,39 @@ public final class Ns3Tbfvuwtge2Iq {
       return productGroupIds_.getByteString(index);
     }
 
-    public static final int UNITDIMENSIONCOST_FIELD_NUMBER = 4;
-    private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> unitDimensionCost_;
+    public static final int UNITDIMENSIONCOSTS_FIELD_NUMBER = 4;
+    private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> unitDimensionCosts_;
     /**
-     * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+     * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
      */
-    public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> getUnitDimensionCostList() {
-      return unitDimensionCost_;
+    public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> getUnitDimensionCostsList() {
+      return unitDimensionCosts_;
     }
     /**
-     * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+     * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
      */
     public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder> 
-        getUnitDimensionCostOrBuilderList() {
-      return unitDimensionCost_;
+        getUnitDimensionCostsOrBuilderList() {
+      return unitDimensionCosts_;
     }
     /**
-     * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+     * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
      */
-    public int getUnitDimensionCostCount() {
-      return unitDimensionCost_.size();
+    public int getUnitDimensionCostsCount() {
+      return unitDimensionCosts_.size();
     }
     /**
-     * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+     * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
      */
-    public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost getUnitDimensionCost(int index) {
-      return unitDimensionCost_.get(index);
+    public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost getUnitDimensionCosts(int index) {
+      return unitDimensionCosts_.get(index);
     }
     /**
-     * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+     * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
      */
-    public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder getUnitDimensionCostOrBuilder(
+    public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder getUnitDimensionCostsOrBuilder(
         int index) {
-      return unitDimensionCost_.get(index);
+      return unitDimensionCosts_.get(index);
     }
 
     public static final int FLOWCONSTRAINTS_FIELD_NUMBER = 5;
@@ -18852,8 +22876,8 @@ public final class Ns3Tbfvuwtge2Iq {
         memoizedIsInitialized = 0;
         return false;
       }
-      for (int i = 0; i < getUnitDimensionCostCount(); i++) {
-        if (!getUnitDimensionCost(i).isInitialized()) {
+      for (int i = 0; i < getUnitDimensionCostsCount(); i++) {
+        if (!getUnitDimensionCosts(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -18880,8 +22904,8 @@ public final class Ns3Tbfvuwtge2Iq {
       for (int i = 0; i < productGroupIds_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, productGroupIds_.getRaw(i));
       }
-      for (int i = 0; i < unitDimensionCost_.size(); i++) {
-        output.writeMessage(4, unitDimensionCost_.get(i));
+      for (int i = 0; i < unitDimensionCosts_.size(); i++) {
+        output.writeMessage(4, unitDimensionCosts_.get(i));
       }
       for (int i = 0; i < flowConstraints_.size(); i++) {
         output.writeMessage(5, flowConstraints_.get(i));
@@ -18909,9 +22933,9 @@ public final class Ns3Tbfvuwtge2Iq {
         size += dataSize;
         size += 1 * getProductGroupIdsList().size();
       }
-      for (int i = 0; i < unitDimensionCost_.size(); i++) {
+      for (int i = 0; i < unitDimensionCosts_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, unitDimensionCost_.get(i));
+          .computeMessageSize(4, unitDimensionCosts_.get(i));
       }
       for (int i = 0; i < flowConstraints_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -18945,8 +22969,8 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       result = result && getProductGroupIdsList()
           .equals(other.getProductGroupIdsList());
-      result = result && getUnitDimensionCostList()
-          .equals(other.getUnitDimensionCostList());
+      result = result && getUnitDimensionCostsList()
+          .equals(other.getUnitDimensionCostsList());
       result = result && getFlowConstraintsList()
           .equals(other.getFlowConstraintsList());
       result = result && unknownFields.equals(other.unknownFields);
@@ -18972,9 +22996,9 @@ public final class Ns3Tbfvuwtge2Iq {
         hash = (37 * hash) + PRODUCTGROUPIDS_FIELD_NUMBER;
         hash = (53 * hash) + getProductGroupIdsList().hashCode();
       }
-      if (getUnitDimensionCostCount() > 0) {
-        hash = (37 * hash) + UNITDIMENSIONCOST_FIELD_NUMBER;
-        hash = (53 * hash) + getUnitDimensionCostList().hashCode();
+      if (getUnitDimensionCostsCount() > 0) {
+        hash = (37 * hash) + UNITDIMENSIONCOSTS_FIELD_NUMBER;
+        hash = (53 * hash) + getUnitDimensionCostsList().hashCode();
       }
       if (getFlowConstraintsCount() > 0) {
         hash = (37 * hash) + FLOWCONSTRAINTS_FIELD_NUMBER;
@@ -19113,7 +23137,7 @@ public final class Ns3Tbfvuwtge2Iq {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getUnitDimensionCostFieldBuilder();
+          getUnitDimensionCostsFieldBuilder();
           getFlowConstraintsFieldBuilder();
         }
       }
@@ -19126,11 +23150,11 @@ public final class Ns3Tbfvuwtge2Iq {
         bitField0_ = (bitField0_ & ~0x00000002);
         productGroupIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
-        if (unitDimensionCostBuilder_ == null) {
-          unitDimensionCost_ = java.util.Collections.emptyList();
+        if (unitDimensionCostsBuilder_ == null) {
+          unitDimensionCosts_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          unitDimensionCostBuilder_.clear();
+          unitDimensionCostsBuilder_.clear();
         }
         if (flowConstraintsBuilder_ == null) {
           flowConstraints_ = java.util.Collections.emptyList();
@@ -19179,14 +23203,14 @@ public final class Ns3Tbfvuwtge2Iq {
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.productGroupIds_ = productGroupIds_;
-        if (unitDimensionCostBuilder_ == null) {
+        if (unitDimensionCostsBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            unitDimensionCost_ = java.util.Collections.unmodifiableList(unitDimensionCost_);
+            unitDimensionCosts_ = java.util.Collections.unmodifiableList(unitDimensionCosts_);
             bitField0_ = (bitField0_ & ~0x00000008);
           }
-          result.unitDimensionCost_ = unitDimensionCost_;
+          result.unitDimensionCosts_ = unitDimensionCosts_;
         } else {
-          result.unitDimensionCost_ = unitDimensionCostBuilder_.build();
+          result.unitDimensionCosts_ = unitDimensionCostsBuilder_.build();
         }
         if (flowConstraintsBuilder_ == null) {
           if (((bitField0_ & 0x00000010) == 0x00000010)) {
@@ -19266,29 +23290,29 @@ public final class Ns3Tbfvuwtge2Iq {
           }
           onChanged();
         }
-        if (unitDimensionCostBuilder_ == null) {
-          if (!other.unitDimensionCost_.isEmpty()) {
-            if (unitDimensionCost_.isEmpty()) {
-              unitDimensionCost_ = other.unitDimensionCost_;
+        if (unitDimensionCostsBuilder_ == null) {
+          if (!other.unitDimensionCosts_.isEmpty()) {
+            if (unitDimensionCosts_.isEmpty()) {
+              unitDimensionCosts_ = other.unitDimensionCosts_;
               bitField0_ = (bitField0_ & ~0x00000008);
             } else {
-              ensureUnitDimensionCostIsMutable();
-              unitDimensionCost_.addAll(other.unitDimensionCost_);
+              ensureUnitDimensionCostsIsMutable();
+              unitDimensionCosts_.addAll(other.unitDimensionCosts_);
             }
             onChanged();
           }
         } else {
-          if (!other.unitDimensionCost_.isEmpty()) {
-            if (unitDimensionCostBuilder_.isEmpty()) {
-              unitDimensionCostBuilder_.dispose();
-              unitDimensionCostBuilder_ = null;
-              unitDimensionCost_ = other.unitDimensionCost_;
+          if (!other.unitDimensionCosts_.isEmpty()) {
+            if (unitDimensionCostsBuilder_.isEmpty()) {
+              unitDimensionCostsBuilder_.dispose();
+              unitDimensionCostsBuilder_ = null;
+              unitDimensionCosts_ = other.unitDimensionCosts_;
               bitField0_ = (bitField0_ & ~0x00000008);
-              unitDimensionCostBuilder_ = 
+              unitDimensionCostsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getUnitDimensionCostFieldBuilder() : null;
+                   getUnitDimensionCostsFieldBuilder() : null;
             } else {
-              unitDimensionCostBuilder_.addAllMessages(other.unitDimensionCost_);
+              unitDimensionCostsBuilder_.addAllMessages(other.unitDimensionCosts_);
             }
           }
         }
@@ -19331,8 +23355,8 @@ public final class Ns3Tbfvuwtge2Iq {
         if (!hasSource()) {
           return false;
         }
-        for (int i = 0; i < getUnitDimensionCostCount(); i++) {
-          if (!getUnitDimensionCost(i).isInitialized()) {
+        for (int i = 0; i < getUnitDimensionCostsCount(); i++) {
+          if (!getUnitDimensionCosts(i).isInitialized()) {
             return false;
           }
         }
@@ -19645,244 +23669,244 @@ public final class Ns3Tbfvuwtge2Iq {
         return this;
       }
 
-      private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> unitDimensionCost_ =
+      private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> unitDimensionCosts_ =
         java.util.Collections.emptyList();
-      private void ensureUnitDimensionCostIsMutable() {
+      private void ensureUnitDimensionCostsIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          unitDimensionCost_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost>(unitDimensionCost_);
+          unitDimensionCosts_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost>(unitDimensionCosts_);
           bitField0_ |= 0x00000008;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder> unitDimensionCostBuilder_;
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder> unitDimensionCostsBuilder_;
 
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> getUnitDimensionCostList() {
-        if (unitDimensionCostBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(unitDimensionCost_);
+      public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> getUnitDimensionCostsList() {
+        if (unitDimensionCostsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(unitDimensionCosts_);
         } else {
-          return unitDimensionCostBuilder_.getMessageList();
+          return unitDimensionCostsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public int getUnitDimensionCostCount() {
-        if (unitDimensionCostBuilder_ == null) {
-          return unitDimensionCost_.size();
+      public int getUnitDimensionCostsCount() {
+        if (unitDimensionCostsBuilder_ == null) {
+          return unitDimensionCosts_.size();
         } else {
-          return unitDimensionCostBuilder_.getCount();
+          return unitDimensionCostsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost getUnitDimensionCost(int index) {
-        if (unitDimensionCostBuilder_ == null) {
-          return unitDimensionCost_.get(index);
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost getUnitDimensionCosts(int index) {
+        if (unitDimensionCostsBuilder_ == null) {
+          return unitDimensionCosts_.get(index);
         } else {
-          return unitDimensionCostBuilder_.getMessage(index);
+          return unitDimensionCostsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public Builder setUnitDimensionCost(
+      public Builder setUnitDimensionCosts(
           int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost value) {
-        if (unitDimensionCostBuilder_ == null) {
+        if (unitDimensionCostsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureUnitDimensionCostIsMutable();
-          unitDimensionCost_.set(index, value);
+          ensureUnitDimensionCostsIsMutable();
+          unitDimensionCosts_.set(index, value);
           onChanged();
         } else {
-          unitDimensionCostBuilder_.setMessage(index, value);
+          unitDimensionCostsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public Builder setUnitDimensionCost(
+      public Builder setUnitDimensionCosts(
           int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder builderForValue) {
-        if (unitDimensionCostBuilder_ == null) {
-          ensureUnitDimensionCostIsMutable();
-          unitDimensionCost_.set(index, builderForValue.build());
+        if (unitDimensionCostsBuilder_ == null) {
+          ensureUnitDimensionCostsIsMutable();
+          unitDimensionCosts_.set(index, builderForValue.build());
           onChanged();
         } else {
-          unitDimensionCostBuilder_.setMessage(index, builderForValue.build());
+          unitDimensionCostsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public Builder addUnitDimensionCost(icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost value) {
-        if (unitDimensionCostBuilder_ == null) {
+      public Builder addUnitDimensionCosts(icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost value) {
+        if (unitDimensionCostsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureUnitDimensionCostIsMutable();
-          unitDimensionCost_.add(value);
+          ensureUnitDimensionCostsIsMutable();
+          unitDimensionCosts_.add(value);
           onChanged();
         } else {
-          unitDimensionCostBuilder_.addMessage(value);
+          unitDimensionCostsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public Builder addUnitDimensionCost(
+      public Builder addUnitDimensionCosts(
           int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost value) {
-        if (unitDimensionCostBuilder_ == null) {
+        if (unitDimensionCostsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureUnitDimensionCostIsMutable();
-          unitDimensionCost_.add(index, value);
+          ensureUnitDimensionCostsIsMutable();
+          unitDimensionCosts_.add(index, value);
           onChanged();
         } else {
-          unitDimensionCostBuilder_.addMessage(index, value);
+          unitDimensionCostsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public Builder addUnitDimensionCost(
+      public Builder addUnitDimensionCosts(
           icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder builderForValue) {
-        if (unitDimensionCostBuilder_ == null) {
-          ensureUnitDimensionCostIsMutable();
-          unitDimensionCost_.add(builderForValue.build());
+        if (unitDimensionCostsBuilder_ == null) {
+          ensureUnitDimensionCostsIsMutable();
+          unitDimensionCosts_.add(builderForValue.build());
           onChanged();
         } else {
-          unitDimensionCostBuilder_.addMessage(builderForValue.build());
+          unitDimensionCostsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public Builder addUnitDimensionCost(
+      public Builder addUnitDimensionCosts(
           int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder builderForValue) {
-        if (unitDimensionCostBuilder_ == null) {
-          ensureUnitDimensionCostIsMutable();
-          unitDimensionCost_.add(index, builderForValue.build());
+        if (unitDimensionCostsBuilder_ == null) {
+          ensureUnitDimensionCostsIsMutable();
+          unitDimensionCosts_.add(index, builderForValue.build());
           onChanged();
         } else {
-          unitDimensionCostBuilder_.addMessage(index, builderForValue.build());
+          unitDimensionCostsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public Builder addAllUnitDimensionCost(
+      public Builder addAllUnitDimensionCosts(
           java.lang.Iterable<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost> values) {
-        if (unitDimensionCostBuilder_ == null) {
-          ensureUnitDimensionCostIsMutable();
+        if (unitDimensionCostsBuilder_ == null) {
+          ensureUnitDimensionCostsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, unitDimensionCost_);
+              values, unitDimensionCosts_);
           onChanged();
         } else {
-          unitDimensionCostBuilder_.addAllMessages(values);
+          unitDimensionCostsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public Builder clearUnitDimensionCost() {
-        if (unitDimensionCostBuilder_ == null) {
-          unitDimensionCost_ = java.util.Collections.emptyList();
+      public Builder clearUnitDimensionCosts() {
+        if (unitDimensionCostsBuilder_ == null) {
+          unitDimensionCosts_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
-          unitDimensionCostBuilder_.clear();
+          unitDimensionCostsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public Builder removeUnitDimensionCost(int index) {
-        if (unitDimensionCostBuilder_ == null) {
-          ensureUnitDimensionCostIsMutable();
-          unitDimensionCost_.remove(index);
+      public Builder removeUnitDimensionCosts(int index) {
+        if (unitDimensionCostsBuilder_ == null) {
+          ensureUnitDimensionCostsIsMutable();
+          unitDimensionCosts_.remove(index);
           onChanged();
         } else {
-          unitDimensionCostBuilder_.remove(index);
+          unitDimensionCostsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder getUnitDimensionCostBuilder(
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder getUnitDimensionCostsBuilder(
           int index) {
-        return getUnitDimensionCostFieldBuilder().getBuilder(index);
+        return getUnitDimensionCostsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder getUnitDimensionCostOrBuilder(
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder getUnitDimensionCostsOrBuilder(
           int index) {
-        if (unitDimensionCostBuilder_ == null) {
-          return unitDimensionCost_.get(index);  } else {
-          return unitDimensionCostBuilder_.getMessageOrBuilder(index);
+        if (unitDimensionCostsBuilder_ == null) {
+          return unitDimensionCosts_.get(index);  } else {
+          return unitDimensionCostsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
       public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder> 
-           getUnitDimensionCostOrBuilderList() {
-        if (unitDimensionCostBuilder_ != null) {
-          return unitDimensionCostBuilder_.getMessageOrBuilderList();
+           getUnitDimensionCostsOrBuilderList() {
+        if (unitDimensionCostsBuilder_ != null) {
+          return unitDimensionCostsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(unitDimensionCost_);
+          return java.util.Collections.unmodifiableList(unitDimensionCosts_);
         }
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder addUnitDimensionCostBuilder() {
-        return getUnitDimensionCostFieldBuilder().addBuilder(
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder addUnitDimensionCostsBuilder() {
+        return getUnitDimensionCostsFieldBuilder().addBuilder(
             icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.getDefaultInstance());
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
-      public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder addUnitDimensionCostBuilder(
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder addUnitDimensionCostsBuilder(
           int index) {
-        return getUnitDimensionCostFieldBuilder().addBuilder(
+        return getUnitDimensionCostsFieldBuilder().addBuilder(
             index, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.getDefaultInstance());
       }
       /**
-       * <code>repeated .NS3.UnitDimensionCost unitDimensionCost = 4;</code>
+       * <code>repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;</code>
        */
       public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder> 
-           getUnitDimensionCostBuilderList() {
-        return getUnitDimensionCostFieldBuilder().getBuilderList();
+           getUnitDimensionCostsBuilderList() {
+        return getUnitDimensionCostsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder> 
-          getUnitDimensionCostFieldBuilder() {
-        if (unitDimensionCostBuilder_ == null) {
-          unitDimensionCostBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getUnitDimensionCostsFieldBuilder() {
+        if (unitDimensionCostsBuilder_ == null) {
+          unitDimensionCostsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCost.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.UnitDimensionCostOrBuilder>(
-                  unitDimensionCost_,
+                  unitDimensionCosts_,
                   ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
                   isClean());
-          unitDimensionCost_ = null;
+          unitDimensionCosts_ = null;
         }
-        return unitDimensionCostBuilder_;
+        return unitDimensionCostsBuilder_;
       }
 
       private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.FlowDimensionalConstraint> flowConstraints_ =
@@ -22359,7 +26383,7 @@ public final class Ns3Tbfvuwtge2Iq {
 
     /**
      * <pre>
-     * the model ID can be obtained by uploading a cached model to the api.
+     * the model ID from a previously optimised
      * </pre>
      *
      * <code>optional string modelID = 2;</code>
@@ -22367,7 +26391,7 @@ public final class Ns3Tbfvuwtge2Iq {
     boolean hasModelID();
     /**
      * <pre>
-     * the model ID can be obtained by uploading a cached model to the api.
+     * the model ID from a previously optimised
      * </pre>
      *
      * <code>optional string modelID = 2;</code>
@@ -22375,7 +26399,7 @@ public final class Ns3Tbfvuwtge2Iq {
     java.lang.String getModelID();
     /**
      * <pre>
-     * the model ID can be obtained by uploading a cached model to the api.
+     * the model ID from a previously optimised
      * </pre>
      *
      * <code>optional string modelID = 2;</code>
@@ -22384,10 +26408,18 @@ public final class Ns3Tbfvuwtge2Iq {
         getModelIDBytes();
 
     /**
+     * <pre>
+     * request (for use with evaluate solve type)
+     * </pre>
+     *
      * <code>optional .NS3.SolveRequest.SolveType solveType = 4 [default = Optimise];</code>
      */
     boolean hasSolveType();
     /**
+     * <pre>
+     * request (for use with evaluate solve type)
+     * </pre>
+     *
      * <code>optional .NS3.SolveRequest.SolveType solveType = 4 [default = Optimise];</code>
      */
     icepackai.NS3.Ns3Tbfvuwtge2Iq.SolveRequest.SolveType getSolveType();
@@ -22732,7 +26764,7 @@ public final class Ns3Tbfvuwtge2Iq {
     private volatile java.lang.Object modelID_;
     /**
      * <pre>
-     * the model ID can be obtained by uploading a cached model to the api.
+     * the model ID from a previously optimised
      * </pre>
      *
      * <code>optional string modelID = 2;</code>
@@ -22742,7 +26774,7 @@ public final class Ns3Tbfvuwtge2Iq {
     }
     /**
      * <pre>
-     * the model ID can be obtained by uploading a cached model to the api.
+     * the model ID from a previously optimised
      * </pre>
      *
      * <code>optional string modelID = 2;</code>
@@ -22763,7 +26795,7 @@ public final class Ns3Tbfvuwtge2Iq {
     }
     /**
      * <pre>
-     * the model ID can be obtained by uploading a cached model to the api.
+     * the model ID from a previously optimised
      * </pre>
      *
      * <code>optional string modelID = 2;</code>
@@ -22785,12 +26817,20 @@ public final class Ns3Tbfvuwtge2Iq {
     public static final int SOLVETYPE_FIELD_NUMBER = 4;
     private int solveType_;
     /**
+     * <pre>
+     * request (for use with evaluate solve type)
+     * </pre>
+     *
      * <code>optional .NS3.SolveRequest.SolveType solveType = 4 [default = Optimise];</code>
      */
     public boolean hasSolveType() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
+     * <pre>
+     * request (for use with evaluate solve type)
+     * </pre>
+     *
      * <code>optional .NS3.SolveRequest.SolveType solveType = 4 [default = Optimise];</code>
      */
     public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolveRequest.SolveType getSolveType() {
@@ -23387,7 +27427,7 @@ public final class Ns3Tbfvuwtge2Iq {
       private java.lang.Object modelID_ = "";
       /**
        * <pre>
-       * the model ID can be obtained by uploading a cached model to the api.
+       * the model ID from a previously optimised
        * </pre>
        *
        * <code>optional string modelID = 2;</code>
@@ -23397,7 +27437,7 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * the model ID can be obtained by uploading a cached model to the api.
+       * the model ID from a previously optimised
        * </pre>
        *
        * <code>optional string modelID = 2;</code>
@@ -23418,7 +27458,7 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * the model ID can be obtained by uploading a cached model to the api.
+       * the model ID from a previously optimised
        * </pre>
        *
        * <code>optional string modelID = 2;</code>
@@ -23438,7 +27478,7 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * the model ID can be obtained by uploading a cached model to the api.
+       * the model ID from a previously optimised
        * </pre>
        *
        * <code>optional string modelID = 2;</code>
@@ -23455,7 +27495,7 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * the model ID can be obtained by uploading a cached model to the api.
+       * the model ID from a previously optimised
        * </pre>
        *
        * <code>optional string modelID = 2;</code>
@@ -23468,7 +27508,7 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       /**
        * <pre>
-       * the model ID can be obtained by uploading a cached model to the api.
+       * the model ID from a previously optimised
        * </pre>
        *
        * <code>optional string modelID = 2;</code>
@@ -23486,12 +27526,20 @@ public final class Ns3Tbfvuwtge2Iq {
 
       private int solveType_ = 0;
       /**
+       * <pre>
+       * request (for use with evaluate solve type)
+       * </pre>
+       *
        * <code>optional .NS3.SolveRequest.SolveType solveType = 4 [default = Optimise];</code>
        */
       public boolean hasSolveType() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
+       * <pre>
+       * request (for use with evaluate solve type)
+       * </pre>
+       *
        * <code>optional .NS3.SolveRequest.SolveType solveType = 4 [default = Optimise];</code>
        */
       public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolveRequest.SolveType getSolveType() {
@@ -23500,6 +27548,10 @@ public final class Ns3Tbfvuwtge2Iq {
         return result == null ? icepackai.NS3.Ns3Tbfvuwtge2Iq.SolveRequest.SolveType.Optimise : result;
       }
       /**
+       * <pre>
+       * request (for use with evaluate solve type)
+       * </pre>
+       *
        * <code>optional .NS3.SolveRequest.SolveType solveType = 4 [default = Optimise];</code>
        */
       public Builder setSolveType(icepackai.NS3.Ns3Tbfvuwtge2Iq.SolveRequest.SolveType value) {
@@ -23512,6 +27564,10 @@ public final class Ns3Tbfvuwtge2Iq {
         return this;
       }
       /**
+       * <pre>
+       * request (for use with evaluate solve type)
+       * </pre>
+       *
        * <code>optional .NS3.SolveRequest.SolveType solveType = 4 [default = Optimise];</code>
        */
       public Builder clearSolveType() {
@@ -23760,6 +27816,30 @@ public final class Ns3Tbfvuwtge2Iq {
      */
     icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.RouteOrBuilder getRoutesOrBuilder(
         int index);
+
+    /**
+     * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+     */
+    java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment> 
+        getNodeProductTransformAssignmentsList();
+    /**
+     * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+     */
+    icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment getNodeProductTransformAssignments(int index);
+    /**
+     * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+     */
+    int getNodeProductTransformAssignmentsCount();
+    /**
+     * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+     */
+    java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignmentOrBuilder> 
+        getNodeProductTransformAssignmentsOrBuilderList();
+    /**
+     * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+     */
+    icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignmentOrBuilder getNodeProductTransformAssignmentsOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -23787,6 +27867,7 @@ public final class Ns3Tbfvuwtge2Iq {
       nodeProductFlows_ = java.util.Collections.emptyList();
       geometrySequence_ = java.util.Collections.emptyList();
       routes_ = java.util.Collections.emptyList();
+      nodeProductTransformAssignments_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -23873,6 +27954,15 @@ public final class Ns3Tbfvuwtge2Iq {
                   input.readMessage(icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.Route.PARSER, extensionRegistry));
               break;
             }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                nodeProductTransformAssignments_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              nodeProductTransformAssignments_.add(
+                  input.readMessage(icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.PARSER, extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -23902,6 +27992,9 @@ public final class Ns3Tbfvuwtge2Iq {
         }
         if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
           routes_ = java.util.Collections.unmodifiableList(routes_);
+        }
+        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+          nodeProductTransformAssignments_ = java.util.Collections.unmodifiableList(nodeProductTransformAssignments_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -30712,6 +34805,2887 @@ public final class Ns3Tbfvuwtge2Iq {
 
     }
 
+    public interface NodeProductTransformAssignmentOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:NS3.SolutionResponse.NodeProductTransformAssignment)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * identifiers
+       * </pre>
+       *
+       * <code>required string nodeId = 1;</code>
+       */
+      boolean hasNodeId();
+      /**
+       * <pre>
+       * identifiers
+       * </pre>
+       *
+       * <code>required string nodeId = 1;</code>
+       */
+      java.lang.String getNodeId();
+      /**
+       * <pre>
+       * identifiers
+       * </pre>
+       *
+       * <code>required string nodeId = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getNodeIdBytes();
+
+      /**
+       * <code>required string productTransformId = 2;</code>
+       */
+      boolean hasProductTransformId();
+      /**
+       * <code>required string productTransformId = 2;</code>
+       */
+      java.lang.String getProductTransformId();
+      /**
+       * <code>required string productTransformId = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getProductTransformIdBytes();
+
+      /**
+       * <pre>
+       * input+output terms / ratios
+       * </pre>
+       *
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+       */
+      java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item> 
+          getInputItemsList();
+      /**
+       * <pre>
+       * input+output terms / ratios
+       * </pre>
+       *
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+       */
+      icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item getInputItems(int index);
+      /**
+       * <pre>
+       * input+output terms / ratios
+       * </pre>
+       *
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+       */
+      int getInputItemsCount();
+      /**
+       * <pre>
+       * input+output terms / ratios
+       * </pre>
+       *
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+       */
+      java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder> 
+          getInputItemsOrBuilderList();
+      /**
+       * <pre>
+       * input+output terms / ratios
+       * </pre>
+       *
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+       */
+      icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder getInputItemsOrBuilder(
+          int index);
+
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+       */
+      java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item> 
+          getOutputItemsList();
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+       */
+      icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item getOutputItems(int index);
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+       */
+      int getOutputItemsCount();
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+       */
+      java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder> 
+          getOutputItemsOrBuilderList();
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+       */
+      icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder getOutputItemsOrBuilder(
+          int index);
+    }
+    /**
+     * Protobuf type {@code NS3.SolutionResponse.NodeProductTransformAssignment}
+     */
+    public  static final class NodeProductTransformAssignment extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:NS3.SolutionResponse.NodeProductTransformAssignment)
+        NodeProductTransformAssignmentOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use NodeProductTransformAssignment.newBuilder() to construct.
+      private NodeProductTransformAssignment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private NodeProductTransformAssignment() {
+        nodeId_ = "";
+        productTransformId_ = "";
+        inputItems_ = java.util.Collections.emptyList();
+        outputItems_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private NodeProductTransformAssignment(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000001;
+                nodeId_ = bs;
+                break;
+              }
+              case 18: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000002;
+                productTransformId_ = bs;
+                break;
+              }
+              case 26: {
+                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                  inputItems_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item>();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                inputItems_.add(
+                    input.readMessage(icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.PARSER, extensionRegistry));
+                break;
+              }
+              case 34: {
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                  outputItems_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item>();
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                outputItems_.add(
+                    input.readMessage(icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.PARSER, extensionRegistry));
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+            inputItems_ = java.util.Collections.unmodifiableList(inputItems_);
+          }
+          if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+            outputItems_ = java.util.Collections.unmodifiableList(outputItems_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.class, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Builder.class);
+      }
+
+      public interface ItemOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:NS3.SolutionResponse.NodeProductTransformAssignment.Item)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>required string productId = 1;</code>
+         */
+        boolean hasProductId();
+        /**
+         * <code>required string productId = 1;</code>
+         */
+        java.lang.String getProductId();
+        /**
+         * <code>required string productId = 1;</code>
+         */
+        com.google.protobuf.ByteString
+            getProductIdBytes();
+
+        /**
+         * <code>required float amount = 2;</code>
+         */
+        boolean hasAmount();
+        /**
+         * <code>required float amount = 2;</code>
+         */
+        float getAmount();
+
+        /**
+         * <pre>
+         * from the UnitDimensionCosts
+         * </pre>
+         *
+         * <code>required float cost = 3;</code>
+         */
+        boolean hasCost();
+        /**
+         * <pre>
+         * from the UnitDimensionCosts
+         * </pre>
+         *
+         * <code>required float cost = 3;</code>
+         */
+        float getCost();
+
+        /**
+         * <pre>
+         * from the fixedDimensionCosts
+         * </pre>
+         *
+         * <code>required float fixedCost = 4;</code>
+         */
+        boolean hasFixedCost();
+        /**
+         * <pre>
+         * from the fixedDimensionCosts
+         * </pre>
+         *
+         * <code>required float fixedCost = 4;</code>
+         */
+        float getFixedCost();
+
+        /**
+         * <pre>
+         * from the DimRanges
+         * </pre>
+         *
+         * <code>required float penaltyAmount = 5;</code>
+         */
+        boolean hasPenaltyAmount();
+        /**
+         * <pre>
+         * from the DimRanges
+         * </pre>
+         *
+         * <code>required float penaltyAmount = 5;</code>
+         */
+        float getPenaltyAmount();
+
+        /**
+         * <pre>
+         * from the DimRanges
+         * </pre>
+         *
+         * <code>required float penaltyCost = 6;</code>
+         */
+        boolean hasPenaltyCost();
+        /**
+         * <pre>
+         * from the DimRanges
+         * </pre>
+         *
+         * <code>required float penaltyCost = 6;</code>
+         */
+        float getPenaltyCost();
+      }
+      /**
+       * Protobuf type {@code NS3.SolutionResponse.NodeProductTransformAssignment.Item}
+       */
+      public  static final class Item extends
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:NS3.SolutionResponse.NodeProductTransformAssignment.Item)
+          ItemOrBuilder {
+      private static final long serialVersionUID = 0L;
+        // Use Item.newBuilder() to construct.
+        private Item(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+        private Item() {
+          productId_ = "";
+          amount_ = 0F;
+          cost_ = 0F;
+          fixedCost_ = 0F;
+          penaltyAmount_ = 0F;
+          penaltyCost_ = 0F;
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+          return this.unknownFields;
+        }
+        private Item(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          int mutable_bitField0_ = 0;
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
+                  bitField0_ |= 0x00000001;
+                  productId_ = bs;
+                  break;
+                }
+                case 21: {
+                  bitField0_ |= 0x00000002;
+                  amount_ = input.readFloat();
+                  break;
+                }
+                case 29: {
+                  bitField0_ |= 0x00000004;
+                  cost_ = input.readFloat();
+                  break;
+                }
+                case 37: {
+                  bitField0_ |= 0x00000008;
+                  fixedCost_ = input.readFloat();
+                  break;
+                }
+                case 45: {
+                  bitField0_ |= 0x00000010;
+                  penaltyAmount_ = input.readFloat();
+                  break;
+                }
+                case 53: {
+                  bitField0_ |= 0x00000020;
+                  penaltyCost_ = input.readFloat();
+                  break;
+                }
+                default: {
+                  if (!parseUnknownField(
+                      input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(
+                e).setUnfinishedMessage(this);
+          } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_Item_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_Item_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.class, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder.class);
+        }
+
+        private int bitField0_;
+        public static final int PRODUCTID_FIELD_NUMBER = 1;
+        private volatile java.lang.Object productId_;
+        /**
+         * <code>required string productId = 1;</code>
+         */
+        public boolean hasProductId() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>required string productId = 1;</code>
+         */
+        public java.lang.String getProductId() {
+          java.lang.Object ref = productId_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = 
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              productId_ = s;
+            }
+            return s;
+          }
+        }
+        /**
+         * <code>required string productId = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getProductIdBytes() {
+          java.lang.Object ref = productId_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            productId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int AMOUNT_FIELD_NUMBER = 2;
+        private float amount_;
+        /**
+         * <code>required float amount = 2;</code>
+         */
+        public boolean hasAmount() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>required float amount = 2;</code>
+         */
+        public float getAmount() {
+          return amount_;
+        }
+
+        public static final int COST_FIELD_NUMBER = 3;
+        private float cost_;
+        /**
+         * <pre>
+         * from the UnitDimensionCosts
+         * </pre>
+         *
+         * <code>required float cost = 3;</code>
+         */
+        public boolean hasCost() {
+          return ((bitField0_ & 0x00000004) == 0x00000004);
+        }
+        /**
+         * <pre>
+         * from the UnitDimensionCosts
+         * </pre>
+         *
+         * <code>required float cost = 3;</code>
+         */
+        public float getCost() {
+          return cost_;
+        }
+
+        public static final int FIXEDCOST_FIELD_NUMBER = 4;
+        private float fixedCost_;
+        /**
+         * <pre>
+         * from the fixedDimensionCosts
+         * </pre>
+         *
+         * <code>required float fixedCost = 4;</code>
+         */
+        public boolean hasFixedCost() {
+          return ((bitField0_ & 0x00000008) == 0x00000008);
+        }
+        /**
+         * <pre>
+         * from the fixedDimensionCosts
+         * </pre>
+         *
+         * <code>required float fixedCost = 4;</code>
+         */
+        public float getFixedCost() {
+          return fixedCost_;
+        }
+
+        public static final int PENALTYAMOUNT_FIELD_NUMBER = 5;
+        private float penaltyAmount_;
+        /**
+         * <pre>
+         * from the DimRanges
+         * </pre>
+         *
+         * <code>required float penaltyAmount = 5;</code>
+         */
+        public boolean hasPenaltyAmount() {
+          return ((bitField0_ & 0x00000010) == 0x00000010);
+        }
+        /**
+         * <pre>
+         * from the DimRanges
+         * </pre>
+         *
+         * <code>required float penaltyAmount = 5;</code>
+         */
+        public float getPenaltyAmount() {
+          return penaltyAmount_;
+        }
+
+        public static final int PENALTYCOST_FIELD_NUMBER = 6;
+        private float penaltyCost_;
+        /**
+         * <pre>
+         * from the DimRanges
+         * </pre>
+         *
+         * <code>required float penaltyCost = 6;</code>
+         */
+        public boolean hasPenaltyCost() {
+          return ((bitField0_ & 0x00000020) == 0x00000020);
+        }
+        /**
+         * <pre>
+         * from the DimRanges
+         * </pre>
+         *
+         * <code>required float penaltyCost = 6;</code>
+         */
+        public float getPenaltyCost() {
+          return penaltyCost_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          if (!hasProductId()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+          if (!hasAmount()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+          if (!hasCost()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+          if (!hasFixedCost()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+          if (!hasPenaltyAmount()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+          if (!hasPenaltyCost()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                            throws java.io.IOException {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, productId_);
+          }
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            output.writeFloat(2, amount_);
+          }
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            output.writeFloat(3, cost_);
+          }
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            output.writeFloat(4, fixedCost_);
+          }
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            output.writeFloat(5, penaltyAmount_);
+          }
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            output.writeFloat(6, penaltyCost_);
+          }
+          unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, productId_);
+          }
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeFloatSize(2, amount_);
+          }
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeFloatSize(3, cost_);
+          }
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeFloatSize(4, fixedCost_);
+          }
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeFloatSize(5, penaltyAmount_);
+          }
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeFloatSize(6, penaltyCost_);
+          }
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+           return true;
+          }
+          if (!(obj instanceof icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item)) {
+            return super.equals(obj);
+          }
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item other = (icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item) obj;
+
+          boolean result = true;
+          result = result && (hasProductId() == other.hasProductId());
+          if (hasProductId()) {
+            result = result && getProductId()
+                .equals(other.getProductId());
+          }
+          result = result && (hasAmount() == other.hasAmount());
+          if (hasAmount()) {
+            result = result && (
+                java.lang.Float.floatToIntBits(getAmount())
+                == java.lang.Float.floatToIntBits(
+                    other.getAmount()));
+          }
+          result = result && (hasCost() == other.hasCost());
+          if (hasCost()) {
+            result = result && (
+                java.lang.Float.floatToIntBits(getCost())
+                == java.lang.Float.floatToIntBits(
+                    other.getCost()));
+          }
+          result = result && (hasFixedCost() == other.hasFixedCost());
+          if (hasFixedCost()) {
+            result = result && (
+                java.lang.Float.floatToIntBits(getFixedCost())
+                == java.lang.Float.floatToIntBits(
+                    other.getFixedCost()));
+          }
+          result = result && (hasPenaltyAmount() == other.hasPenaltyAmount());
+          if (hasPenaltyAmount()) {
+            result = result && (
+                java.lang.Float.floatToIntBits(getPenaltyAmount())
+                == java.lang.Float.floatToIntBits(
+                    other.getPenaltyAmount()));
+          }
+          result = result && (hasPenaltyCost() == other.hasPenaltyCost());
+          if (hasPenaltyCost()) {
+            result = result && (
+                java.lang.Float.floatToIntBits(getPenaltyCost())
+                == java.lang.Float.floatToIntBits(
+                    other.getPenaltyCost()));
+          }
+          result = result && unknownFields.equals(other.unknownFields);
+          return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (hasProductId()) {
+            hash = (37 * hash) + PRODUCTID_FIELD_NUMBER;
+            hash = (53 * hash) + getProductId().hashCode();
+          }
+          if (hasAmount()) {
+            hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+            hash = (53 * hash) + java.lang.Float.floatToIntBits(
+                getAmount());
+          }
+          if (hasCost()) {
+            hash = (37 * hash) + COST_FIELD_NUMBER;
+            hash = (53 * hash) + java.lang.Float.floatToIntBits(
+                getCost());
+          }
+          if (hasFixedCost()) {
+            hash = (37 * hash) + FIXEDCOST_FIELD_NUMBER;
+            hash = (53 * hash) + java.lang.Float.floatToIntBits(
+                getFixedCost());
+          }
+          if (hasPenaltyAmount()) {
+            hash = (37 * hash) + PENALTYAMOUNT_FIELD_NUMBER;
+            hash = (53 * hash) + java.lang.Float.floatToIntBits(
+                getPenaltyAmount());
+          }
+          if (hasPenaltyCost()) {
+            hash = (37 * hash) + PENALTYCOST_FIELD_NUMBER;
+            hash = (53 * hash) + java.lang.Float.floatToIntBits(
+                getPenaltyCost());
+          }
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+        }
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() { return newBuilder(); }
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+        public static Builder newBuilder(icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE
+              ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         * Protobuf type {@code NS3.SolutionResponse.NodeProductTransformAssignment.Item}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:NS3.SolutionResponse.NodeProductTransformAssignment.Item)
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor
+              getDescriptor() {
+            return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_Item_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_Item_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.class, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder.class);
+          }
+
+          // Construct using icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+            }
+          }
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            productId_ = "";
+            bitField0_ = (bitField0_ & ~0x00000001);
+            amount_ = 0F;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            cost_ = 0F;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            fixedCost_ = 0F;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            penaltyAmount_ = 0F;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            penaltyCost_ = 0F;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor
+              getDescriptorForType() {
+            return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_Item_descriptor;
+          }
+
+          @java.lang.Override
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item getDefaultInstanceForType() {
+            return icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item build() {
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item buildPartial() {
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item result = new icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item(this);
+            int from_bitField0_ = bitField0_;
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+              to_bitField0_ |= 0x00000001;
+            }
+            result.productId_ = productId_;
+            if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+              to_bitField0_ |= 0x00000002;
+            }
+            result.amount_ = amount_;
+            if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+              to_bitField0_ |= 0x00000004;
+            }
+            result.cost_ = cost_;
+            if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+              to_bitField0_ |= 0x00000008;
+            }
+            result.fixedCost_ = fixedCost_;
+            if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+              to_bitField0_ |= 0x00000010;
+            }
+            result.penaltyAmount_ = penaltyAmount_;
+            if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+              to_bitField0_ |= 0x00000020;
+            }
+            result.penaltyCost_ = penaltyCost_;
+            result.bitField0_ = to_bitField0_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return (Builder) super.clone();
+          }
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return (Builder) super.setField(field, value);
+          }
+          @java.lang.Override
+          public Builder clearField(
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return (Builder) super.clearField(field);
+          }
+          @java.lang.Override
+          public Builder clearOneof(
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return (Builder) super.clearOneof(oneof);
+          }
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
+            return (Builder) super.setRepeatedField(field, index, value);
+          }
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return (Builder) super.addRepeatedField(field, value);
+          }
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item) {
+              return mergeFrom((icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item)other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item other) {
+            if (other == icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.getDefaultInstance()) return this;
+            if (other.hasProductId()) {
+              bitField0_ |= 0x00000001;
+              productId_ = other.productId_;
+              onChanged();
+            }
+            if (other.hasAmount()) {
+              setAmount(other.getAmount());
+            }
+            if (other.hasCost()) {
+              setCost(other.getCost());
+            }
+            if (other.hasFixedCost()) {
+              setFixedCost(other.getFixedCost());
+            }
+            if (other.hasPenaltyAmount()) {
+              setPenaltyAmount(other.getPenaltyAmount());
+            }
+            if (other.hasPenaltyCost()) {
+              setPenaltyCost(other.getPenaltyCost());
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            if (!hasProductId()) {
+              return false;
+            }
+            if (!hasAmount()) {
+              return false;
+            }
+            if (!hasCost()) {
+              return false;
+            }
+            if (!hasFixedCost()) {
+              return false;
+            }
+            if (!hasPenaltyAmount()) {
+              return false;
+            }
+            if (!hasPenaltyCost()) {
+              return false;
+            }
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage = (icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item) e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+          private int bitField0_;
+
+          private java.lang.Object productId_ = "";
+          /**
+           * <code>required string productId = 1;</code>
+           */
+          public boolean hasProductId() {
+            return ((bitField0_ & 0x00000001) == 0x00000001);
+          }
+          /**
+           * <code>required string productId = 1;</code>
+           */
+          public java.lang.String getProductId() {
+            java.lang.Object ref = productId_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (bs.isValidUtf8()) {
+                productId_ = s;
+              }
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           * <code>required string productId = 1;</code>
+           */
+          public com.google.protobuf.ByteString
+              getProductIdBytes() {
+            java.lang.Object ref = productId_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b = 
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                      (java.lang.String) ref);
+              productId_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           * <code>required string productId = 1;</code>
+           */
+          public Builder setProductId(
+              java.lang.String value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+            productId_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>required string productId = 1;</code>
+           */
+          public Builder clearProductId() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            productId_ = getDefaultInstance().getProductId();
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>required string productId = 1;</code>
+           */
+          public Builder setProductIdBytes(
+              com.google.protobuf.ByteString value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+            productId_ = value;
+            onChanged();
+            return this;
+          }
+
+          private float amount_ ;
+          /**
+           * <code>required float amount = 2;</code>
+           */
+          public boolean hasAmount() {
+            return ((bitField0_ & 0x00000002) == 0x00000002);
+          }
+          /**
+           * <code>required float amount = 2;</code>
+           */
+          public float getAmount() {
+            return amount_;
+          }
+          /**
+           * <code>required float amount = 2;</code>
+           */
+          public Builder setAmount(float value) {
+            bitField0_ |= 0x00000002;
+            amount_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>required float amount = 2;</code>
+           */
+          public Builder clearAmount() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            amount_ = 0F;
+            onChanged();
+            return this;
+          }
+
+          private float cost_ ;
+          /**
+           * <pre>
+           * from the UnitDimensionCosts
+           * </pre>
+           *
+           * <code>required float cost = 3;</code>
+           */
+          public boolean hasCost() {
+            return ((bitField0_ & 0x00000004) == 0x00000004);
+          }
+          /**
+           * <pre>
+           * from the UnitDimensionCosts
+           * </pre>
+           *
+           * <code>required float cost = 3;</code>
+           */
+          public float getCost() {
+            return cost_;
+          }
+          /**
+           * <pre>
+           * from the UnitDimensionCosts
+           * </pre>
+           *
+           * <code>required float cost = 3;</code>
+           */
+          public Builder setCost(float value) {
+            bitField0_ |= 0x00000004;
+            cost_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * from the UnitDimensionCosts
+           * </pre>
+           *
+           * <code>required float cost = 3;</code>
+           */
+          public Builder clearCost() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            cost_ = 0F;
+            onChanged();
+            return this;
+          }
+
+          private float fixedCost_ ;
+          /**
+           * <pre>
+           * from the fixedDimensionCosts
+           * </pre>
+           *
+           * <code>required float fixedCost = 4;</code>
+           */
+          public boolean hasFixedCost() {
+            return ((bitField0_ & 0x00000008) == 0x00000008);
+          }
+          /**
+           * <pre>
+           * from the fixedDimensionCosts
+           * </pre>
+           *
+           * <code>required float fixedCost = 4;</code>
+           */
+          public float getFixedCost() {
+            return fixedCost_;
+          }
+          /**
+           * <pre>
+           * from the fixedDimensionCosts
+           * </pre>
+           *
+           * <code>required float fixedCost = 4;</code>
+           */
+          public Builder setFixedCost(float value) {
+            bitField0_ |= 0x00000008;
+            fixedCost_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * from the fixedDimensionCosts
+           * </pre>
+           *
+           * <code>required float fixedCost = 4;</code>
+           */
+          public Builder clearFixedCost() {
+            bitField0_ = (bitField0_ & ~0x00000008);
+            fixedCost_ = 0F;
+            onChanged();
+            return this;
+          }
+
+          private float penaltyAmount_ ;
+          /**
+           * <pre>
+           * from the DimRanges
+           * </pre>
+           *
+           * <code>required float penaltyAmount = 5;</code>
+           */
+          public boolean hasPenaltyAmount() {
+            return ((bitField0_ & 0x00000010) == 0x00000010);
+          }
+          /**
+           * <pre>
+           * from the DimRanges
+           * </pre>
+           *
+           * <code>required float penaltyAmount = 5;</code>
+           */
+          public float getPenaltyAmount() {
+            return penaltyAmount_;
+          }
+          /**
+           * <pre>
+           * from the DimRanges
+           * </pre>
+           *
+           * <code>required float penaltyAmount = 5;</code>
+           */
+          public Builder setPenaltyAmount(float value) {
+            bitField0_ |= 0x00000010;
+            penaltyAmount_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * from the DimRanges
+           * </pre>
+           *
+           * <code>required float penaltyAmount = 5;</code>
+           */
+          public Builder clearPenaltyAmount() {
+            bitField0_ = (bitField0_ & ~0x00000010);
+            penaltyAmount_ = 0F;
+            onChanged();
+            return this;
+          }
+
+          private float penaltyCost_ ;
+          /**
+           * <pre>
+           * from the DimRanges
+           * </pre>
+           *
+           * <code>required float penaltyCost = 6;</code>
+           */
+          public boolean hasPenaltyCost() {
+            return ((bitField0_ & 0x00000020) == 0x00000020);
+          }
+          /**
+           * <pre>
+           * from the DimRanges
+           * </pre>
+           *
+           * <code>required float penaltyCost = 6;</code>
+           */
+          public float getPenaltyCost() {
+            return penaltyCost_;
+          }
+          /**
+           * <pre>
+           * from the DimRanges
+           * </pre>
+           *
+           * <code>required float penaltyCost = 6;</code>
+           */
+          public Builder setPenaltyCost(float value) {
+            bitField0_ |= 0x00000020;
+            penaltyCost_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * from the DimRanges
+           * </pre>
+           *
+           * <code>required float penaltyCost = 6;</code>
+           */
+          public Builder clearPenaltyCost() {
+            bitField0_ = (bitField0_ & ~0x00000020);
+            penaltyCost_ = 0F;
+            onChanged();
+            return this;
+          }
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+
+          // @@protoc_insertion_point(builder_scope:NS3.SolutionResponse.NodeProductTransformAssignment.Item)
+        }
+
+        // @@protoc_insertion_point(class_scope:NS3.SolutionResponse.NodeProductTransformAssignment.Item)
+        private static final icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item DEFAULT_INSTANCE;
+        static {
+          DEFAULT_INSTANCE = new icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item();
+        }
+
+        public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        @java.lang.Deprecated public static final com.google.protobuf.Parser<Item>
+            PARSER = new com.google.protobuf.AbstractParser<Item>() {
+          @java.lang.Override
+          public Item parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Item(input, extensionRegistry);
+          }
+        };
+
+        public static com.google.protobuf.Parser<Item> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Item> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+
+      }
+
+      private int bitField0_;
+      public static final int NODEID_FIELD_NUMBER = 1;
+      private volatile java.lang.Object nodeId_;
+      /**
+       * <pre>
+       * identifiers
+       * </pre>
+       *
+       * <code>required string nodeId = 1;</code>
+       */
+      public boolean hasNodeId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <pre>
+       * identifiers
+       * </pre>
+       *
+       * <code>required string nodeId = 1;</code>
+       */
+      public java.lang.String getNodeId() {
+        java.lang.Object ref = nodeId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            nodeId_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * identifiers
+       * </pre>
+       *
+       * <code>required string nodeId = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNodeIdBytes() {
+        java.lang.Object ref = nodeId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nodeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int PRODUCTTRANSFORMID_FIELD_NUMBER = 2;
+      private volatile java.lang.Object productTransformId_;
+      /**
+       * <code>required string productTransformId = 2;</code>
+       */
+      public boolean hasProductTransformId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string productTransformId = 2;</code>
+       */
+      public java.lang.String getProductTransformId() {
+        java.lang.Object ref = productTransformId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            productTransformId_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>required string productTransformId = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getProductTransformIdBytes() {
+        java.lang.Object ref = productTransformId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productTransformId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int INPUTITEMS_FIELD_NUMBER = 3;
+      private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item> inputItems_;
+      /**
+       * <pre>
+       * input+output terms / ratios
+       * </pre>
+       *
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+       */
+      public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item> getInputItemsList() {
+        return inputItems_;
+      }
+      /**
+       * <pre>
+       * input+output terms / ratios
+       * </pre>
+       *
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+       */
+      public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder> 
+          getInputItemsOrBuilderList() {
+        return inputItems_;
+      }
+      /**
+       * <pre>
+       * input+output terms / ratios
+       * </pre>
+       *
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+       */
+      public int getInputItemsCount() {
+        return inputItems_.size();
+      }
+      /**
+       * <pre>
+       * input+output terms / ratios
+       * </pre>
+       *
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item getInputItems(int index) {
+        return inputItems_.get(index);
+      }
+      /**
+       * <pre>
+       * input+output terms / ratios
+       * </pre>
+       *
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder getInputItemsOrBuilder(
+          int index) {
+        return inputItems_.get(index);
+      }
+
+      public static final int OUTPUTITEMS_FIELD_NUMBER = 4;
+      private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item> outputItems_;
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+       */
+      public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item> getOutputItemsList() {
+        return outputItems_;
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+       */
+      public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder> 
+          getOutputItemsOrBuilderList() {
+        return outputItems_;
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+       */
+      public int getOutputItemsCount() {
+        return outputItems_.size();
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item getOutputItems(int index) {
+        return outputItems_.get(index);
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder getOutputItemsOrBuilder(
+          int index) {
+        return outputItems_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        if (!hasNodeId()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        if (!hasProductTransformId()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        for (int i = 0; i < getInputItemsCount(); i++) {
+          if (!getInputItems(i).isInitialized()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+        }
+        for (int i = 0; i < getOutputItemsCount(); i++) {
+          if (!getOutputItems(i).isInitialized()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeId_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, productTransformId_);
+        }
+        for (int i = 0; i < inputItems_.size(); i++) {
+          output.writeMessage(3, inputItems_.get(i));
+        }
+        for (int i = 0; i < outputItems_.size(); i++) {
+          output.writeMessage(4, outputItems_.get(i));
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeId_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, productTransformId_);
+        }
+        for (int i = 0; i < inputItems_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, inputItems_.get(i));
+        }
+        for (int i = 0; i < outputItems_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, outputItems_.get(i));
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment)) {
+          return super.equals(obj);
+        }
+        icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment other = (icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment) obj;
+
+        boolean result = true;
+        result = result && (hasNodeId() == other.hasNodeId());
+        if (hasNodeId()) {
+          result = result && getNodeId()
+              .equals(other.getNodeId());
+        }
+        result = result && (hasProductTransformId() == other.hasProductTransformId());
+        if (hasProductTransformId()) {
+          result = result && getProductTransformId()
+              .equals(other.getProductTransformId());
+        }
+        result = result && getInputItemsList()
+            .equals(other.getInputItemsList());
+        result = result && getOutputItemsList()
+            .equals(other.getOutputItemsList());
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasNodeId()) {
+          hash = (37 * hash) + NODEID_FIELD_NUMBER;
+          hash = (53 * hash) + getNodeId().hashCode();
+        }
+        if (hasProductTransformId()) {
+          hash = (37 * hash) + PRODUCTTRANSFORMID_FIELD_NUMBER;
+          hash = (53 * hash) + getProductTransformId().hashCode();
+        }
+        if (getInputItemsCount() > 0) {
+          hash = (37 * hash) + INPUTITEMS_FIELD_NUMBER;
+          hash = (53 * hash) + getInputItemsList().hashCode();
+        }
+        if (getOutputItemsCount() > 0) {
+          hash = (37 * hash) + OUTPUTITEMS_FIELD_NUMBER;
+          hash = (53 * hash) + getOutputItemsList().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code NS3.SolutionResponse.NodeProductTransformAssignment}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:NS3.SolutionResponse.NodeProductTransformAssignment)
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignmentOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.class, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Builder.class);
+        }
+
+        // Construct using icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+            getInputItemsFieldBuilder();
+            getOutputItemsFieldBuilder();
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          nodeId_ = "";
+          bitField0_ = (bitField0_ & ~0x00000001);
+          productTransformId_ = "";
+          bitField0_ = (bitField0_ & ~0x00000002);
+          if (inputItemsBuilder_ == null) {
+            inputItems_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            inputItemsBuilder_.clear();
+          }
+          if (outputItemsBuilder_ == null) {
+            outputItems_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            outputItemsBuilder_.clear();
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return icepackai.NS3.Ns3Tbfvuwtge2Iq.internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_descriptor;
+        }
+
+        @java.lang.Override
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment getDefaultInstanceForType() {
+          return icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment build() {
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment buildPartial() {
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment result = new icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.nodeId_ = nodeId_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.productTransformId_ = productTransformId_;
+          if (inputItemsBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+              inputItems_ = java.util.Collections.unmodifiableList(inputItems_);
+              bitField0_ = (bitField0_ & ~0x00000004);
+            }
+            result.inputItems_ = inputItems_;
+          } else {
+            result.inputItems_ = inputItemsBuilder_.build();
+          }
+          if (outputItemsBuilder_ == null) {
+            if (((bitField0_ & 0x00000008) == 0x00000008)) {
+              outputItems_ = java.util.Collections.unmodifiableList(outputItems_);
+              bitField0_ = (bitField0_ & ~0x00000008);
+            }
+            result.outputItems_ = outputItems_;
+          } else {
+            result.outputItems_ = outputItemsBuilder_.build();
+          }
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment) {
+            return mergeFrom((icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment other) {
+          if (other == icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.getDefaultInstance()) return this;
+          if (other.hasNodeId()) {
+            bitField0_ |= 0x00000001;
+            nodeId_ = other.nodeId_;
+            onChanged();
+          }
+          if (other.hasProductTransformId()) {
+            bitField0_ |= 0x00000002;
+            productTransformId_ = other.productTransformId_;
+            onChanged();
+          }
+          if (inputItemsBuilder_ == null) {
+            if (!other.inputItems_.isEmpty()) {
+              if (inputItems_.isEmpty()) {
+                inputItems_ = other.inputItems_;
+                bitField0_ = (bitField0_ & ~0x00000004);
+              } else {
+                ensureInputItemsIsMutable();
+                inputItems_.addAll(other.inputItems_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.inputItems_.isEmpty()) {
+              if (inputItemsBuilder_.isEmpty()) {
+                inputItemsBuilder_.dispose();
+                inputItemsBuilder_ = null;
+                inputItems_ = other.inputItems_;
+                bitField0_ = (bitField0_ & ~0x00000004);
+                inputItemsBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getInputItemsFieldBuilder() : null;
+              } else {
+                inputItemsBuilder_.addAllMessages(other.inputItems_);
+              }
+            }
+          }
+          if (outputItemsBuilder_ == null) {
+            if (!other.outputItems_.isEmpty()) {
+              if (outputItems_.isEmpty()) {
+                outputItems_ = other.outputItems_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+              } else {
+                ensureOutputItemsIsMutable();
+                outputItems_.addAll(other.outputItems_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.outputItems_.isEmpty()) {
+              if (outputItemsBuilder_.isEmpty()) {
+                outputItemsBuilder_.dispose();
+                outputItemsBuilder_ = null;
+                outputItems_ = other.outputItems_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+                outputItemsBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getOutputItemsFieldBuilder() : null;
+              } else {
+                outputItemsBuilder_.addAllMessages(other.outputItems_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          if (!hasNodeId()) {
+            return false;
+          }
+          if (!hasProductTransformId()) {
+            return false;
+          }
+          for (int i = 0; i < getInputItemsCount(); i++) {
+            if (!getInputItems(i).isInitialized()) {
+              return false;
+            }
+          }
+          for (int i = 0; i < getOutputItemsCount(); i++) {
+            if (!getOutputItems(i).isInitialized()) {
+              return false;
+            }
+          }
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.lang.Object nodeId_ = "";
+        /**
+         * <pre>
+         * identifiers
+         * </pre>
+         *
+         * <code>required string nodeId = 1;</code>
+         */
+        public boolean hasNodeId() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <pre>
+         * identifiers
+         * </pre>
+         *
+         * <code>required string nodeId = 1;</code>
+         */
+        public java.lang.String getNodeId() {
+          java.lang.Object ref = nodeId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              nodeId_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * identifiers
+         * </pre>
+         *
+         * <code>required string nodeId = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getNodeIdBytes() {
+          java.lang.Object ref = nodeId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            nodeId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * identifiers
+         * </pre>
+         *
+         * <code>required string nodeId = 1;</code>
+         */
+        public Builder setNodeId(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          nodeId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * identifiers
+         * </pre>
+         *
+         * <code>required string nodeId = 1;</code>
+         */
+        public Builder clearNodeId() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          nodeId_ = getDefaultInstance().getNodeId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * identifiers
+         * </pre>
+         *
+         * <code>required string nodeId = 1;</code>
+         */
+        public Builder setNodeIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          nodeId_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object productTransformId_ = "";
+        /**
+         * <code>required string productTransformId = 2;</code>
+         */
+        public boolean hasProductTransformId() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>required string productTransformId = 2;</code>
+         */
+        public java.lang.String getProductTransformId() {
+          java.lang.Object ref = productTransformId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              productTransformId_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>required string productTransformId = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getProductTransformIdBytes() {
+          java.lang.Object ref = productTransformId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            productTransformId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>required string productTransformId = 2;</code>
+         */
+        public Builder setProductTransformId(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+          productTransformId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string productTransformId = 2;</code>
+         */
+        public Builder clearProductTransformId() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          productTransformId_ = getDefaultInstance().getProductTransformId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string productTransformId = 2;</code>
+         */
+        public Builder setProductTransformIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+          productTransformId_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item> inputItems_ =
+          java.util.Collections.emptyList();
+        private void ensureInputItemsIsMutable() {
+          if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+            inputItems_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item>(inputItems_);
+            bitField0_ |= 0x00000004;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder> inputItemsBuilder_;
+
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item> getInputItemsList() {
+          if (inputItemsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(inputItems_);
+          } else {
+            return inputItemsBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public int getInputItemsCount() {
+          if (inputItemsBuilder_ == null) {
+            return inputItems_.size();
+          } else {
+            return inputItemsBuilder_.getCount();
+          }
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item getInputItems(int index) {
+          if (inputItemsBuilder_ == null) {
+            return inputItems_.get(index);
+          } else {
+            return inputItemsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public Builder setInputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item value) {
+          if (inputItemsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureInputItemsIsMutable();
+            inputItems_.set(index, value);
+            onChanged();
+          } else {
+            inputItemsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public Builder setInputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder builderForValue) {
+          if (inputItemsBuilder_ == null) {
+            ensureInputItemsIsMutable();
+            inputItems_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            inputItemsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public Builder addInputItems(icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item value) {
+          if (inputItemsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureInputItemsIsMutable();
+            inputItems_.add(value);
+            onChanged();
+          } else {
+            inputItemsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public Builder addInputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item value) {
+          if (inputItemsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureInputItemsIsMutable();
+            inputItems_.add(index, value);
+            onChanged();
+          } else {
+            inputItemsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public Builder addInputItems(
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder builderForValue) {
+          if (inputItemsBuilder_ == null) {
+            ensureInputItemsIsMutable();
+            inputItems_.add(builderForValue.build());
+            onChanged();
+          } else {
+            inputItemsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public Builder addInputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder builderForValue) {
+          if (inputItemsBuilder_ == null) {
+            ensureInputItemsIsMutable();
+            inputItems_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            inputItemsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public Builder addAllInputItems(
+            java.lang.Iterable<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item> values) {
+          if (inputItemsBuilder_ == null) {
+            ensureInputItemsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, inputItems_);
+            onChanged();
+          } else {
+            inputItemsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public Builder clearInputItems() {
+          if (inputItemsBuilder_ == null) {
+            inputItems_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000004);
+            onChanged();
+          } else {
+            inputItemsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public Builder removeInputItems(int index) {
+          if (inputItemsBuilder_ == null) {
+            ensureInputItemsIsMutable();
+            inputItems_.remove(index);
+            onChanged();
+          } else {
+            inputItemsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder getInputItemsBuilder(
+            int index) {
+          return getInputItemsFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder getInputItemsOrBuilder(
+            int index) {
+          if (inputItemsBuilder_ == null) {
+            return inputItems_.get(index);  } else {
+            return inputItemsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder> 
+             getInputItemsOrBuilderList() {
+          if (inputItemsBuilder_ != null) {
+            return inputItemsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(inputItems_);
+          }
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder addInputItemsBuilder() {
+          return getInputItemsFieldBuilder().addBuilder(
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder addInputItemsBuilder(
+            int index) {
+          return getInputItemsFieldBuilder().addBuilder(
+              index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * input+output terms / ratios
+         * </pre>
+         *
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;</code>
+         */
+        public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder> 
+             getInputItemsBuilderList() {
+          return getInputItemsFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder> 
+            getInputItemsFieldBuilder() {
+          if (inputItemsBuilder_ == null) {
+            inputItemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder>(
+                    inputItems_,
+                    ((bitField0_ & 0x00000004) == 0x00000004),
+                    getParentForChildren(),
+                    isClean());
+            inputItems_ = null;
+          }
+          return inputItemsBuilder_;
+        }
+
+        private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item> outputItems_ =
+          java.util.Collections.emptyList();
+        private void ensureOutputItemsIsMutable() {
+          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+            outputItems_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item>(outputItems_);
+            bitField0_ |= 0x00000008;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder> outputItemsBuilder_;
+
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item> getOutputItemsList() {
+          if (outputItemsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(outputItems_);
+          } else {
+            return outputItemsBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public int getOutputItemsCount() {
+          if (outputItemsBuilder_ == null) {
+            return outputItems_.size();
+          } else {
+            return outputItemsBuilder_.getCount();
+          }
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item getOutputItems(int index) {
+          if (outputItemsBuilder_ == null) {
+            return outputItems_.get(index);
+          } else {
+            return outputItemsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public Builder setOutputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item value) {
+          if (outputItemsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureOutputItemsIsMutable();
+            outputItems_.set(index, value);
+            onChanged();
+          } else {
+            outputItemsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public Builder setOutputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder builderForValue) {
+          if (outputItemsBuilder_ == null) {
+            ensureOutputItemsIsMutable();
+            outputItems_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            outputItemsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public Builder addOutputItems(icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item value) {
+          if (outputItemsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureOutputItemsIsMutable();
+            outputItems_.add(value);
+            onChanged();
+          } else {
+            outputItemsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public Builder addOutputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item value) {
+          if (outputItemsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureOutputItemsIsMutable();
+            outputItems_.add(index, value);
+            onChanged();
+          } else {
+            outputItemsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public Builder addOutputItems(
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder builderForValue) {
+          if (outputItemsBuilder_ == null) {
+            ensureOutputItemsIsMutable();
+            outputItems_.add(builderForValue.build());
+            onChanged();
+          } else {
+            outputItemsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public Builder addOutputItems(
+            int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder builderForValue) {
+          if (outputItemsBuilder_ == null) {
+            ensureOutputItemsIsMutable();
+            outputItems_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            outputItemsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public Builder addAllOutputItems(
+            java.lang.Iterable<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item> values) {
+          if (outputItemsBuilder_ == null) {
+            ensureOutputItemsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, outputItems_);
+            onChanged();
+          } else {
+            outputItemsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public Builder clearOutputItems() {
+          if (outputItemsBuilder_ == null) {
+            outputItems_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+          } else {
+            outputItemsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public Builder removeOutputItems(int index) {
+          if (outputItemsBuilder_ == null) {
+            ensureOutputItemsIsMutable();
+            outputItems_.remove(index);
+            onChanged();
+          } else {
+            outputItemsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder getOutputItemsBuilder(
+            int index) {
+          return getOutputItemsFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder getOutputItemsOrBuilder(
+            int index) {
+          if (outputItemsBuilder_ == null) {
+            return outputItems_.get(index);  } else {
+            return outputItemsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder> 
+             getOutputItemsOrBuilderList() {
+          if (outputItemsBuilder_ != null) {
+            return outputItemsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(outputItems_);
+          }
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder addOutputItemsBuilder() {
+          return getOutputItemsFieldBuilder().addBuilder(
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder addOutputItemsBuilder(
+            int index) {
+          return getOutputItemsFieldBuilder().addBuilder(
+              index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;</code>
+         */
+        public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder> 
+             getOutputItemsBuilderList() {
+          return getOutputItemsFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder> 
+            getOutputItemsFieldBuilder() {
+          if (outputItemsBuilder_ == null) {
+            outputItemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Item.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.ItemOrBuilder>(
+                    outputItems_,
+                    ((bitField0_ & 0x00000008) == 0x00000008),
+                    getParentForChildren(),
+                    isClean());
+            outputItems_ = null;
+          }
+          return outputItemsBuilder_;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:NS3.SolutionResponse.NodeProductTransformAssignment)
+      }
+
+      // @@protoc_insertion_point(class_scope:NS3.SolutionResponse.NodeProductTransformAssignment)
+      private static final icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment();
+      }
+
+      public static icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<NodeProductTransformAssignment>
+          PARSER = new com.google.protobuf.AbstractParser<NodeProductTransformAssignment>() {
+        @java.lang.Override
+        public NodeProductTransformAssignment parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new NodeProductTransformAssignment(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<NodeProductTransformAssignment> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<NodeProductTransformAssignment> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     private int bitField0_;
     public static final int OBJECTIVE_FIELD_NUMBER = 1;
     private float objective_;
@@ -30933,6 +37907,41 @@ public final class Ns3Tbfvuwtge2Iq {
       return routes_.get(index);
     }
 
+    public static final int NODEPRODUCTTRANSFORMASSIGNMENTS_FIELD_NUMBER = 9;
+    private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment> nodeProductTransformAssignments_;
+    /**
+     * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+     */
+    public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment> getNodeProductTransformAssignmentsList() {
+      return nodeProductTransformAssignments_;
+    }
+    /**
+     * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+     */
+    public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignmentOrBuilder> 
+        getNodeProductTransformAssignmentsOrBuilderList() {
+      return nodeProductTransformAssignments_;
+    }
+    /**
+     * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+     */
+    public int getNodeProductTransformAssignmentsCount() {
+      return nodeProductTransformAssignments_.size();
+    }
+    /**
+     * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+     */
+    public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment getNodeProductTransformAssignments(int index) {
+      return nodeProductTransformAssignments_.get(index);
+    }
+    /**
+     * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+     */
+    public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignmentOrBuilder getNodeProductTransformAssignmentsOrBuilder(
+        int index) {
+      return nodeProductTransformAssignments_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -30968,6 +37977,12 @@ public final class Ns3Tbfvuwtge2Iq {
           return false;
         }
       }
+      for (int i = 0; i < getNodeProductTransformAssignmentsCount(); i++) {
+        if (!getNodeProductTransformAssignments(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -30998,6 +38013,9 @@ public final class Ns3Tbfvuwtge2Iq {
       }
       for (int i = 0; i < routes_.size(); i++) {
         output.writeMessage(8, routes_.get(i));
+      }
+      for (int i = 0; i < nodeProductTransformAssignments_.size(); i++) {
+        output.writeMessage(9, nodeProductTransformAssignments_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -31039,6 +38057,10 @@ public final class Ns3Tbfvuwtge2Iq {
       for (int i = 0; i < routes_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, routes_.get(i));
+      }
+      for (int i = 0; i < nodeProductTransformAssignments_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, nodeProductTransformAssignments_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -31087,6 +38109,8 @@ public final class Ns3Tbfvuwtge2Iq {
           .equals(other.getGeometrySequenceList());
       result = result && getRoutesList()
           .equals(other.getRoutesList());
+      result = result && getNodeProductTransformAssignmentsList()
+          .equals(other.getNodeProductTransformAssignmentsList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -31132,6 +38156,10 @@ public final class Ns3Tbfvuwtge2Iq {
       if (getRoutesCount() > 0) {
         hash = (37 * hash) + ROUTES_FIELD_NUMBER;
         hash = (53 * hash) + getRoutesList().hashCode();
+      }
+      if (getNodeProductTransformAssignmentsCount() > 0) {
+        hash = (37 * hash) + NODEPRODUCTTRANSFORMASSIGNMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getNodeProductTransformAssignmentsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -31271,6 +38299,7 @@ public final class Ns3Tbfvuwtge2Iq {
           getNodeProductFlowsFieldBuilder();
           getGeometrySequenceFieldBuilder();
           getRoutesFieldBuilder();
+          getNodeProductTransformAssignmentsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -31311,6 +38340,12 @@ public final class Ns3Tbfvuwtge2Iq {
           bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           routesBuilder_.clear();
+        }
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          nodeProductTransformAssignments_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        } else {
+          nodeProductTransformAssignmentsBuilder_.clear();
         }
         return this;
       }
@@ -31396,6 +38431,15 @@ public final class Ns3Tbfvuwtge2Iq {
           result.routes_ = routes_;
         } else {
           result.routes_ = routesBuilder_.build();
+        }
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) == 0x00000100)) {
+            nodeProductTransformAssignments_ = java.util.Collections.unmodifiableList(nodeProductTransformAssignments_);
+            bitField0_ = (bitField0_ & ~0x00000100);
+          }
+          result.nodeProductTransformAssignments_ = nodeProductTransformAssignments_;
+        } else {
+          result.nodeProductTransformAssignments_ = nodeProductTransformAssignmentsBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -31585,6 +38629,32 @@ public final class Ns3Tbfvuwtge2Iq {
             }
           }
         }
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          if (!other.nodeProductTransformAssignments_.isEmpty()) {
+            if (nodeProductTransformAssignments_.isEmpty()) {
+              nodeProductTransformAssignments_ = other.nodeProductTransformAssignments_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+            } else {
+              ensureNodeProductTransformAssignmentsIsMutable();
+              nodeProductTransformAssignments_.addAll(other.nodeProductTransformAssignments_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.nodeProductTransformAssignments_.isEmpty()) {
+            if (nodeProductTransformAssignmentsBuilder_.isEmpty()) {
+              nodeProductTransformAssignmentsBuilder_.dispose();
+              nodeProductTransformAssignmentsBuilder_ = null;
+              nodeProductTransformAssignments_ = other.nodeProductTransformAssignments_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+              nodeProductTransformAssignmentsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getNodeProductTransformAssignmentsFieldBuilder() : null;
+            } else {
+              nodeProductTransformAssignmentsBuilder_.addAllMessages(other.nodeProductTransformAssignments_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -31612,6 +38682,11 @@ public final class Ns3Tbfvuwtge2Iq {
         }
         for (int i = 0; i < getRoutesCount(); i++) {
           if (!getRoutes(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getNodeProductTransformAssignmentsCount(); i++) {
+          if (!getNodeProductTransformAssignments(i).isInitialized()) {
             return false;
           }
         }
@@ -32933,6 +40008,246 @@ public final class Ns3Tbfvuwtge2Iq {
         }
         return routesBuilder_;
       }
+
+      private java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment> nodeProductTransformAssignments_ =
+        java.util.Collections.emptyList();
+      private void ensureNodeProductTransformAssignmentsIsMutable() {
+        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+          nodeProductTransformAssignments_ = new java.util.ArrayList<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment>(nodeProductTransformAssignments_);
+          bitField0_ |= 0x00000100;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignmentOrBuilder> nodeProductTransformAssignmentsBuilder_;
+
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment> getNodeProductTransformAssignmentsList() {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(nodeProductTransformAssignments_);
+        } else {
+          return nodeProductTransformAssignmentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public int getNodeProductTransformAssignmentsCount() {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          return nodeProductTransformAssignments_.size();
+        } else {
+          return nodeProductTransformAssignmentsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment getNodeProductTransformAssignments(int index) {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          return nodeProductTransformAssignments_.get(index);
+        } else {
+          return nodeProductTransformAssignmentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public Builder setNodeProductTransformAssignments(
+          int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment value) {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodeProductTransformAssignmentsIsMutable();
+          nodeProductTransformAssignments_.set(index, value);
+          onChanged();
+        } else {
+          nodeProductTransformAssignmentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public Builder setNodeProductTransformAssignments(
+          int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Builder builderForValue) {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          ensureNodeProductTransformAssignmentsIsMutable();
+          nodeProductTransformAssignments_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          nodeProductTransformAssignmentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public Builder addNodeProductTransformAssignments(icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment value) {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodeProductTransformAssignmentsIsMutable();
+          nodeProductTransformAssignments_.add(value);
+          onChanged();
+        } else {
+          nodeProductTransformAssignmentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public Builder addNodeProductTransformAssignments(
+          int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment value) {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodeProductTransformAssignmentsIsMutable();
+          nodeProductTransformAssignments_.add(index, value);
+          onChanged();
+        } else {
+          nodeProductTransformAssignmentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public Builder addNodeProductTransformAssignments(
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Builder builderForValue) {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          ensureNodeProductTransformAssignmentsIsMutable();
+          nodeProductTransformAssignments_.add(builderForValue.build());
+          onChanged();
+        } else {
+          nodeProductTransformAssignmentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public Builder addNodeProductTransformAssignments(
+          int index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Builder builderForValue) {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          ensureNodeProductTransformAssignmentsIsMutable();
+          nodeProductTransformAssignments_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          nodeProductTransformAssignmentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public Builder addAllNodeProductTransformAssignments(
+          java.lang.Iterable<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment> values) {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          ensureNodeProductTransformAssignmentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, nodeProductTransformAssignments_);
+          onChanged();
+        } else {
+          nodeProductTransformAssignmentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public Builder clearNodeProductTransformAssignments() {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          nodeProductTransformAssignments_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+          onChanged();
+        } else {
+          nodeProductTransformAssignmentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public Builder removeNodeProductTransformAssignments(int index) {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          ensureNodeProductTransformAssignmentsIsMutable();
+          nodeProductTransformAssignments_.remove(index);
+          onChanged();
+        } else {
+          nodeProductTransformAssignmentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Builder getNodeProductTransformAssignmentsBuilder(
+          int index) {
+        return getNodeProductTransformAssignmentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignmentOrBuilder getNodeProductTransformAssignmentsOrBuilder(
+          int index) {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          return nodeProductTransformAssignments_.get(index);  } else {
+          return nodeProductTransformAssignmentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public java.util.List<? extends icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignmentOrBuilder> 
+           getNodeProductTransformAssignmentsOrBuilderList() {
+        if (nodeProductTransformAssignmentsBuilder_ != null) {
+          return nodeProductTransformAssignmentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(nodeProductTransformAssignments_);
+        }
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Builder addNodeProductTransformAssignmentsBuilder() {
+        return getNodeProductTransformAssignmentsFieldBuilder().addBuilder(
+            icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Builder addNodeProductTransformAssignmentsBuilder(
+          int index) {
+        return getNodeProductTransformAssignmentsFieldBuilder().addBuilder(
+            index, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;</code>
+       */
+      public java.util.List<icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Builder> 
+           getNodeProductTransformAssignmentsBuilderList() {
+        return getNodeProductTransformAssignmentsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignmentOrBuilder> 
+          getNodeProductTransformAssignmentsFieldBuilder() {
+        if (nodeProductTransformAssignmentsBuilder_ == null) {
+          nodeProductTransformAssignmentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignment.Builder, icepackai.NS3.Ns3Tbfvuwtge2Iq.SolutionResponse.NodeProductTransformAssignmentOrBuilder>(
+                  nodeProductTransformAssignments_,
+                  ((bitField0_ & 0x00000100) == 0x00000100),
+                  getParentForChildren(),
+                  isClean());
+          nodeProductTransformAssignments_ = null;
+        }
+        return nodeProductTransformAssignmentsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -33042,6 +40357,16 @@ public final class Ns3Tbfvuwtge2Iq {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_NS3_Node_Flow_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_NS3_Node_ProductTransform_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_NS3_Node_ProductTransform_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_NS3_Node_ProductTransform_Item_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_NS3_Node_ProductTransform_Item_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_NS3_ProductGroup_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -33101,6 +40426,16 @@ public final class Ns3Tbfvuwtge2Iq {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_NS3_SolutionResponse_Route_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_Item_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_Item_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -33131,7 +40466,7 @@ public final class Ns3Tbfvuwtge2Iq {
       "\n\007flowMin\030\003 \002(\002\022\017\n\007flowMax\030\004 \002(\002\"d\n\016Dime" +
       "nsionRange\022\023\n\013dimensionId\030\001 \002(\t\022\023\n\010minRa" +
       "nge\030\002 \002(\002:\0010\022\020\n\010maxRange\030\003 \002(\002\022\026\n\013flowPe" +
-      "nalty\030\004 \002(\002:\0010\"\236\005\n\004Node\022\n\n\002id\030\001 \002(\t\022\035\n\007g" +
+      "nalty\030\004 \002(\002:\0010\"\273\010\n\004Node\022\n\n\002id\030\001 \002(\t\022\035\n\007g" +
       "eocode\030\002 \002(\0132\014.NS3.Geocode\022)\n\nproduction" +
       "\030\003 \003(\0132\025.NS3.Node.ProductFlow\022*\n\013consump" +
       "tion\030\004 \003(\0132\025.NS3.Node.ProductFlow\022\034\n\004flo" +
@@ -33139,74 +40474,95 @@ public final class Ns3Tbfvuwtge2Iq {
       "\006 \003(\0132\025.NS3.Node.ProductFlow\022\030\n\020allowabl" +
       "eSources\030\007 \003(\t\022\032\n\016maximumSources\030\010 \001(\005:\002" +
       "-1\0227\n\017flowConstraints\030\t \003(\0132\036.NS3.FlowDi" +
-      "mensionalConstraint\032\270\001\n\013ProductFlow\022\021\n\tp" +
-      "roductId\030\001 \002(\t\022,\n\017dimensionRanges\030\002 \003(\0132" +
-      "\023.NS3.DimensionRange\0224\n\023FixedDimensionCo" +
-      "sts\030\003 \003(\0132\027.NS3.FixedDimensionCost\0222\n\022un" +
-      "itDimensionCosts\030\004 \003(\0132\026.NS3.UnitDimensi" +
-      "onCost\032\236\001\n\004Flow\022,\n\017dimensionRanges\030\001 \003(\013" +
-      "2\023.NS3.DimensionRange\0224\n\023FixedDimensionC" +
-      "osts\030\002 \003(\0132\027.NS3.FixedDimensionCost\0222\n\022u" +
-      "nitDimensionCosts\030\003 \003(\0132\026.NS3.UnitDimens" +
-      "ionCost\"\336\001\n\014ProductGroup\022\021\n\tproductId\030\001 " +
-      "\002(\t\022\026\n\016productGroupId\030\002 \002(\t\022D\n\024productSp" +
-      "ecification\030\003 \003(\0132&.NS3.ProductGroup.Pro" +
-      "ductSpecification\032]\n\024ProductSpecificatio" +
-      "n\022\025\n\rbaseDimension\030\001 \002(\t\022\027\n\017targetDimens" +
-      "ion\030\002 \003(\t\022\025\n\rtargetPerBase\030\003 \003(\002\"\325\001\n\010Lan" +
-      "eRate\022\n\n\002id\030\001 \002(\t\022\016\n\006source\030\003 \002(\t\022\023\n\013des" +
-      "tination\030\004 \002(\t\022\022\n\nproductIds\030\005 \003(\t\022\027\n\017pr" +
-      "oductGroupIds\030\006 \003(\t\0222\n\022unitDimensionCost" +
-      "s\030\007 \003(\0132\026.NS3.UnitDimensionCost\0227\n\017flowC" +
-      "onstraints\030\010 \003(\0132\036.NS3.FlowDimensionalCo" +
-      "nstraint\"\254\001\n\tCostModel\022\n\n\002id\030\001 \002(\t\022\016\n\006so" +
-      "urce\030\002 \002(\t\022\027\n\017productGroupIds\030\003 \003(\t\0221\n\021u" +
-      "nitDimensionCost\030\004 \003(\0132\026.NS3.UnitDimensi" +
-      "onCost\0227\n\017flowConstraints\030\005 \003(\0132\036.NS3.Fl" +
-      "owDimensionalConstraint\"\302\001\n\005Model\022/\n\ndim" +
-      "ensions\030\001 \002(\0132\033.NS3.DimensionConfigurati" +
-      "on\022\030\n\005nodes\030\002 \003(\0132\t.NS3.Node\022 \n\tlaneRate" +
-      "s\030\003 \003(\0132\r.NS3.LaneRate\022\"\n\ncostModels\030\004 \003" +
-      "(\0132\016.NS3.CostModel\022(\n\rproductGroups\030\005 \003(" +
-      "\0132\021.NS3.ProductGroup\"\372\001\n\014SolveRequest\022\031\n" +
-      "\005model\030\001 \001(\0132\n.NS3.Model\022\017\n\007modelID\030\002 \001(" +
-      "\t\0228\n\tsolveType\030\004 \001(\0162\033.NS3.SolveRequest." +
-      "SolveType:\010Optimise\022>\n\016geometryOutput\030\005 " +
-      "\001(\0162 .NS3.SolveRequest.GeometryOutput:\004N" +
-      "one\"\031\n\tSolveType\022\014\n\010Optimise\020\000\")\n\016Geomet" +
-      "ryOutput\022\010\n\004None\020\000\022\r\n\tAggregate\020\001\"\324\t\n\020So" +
-      "lutionResponse\022\021\n\tobjective\030\001 \002(\002\022\022\n\nlow" +
-      "erBound\030\002 \001(\002\022\025\n\roptimalityGap\030\003 \001(\002\0225\n\013" +
-      "assignments\030\004 \003(\0132 .NS3.SolutionResponse" +
-      ".Assignment\0221\n\tnodeFlows\030\005 \003(\0132\036.NS3.Sol" +
-      "utionResponse.NodeFlow\022?\n\020nodeProductFlo" +
-      "ws\030\006 \003(\0132%.NS3.SolutionResponse.NodeProd" +
-      "uctFlow\022@\n\020geometrySequence\030\007 \003(\0132&.NS3." +
-      "SolutionResponse.GeometrySequence\022+\n\006rou" +
-      "tes\030\010 \003(\0132\033.NS3.SolutionResponse.Route\032\257" +
-      "\001\n\nAssignment\022\016\n\006source\030\001 \002(\t\022\023\n\013destina" +
-      "tion\030\002 \002(\t\022\021\n\tproductId\030\003 \002(\t\022\016\n\006amount\030" +
-      "\004 \002(\002\022\014\n\004cost\030\005 \002(\002\022\022\n\nlaneRateId\030\006 \001(\t\022" +
-      "\023\n\013costModelId\030\007 \001(\t\022\020\n\010distance\030\010 \002(\002\022\020" +
-      "\n\010duration\030\t \002(\002\032\227\002\n\017NodeProductFlow\022\016\n\006" +
-      "nodeId\030\001 \002(\t\022\021\n\tproductId\030\002 \002(\t\022\016\n\006inFlo" +
-      "w\030\003 \002(\002\022\017\n\007outFlow\030\004 \002(\002\022\020\n\010flowCost\030\005 \002" +
-      "(\002\022\021\n\tfixedCost\030\006 \002(\002\022\030\n\020productionAmoun" +
-      "t\030\007 \002(\002\022\031\n\021productionPenalty\030\010 \002(\002\022\026\n\016pr" +
-      "oductionCost\030\t \002(\002\022\031\n\021consumptionAmount\030" +
-      "\n \002(\002\022\032\n\022consumptionPenalty\030\013 \002(\002\022\027\n\017con" +
-      "sumptionCost\030\014 \002(\002\032\260\002\n\010NodeFlow\022\016\n\006nodeI" +
-      "d\030\001 \002(\t\022\016\n\006inFlow\030\002 \002(\002\022\017\n\007outFlow\030\003 \002(\002" +
-      "\022\020\n\010flowCost\030\004 \002(\002\022\021\n\tfixedCost\030\005 \002(\002\022\027\n" +
-      "\017productFlowCost\030\006 \002(\002\022\030\n\020productFixedCo" +
-      "st\030\007 \002(\002\022\030\n\020productionAmount\030\010 \002(\002\022\031\n\021pr" +
-      "oductionPenalty\030\t \002(\002\022\026\n\016productionCost\030" +
-      "\n \002(\002\022\031\n\021consumptionAmount\030\013 \002(\002\022\032\n\022cons" +
-      "umptionPenalty\030\014 \002(\002\022\027\n\017consumptionCost\030" +
-      "\r \002(\002\032(\n\020GeometrySequence\022\t\n\001x\030\001 \003(\002\022\t\n\001" +
-      "y\030\002 \003(\002\032?\n\005Route\022\016\n\006fromId\030\001 \002(\t\022\014\n\004toId" +
-      "\030\002 \002(\t\022\030\n\020geometrySequence\030\003 \003(\005B\017\n\ricep" +
-      "ackai.NS3"
+      "mensionalConstraint\0225\n\021productTransforms" +
+      "\030\n \003(\0132\032.NS3.Node.ProductTransform\032\270\001\n\013P" +
+      "roductFlow\022\021\n\tproductId\030\001 \002(\t\022,\n\017dimensi" +
+      "onRanges\030\002 \003(\0132\023.NS3.DimensionRange\0224\n\023F" +
+      "ixedDimensionCosts\030\003 \003(\0132\027.NS3.FixedDime" +
+      "nsionCost\0222\n\022unitDimensionCosts\030\004 \003(\0132\026." +
+      "NS3.UnitDimensionCost\032\236\001\n\004Flow\022,\n\017dimens" +
+      "ionRanges\030\001 \003(\0132\023.NS3.DimensionRange\0224\n\023" +
+      "FixedDimensionCosts\030\002 \003(\0132\027.NS3.FixedDim" +
+      "ensionCost\0222\n\022unitDimensionCosts\030\003 \003(\0132\026" +
+      ".NS3.UnitDimensionCost\032\343\002\n\020ProductTransf" +
+      "orm\022\032\n\022productTransformId\030\001 \002(\t\0223\n\ninput" +
+      "Items\030\002 \003(\0132\037.NS3.Node.ProductTransform." +
+      "Item\0224\n\013outputItems\030\003 \003(\0132\037.NS3.Node.Pro" +
+      "ductTransform.Item\032\307\001\n\004Item\022\021\n\tproductId" +
+      "\030\001 \002(\t\022\024\n\014productRatio\030\002 \002(\005\022,\n\017dimensio" +
+      "nRanges\030\003 \003(\0132\023.NS3.DimensionRange\0224\n\023fi" +
+      "xedDimensionCosts\030\004 \003(\0132\027.NS3.FixedDimen" +
+      "sionCost\0222\n\022unitDimensionCosts\030\005 \003(\0132\026.N" +
+      "S3.UnitDimensionCost\"\336\001\n\014ProductGroup\022\021\n" +
+      "\tproductId\030\001 \002(\t\022\026\n\016productGroupId\030\002 \002(\t" +
+      "\022D\n\024productSpecification\030\003 \003(\0132&.NS3.Pro" +
+      "ductGroup.ProductSpecification\032]\n\024Produc" +
+      "tSpecification\022\025\n\rbaseDimension\030\001 \002(\t\022\027\n" +
+      "\017targetDimension\030\002 \003(\t\022\025\n\rtargetPerBase\030" +
+      "\003 \003(\002\"\325\001\n\010LaneRate\022\n\n\002id\030\001 \002(\t\022\016\n\006source" +
+      "\030\003 \002(\t\022\023\n\013destination\030\004 \002(\t\022\022\n\nproductId" +
+      "s\030\005 \003(\t\022\027\n\017productGroupIds\030\006 \003(\t\0222\n\022unit" +
+      "DimensionCosts\030\007 \003(\0132\026.NS3.UnitDimension" +
+      "Cost\0227\n\017flowConstraints\030\010 \003(\0132\036.NS3.Flow" +
+      "DimensionalConstraint\"\255\001\n\tCostModel\022\n\n\002i" +
+      "d\030\001 \002(\t\022\016\n\006source\030\002 \002(\t\022\027\n\017productGroupI" +
+      "ds\030\003 \003(\t\0222\n\022unitDimensionCosts\030\004 \003(\0132\026.N" +
+      "S3.UnitDimensionCost\0227\n\017flowConstraints\030" +
+      "\005 \003(\0132\036.NS3.FlowDimensionalConstraint\"\302\001" +
+      "\n\005Model\022/\n\ndimensions\030\001 \002(\0132\033.NS3.Dimens" +
+      "ionConfiguration\022\030\n\005nodes\030\002 \003(\0132\t.NS3.No" +
+      "de\022 \n\tlaneRates\030\003 \003(\0132\r.NS3.LaneRate\022\"\n\n" +
+      "costModels\030\004 \003(\0132\016.NS3.CostModel\022(\n\rprod" +
+      "uctGroups\030\005 \003(\0132\021.NS3.ProductGroup\"\372\001\n\014S" +
+      "olveRequest\022\031\n\005model\030\001 \001(\0132\n.NS3.Model\022\017" +
+      "\n\007modelID\030\002 \001(\t\0228\n\tsolveType\030\004 \001(\0162\033.NS3" +
+      ".SolveRequest.SolveType:\010Optimise\022>\n\016geo" +
+      "metryOutput\030\005 \001(\0162 .NS3.SolveRequest.Geo" +
+      "metryOutput:\004None\"\031\n\tSolveType\022\014\n\010Optimi" +
+      "se\020\000\")\n\016GeometryOutput\022\010\n\004None\020\000\022\r\n\tAggr" +
+      "egate\020\001\"\231\r\n\020SolutionResponse\022\021\n\tobjectiv" +
+      "e\030\001 \002(\002\022\022\n\nlowerBound\030\002 \001(\002\022\025\n\roptimalit" +
+      "yGap\030\003 \001(\002\0225\n\013assignments\030\004 \003(\0132 .NS3.So" +
+      "lutionResponse.Assignment\0221\n\tnodeFlows\030\005" +
+      " \003(\0132\036.NS3.SolutionResponse.NodeFlow\022?\n\020" +
+      "nodeProductFlows\030\006 \003(\0132%.NS3.SolutionRes" +
+      "ponse.NodeProductFlow\022@\n\020geometrySequenc" +
+      "e\030\007 \003(\0132&.NS3.SolutionResponse.GeometryS" +
+      "equence\022+\n\006routes\030\010 \003(\0132\033.NS3.SolutionRe" +
+      "sponse.Route\022]\n\037nodeProductTransformAssi" +
+      "gnments\030\t \003(\01324.NS3.SolutionResponse.Nod" +
+      "eProductTransformAssignment\032\257\001\n\nAssignme" +
+      "nt\022\016\n\006source\030\001 \002(\t\022\023\n\013destination\030\002 \002(\t\022" +
+      "\021\n\tproductId\030\003 \002(\t\022\016\n\006amount\030\004 \002(\002\022\014\n\004co" +
+      "st\030\005 \002(\002\022\022\n\nlaneRateId\030\006 \001(\t\022\023\n\013costMode" +
+      "lId\030\007 \001(\t\022\020\n\010distance\030\010 \002(\002\022\020\n\010duration\030" +
+      "\t \002(\002\032\227\002\n\017NodeProductFlow\022\016\n\006nodeId\030\001 \002(" +
+      "\t\022\021\n\tproductId\030\002 \002(\t\022\016\n\006inFlow\030\003 \002(\002\022\017\n\007" +
+      "outFlow\030\004 \002(\002\022\020\n\010flowCost\030\005 \002(\002\022\021\n\tfixed" +
+      "Cost\030\006 \002(\002\022\030\n\020productionAmount\030\007 \002(\002\022\031\n\021" +
+      "productionPenalty\030\010 \002(\002\022\026\n\016productionCos" +
+      "t\030\t \002(\002\022\031\n\021consumptionAmount\030\n \002(\002\022\032\n\022co" +
+      "nsumptionPenalty\030\013 \002(\002\022\027\n\017consumptionCos" +
+      "t\030\014 \002(\002\032\260\002\n\010NodeFlow\022\016\n\006nodeId\030\001 \002(\t\022\016\n\006" +
+      "inFlow\030\002 \002(\002\022\017\n\007outFlow\030\003 \002(\002\022\020\n\010flowCos" +
+      "t\030\004 \002(\002\022\021\n\tfixedCost\030\005 \002(\002\022\027\n\017productFlo" +
+      "wCost\030\006 \002(\002\022\030\n\020productFixedCost\030\007 \002(\002\022\030\n" +
+      "\020productionAmount\030\010 \002(\002\022\031\n\021productionPen" +
+      "alty\030\t \002(\002\022\026\n\016productionCost\030\n \002(\002\022\031\n\021co" +
+      "nsumptionAmount\030\013 \002(\002\022\032\n\022consumptionPena" +
+      "lty\030\014 \002(\002\022\027\n\017consumptionCost\030\r \002(\002\032(\n\020Ge" +
+      "ometrySequence\022\t\n\001x\030\001 \003(\002\022\t\n\001y\030\002 \003(\002\032?\n\005" +
+      "Route\022\016\n\006fromId\030\001 \002(\t\022\014\n\004toId\030\002 \002(\t\022\030\n\020g" +
+      "eometrySequence\030\003 \003(\005\032\343\002\n\036NodeProductTra" +
+      "nsformAssignment\022\016\n\006nodeId\030\001 \002(\t\022\032\n\022prod" +
+      "uctTransformId\030\002 \002(\t\022M\n\ninputItems\030\003 \003(\013" +
+      "29.NS3.SolutionResponse.NodeProductTrans" +
+      "formAssignment.Item\022N\n\013outputItems\030\004 \003(\013" +
+      "29.NS3.SolutionResponse.NodeProductTrans" +
+      "formAssignment.Item\032v\n\004Item\022\021\n\tproductId" +
+      "\030\001 \002(\t\022\016\n\006amount\030\002 \002(\002\022\014\n\004cost\030\003 \002(\002\022\021\n\t" +
+      "fixedCost\030\004 \002(\002\022\025\n\rpenaltyAmount\030\005 \002(\002\022\023" +
+      "\n\013penaltyCost\030\006 \002(\002B\017\n\ricepackai.NS3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -33273,7 +40629,7 @@ public final class Ns3Tbfvuwtge2Iq {
     internal_static_NS3_Node_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NS3_Node_descriptor,
-        new java.lang.String[] { "Id", "Geocode", "Production", "Consumption", "Flow", "ProductFlows", "AllowableSources", "MaximumSources", "FlowConstraints", });
+        new java.lang.String[] { "Id", "Geocode", "Production", "Consumption", "Flow", "ProductFlows", "AllowableSources", "MaximumSources", "FlowConstraints", "ProductTransforms", });
     internal_static_NS3_Node_ProductFlow_descriptor =
       internal_static_NS3_Node_descriptor.getNestedTypes().get(0);
     internal_static_NS3_Node_ProductFlow_fieldAccessorTable = new
@@ -33286,6 +40642,18 @@ public final class Ns3Tbfvuwtge2Iq {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NS3_Node_Flow_descriptor,
         new java.lang.String[] { "DimensionRanges", "FixedDimensionCosts", "UnitDimensionCosts", });
+    internal_static_NS3_Node_ProductTransform_descriptor =
+      internal_static_NS3_Node_descriptor.getNestedTypes().get(2);
+    internal_static_NS3_Node_ProductTransform_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_NS3_Node_ProductTransform_descriptor,
+        new java.lang.String[] { "ProductTransformId", "InputItems", "OutputItems", });
+    internal_static_NS3_Node_ProductTransform_Item_descriptor =
+      internal_static_NS3_Node_ProductTransform_descriptor.getNestedTypes().get(0);
+    internal_static_NS3_Node_ProductTransform_Item_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_NS3_Node_ProductTransform_Item_descriptor,
+        new java.lang.String[] { "ProductId", "ProductRatio", "DimensionRanges", "FixedDimensionCosts", "UnitDimensionCosts", });
     internal_static_NS3_ProductGroup_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_NS3_ProductGroup_fieldAccessorTable = new
@@ -33309,7 +40677,7 @@ public final class Ns3Tbfvuwtge2Iq {
     internal_static_NS3_CostModel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NS3_CostModel_descriptor,
-        new java.lang.String[] { "Id", "Source", "ProductGroupIds", "UnitDimensionCost", "FlowConstraints", });
+        new java.lang.String[] { "Id", "Source", "ProductGroupIds", "UnitDimensionCosts", "FlowConstraints", });
     internal_static_NS3_Model_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_NS3_Model_fieldAccessorTable = new
@@ -33327,7 +40695,7 @@ public final class Ns3Tbfvuwtge2Iq {
     internal_static_NS3_SolutionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NS3_SolutionResponse_descriptor,
-        new java.lang.String[] { "Objective", "LowerBound", "OptimalityGap", "Assignments", "NodeFlows", "NodeProductFlows", "GeometrySequence", "Routes", });
+        new java.lang.String[] { "Objective", "LowerBound", "OptimalityGap", "Assignments", "NodeFlows", "NodeProductFlows", "GeometrySequence", "Routes", "NodeProductTransformAssignments", });
     internal_static_NS3_SolutionResponse_Assignment_descriptor =
       internal_static_NS3_SolutionResponse_descriptor.getNestedTypes().get(0);
     internal_static_NS3_SolutionResponse_Assignment_fieldAccessorTable = new
@@ -33358,6 +40726,18 @@ public final class Ns3Tbfvuwtge2Iq {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NS3_SolutionResponse_Route_descriptor,
         new java.lang.String[] { "FromId", "ToId", "GeometrySequence", });
+    internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_descriptor =
+      internal_static_NS3_SolutionResponse_descriptor.getNestedTypes().get(5);
+    internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_descriptor,
+        new java.lang.String[] { "NodeId", "ProductTransformId", "InputItems", "OutputItems", });
+    internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_Item_descriptor =
+      internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_descriptor.getNestedTypes().get(0);
+    internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_Item_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_NS3_SolutionResponse_NodeProductTransformAssignment_Item_descriptor,
+        new java.lang.String[] { "ProductId", "Amount", "Cost", "FixedCost", "PenaltyAmount", "PenaltyCost", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
