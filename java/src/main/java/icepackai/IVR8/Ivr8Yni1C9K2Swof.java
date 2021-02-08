@@ -60,6 +60,10 @@ public final class Ivr8Yni1C9K2Swof {
     float getTardyMax();
   }
   /**
+   * <pre>
+   * https://docs.icepack.ai/ivr/dimension/#internaldimension
+   * </pre>
+   *
    * Protobuf type {@code IVR8.InternalDimension}
    */
   public  static final class InternalDimension extends
@@ -648,6 +652,10 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/dimension/#internaldimension
+     * </pre>
+     *
      * Protobuf type {@code IVR8.InternalDimension}
      */
     public static final class Builder extends
@@ -1116,6 +1124,10 @@ public final class Ivr8Yni1C9K2Swof {
     float getTardyMax();
   }
   /**
+   * <pre>
+   * https://docs.icepack.ai/ivr/dimension/#capacitydimension
+   * </pre>
+   *
    * Protobuf type {@code IVR8.CapacityDimension}
    */
   public  static final class CapacityDimension extends
@@ -1549,6 +1561,10 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/dimension/#capacitydimension
+     * </pre>
+     *
      * Protobuf type {@code IVR8.CapacityDimension}
      */
     public static final class Builder extends
@@ -2062,6 +2078,10 @@ public final class Ivr8Yni1C9K2Swof {
         int index);
   }
   /**
+   * <pre>
+   * https://docs.icepack.ai/ivr/dimension/#dimensionconfiguration
+   * </pre>
+   *
    * Protobuf type {@code IVR8.DimensionConfiguration}
    */
   public  static final class DimensionConfiguration extends
@@ -2458,6 +2478,10 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/dimension/#dimensionconfiguration
+     * </pre>
+     *
      * Protobuf type {@code IVR8.DimensionConfiguration}
      */
     public static final class Builder extends
@@ -3254,6 +3278,10 @@ public final class Ivr8Yni1C9K2Swof {
     float getLatitude();
   }
   /**
+   * <pre>
+   * https://docs.icepack.ai/ivr/geocode/
+   * </pre>
+   *
    * Protobuf type {@code IVR8.Geocode}
    */
   public  static final class Geocode extends
@@ -3567,6 +3595,10 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/geocode/
+     * </pre>
+     *
      * Protobuf type {@code IVR8.Geocode}
      */
     public static final class Builder extends
@@ -3934,6 +3966,10 @@ public final class Ivr8Yni1C9K2Swof {
     float getTardyMax();
   }
   /**
+   * <pre>
+   * https://docs.icepack.ai/ivr/window/
+   * </pre>
+   *
    * Protobuf type {@code IVR8.Window}
    */
   public  static final class Window extends
@@ -4407,6 +4443,10 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/window/
+     * </pre>
+     *
      * Protobuf type {@code IVR8.Window}
      */
     public static final class Builder extends
@@ -4929,6 +4969,7 @@ public final class Ivr8Yni1C9K2Swof {
   /**
    * <pre>
    * Locations allow us to uniquely identify the positions at which Tasks occur
+   * https://docs.icepack.ai/ivr/location/
    * </pre>
    *
    * Protobuf type {@code IVR8.Location}
@@ -6942,6 +6983,7 @@ public final class Ivr8Yni1C9K2Swof {
     /**
      * <pre>
      * Locations allow us to uniquely identify the positions at which Tasks occur
+     * https://docs.icepack.ai/ivr/location/
      * </pre>
      *
      * Protobuf type {@code IVR8.Location}
@@ -7780,6 +7822,7 @@ public final class Ivr8Yni1C9K2Swof {
    * Currently only singles Task and pickup+dropoff Tasks are supported
    * Jobs are also used to represent shifts on Vehicles with at most two Tasks
    * indicating the start and end location (which may be the same)
+   * https://docs.icepack.ai/ivr/job/
    * </pre>
    *
    * Protobuf type {@code IVR8.Job}
@@ -7950,6 +7993,10 @@ public final class Ivr8Yni1C9K2Swof {
           getVehicleIdsBytes(int index);
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/job/#job-vehicle-relation
+     * </pre>
+     *
      * Protobuf type {@code IVR8.Job.VehicleRelation}
      */
     public  static final class VehicleRelation extends
@@ -8365,6 +8412,10 @@ public final class Ivr8Yni1C9K2Swof {
         return builder;
       }
       /**
+       * <pre>
+       * https://docs.icepack.ai/ivr/job/#job-vehicle-relation
+       * </pre>
+       *
        * Protobuf type {@code IVR8.Job.VehicleRelation}
        */
       public static final class Builder extends
@@ -8753,6 +8804,10 @@ public final class Ivr8Yni1C9K2Swof {
           getCompartmentIdsBytes(int index);
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/job/#job-compartment-relation
+     * </pre>
+     *
      * Protobuf type {@code IVR8.Job.CompartmentRelation}
      */
     public  static final class CompartmentRelation extends
@@ -9168,6 +9223,10 @@ public final class Ivr8Yni1C9K2Swof {
         return builder;
       }
       /**
+       * <pre>
+       * https://docs.icepack.ai/ivr/job/#job-compartment-relation
+       * </pre>
+       *
        * Protobuf type {@code IVR8.Job.CompartmentRelation}
        */
       public static final class Builder extends
@@ -9603,8 +9662,62 @@ public final class Ivr8Yni1C9K2Swof {
        * <code>repeated .IVR8.Job.Task.TripConstraint tripConstraints = 4;</code>
        */
       icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TripConstraint getTripConstraints(int index);
+
+      /**
+       * <pre>
+       * if empty, all are permitted
+       * </pre>
+       *
+       * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+       */
+      boolean hasPredecessors();
+      /**
+       * <pre>
+       * if empty, all are permitted
+       * </pre>
+       *
+       * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+       */
+      icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation getPredecessors();
+      /**
+       * <pre>
+       * if empty, all are permitted
+       * </pre>
+       *
+       * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+       */
+      icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelationOrBuilder getPredecessorsOrBuilder();
+
+      /**
+       * <pre>
+       * if empty, all are permitted
+       * </pre>
+       *
+       * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+       */
+      boolean hasSuccessors();
+      /**
+       * <pre>
+       * if empty, all are permitted
+       * </pre>
+       *
+       * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+       */
+      icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation getSuccessors();
+      /**
+       * <pre>
+       * if empty, all are permitted
+       * </pre>
+       *
+       * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+       */
+      icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelationOrBuilder getSuccessorsOrBuilder();
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/task/
+     * </pre>
+     *
      * Protobuf type {@code IVR8.Job.Task}
      */
     public  static final class Task extends
@@ -9701,6 +9814,32 @@ public final class Ivr8Yni1C9K2Swof {
                   }
                 }
                 input.popLimit(oldLimit);
+                break;
+              }
+              case 42: {
+                icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                  subBuilder = predecessors_.toBuilder();
+                }
+                predecessors_ = input.readMessage(icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(predecessors_);
+                  predecessors_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00000004;
+                break;
+              }
+              case 50: {
+                icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                  subBuilder = successors_.toBuilder();
+                }
+                successors_ = input.readMessage(icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(successors_);
+                  successors_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00000008;
                 break;
               }
               default: {
@@ -10905,6 +11044,809 @@ public final class Ivr8Yni1C9K2Swof {
 
       }
 
+      public interface TaskRelationOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:IVR8.Job.Task.TaskRelation)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>required .IVR8.Job.Task.TaskRelation.Type type = 1;</code>
+         */
+        boolean hasType();
+        /**
+         * <code>required .IVR8.Job.Task.TaskRelation.Type type = 1;</code>
+         */
+        icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Type getType();
+
+        /**
+         * <code>repeated string taskIds = 2;</code>
+         */
+        java.util.List<java.lang.String>
+            getTaskIdsList();
+        /**
+         * <code>repeated string taskIds = 2;</code>
+         */
+        int getTaskIdsCount();
+        /**
+         * <code>repeated string taskIds = 2;</code>
+         */
+        java.lang.String getTaskIds(int index);
+        /**
+         * <code>repeated string taskIds = 2;</code>
+         */
+        com.google.protobuf.ByteString
+            getTaskIdsBytes(int index);
+      }
+      /**
+       * Protobuf type {@code IVR8.Job.Task.TaskRelation}
+       */
+      public  static final class TaskRelation extends
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:IVR8.Job.Task.TaskRelation)
+          TaskRelationOrBuilder {
+      private static final long serialVersionUID = 0L;
+        // Use TaskRelation.newBuilder() to construct.
+        private TaskRelation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+        private TaskRelation() {
+          type_ = 0;
+          taskIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+          return this.unknownFields;
+        }
+        private TaskRelation(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          int mutable_bitField0_ = 0;
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int rawValue = input.readEnum();
+                    @SuppressWarnings("deprecation")
+                  icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Type value = icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Type.valueOf(rawValue);
+                  if (value == null) {
+                    unknownFields.mergeVarintField(1, rawValue);
+                  } else {
+                    bitField0_ |= 0x00000001;
+                    type_ = rawValue;
+                  }
+                  break;
+                }
+                case 18: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
+                  if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                    taskIds_ = new com.google.protobuf.LazyStringArrayList();
+                    mutable_bitField0_ |= 0x00000002;
+                  }
+                  taskIds_.add(bs);
+                  break;
+                }
+                default: {
+                  if (!parseUnknownField(
+                      input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(
+                e).setUnfinishedMessage(this);
+          } finally {
+            if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              taskIds_ = taskIds_.getUnmodifiableView();
+            }
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return icepackai.IVR8.Ivr8Yni1C9K2Swof.internal_static_IVR8_Job_Task_TaskRelation_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return icepackai.IVR8.Ivr8Yni1C9K2Swof.internal_static_IVR8_Job_Task_TaskRelation_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.class, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder.class);
+        }
+
+        /**
+         * Protobuf enum {@code IVR8.Job.Task.TaskRelation.Type}
+         */
+        public enum Type
+            implements com.google.protobuf.ProtocolMessageEnum {
+          /**
+           * <code>INCLUSIVE = 0;</code>
+           */
+          INCLUSIVE(0),
+          /**
+           * <code>EXCLUSIVE = 1;</code>
+           */
+          EXCLUSIVE(1),
+          ;
+
+          /**
+           * <code>INCLUSIVE = 0;</code>
+           */
+          public static final int INCLUSIVE_VALUE = 0;
+          /**
+           * <code>EXCLUSIVE = 1;</code>
+           */
+          public static final int EXCLUSIVE_VALUE = 1;
+
+
+          public final int getNumber() {
+            return value;
+          }
+
+          /**
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
+          @java.lang.Deprecated
+          public static Type valueOf(int value) {
+            return forNumber(value);
+          }
+
+          public static Type forNumber(int value) {
+            switch (value) {
+              case 0: return INCLUSIVE;
+              case 1: return EXCLUSIVE;
+              default: return null;
+            }
+          }
+
+          public static com.google.protobuf.Internal.EnumLiteMap<Type>
+              internalGetValueMap() {
+            return internalValueMap;
+          }
+          private static final com.google.protobuf.Internal.EnumLiteMap<
+              Type> internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+                  public Type findValueByNumber(int number) {
+                    return Type.forNumber(number);
+                  }
+                };
+
+          public final com.google.protobuf.Descriptors.EnumValueDescriptor
+              getValueDescriptor() {
+            return getDescriptor().getValues().get(ordinal());
+          }
+          public final com.google.protobuf.Descriptors.EnumDescriptor
+              getDescriptorForType() {
+            return getDescriptor();
+          }
+          public static final com.google.protobuf.Descriptors.EnumDescriptor
+              getDescriptor() {
+            return icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.getDescriptor().getEnumTypes().get(0);
+          }
+
+          private static final Type[] VALUES = values();
+
+          public static Type valueOf(
+              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+              throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+            }
+            return VALUES[desc.getIndex()];
+          }
+
+          private final int value;
+
+          private Type(int value) {
+            this.value = value;
+          }
+
+          // @@protoc_insertion_point(enum_scope:IVR8.Job.Task.TaskRelation.Type)
+        }
+
+        private int bitField0_;
+        public static final int TYPE_FIELD_NUMBER = 1;
+        private int type_;
+        /**
+         * <code>required .IVR8.Job.Task.TaskRelation.Type type = 1;</code>
+         */
+        public boolean hasType() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>required .IVR8.Job.Task.TaskRelation.Type type = 1;</code>
+         */
+        public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Type getType() {
+          @SuppressWarnings("deprecation")
+          icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Type result = icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Type.valueOf(type_);
+          return result == null ? icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Type.INCLUSIVE : result;
+        }
+
+        public static final int TASKIDS_FIELD_NUMBER = 2;
+        private com.google.protobuf.LazyStringList taskIds_;
+        /**
+         * <code>repeated string taskIds = 2;</code>
+         */
+        public com.google.protobuf.ProtocolStringList
+            getTaskIdsList() {
+          return taskIds_;
+        }
+        /**
+         * <code>repeated string taskIds = 2;</code>
+         */
+        public int getTaskIdsCount() {
+          return taskIds_.size();
+        }
+        /**
+         * <code>repeated string taskIds = 2;</code>
+         */
+        public java.lang.String getTaskIds(int index) {
+          return taskIds_.get(index);
+        }
+        /**
+         * <code>repeated string taskIds = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getTaskIdsBytes(int index) {
+          return taskIds_.getByteString(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          if (!hasType()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                            throws java.io.IOException {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            output.writeEnum(1, type_);
+          }
+          for (int i = 0; i < taskIds_.size(); i++) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskIds_.getRaw(i));
+          }
+          unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeEnumSize(1, type_);
+          }
+          {
+            int dataSize = 0;
+            for (int i = 0; i < taskIds_.size(); i++) {
+              dataSize += computeStringSizeNoTag(taskIds_.getRaw(i));
+            }
+            size += dataSize;
+            size += 1 * getTaskIdsList().size();
+          }
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+           return true;
+          }
+          if (!(obj instanceof icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation)) {
+            return super.equals(obj);
+          }
+          icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation other = (icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation) obj;
+
+          boolean result = true;
+          result = result && (hasType() == other.hasType());
+          if (hasType()) {
+            result = result && type_ == other.type_;
+          }
+          result = result && getTaskIdsList()
+              .equals(other.getTaskIdsList());
+          result = result && unknownFields.equals(other.unknownFields);
+          return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (hasType()) {
+            hash = (37 * hash) + TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + type_;
+          }
+          if (getTaskIdsCount() > 0) {
+            hash = (37 * hash) + TASKIDS_FIELD_NUMBER;
+            hash = (53 * hash) + getTaskIdsList().hashCode();
+          }
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+        }
+        public static icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input);
+        }
+        public static icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+        }
+        public static icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() { return newBuilder(); }
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+        public static Builder newBuilder(icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE
+              ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         * Protobuf type {@code IVR8.Job.Task.TaskRelation}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:IVR8.Job.Task.TaskRelation)
+            icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelationOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor
+              getDescriptor() {
+            return icepackai.IVR8.Ivr8Yni1C9K2Swof.internal_static_IVR8_Job_Task_TaskRelation_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return icepackai.IVR8.Ivr8Yni1C9K2Swof.internal_static_IVR8_Job_Task_TaskRelation_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.class, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder.class);
+          }
+
+          // Construct using icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+            }
+          }
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            type_ = 0;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            taskIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor
+              getDescriptorForType() {
+            return icepackai.IVR8.Ivr8Yni1C9K2Swof.internal_static_IVR8_Job_Task_TaskRelation_descriptor;
+          }
+
+          @java.lang.Override
+          public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation getDefaultInstanceForType() {
+            return icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation build() {
+            icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation buildPartial() {
+            icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation result = new icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation(this);
+            int from_bitField0_ = bitField0_;
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+              to_bitField0_ |= 0x00000001;
+            }
+            result.type_ = type_;
+            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+              taskIds_ = taskIds_.getUnmodifiableView();
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.taskIds_ = taskIds_;
+            result.bitField0_ = to_bitField0_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return (Builder) super.clone();
+          }
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return (Builder) super.setField(field, value);
+          }
+          @java.lang.Override
+          public Builder clearField(
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return (Builder) super.clearField(field);
+          }
+          @java.lang.Override
+          public Builder clearOneof(
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return (Builder) super.clearOneof(oneof);
+          }
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
+            return (Builder) super.setRepeatedField(field, index, value);
+          }
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return (Builder) super.addRepeatedField(field, value);
+          }
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation) {
+              return mergeFrom((icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation)other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation other) {
+            if (other == icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.getDefaultInstance()) return this;
+            if (other.hasType()) {
+              setType(other.getType());
+            }
+            if (!other.taskIds_.isEmpty()) {
+              if (taskIds_.isEmpty()) {
+                taskIds_ = other.taskIds_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+              } else {
+                ensureTaskIdsIsMutable();
+                taskIds_.addAll(other.taskIds_);
+              }
+              onChanged();
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            if (!hasType()) {
+              return false;
+            }
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage = (icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation) e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+          private int bitField0_;
+
+          private int type_ = 0;
+          /**
+           * <code>required .IVR8.Job.Task.TaskRelation.Type type = 1;</code>
+           */
+          public boolean hasType() {
+            return ((bitField0_ & 0x00000001) == 0x00000001);
+          }
+          /**
+           * <code>required .IVR8.Job.Task.TaskRelation.Type type = 1;</code>
+           */
+          public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Type getType() {
+            @SuppressWarnings("deprecation")
+            icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Type result = icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Type.valueOf(type_);
+            return result == null ? icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Type.INCLUSIVE : result;
+          }
+          /**
+           * <code>required .IVR8.Job.Task.TaskRelation.Type type = 1;</code>
+           */
+          public Builder setType(icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Type value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            bitField0_ |= 0x00000001;
+            type_ = value.getNumber();
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>required .IVR8.Job.Task.TaskRelation.Type type = 1;</code>
+           */
+          public Builder clearType() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            type_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private com.google.protobuf.LazyStringList taskIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          private void ensureTaskIdsIsMutable() {
+            if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+              taskIds_ = new com.google.protobuf.LazyStringArrayList(taskIds_);
+              bitField0_ |= 0x00000002;
+             }
+          }
+          /**
+           * <code>repeated string taskIds = 2;</code>
+           */
+          public com.google.protobuf.ProtocolStringList
+              getTaskIdsList() {
+            return taskIds_.getUnmodifiableView();
+          }
+          /**
+           * <code>repeated string taskIds = 2;</code>
+           */
+          public int getTaskIdsCount() {
+            return taskIds_.size();
+          }
+          /**
+           * <code>repeated string taskIds = 2;</code>
+           */
+          public java.lang.String getTaskIds(int index) {
+            return taskIds_.get(index);
+          }
+          /**
+           * <code>repeated string taskIds = 2;</code>
+           */
+          public com.google.protobuf.ByteString
+              getTaskIdsBytes(int index) {
+            return taskIds_.getByteString(index);
+          }
+          /**
+           * <code>repeated string taskIds = 2;</code>
+           */
+          public Builder setTaskIds(
+              int index, java.lang.String value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTaskIdsIsMutable();
+            taskIds_.set(index, value);
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>repeated string taskIds = 2;</code>
+           */
+          public Builder addTaskIds(
+              java.lang.String value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTaskIdsIsMutable();
+            taskIds_.add(value);
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>repeated string taskIds = 2;</code>
+           */
+          public Builder addAllTaskIds(
+              java.lang.Iterable<java.lang.String> values) {
+            ensureTaskIdsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, taskIds_);
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>repeated string taskIds = 2;</code>
+           */
+          public Builder clearTaskIds() {
+            taskIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>repeated string taskIds = 2;</code>
+           */
+          public Builder addTaskIdsBytes(
+              com.google.protobuf.ByteString value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTaskIdsIsMutable();
+            taskIds_.add(value);
+            onChanged();
+            return this;
+          }
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+
+          // @@protoc_insertion_point(builder_scope:IVR8.Job.Task.TaskRelation)
+        }
+
+        // @@protoc_insertion_point(class_scope:IVR8.Job.Task.TaskRelation)
+        private static final icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation DEFAULT_INSTANCE;
+        static {
+          DEFAULT_INSTANCE = new icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation();
+        }
+
+        public static icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        @java.lang.Deprecated public static final com.google.protobuf.Parser<TaskRelation>
+            PARSER = new com.google.protobuf.AbstractParser<TaskRelation>() {
+          @java.lang.Override
+          public TaskRelation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TaskRelation(input, extensionRegistry);
+          }
+        };
+
+        public static com.google.protobuf.Parser<TaskRelation> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<TaskRelation> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+
+      }
+
       private int bitField0_;
       public static final int TASKID_FIELD_NUMBER = 1;
       private volatile java.lang.Object taskId_;
@@ -11069,6 +12011,72 @@ public final class Ivr8Yni1C9K2Swof {
         return tripConstraints_converter_.convert(tripConstraints_.get(index));
       }
 
+      public static final int PREDECESSORS_FIELD_NUMBER = 5;
+      private icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation predecessors_;
+      /**
+       * <pre>
+       * if empty, all are permitted
+       * </pre>
+       *
+       * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+       */
+      public boolean hasPredecessors() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <pre>
+       * if empty, all are permitted
+       * </pre>
+       *
+       * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+       */
+      public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation getPredecessors() {
+        return predecessors_ == null ? icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.getDefaultInstance() : predecessors_;
+      }
+      /**
+       * <pre>
+       * if empty, all are permitted
+       * </pre>
+       *
+       * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+       */
+      public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelationOrBuilder getPredecessorsOrBuilder() {
+        return predecessors_ == null ? icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.getDefaultInstance() : predecessors_;
+      }
+
+      public static final int SUCCESSORS_FIELD_NUMBER = 6;
+      private icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation successors_;
+      /**
+       * <pre>
+       * if empty, all are permitted
+       * </pre>
+       *
+       * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+       */
+      public boolean hasSuccessors() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <pre>
+       * if empty, all are permitted
+       * </pre>
+       *
+       * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+       */
+      public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation getSuccessors() {
+        return successors_ == null ? icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.getDefaultInstance() : successors_;
+      }
+      /**
+       * <pre>
+       * if empty, all are permitted
+       * </pre>
+       *
+       * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+       */
+      public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelationOrBuilder getSuccessorsOrBuilder() {
+        return successors_ == null ? icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.getDefaultInstance() : successors_;
+      }
+
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -11086,6 +12094,18 @@ public final class Ivr8Yni1C9K2Swof {
         }
         for (int i = 0; i < getAttributesCount(); i++) {
           if (!getAttributes(i).isInitialized()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+        }
+        if (hasPredecessors()) {
+          if (!getPredecessors().isInitialized()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+        }
+        if (hasSuccessors()) {
+          if (!getSuccessors().isInitialized()) {
             memoizedIsInitialized = 0;
             return false;
           }
@@ -11108,6 +12128,12 @@ public final class Ivr8Yni1C9K2Swof {
         }
         for (int i = 0; i < tripConstraints_.size(); i++) {
           output.writeEnum(4, tripConstraints_.get(i));
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          output.writeMessage(5, getPredecessors());
+        }
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          output.writeMessage(6, getSuccessors());
         }
         unknownFields.writeTo(output);
       }
@@ -11136,6 +12162,14 @@ public final class Ivr8Yni1C9K2Swof {
           }
           size += dataSize;
           size += 1 * tripConstraints_.size();
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, getPredecessors());
+        }
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, getSuccessors());
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -11166,6 +12200,16 @@ public final class Ivr8Yni1C9K2Swof {
         result = result && getAttributesList()
             .equals(other.getAttributesList());
         result = result && tripConstraints_.equals(other.tripConstraints_);
+        result = result && (hasPredecessors() == other.hasPredecessors());
+        if (hasPredecessors()) {
+          result = result && getPredecessors()
+              .equals(other.getPredecessors());
+        }
+        result = result && (hasSuccessors() == other.hasSuccessors());
+        if (hasSuccessors()) {
+          result = result && getSuccessors()
+              .equals(other.getSuccessors());
+        }
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -11192,6 +12236,14 @@ public final class Ivr8Yni1C9K2Swof {
         if (getTripConstraintsCount() > 0) {
           hash = (37 * hash) + TRIPCONSTRAINTS_FIELD_NUMBER;
           hash = (53 * hash) + tripConstraints_.hashCode();
+        }
+        if (hasPredecessors()) {
+          hash = (37 * hash) + PREDECESSORS_FIELD_NUMBER;
+          hash = (53 * hash) + getPredecessors().hashCode();
+        }
+        if (hasSuccessors()) {
+          hash = (37 * hash) + SUCCESSORS_FIELD_NUMBER;
+          hash = (53 * hash) + getSuccessors().hashCode();
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -11289,6 +12341,10 @@ public final class Ivr8Yni1C9K2Swof {
         return builder;
       }
       /**
+       * <pre>
+       * https://docs.icepack.ai/ivr/task/
+       * </pre>
+       *
        * Protobuf type {@code IVR8.Job.Task}
        */
       public static final class Builder extends
@@ -11322,6 +12378,8 @@ public final class Ivr8Yni1C9K2Swof {
           if (com.google.protobuf.GeneratedMessageV3
                   .alwaysUseFieldBuilders) {
             getAttributesFieldBuilder();
+            getPredecessorsFieldBuilder();
+            getSuccessorsFieldBuilder();
           }
         }
         @java.lang.Override
@@ -11339,6 +12397,18 @@ public final class Ivr8Yni1C9K2Swof {
           }
           tripConstraints_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000008);
+          if (predecessorsBuilder_ == null) {
+            predecessors_ = null;
+          } else {
+            predecessorsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000010);
+          if (successorsBuilder_ == null) {
+            successors_ = null;
+          } else {
+            successorsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000020);
           return this;
         }
 
@@ -11389,6 +12459,22 @@ public final class Ivr8Yni1C9K2Swof {
             bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.tripConstraints_ = tripConstraints_;
+          if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+            to_bitField0_ |= 0x00000004;
+          }
+          if (predecessorsBuilder_ == null) {
+            result.predecessors_ = predecessors_;
+          } else {
+            result.predecessors_ = predecessorsBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+            to_bitField0_ |= 0x00000008;
+          }
+          if (successorsBuilder_ == null) {
+            result.successors_ = successors_;
+          } else {
+            result.successors_ = successorsBuilder_.build();
+          }
           result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
@@ -11484,6 +12570,12 @@ public final class Ivr8Yni1C9K2Swof {
             }
             onChanged();
           }
+          if (other.hasPredecessors()) {
+            mergePredecessors(other.getPredecessors());
+          }
+          if (other.hasSuccessors()) {
+            mergeSuccessors(other.getSuccessors());
+          }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
@@ -11499,6 +12591,16 @@ public final class Ivr8Yni1C9K2Swof {
           }
           for (int i = 0; i < getAttributesCount(); i++) {
             if (!getAttributes(i).isInitialized()) {
+              return false;
+            }
+          }
+          if (hasPredecessors()) {
+            if (!getPredecessors().isInitialized()) {
+              return false;
+            }
+          }
+          if (hasSuccessors()) {
+            if (!getSuccessors().isInitialized()) {
               return false;
             }
           }
@@ -12018,6 +13120,314 @@ public final class Ivr8Yni1C9K2Swof {
           onChanged();
           return this;
         }
+
+        private icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation predecessors_ = null;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelationOrBuilder> predecessorsBuilder_;
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+         */
+        public boolean hasPredecessors() {
+          return ((bitField0_ & 0x00000010) == 0x00000010);
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+         */
+        public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation getPredecessors() {
+          if (predecessorsBuilder_ == null) {
+            return predecessors_ == null ? icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.getDefaultInstance() : predecessors_;
+          } else {
+            return predecessorsBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+         */
+        public Builder setPredecessors(icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation value) {
+          if (predecessorsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            predecessors_ = value;
+            onChanged();
+          } else {
+            predecessorsBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000010;
+          return this;
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+         */
+        public Builder setPredecessors(
+            icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder builderForValue) {
+          if (predecessorsBuilder_ == null) {
+            predecessors_ = builderForValue.build();
+            onChanged();
+          } else {
+            predecessorsBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000010;
+          return this;
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+         */
+        public Builder mergePredecessors(icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation value) {
+          if (predecessorsBuilder_ == null) {
+            if (((bitField0_ & 0x00000010) == 0x00000010) &&
+                predecessors_ != null &&
+                predecessors_ != icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.getDefaultInstance()) {
+              predecessors_ =
+                icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.newBuilder(predecessors_).mergeFrom(value).buildPartial();
+            } else {
+              predecessors_ = value;
+            }
+            onChanged();
+          } else {
+            predecessorsBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000010;
+          return this;
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+         */
+        public Builder clearPredecessors() {
+          if (predecessorsBuilder_ == null) {
+            predecessors_ = null;
+            onChanged();
+          } else {
+            predecessorsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000010);
+          return this;
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+         */
+        public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder getPredecessorsBuilder() {
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return getPredecessorsFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+         */
+        public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelationOrBuilder getPredecessorsOrBuilder() {
+          if (predecessorsBuilder_ != null) {
+            return predecessorsBuilder_.getMessageOrBuilder();
+          } else {
+            return predecessors_ == null ?
+                icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.getDefaultInstance() : predecessors_;
+          }
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation predecessors = 5;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelationOrBuilder> 
+            getPredecessorsFieldBuilder() {
+          if (predecessorsBuilder_ == null) {
+            predecessorsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelationOrBuilder>(
+                    getPredecessors(),
+                    getParentForChildren(),
+                    isClean());
+            predecessors_ = null;
+          }
+          return predecessorsBuilder_;
+        }
+
+        private icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation successors_ = null;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelationOrBuilder> successorsBuilder_;
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+         */
+        public boolean hasSuccessors() {
+          return ((bitField0_ & 0x00000020) == 0x00000020);
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+         */
+        public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation getSuccessors() {
+          if (successorsBuilder_ == null) {
+            return successors_ == null ? icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.getDefaultInstance() : successors_;
+          } else {
+            return successorsBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+         */
+        public Builder setSuccessors(icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation value) {
+          if (successorsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            successors_ = value;
+            onChanged();
+          } else {
+            successorsBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000020;
+          return this;
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+         */
+        public Builder setSuccessors(
+            icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder builderForValue) {
+          if (successorsBuilder_ == null) {
+            successors_ = builderForValue.build();
+            onChanged();
+          } else {
+            successorsBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000020;
+          return this;
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+         */
+        public Builder mergeSuccessors(icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation value) {
+          if (successorsBuilder_ == null) {
+            if (((bitField0_ & 0x00000020) == 0x00000020) &&
+                successors_ != null &&
+                successors_ != icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.getDefaultInstance()) {
+              successors_ =
+                icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.newBuilder(successors_).mergeFrom(value).buildPartial();
+            } else {
+              successors_ = value;
+            }
+            onChanged();
+          } else {
+            successorsBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000020;
+          return this;
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+         */
+        public Builder clearSuccessors() {
+          if (successorsBuilder_ == null) {
+            successors_ = null;
+            onChanged();
+          } else {
+            successorsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000020);
+          return this;
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+         */
+        public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder getSuccessorsBuilder() {
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return getSuccessorsFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+         */
+        public icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelationOrBuilder getSuccessorsOrBuilder() {
+          if (successorsBuilder_ != null) {
+            return successorsBuilder_.getMessageOrBuilder();
+          } else {
+            return successors_ == null ?
+                icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.getDefaultInstance() : successors_;
+          }
+        }
+        /**
+         * <pre>
+         * if empty, all are permitted
+         * </pre>
+         *
+         * <code>optional .IVR8.Job.Task.TaskRelation successors = 6;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelationOrBuilder> 
+            getSuccessorsFieldBuilder() {
+          if (successorsBuilder_ == null) {
+            successorsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelation.Builder, icepackai.IVR8.Ivr8Yni1C9K2Swof.Job.Task.TaskRelationOrBuilder>(
+                    getSuccessors(),
+                    getParentForChildren(),
+                    isClean());
+            successors_ = null;
+          }
+          return successorsBuilder_;
+        }
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -12531,6 +13941,7 @@ public final class Ivr8Yni1C9K2Swof {
      * Currently only singles Task and pickup+dropoff Tasks are supported
      * Jobs are also used to represent shifts on Vehicles with at most two Tasks
      * indicating the start and end location (which may be the same)
+     * https://docs.icepack.ai/ivr/job/
      * </pre>
      *
      * Protobuf type {@code IVR8.Job}
@@ -13548,6 +14959,10 @@ public final class Ivr8Yni1C9K2Swof {
         int index);
   }
   /**
+   * <pre>
+   * https://docs.icepack.ai/ivr/transit-set/
+   * </pre>
+   *
    * Protobuf type {@code IVR8.TransitSet}
    */
   public  static final class TransitSet extends
@@ -14690,6 +16105,10 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/transit-set/
+     * </pre>
+     *
      * Protobuf type {@code IVR8.TransitSet}
      */
     public static final class Builder extends
@@ -15229,6 +16648,10 @@ public final class Ivr8Yni1C9K2Swof {
     icepackai.IVR8.Ivr8Yni1C9K2Swof.TransitSetOrBuilder getTransitSetOrBuilder();
   }
   /**
+   * <pre>
+   * https://docs.icepack.ai/ivr/transit-generator/
+   * </pre>
+   *
    * Protobuf type {@code IVR8.TransitGenerator}
    */
   public  static final class TransitGenerator extends
@@ -15646,6 +17069,10 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/transit-generator/
+     * </pre>
+     *
      * Protobuf type {@code IVR8.TransitGenerator}
      */
     public static final class Builder extends
@@ -16260,6 +17687,10 @@ public final class Ivr8Yni1C9K2Swof {
         getCompartmentSetIdBytes();
   }
   /**
+   * <pre>
+   * https://docs.icepack.ai/ivr/vehicle-class/
+   * </pre>
+   *
    * Protobuf type {@code IVR8.VehicleClass}
    */
   public  static final class VehicleClass extends
@@ -17808,6 +19239,10 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/vehicle-class/
+     * </pre>
+     *
      * Protobuf type {@code IVR8.VehicleClass}
      */
     public static final class Builder extends
@@ -18630,6 +20065,10 @@ public final class Ivr8Yni1C9K2Swof {
         int index);
   }
   /**
+   * <pre>
+   * https://docs.icepack.ai/ivr/vehicle-cost-class/
+   * </pre>
+   *
    * Protobuf type {@code IVR8.VehicleCostClass}
    */
   public  static final class VehicleCostClass extends
@@ -20066,6 +21505,10 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/vehicle-cost-class/
+     * </pre>
+     *
      * Protobuf type {@code IVR8.VehicleCostClass}
      */
     public static final class Builder extends
@@ -20800,6 +22243,10 @@ public final class Ivr8Yni1C9K2Swof {
         getCompartmentSetIdBytes();
   }
   /**
+   * <pre>
+   * https://docs.icepack.ai/ivr/vehicle/
+   * </pre>
+   *
    * Protobuf type {@code IVR8.Vehicle}
    */
   public  static final class Vehicle extends
@@ -25023,6 +26470,10 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/vehicle/
+     * </pre>
+     *
      * Protobuf type {@code IVR8.Vehicle}
      */
     public static final class Builder extends
@@ -26175,6 +27626,7 @@ public final class Ivr8Yni1C9K2Swof {
    * <pre>
    * used to provide a partial solution for either evaluation or as
    * a seed to the optimisation problem (warm start)
+   * https://docs.icepack.ai/ivr/task-sequence/
    * </pre>
    *
    * Protobuf type {@code IVR8.TaskSequence}
@@ -26583,6 +28035,7 @@ public final class Ivr8Yni1C9K2Swof {
      * <pre>
      * used to provide a partial solution for either evaluation or as
      * a seed to the optimisation problem (warm start)
+     * https://docs.icepack.ai/ivr/task-sequence/
      * </pre>
      *
      * Protobuf type {@code IVR8.TaskSequence}
@@ -27180,6 +28633,10 @@ public final class Ivr8Yni1C9K2Swof {
         int index);
   }
   /**
+   * <pre>
+   * https://docs.icepack.ai/ivr/transit-rule/
+   * </pre>
+   *
    * Protobuf type {@code IVR8.TransitRule}
    */
   public  static final class TransitRule extends
@@ -28420,6 +29877,10 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/transit-rule/
+     * </pre>
+     *
      * Protobuf type {@code IVR8.TransitRule}
      */
     public static final class Builder extends
@@ -29298,6 +30759,10 @@ public final class Ivr8Yni1C9K2Swof {
         int index);
   }
   /**
+   * <pre>
+   * https://docs.icepack.ai/ivr/compartment/
+   * </pre>
+   *
    * Protobuf type {@code IVR8.Compartment}
    */
   public  static final class Compartment extends
@@ -30337,6 +31802,10 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/compartment/
+     * </pre>
+     *
      * Protobuf type {@code IVR8.Compartment}
      */
     public static final class Builder extends
@@ -30972,6 +32441,10 @@ public final class Ivr8Yni1C9K2Swof {
         int index);
   }
   /**
+   * <pre>
+   * https://docs.icepack.ai/ivr/compartment-set/
+   * </pre>
+   *
    * Protobuf type {@code IVR8.CompartmentSet}
    */
   public  static final class CompartmentSet extends
@@ -32504,6 +33977,10 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/compartment-set/
+     * </pre>
+     *
      * Protobuf type {@code IVR8.CompartmentSet}
      */
     public static final class Builder extends
@@ -33447,7 +34924,8 @@ public final class Ivr8Yni1C9K2Swof {
   /**
    * <pre>
    * The encapsulating model.
-   * Potentially versioned on the server side (Through the request ID)
+   * Potentially versioned on the server side (through the request ID - see
+   * https://docs.icepack.ai/ivr/ivrdata/) https://docs.icepack.ai/ivr/model/
    * </pre>
    *
    * Protobuf type {@code IVR8.Model}
@@ -34397,7 +35875,8 @@ public final class Ivr8Yni1C9K2Swof {
     /**
      * <pre>
      * The encapsulating model.
-     * Potentially versioned on the server side (Through the request ID)
+     * Potentially versioned on the server side (through the request ID - see
+     * https://docs.icepack.ai/ivr/ivrdata/) https://docs.icepack.ai/ivr/model/
      * </pre>
      *
      * Protobuf type {@code IVR8.Model}
@@ -37639,7 +39118,7 @@ public final class Ivr8Yni1C9K2Swof {
 
     /**
      * <pre>
-     * the model ID from a previously optimised
+     * the ID from a data-upload type:
      * </pre>
      *
      * <code>optional string modelID = 2;</code>
@@ -37647,7 +39126,7 @@ public final class Ivr8Yni1C9K2Swof {
     boolean hasModelID();
     /**
      * <pre>
-     * the model ID from a previously optimised
+     * the ID from a data-upload type:
      * </pre>
      *
      * <code>optional string modelID = 2;</code>
@@ -37655,7 +39134,7 @@ public final class Ivr8Yni1C9K2Swof {
     java.lang.String getModelID();
     /**
      * <pre>
-     * the model ID from a previously optimised
+     * the ID from a data-upload type:
      * </pre>
      *
      * <code>optional string modelID = 2;</code>
@@ -37665,7 +39144,7 @@ public final class Ivr8Yni1C9K2Swof {
 
     /**
      * <pre>
-     * request (for use with evaluate solve type)
+     * https://docs.icepack.ai/ivr/ivrdata/
      * </pre>
      *
      * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -37674,7 +39153,7 @@ public final class Ivr8Yni1C9K2Swof {
         getRoutesList();
     /**
      * <pre>
-     * request (for use with evaluate solve type)
+     * https://docs.icepack.ai/ivr/ivrdata/
      * </pre>
      *
      * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -37682,7 +39161,7 @@ public final class Ivr8Yni1C9K2Swof {
     icepackai.IVR8.Ivr8Yni1C9K2Swof.TaskSequence getRoutes(int index);
     /**
      * <pre>
-     * request (for use with evaluate solve type)
+     * https://docs.icepack.ai/ivr/ivrdata/
      * </pre>
      *
      * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -37690,7 +39169,7 @@ public final class Ivr8Yni1C9K2Swof {
     int getRoutesCount();
     /**
      * <pre>
-     * request (for use with evaluate solve type)
+     * https://docs.icepack.ai/ivr/ivrdata/
      * </pre>
      *
      * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -37699,7 +39178,7 @@ public final class Ivr8Yni1C9K2Swof {
         getRoutesOrBuilderList();
     /**
      * <pre>
-     * request (for use with evaluate solve type)
+     * https://docs.icepack.ai/ivr/ivrdata/
      * </pre>
      *
      * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -37719,6 +39198,7 @@ public final class Ivr8Yni1C9K2Swof {
   /**
    * <pre>
    * Input message for this schema.
+   * https://docs.icepack.ai/ivr/solve-request/
    * </pre>
    *
    * Protobuf type {@code IVR8.SolveRequest}
@@ -37998,7 +39478,7 @@ public final class Ivr8Yni1C9K2Swof {
     private volatile java.lang.Object modelID_;
     /**
      * <pre>
-     * the model ID from a previously optimised
+     * the ID from a data-upload type:
      * </pre>
      *
      * <code>optional string modelID = 2;</code>
@@ -38008,7 +39488,7 @@ public final class Ivr8Yni1C9K2Swof {
     }
     /**
      * <pre>
-     * the model ID from a previously optimised
+     * the ID from a data-upload type:
      * </pre>
      *
      * <code>optional string modelID = 2;</code>
@@ -38029,7 +39509,7 @@ public final class Ivr8Yni1C9K2Swof {
     }
     /**
      * <pre>
-     * the model ID from a previously optimised
+     * the ID from a data-upload type:
      * </pre>
      *
      * <code>optional string modelID = 2;</code>
@@ -38052,7 +39532,7 @@ public final class Ivr8Yni1C9K2Swof {
     private java.util.List<icepackai.IVR8.Ivr8Yni1C9K2Swof.TaskSequence> routes_;
     /**
      * <pre>
-     * request (for use with evaluate solve type)
+     * https://docs.icepack.ai/ivr/ivrdata/
      * </pre>
      *
      * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -38062,7 +39542,7 @@ public final class Ivr8Yni1C9K2Swof {
     }
     /**
      * <pre>
-     * request (for use with evaluate solve type)
+     * https://docs.icepack.ai/ivr/ivrdata/
      * </pre>
      *
      * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -38073,7 +39553,7 @@ public final class Ivr8Yni1C9K2Swof {
     }
     /**
      * <pre>
-     * request (for use with evaluate solve type)
+     * https://docs.icepack.ai/ivr/ivrdata/
      * </pre>
      *
      * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -38083,7 +39563,7 @@ public final class Ivr8Yni1C9K2Swof {
     }
     /**
      * <pre>
-     * request (for use with evaluate solve type)
+     * https://docs.icepack.ai/ivr/ivrdata/
      * </pre>
      *
      * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -38093,7 +39573,7 @@ public final class Ivr8Yni1C9K2Swof {
     }
     /**
      * <pre>
-     * request (for use with evaluate solve type)
+     * https://docs.icepack.ai/ivr/ivrdata/
      * </pre>
      *
      * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -38339,6 +39819,7 @@ public final class Ivr8Yni1C9K2Swof {
     /**
      * <pre>
      * Input message for this schema.
+     * https://docs.icepack.ai/ivr/solve-request/
      * </pre>
      *
      * Protobuf type {@code IVR8.SolveRequest}
@@ -38732,7 +40213,7 @@ public final class Ivr8Yni1C9K2Swof {
       private java.lang.Object modelID_ = "";
       /**
        * <pre>
-       * the model ID from a previously optimised
+       * the ID from a data-upload type:
        * </pre>
        *
        * <code>optional string modelID = 2;</code>
@@ -38742,7 +40223,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * the model ID from a previously optimised
+       * the ID from a data-upload type:
        * </pre>
        *
        * <code>optional string modelID = 2;</code>
@@ -38763,7 +40244,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * the model ID from a previously optimised
+       * the ID from a data-upload type:
        * </pre>
        *
        * <code>optional string modelID = 2;</code>
@@ -38783,7 +40264,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * the model ID from a previously optimised
+       * the ID from a data-upload type:
        * </pre>
        *
        * <code>optional string modelID = 2;</code>
@@ -38800,7 +40281,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * the model ID from a previously optimised
+       * the ID from a data-upload type:
        * </pre>
        *
        * <code>optional string modelID = 2;</code>
@@ -38813,7 +40294,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * the model ID from a previously optimised
+       * the ID from a data-upload type:
        * </pre>
        *
        * <code>optional string modelID = 2;</code>
@@ -38843,7 +40324,7 @@ public final class Ivr8Yni1C9K2Swof {
 
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -38857,7 +40338,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -38871,7 +40352,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -38885,7 +40366,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -38906,7 +40387,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -38924,7 +40405,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -38944,7 +40425,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -38965,7 +40446,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -38983,7 +40464,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -39001,7 +40482,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -39020,7 +40501,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -39037,7 +40518,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -39054,7 +40535,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -39065,7 +40546,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -39079,7 +40560,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -39094,7 +40575,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -39105,7 +40586,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -39117,7 +40598,7 @@ public final class Ivr8Yni1C9K2Swof {
       }
       /**
        * <pre>
-       * request (for use with evaluate solve type)
+       * https://docs.icepack.ai/ivr/ivrdata/
        * </pre>
        *
        * <code>repeated .IVR8.TaskSequence routes = 3;</code>
@@ -39292,6 +40773,11 @@ public final class Ivr8Yni1C9K2Swof {
         int index);
   }
   /**
+   * <pre>
+   * -- OUTPUT DEFINITIONS -- //
+   * https://docs.icepack.ai/ivr/solution-response/
+   * </pre>
+   *
    * Protobuf type {@code IVR8.SolutionResponse}
    */
   public  static final class SolutionResponse extends
@@ -39476,6 +40962,10 @@ public final class Ivr8Yni1C9K2Swof {
       float getTardyCost();
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/solution-response/#stop-attribute
+     * </pre>
+     *
      * Protobuf type {@code IVR8.SolutionResponse.StopAttribute}
      */
     public  static final class StopAttribute extends
@@ -40069,6 +41559,10 @@ public final class Ivr8Yni1C9K2Swof {
         return builder;
       }
       /**
+       * <pre>
+       * https://docs.icepack.ai/ivr/solution-response/#stop-attribute
+       * </pre>
+       *
        * Protobuf type {@code IVR8.SolutionResponse.StopAttribute}
        */
       public static final class Builder extends
@@ -40709,6 +42203,10 @@ public final class Ivr8Yni1C9K2Swof {
       float getCost();
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/solution-response/#interstopattribute
+     * </pre>
+     *
      * Protobuf type {@code IVR8.SolutionResponse.InterStopAttribute}
      */
     public  static final class InterStopAttribute extends
@@ -41126,6 +42624,10 @@ public final class Ivr8Yni1C9K2Swof {
         return builder;
       }
       /**
+       * <pre>
+       * https://docs.icepack.ai/ivr/solution-response/#interstopattribute
+       * </pre>
+       *
        * Protobuf type {@code IVR8.SolutionResponse.InterStopAttribute}
        */
       public static final class Builder extends
@@ -41647,6 +43149,10 @@ public final class Ivr8Yni1C9K2Swof {
           getCompartmentIdBytes();
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/solution-response/#stop
+     * </pre>
+     *
      * Protobuf type {@code IVR8.SolutionResponse.Stop}
      */
     public  static final class Stop extends
@@ -42281,6 +43787,10 @@ public final class Ivr8Yni1C9K2Swof {
         return builder;
       }
       /**
+       * <pre>
+       * https://docs.icepack.ai/ivr/solution-response/#stop
+       * </pre>
+       *
        * Protobuf type {@code IVR8.SolutionResponse.Stop}
        */
       public static final class Builder extends
@@ -43280,6 +44790,10 @@ public final class Ivr8Yni1C9K2Swof {
           int index);
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/solution-response/#interstop
+     * </pre>
+     *
      * Protobuf type {@code IVR8.SolutionResponse.InterStop}
      */
     public  static final class InterStop extends
@@ -43713,6 +45227,10 @@ public final class Ivr8Yni1C9K2Swof {
         return builder;
       }
       /**
+       * <pre>
+       * https://docs.icepack.ai/ivr/solution-response/#interstop
+       * </pre>
+       *
        * Protobuf type {@code IVR8.SolutionResponse.InterStop}
        */
       public static final class Builder extends
@@ -44649,6 +46167,10 @@ public final class Ivr8Yni1C9K2Swof {
       float getCost();
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/solution-response/#transitruleattribute
+     * </pre>
+     *
      * Protobuf type {@code IVR8.SolutionResponse.TransitRuleAttribute}
      */
     public  static final class TransitRuleAttribute extends
@@ -45216,6 +46738,10 @@ public final class Ivr8Yni1C9K2Swof {
         return builder;
       }
       /**
+       * <pre>
+       * https://docs.icepack.ai/ivr/solution-response/#transitruleattribute
+       * </pre>
+       *
        * Protobuf type {@code IVR8.SolutionResponse.TransitRuleAttribute}
        */
       public static final class Builder extends
@@ -45916,6 +47442,10 @@ public final class Ivr8Yni1C9K2Swof {
           int index);
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/solution-response/#route
+     * </pre>
+     *
      * Protobuf type {@code IVR8.SolutionResponse.Route}
      */
     public  static final class Route extends
@@ -46464,6 +47994,10 @@ public final class Ivr8Yni1C9K2Swof {
         return builder;
       }
       /**
+       * <pre>
+       * https://docs.icepack.ai/ivr/solution-response/#route
+       * </pre>
+       *
        * Protobuf type {@code IVR8.SolutionResponse.Route}
        */
       public static final class Builder extends
@@ -47737,6 +49271,10 @@ public final class Ivr8Yni1C9K2Swof {
           int index);
     }
     /**
+     * <pre>
+     * https://docs.icepack.ai/ivr/solution-response/#infeasibility
+     * </pre>
+     *
      * Protobuf type {@code IVR8.SolutionResponse.Infeasibility}
      */
     public  static final class Infeasibility extends
@@ -49300,6 +50838,10 @@ public final class Ivr8Yni1C9K2Swof {
         return builder;
       }
       /**
+       * <pre>
+       * https://docs.icepack.ai/ivr/solution-response/#infeasibility
+       * </pre>
+       *
        * Protobuf type {@code IVR8.SolutionResponse.Infeasibility}
        */
       public static final class Builder extends
@@ -50166,6 +51708,11 @@ public final class Ivr8Yni1C9K2Swof {
       return builder;
     }
     /**
+     * <pre>
+     * -- OUTPUT DEFINITIONS -- //
+     * https://docs.icepack.ai/ivr/solution-response/
+     * </pre>
+     *
      * Protobuf type {@code IVR8.SolutionResponse}
      */
     public static final class Builder extends
@@ -51041,6 +52588,11 @@ public final class Ivr8Yni1C9K2Swof {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_IVR8_Job_Task_Attribute_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_IVR8_Job_Task_TaskRelation_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_IVR8_Job_Task_TaskRelation_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_IVR8_TransitSet_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -51223,7 +52775,7 @@ public final class Ivr8Yni1C9K2Swof {
       "nsionId\030\001 \002(\t\022\021\n\tvehicleId\030\002 \001(\t\022\020\n\010quan" +
       "tity\030\003 \001(\002\022$\n\016arrivalWindows\030\004 \003(\0132\014.IVR" +
       "8.Window\022&\n\020departureWindows\030\005 \003(\0132\014.IVR" +
-      "8.Window\"\355\005\n\003Job\022\n\n\002id\030\001 \002(\t\022\"\n\npickupTa" +
+      "8.Window\"\310\007\n\003Job\022\n\n\002id\030\001 \002(\t\022\"\n\npickupTa" +
       "sk\030\002 \001(\0132\016.IVR8.Job.Task\022#\n\013dropoffTask\030" +
       "\003 \001(\0132\016.IVR8.Job.Task\022\017\n\007penalty\030\004 \002(\002\0223" +
       "\n\020vehicleRelations\030\005 \001(\0132\031.IVR8.Job.Vehi" +
@@ -51235,111 +52787,116 @@ public final class Ivr8Yni1C9K2Swof {
       "CompartmentRelation\0220\n\004type\030\001 \002(\0162\".IVR8" +
       ".Job.CompartmentRelation.Type\022\026\n\016compart" +
       "mentIds\030\002 \003(\t\"$\n\004Type\022\r\n\tINCLUSIVE\020\000\022\r\n\t" +
-      "EXCLUSIVE\020\001\032\212\002\n\004Task\022\016\n\006taskId\030\001 \002(\t\022\022\n\n" +
+      "EXCLUSIVE\020\001\032\345\003\n\004Task\022\016\n\006taskId\030\001 \002(\t\022\022\n\n" +
       "locationId\030\002 \002(\t\022,\n\nattributes\030\003 \003(\0132\030.I" +
       "VR8.Job.Task.Attribute\0226\n\017tripConstraint" +
-      "s\030\004 \003(\0162\035.IVR8.Job.Task.TripConstraint\032Q" +
-      "\n\tAttribute\022\023\n\013dimensionId\030\001 \002(\t\022\020\n\010quan" +
-      "tity\030\002 \001(\002\022\035\n\007windows\030\003 \003(\0132\014.IVR8.Windo" +
-      "w\"%\n\016TripConstraint\022\t\n\005FIRST\020\000\022\010\n\004LAST\020\001" +
-      "\"z\n\nTransitSet\022/\n\010transits\030\001 \003(\0132\035.IVR8." +
-      "TransitSet.TransitValue\032;\n\014TransitValue\022" +
-      "\016\n\006fromId\030\001 \002(\t\022\014\n\004toId\030\002 \002(\t\022\r\n\005value\030\003" +
-      " \002(\002\"W\n\020TransitGenerator\022\n\n\002id\030\001 \002(\t\022\021\n\t" +
-      "requestId\030\002 \001(\t\022$\n\ntransitSet\030\003 \001(\0132\020.IV" +
-      "R8.TransitSet\"\371\001\n\014VehicleClass\022\n\n\002id\030\001 \002" +
-      "(\t\0220\n\nattributes\030\002 \003(\0132\034.IVR8.VehicleCla" +
-      "ss.Attribute\022\026\n\016transitRuleIds\030\003 \003(\t\022\030\n\020" +
-      "compartmentSetId\030\004 \001(\t\032y\n\tAttribute\022\023\n\013d" +
-      "imensionId\030\001 \002(\t\022\032\n\022transitGeneratorId\030\002" +
-      " \001(\t\022\023\n\013transitCoef\030\003 \001(\002\022\020\n\010taskCoef\030\004 " +
-      "\001(\002\022\024\n\014locationCoef\030\005 \001(\002\"\201\002\n\020VehicleCos" +
-      "tClass\022\n\n\002id\030\001 \002(\t\022\021\n\tfixedCost\030\002 \002(\002\0224\n" +
-      "\nattributes\030\003 \003(\0132 .IVR8.VehicleCostClas" +
-      "s.Attribute\032\227\001\n\tAttribute\022\023\n\013dimensionId" +
-      "\030\001 \002(\t\022\027\n\017transitCostCoef\030\002 \001(\002\022\024\n\014taskC" +
-      "ostCoef\030\003 \001(\002\022\030\n\020locationCostCoef\030\004 \001(\002\022" +
-      "\025\n\rslackCostCoef\030\005 \001(\002\022\025\n\rtardyCostCoef\030" +
-      "\006 \001(\002\"\351\003\n\007Vehicle\022\n\n\002id\030\001 \002(\t\022\017\n\007classId" +
-      "\030\002 \002(\t\022\023\n\013costClassId\030\003 \002(\t\022\"\n\005shift\030\004 \002" +
-      "(\0132\023.IVR8.Vehicle.Shift\022*\n\ncapacities\030\005 " +
-      "\003(\0132\026.IVR8.Vehicle.Capacity\022\026\n\016transitRu" +
-      "leIds\030\006 \003(\t\022\030\n\020compartmentSetId\030\007 \001(\t\032\237\001" +
-      "\n\004Task\022\022\n\nlocationId\030\001 \002(\t\0220\n\nattributes" +
-      "\030\002 \003(\0132\034.IVR8.Vehicle.Task.Attribute\032Q\n\t" +
-      "Attribute\022\023\n\013dimensionId\030\001 \002(\t\022\020\n\010quanti" +
-      "ty\030\002 \001(\002\022\035\n\007windows\030\003 \003(\0132\014.IVR8.Window\032" +
-      "U\n\005Shift\022&\n\nshiftStart\030\001 \002(\0132\022.IVR8.Vehi" +
-      "cle.Task\022$\n\010shiftEnd\030\002 \001(\0132\022.IVR8.Vehicl" +
-      "e.Task\0321\n\010Capacity\022\023\n\013dimensionId\030\001 \002(\t\022" +
-      "\020\n\010capacity\030\002 \002(\002\"H\n\014TaskSequence\022\021\n\tveh" +
-      "icleId\030\001 \002(\t\022\016\n\006taskId\030\002 \003(\t\022\025\n\rcompartm" +
-      "entId\030\003 \003(\t\"\335\001\n\013TransitRule\022\n\n\002id\030\001 \002(\t\022" +
-      "\023\n\013dimensionId\030\002 \002(\t\022\036\n\020useStandingState" +
-      "\030\003 \001(\010:\004true\022\036\n\017useTransitState\030\004 \001(\010:\005f" +
-      "alse\022\024\n\014ruleIdPrefix\030\005 \002(\t\022+\n\010triggers\030\006" +
-      " \003(\0132\031.IVR8.TransitRule.Trigger\032*\n\007Trigg" +
-      "er\022\r\n\005value\030\001 \002(\002\022\020\n\010quantity\030\002 \002(\002\"|\n\013C" +
-      "ompartment\022\n\n\002id\030\001 \002(\t\022.\n\ncapacities\030\002 \003" +
-      "(\0132\032.IVR8.Compartment.Capacity\0321\n\010Capaci" +
-      "ty\022\023\n\013dimensionId\030\001 \002(\t\022\020\n\010capacity\030\002 \002(" +
-      "\002\"\356\001\n\016CompartmentSet\022\n\n\002id\030\001 \002(\t\022\026\n\016comp" +
-      "artmentIds\030\002 \003(\t\0224\n\013groupLimits\030\003 \003(\0132\037." +
-      "IVR8.CompartmentSet.GroupLimit\032\201\001\n\nGroup" +
-      "Limit\022\026\n\016compartmentIds\030\001 \003(\t\022\024\n\014coeffic" +
-      "ients\030\002 \003(\002\022\023\n\013dimensionId\030\003 \002(\t\022\r\n\005limi" +
-      "t\030\004 \002(\002\022!\n\022checkStandingState\030\005 \001(\010:\005fal" +
-      "se\"\324\003\n\005Model\0220\n\ndimensions\030\001 \002(\0132\034.IVR8." +
-      "DimensionConfiguration\022!\n\tlocations\030\002 \003(" +
-      "\0132\016.IVR8.Location\022\027\n\004jobs\030\003 \003(\0132\t.IVR8.J" +
-      "ob\022\037\n\010vehicles\030\004 \003(\0132\r.IVR8.Vehicle\022*\n\016v" +
-      "ehicleClasses\030\005 \003(\0132\022.IVR8.VehicleClass\022" +
-      "2\n\022vehicleCostClasses\030\006 \003(\0132\026.IVR8.Vehic" +
-      "leCostClass\022\'\n\014transitRules\030\007 \003(\0132\021.IVR8" +
-      ".TransitRule\0221\n\021transitGenerators\030\010 \003(\0132" +
-      "\026.IVR8.TransitGenerator\022(\n\014taskSequence\030" +
-      "\t \003(\0132\022.IVR8.TaskSequence\022\'\n\014compartment" +
-      "s\030\n \003(\0132\021.IVR8.Compartment\022-\n\017compartmen" +
-      "tSets\030\013 \003(\0132\024.IVR8.CompartmentSet\"\323\001\n\014So" +
-      "lveRequest\022\032\n\005model\030\001 \001(\0132\013.IVR8.Model\022\017" +
-      "\n\007modelID\030\002 \001(\t\022\"\n\006routes\030\003 \003(\0132\022.IVR8.T" +
-      "askSequence\0229\n\tsolveType\030\004 \001(\0162\034.IVR8.So" +
-      "lveRequest.SolveType:\010Optimise\"7\n\tSolveT" +
-      "ype\022\014\n\010Optimise\020\000\022\014\n\010Evaluate\020\001\022\016\n\nReOpt" +
-      "imise\020\002\"\234\n\n\020SolutionResponse\022\021\n\tobjectiv" +
-      "e\030\001 \002(\002\022,\n\006routes\030\002 \003(\0132\034.IVR8.SolutionR" +
-      "esponse.Route\022=\n\017infeasibilities\030\003 \003(\0132$" +
-      ".IVR8.SolutionResponse.Infeasibility\032\240\001\n" +
-      "\rStopAttribute\022\r\n\005dimId\030\001 \002(\t\022\022\n\nstartVa" +
-      "lue\030\002 \002(\002\022\020\n\010endValue\030\003 \002(\002\022\014\n\004cost\030\004 \002(" +
-      "\002\022\022\n\nslackValue\030\005 \002(\002\022\021\n\tslackCost\030\006 \002(\002" +
-      "\022\022\n\ntardyValue\030\007 \002(\002\022\021\n\ttardyCost\030\010 \002(\002\032" +
-      "W\n\022InterStopAttribute\022\r\n\005dimId\030\001 \002(\t\022\022\n\n" +
-      "startValue\030\002 \002(\002\022\020\n\010endValue\030\003 \002(\002\022\014\n\004co" +
-      "st\030\004 \002(\002\032\250\001\n\004Stop\022\n\n\002id\030\001 \002(\005\022\020\n\010sequenc" +
-      "e\030\002 \002(\005\022\022\n\nlocationId\030\003 \002(\t\022\016\n\006taskId\030\004 " +
-      "\002(\t\022\r\n\005jobId\030\005 \002(\t\0228\n\nattributes\030\006 \003(\0132$" +
-      ".IVR8.SolutionResponse.StopAttribute\022\025\n\r" +
-      "compartmentId\030\007 \001(\t\032\226\001\n\tInterStop\022\022\n\nfro" +
-      "mStopId\030\001 \002(\005\022\020\n\010toStopId\030\002 \002(\005\022=\n\nattri" +
-      "butes\030\003 \003(\0132).IVR8.SolutionResponse.Inte" +
-      "rStopAttribute\022$\n\rrouteSegments\030\004 \003(\0132\r." +
-      "IVR8.Geocode\032\217\001\n\024TransitRuleAttribute\022\016\n" +
-      "\006ruleId\030\001 \002(\t\022\r\n\005dimId\030\002 \002(\t\022\022\n\nfromStop" +
-      "Id\030\003 \002(\005\022\020\n\010toStopId\030\004 \002(\005\022\022\n\nstartValue" +
-      "\030\005 \002(\002\022\020\n\010endValue\030\006 \002(\002\022\014\n\004cost\030\007 \002(\002\032\333" +
-      "\001\n\005Route\022\021\n\tvehicleId\030\001 \002(\t\022*\n\005stops\030\002 \003" +
-      "(\0132\033.IVR8.SolutionResponse.Stop\0224\n\ninter" +
-      "Stops\030\003 \003(\0132 .IVR8.SolutionResponse.Inte" +
-      "rStop\022\021\n\tfixedCost\030\004 \003(\002\022J\n\025transitRuleA" +
-      "ttributes\030\005 \003(\0132+.IVR8.SolutionResponse." +
-      "TransitRuleAttribute\032\327\001\n\rInfeasibility\022\016" +
-      "\n\006taskId\030\001 \002(\t\022D\n\021infeasibilityInfo\030\002 \003(" +
-      "\0132).IVR8.SolutionResponse.Infeasibility." +
-      "Info\032p\n\004Info\022\017\n\007message\030\001 \002(\t\022\r\n\005dimId\030\002" +
-      " \001(\t\022\r\n\005limit\030\003 \001(\002\022\r\n\005value\030\004 \001(\002\022\r\n\005co" +
-      "unt\030\005 \001(\003\022\033\n\023constrainingTaskIds\030\006 \003(\tB\020" +
-      "\n\016icepackai.IVR8"
+      "s\030\004 \003(\0162\035.IVR8.Job.Task.TripConstraint\0221" +
+      "\n\014predecessors\030\005 \001(\0132\033.IVR8.Job.Task.Tas" +
+      "kRelation\022/\n\nsuccessors\030\006 \001(\0132\033.IVR8.Job" +
+      ".Task.TaskRelation\032Q\n\tAttribute\022\023\n\013dimen" +
+      "sionId\030\001 \002(\t\022\020\n\010quantity\030\002 \001(\002\022\035\n\007window" +
+      "s\030\003 \003(\0132\014.IVR8.Window\032u\n\014TaskRelation\022.\n" +
+      "\004type\030\001 \002(\0162 .IVR8.Job.Task.TaskRelation" +
+      ".Type\022\017\n\007taskIds\030\002 \003(\t\"$\n\004Type\022\r\n\tINCLUS" +
+      "IVE\020\000\022\r\n\tEXCLUSIVE\020\001\"%\n\016TripConstraint\022\t" +
+      "\n\005FIRST\020\000\022\010\n\004LAST\020\001\"z\n\nTransitSet\022/\n\010tra" +
+      "nsits\030\001 \003(\0132\035.IVR8.TransitSet.TransitVal" +
+      "ue\032;\n\014TransitValue\022\016\n\006fromId\030\001 \002(\t\022\014\n\004to" +
+      "Id\030\002 \002(\t\022\r\n\005value\030\003 \002(\002\"W\n\020TransitGenera" +
+      "tor\022\n\n\002id\030\001 \002(\t\022\021\n\trequestId\030\002 \001(\t\022$\n\ntr" +
+      "ansitSet\030\003 \001(\0132\020.IVR8.TransitSet\"\371\001\n\014Veh" +
+      "icleClass\022\n\n\002id\030\001 \002(\t\0220\n\nattributes\030\002 \003(" +
+      "\0132\034.IVR8.VehicleClass.Attribute\022\026\n\016trans" +
+      "itRuleIds\030\003 \003(\t\022\030\n\020compartmentSetId\030\004 \001(" +
+      "\t\032y\n\tAttribute\022\023\n\013dimensionId\030\001 \002(\t\022\032\n\022t" +
+      "ransitGeneratorId\030\002 \001(\t\022\023\n\013transitCoef\030\003" +
+      " \001(\002\022\020\n\010taskCoef\030\004 \001(\002\022\024\n\014locationCoef\030\005" +
+      " \001(\002\"\201\002\n\020VehicleCostClass\022\n\n\002id\030\001 \002(\t\022\021\n" +
+      "\tfixedCost\030\002 \002(\002\0224\n\nattributes\030\003 \003(\0132 .I" +
+      "VR8.VehicleCostClass.Attribute\032\227\001\n\tAttri" +
+      "bute\022\023\n\013dimensionId\030\001 \002(\t\022\027\n\017transitCost" +
+      "Coef\030\002 \001(\002\022\024\n\014taskCostCoef\030\003 \001(\002\022\030\n\020loca" +
+      "tionCostCoef\030\004 \001(\002\022\025\n\rslackCostCoef\030\005 \001(" +
+      "\002\022\025\n\rtardyCostCoef\030\006 \001(\002\"\351\003\n\007Vehicle\022\n\n\002" +
+      "id\030\001 \002(\t\022\017\n\007classId\030\002 \002(\t\022\023\n\013costClassId" +
+      "\030\003 \002(\t\022\"\n\005shift\030\004 \002(\0132\023.IVR8.Vehicle.Shi" +
+      "ft\022*\n\ncapacities\030\005 \003(\0132\026.IVR8.Vehicle.Ca" +
+      "pacity\022\026\n\016transitRuleIds\030\006 \003(\t\022\030\n\020compar" +
+      "tmentSetId\030\007 \001(\t\032\237\001\n\004Task\022\022\n\nlocationId\030" +
+      "\001 \002(\t\0220\n\nattributes\030\002 \003(\0132\034.IVR8.Vehicle" +
+      ".Task.Attribute\032Q\n\tAttribute\022\023\n\013dimensio" +
+      "nId\030\001 \002(\t\022\020\n\010quantity\030\002 \001(\002\022\035\n\007windows\030\003" +
+      " \003(\0132\014.IVR8.Window\032U\n\005Shift\022&\n\nshiftStar" +
+      "t\030\001 \002(\0132\022.IVR8.Vehicle.Task\022$\n\010shiftEnd\030" +
+      "\002 \001(\0132\022.IVR8.Vehicle.Task\0321\n\010Capacity\022\023\n" +
+      "\013dimensionId\030\001 \002(\t\022\020\n\010capacity\030\002 \002(\002\"H\n\014" +
+      "TaskSequence\022\021\n\tvehicleId\030\001 \002(\t\022\016\n\006taskI" +
+      "d\030\002 \003(\t\022\025\n\rcompartmentId\030\003 \003(\t\"\335\001\n\013Trans" +
+      "itRule\022\n\n\002id\030\001 \002(\t\022\023\n\013dimensionId\030\002 \002(\t\022" +
+      "\036\n\020useStandingState\030\003 \001(\010:\004true\022\036\n\017useTr" +
+      "ansitState\030\004 \001(\010:\005false\022\024\n\014ruleIdPrefix\030" +
+      "\005 \002(\t\022+\n\010triggers\030\006 \003(\0132\031.IVR8.TransitRu" +
+      "le.Trigger\032*\n\007Trigger\022\r\n\005value\030\001 \002(\002\022\020\n\010" +
+      "quantity\030\002 \002(\002\"|\n\013Compartment\022\n\n\002id\030\001 \002(" +
+      "\t\022.\n\ncapacities\030\002 \003(\0132\032.IVR8.Compartment" +
+      ".Capacity\0321\n\010Capacity\022\023\n\013dimensionId\030\001 \002" +
+      "(\t\022\020\n\010capacity\030\002 \002(\002\"\356\001\n\016CompartmentSet\022" +
+      "\n\n\002id\030\001 \002(\t\022\026\n\016compartmentIds\030\002 \003(\t\0224\n\013g" +
+      "roupLimits\030\003 \003(\0132\037.IVR8.CompartmentSet.G" +
+      "roupLimit\032\201\001\n\nGroupLimit\022\026\n\016compartmentI" +
+      "ds\030\001 \003(\t\022\024\n\014coefficients\030\002 \003(\002\022\023\n\013dimens" +
+      "ionId\030\003 \002(\t\022\r\n\005limit\030\004 \002(\002\022!\n\022checkStand" +
+      "ingState\030\005 \001(\010:\005false\"\324\003\n\005Model\0220\n\ndimen" +
+      "sions\030\001 \002(\0132\034.IVR8.DimensionConfiguratio" +
+      "n\022!\n\tlocations\030\002 \003(\0132\016.IVR8.Location\022\027\n\004" +
+      "jobs\030\003 \003(\0132\t.IVR8.Job\022\037\n\010vehicles\030\004 \003(\0132" +
+      "\r.IVR8.Vehicle\022*\n\016vehicleClasses\030\005 \003(\0132\022" +
+      ".IVR8.VehicleClass\0222\n\022vehicleCostClasses" +
+      "\030\006 \003(\0132\026.IVR8.VehicleCostClass\022\'\n\014transi" +
+      "tRules\030\007 \003(\0132\021.IVR8.TransitRule\0221\n\021trans" +
+      "itGenerators\030\010 \003(\0132\026.IVR8.TransitGenerat" +
+      "or\022(\n\014taskSequence\030\t \003(\0132\022.IVR8.TaskSequ" +
+      "ence\022\'\n\014compartments\030\n \003(\0132\021.IVR8.Compar" +
+      "tment\022-\n\017compartmentSets\030\013 \003(\0132\024.IVR8.Co" +
+      "mpartmentSet\"\323\001\n\014SolveRequest\022\032\n\005model\030\001" +
+      " \001(\0132\013.IVR8.Model\022\017\n\007modelID\030\002 \001(\t\022\"\n\006ro" +
+      "utes\030\003 \003(\0132\022.IVR8.TaskSequence\0229\n\tsolveT" +
+      "ype\030\004 \001(\0162\034.IVR8.SolveRequest.SolveType:" +
+      "\010Optimise\"7\n\tSolveType\022\014\n\010Optimise\020\000\022\014\n\010" +
+      "Evaluate\020\001\022\016\n\nReOptimise\020\002\"\234\n\n\020SolutionR" +
+      "esponse\022\021\n\tobjective\030\001 \002(\002\022,\n\006routes\030\002 \003" +
+      "(\0132\034.IVR8.SolutionResponse.Route\022=\n\017infe" +
+      "asibilities\030\003 \003(\0132$.IVR8.SolutionRespons" +
+      "e.Infeasibility\032\240\001\n\rStopAttribute\022\r\n\005dim" +
+      "Id\030\001 \002(\t\022\022\n\nstartValue\030\002 \002(\002\022\020\n\010endValue" +
+      "\030\003 \002(\002\022\014\n\004cost\030\004 \002(\002\022\022\n\nslackValue\030\005 \002(\002" +
+      "\022\021\n\tslackCost\030\006 \002(\002\022\022\n\ntardyValue\030\007 \002(\002\022" +
+      "\021\n\ttardyCost\030\010 \002(\002\032W\n\022InterStopAttribute" +
+      "\022\r\n\005dimId\030\001 \002(\t\022\022\n\nstartValue\030\002 \002(\002\022\020\n\010e" +
+      "ndValue\030\003 \002(\002\022\014\n\004cost\030\004 \002(\002\032\250\001\n\004Stop\022\n\n\002" +
+      "id\030\001 \002(\005\022\020\n\010sequence\030\002 \002(\005\022\022\n\nlocationId" +
+      "\030\003 \002(\t\022\016\n\006taskId\030\004 \002(\t\022\r\n\005jobId\030\005 \002(\t\0228\n" +
+      "\nattributes\030\006 \003(\0132$.IVR8.SolutionRespons" +
+      "e.StopAttribute\022\025\n\rcompartmentId\030\007 \001(\t\032\226" +
+      "\001\n\tInterStop\022\022\n\nfromStopId\030\001 \002(\005\022\020\n\010toSt" +
+      "opId\030\002 \002(\005\022=\n\nattributes\030\003 \003(\0132).IVR8.So" +
+      "lutionResponse.InterStopAttribute\022$\n\rrou" +
+      "teSegments\030\004 \003(\0132\r.IVR8.Geocode\032\217\001\n\024Tran" +
+      "sitRuleAttribute\022\016\n\006ruleId\030\001 \002(\t\022\r\n\005dimI" +
+      "d\030\002 \002(\t\022\022\n\nfromStopId\030\003 \002(\005\022\020\n\010toStopId\030" +
+      "\004 \002(\005\022\022\n\nstartValue\030\005 \002(\002\022\020\n\010endValue\030\006 " +
+      "\002(\002\022\014\n\004cost\030\007 \002(\002\032\333\001\n\005Route\022\021\n\tvehicleId" +
+      "\030\001 \002(\t\022*\n\005stops\030\002 \003(\0132\033.IVR8.SolutionRes" +
+      "ponse.Stop\0224\n\ninterStops\030\003 \003(\0132 .IVR8.So" +
+      "lutionResponse.InterStop\022\021\n\tfixedCost\030\004 " +
+      "\003(\002\022J\n\025transitRuleAttributes\030\005 \003(\0132+.IVR" +
+      "8.SolutionResponse.TransitRuleAttribute\032" +
+      "\327\001\n\rInfeasibility\022\016\n\006taskId\030\001 \002(\t\022D\n\021inf" +
+      "easibilityInfo\030\002 \003(\0132).IVR8.SolutionResp" +
+      "onse.Infeasibility.Info\032p\n\004Info\022\017\n\007messa" +
+      "ge\030\001 \002(\t\022\r\n\005dimId\030\002 \001(\t\022\r\n\005limit\030\003 \001(\002\022\r" +
+      "\n\005value\030\004 \001(\002\022\r\n\005count\030\005 \001(\003\022\033\n\023constrai" +
+      "ningTaskIds\030\006 \003(\tB\020\n\016icepackai.IVR8"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -51418,13 +52975,19 @@ public final class Ivr8Yni1C9K2Swof {
     internal_static_IVR8_Job_Task_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IVR8_Job_Task_descriptor,
-        new java.lang.String[] { "TaskId", "LocationId", "Attributes", "TripConstraints", });
+        new java.lang.String[] { "TaskId", "LocationId", "Attributes", "TripConstraints", "Predecessors", "Successors", });
     internal_static_IVR8_Job_Task_Attribute_descriptor =
       internal_static_IVR8_Job_Task_descriptor.getNestedTypes().get(0);
     internal_static_IVR8_Job_Task_Attribute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IVR8_Job_Task_Attribute_descriptor,
         new java.lang.String[] { "DimensionId", "Quantity", "Windows", });
+    internal_static_IVR8_Job_Task_TaskRelation_descriptor =
+      internal_static_IVR8_Job_Task_descriptor.getNestedTypes().get(1);
+    internal_static_IVR8_Job_Task_TaskRelation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_IVR8_Job_Task_TaskRelation_descriptor,
+        new java.lang.String[] { "Type", "TaskIds", });
     internal_static_IVR8_TransitSet_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_IVR8_TransitSet_fieldAccessorTable = new

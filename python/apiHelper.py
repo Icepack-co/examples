@@ -72,9 +72,9 @@ class apiHelper:
         print('Unexpected http error code: ' + str(post_resp.status_code))
         print(post_resp.content)
         if post_resp.status_code == 405 and len(post_resp.content) == 0:
-          sys.exit('Unexpected http error code: ', post_resp.status_code, "\nDid you specify the end-point correctly?\n")
+          sys.exit('Unexpected http error code: ' + post_resp.status_code + "\nDid you specify the end-point correctly?\n")
         else:
-          sys.exit('Unexpected http error code: ', post_resp.status_code, "\n", post_resp.content())
+          sys.exit('Unexpected http error code: ' + post_resp.status_code + "\n", post_resp.content())
     else: 
         return(post_resp.json()['requestid'])
 
@@ -85,7 +85,7 @@ class apiHelper:
                               headers = { 'Content-Type': "application/protobuf", 
                                          'Authorization': "Apitoken " + self.Token()})
       if get_resp.status_code != 200:
-        print("Unable to get response payload. Error: " + get_resp.content())
+        print("Unable to get response payload. Error: " + get_resp.content)
         break
       else:
         p = problem_pb2.ProblemEnvelope()

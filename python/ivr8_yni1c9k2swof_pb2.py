@@ -18,8 +18,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ivr8-yni1c9k2swof.proto',
   package='IVR8',
   syntax='proto2',
-  serialized_options=None,
-  serialized_pb=_b('\n\x17ivr8-yni1c9k2swof.proto\x12\x04IVR8\"\xea\x01\n\x11InternalDimension\x12\n\n\x02id\x18\x01 \x02(\t\x12\x41\n\x0fmeasurementUnit\x18\x02 \x02(\x0e\x32(.IVR8.InternalDimension.eMeasurementUnit\x12\x13\n\x08slackMax\x18\x03 \x01(\x02:\x01\x30\x12\x13\n\x08tardyMax\x18\x04 \x01(\x02:\x01\x30\"\\\n\x10\x65MeasurementUnit\x12\x0b\n\x07SECONDS\x10\x00\x12\x0b\n\x07MINUTES\x10\x01\x12\t\n\x05HOURS\x10\x02\x12\x08\n\x04\x44\x41YS\x10\x03\x12\x0e\n\nKILOMETRES\x10\x04\x12\t\n\x05MILES\x10\x05\"X\n\x11\x43\x61pacityDimension\x12\n\n\x02id\x18\x01 \x02(\t\x12\r\n\x05units\x18\x02 \x02(\t\x12\x13\n\x08slackMax\x18\x03 \x01(\x02:\x01\x30\x12\x13\n\x08tardyMax\x18\x04 \x01(\x02:\x01\x30\"\xab\x01\n\x16\x44imensionConfiguration\x12+\n\ntimeConfig\x18\x01 \x01(\x0b\x32\x17.IVR8.InternalDimension\x12/\n\x0e\x64istanceConfig\x18\x02 \x01(\x0b\x32\x17.IVR8.InternalDimension\x12\x33\n\x12\x63\x61pacityDimensions\x18\x03 \x03(\x0b\x32\x17.IVR8.CapacityDimension\".\n\x07Geocode\x12\x11\n\tlongitude\x18\x01 \x02(\x02\x12\x10\n\x08latitude\x18\x02 \x02(\x02\"\x84\x01\n\x06Window\x12\r\n\x05start\x18\x01 \x02(\x02\x12\x0b\n\x03\x65nd\x18\x02 \x02(\x02\x12\x18\n\rslackCostCoef\x18\x03 \x01(\x02:\x01\x30\x12\x18\n\rtardyCostCoef\x18\x04 \x01(\x02:\x01\x30\x12\x14\n\x08slackMax\x18\x05 \x01(\x02:\x02-1\x12\x14\n\x08tardyMax\x18\x06 \x01(\x02:\x02-1\"\xfa\x01\n\x08Location\x12\n\n\x02id\x18\x01 \x02(\t\x12\x1e\n\x07geocode\x18\x02 \x01(\x0b\x32\r.IVR8.Geocode\x12,\n\nattributes\x18\x03 \x03(\x0b\x32\x18.IVR8.Location.Attribute\x1a\x93\x01\n\tAttribute\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x11\n\tvehicleId\x18\x02 \x01(\t\x12\x10\n\x08quantity\x18\x03 \x01(\x02\x12$\n\x0e\x61rrivalWindows\x18\x04 \x03(\x0b\x32\x0c.IVR8.Window\x12&\n\x10\x64\x65partureWindows\x18\x05 \x03(\x0b\x32\x0c.IVR8.Window\"\xed\x05\n\x03Job\x12\n\n\x02id\x18\x01 \x02(\t\x12\"\n\npickupTask\x18\x02 \x01(\x0b\x32\x0e.IVR8.Job.Task\x12#\n\x0b\x64ropoffTask\x18\x03 \x01(\x0b\x32\x0e.IVR8.Job.Task\x12\x0f\n\x07penalty\x18\x04 \x02(\x02\x12\x33\n\x10vehicleRelations\x18\x05 \x01(\x0b\x32\x19.IVR8.Job.VehicleRelation\x12;\n\x14\x63ompartmentRelations\x18\x06 \x01(\x0b\x32\x1d.IVR8.Job.CompartmentRelation\x1ay\n\x0fVehicleRelation\x12,\n\x04type\x18\x01 \x02(\x0e\x32\x1e.IVR8.Job.VehicleRelation.Type\x12\x12\n\nvehicleIds\x18\x02 \x03(\t\"$\n\x04Type\x12\r\n\tINCLUSIVE\x10\x00\x12\r\n\tEXCLUSIVE\x10\x01\x1a\x85\x01\n\x13\x43ompartmentRelation\x12\x30\n\x04type\x18\x01 \x02(\x0e\x32\".IVR8.Job.CompartmentRelation.Type\x12\x16\n\x0e\x63ompartmentIds\x18\x02 \x03(\t\"$\n\x04Type\x12\r\n\tINCLUSIVE\x10\x00\x12\r\n\tEXCLUSIVE\x10\x01\x1a\x8a\x02\n\x04Task\x12\x0e\n\x06taskId\x18\x01 \x02(\t\x12\x12\n\nlocationId\x18\x02 \x02(\t\x12,\n\nattributes\x18\x03 \x03(\x0b\x32\x18.IVR8.Job.Task.Attribute\x12\x36\n\x0ftripConstraints\x18\x04 \x03(\x0e\x32\x1d.IVR8.Job.Task.TripConstraint\x1aQ\n\tAttribute\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x02\x12\x1d\n\x07windows\x18\x03 \x03(\x0b\x32\x0c.IVR8.Window\"%\n\x0eTripConstraint\x12\t\n\x05\x46IRST\x10\x00\x12\x08\n\x04LAST\x10\x01\"z\n\nTransitSet\x12/\n\x08transits\x18\x01 \x03(\x0b\x32\x1d.IVR8.TransitSet.TransitValue\x1a;\n\x0cTransitValue\x12\x0e\n\x06\x66romId\x18\x01 \x02(\t\x12\x0c\n\x04toId\x18\x02 \x02(\t\x12\r\n\x05value\x18\x03 \x02(\x02\"W\n\x10TransitGenerator\x12\n\n\x02id\x18\x01 \x02(\t\x12\x11\n\trequestId\x18\x02 \x01(\t\x12$\n\ntransitSet\x18\x03 \x01(\x0b\x32\x10.IVR8.TransitSet\"\xf9\x01\n\x0cVehicleClass\x12\n\n\x02id\x18\x01 \x02(\t\x12\x30\n\nattributes\x18\x02 \x03(\x0b\x32\x1c.IVR8.VehicleClass.Attribute\x12\x16\n\x0etransitRuleIds\x18\x03 \x03(\t\x12\x18\n\x10\x63ompartmentSetId\x18\x04 \x01(\t\x1ay\n\tAttribute\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x1a\n\x12transitGeneratorId\x18\x02 \x01(\t\x12\x13\n\x0btransitCoef\x18\x03 \x01(\x02\x12\x10\n\x08taskCoef\x18\x04 \x01(\x02\x12\x14\n\x0clocationCoef\x18\x05 \x01(\x02\"\x81\x02\n\x10VehicleCostClass\x12\n\n\x02id\x18\x01 \x02(\t\x12\x11\n\tfixedCost\x18\x02 \x02(\x02\x12\x34\n\nattributes\x18\x03 \x03(\x0b\x32 .IVR8.VehicleCostClass.Attribute\x1a\x97\x01\n\tAttribute\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x17\n\x0ftransitCostCoef\x18\x02 \x01(\x02\x12\x14\n\x0ctaskCostCoef\x18\x03 \x01(\x02\x12\x18\n\x10locationCostCoef\x18\x04 \x01(\x02\x12\x15\n\rslackCostCoef\x18\x05 \x01(\x02\x12\x15\n\rtardyCostCoef\x18\x06 \x01(\x02\"\xe9\x03\n\x07Vehicle\x12\n\n\x02id\x18\x01 \x02(\t\x12\x0f\n\x07\x63lassId\x18\x02 \x02(\t\x12\x13\n\x0b\x63ostClassId\x18\x03 \x02(\t\x12\"\n\x05shift\x18\x04 \x02(\x0b\x32\x13.IVR8.Vehicle.Shift\x12*\n\ncapacities\x18\x05 \x03(\x0b\x32\x16.IVR8.Vehicle.Capacity\x12\x16\n\x0etransitRuleIds\x18\x06 \x03(\t\x12\x18\n\x10\x63ompartmentSetId\x18\x07 \x01(\t\x1a\x9f\x01\n\x04Task\x12\x12\n\nlocationId\x18\x01 \x02(\t\x12\x30\n\nattributes\x18\x02 \x03(\x0b\x32\x1c.IVR8.Vehicle.Task.Attribute\x1aQ\n\tAttribute\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x02\x12\x1d\n\x07windows\x18\x03 \x03(\x0b\x32\x0c.IVR8.Window\x1aU\n\x05Shift\x12&\n\nshiftStart\x18\x01 \x02(\x0b\x32\x12.IVR8.Vehicle.Task\x12$\n\x08shiftEnd\x18\x02 \x01(\x0b\x32\x12.IVR8.Vehicle.Task\x1a\x31\n\x08\x43\x61pacity\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x10\n\x08\x63\x61pacity\x18\x02 \x02(\x02\"H\n\x0cTaskSequence\x12\x11\n\tvehicleId\x18\x01 \x02(\t\x12\x0e\n\x06taskId\x18\x02 \x03(\t\x12\x15\n\rcompartmentId\x18\x03 \x03(\t\"\xdd\x01\n\x0bTransitRule\x12\n\n\x02id\x18\x01 \x02(\t\x12\x13\n\x0b\x64imensionId\x18\x02 \x02(\t\x12\x1e\n\x10useStandingState\x18\x03 \x01(\x08:\x04true\x12\x1e\n\x0fuseTransitState\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x14\n\x0cruleIdPrefix\x18\x05 \x02(\t\x12+\n\x08triggers\x18\x06 \x03(\x0b\x32\x19.IVR8.TransitRule.Trigger\x1a*\n\x07Trigger\x12\r\n\x05value\x18\x01 \x02(\x02\x12\x10\n\x08quantity\x18\x02 \x02(\x02\"|\n\x0b\x43ompartment\x12\n\n\x02id\x18\x01 \x02(\t\x12.\n\ncapacities\x18\x02 \x03(\x0b\x32\x1a.IVR8.Compartment.Capacity\x1a\x31\n\x08\x43\x61pacity\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x10\n\x08\x63\x61pacity\x18\x02 \x02(\x02\"\xee\x01\n\x0e\x43ompartmentSet\x12\n\n\x02id\x18\x01 \x02(\t\x12\x16\n\x0e\x63ompartmentIds\x18\x02 \x03(\t\x12\x34\n\x0bgroupLimits\x18\x03 \x03(\x0b\x32\x1f.IVR8.CompartmentSet.GroupLimit\x1a\x81\x01\n\nGroupLimit\x12\x16\n\x0e\x63ompartmentIds\x18\x01 \x03(\t\x12\x14\n\x0c\x63oefficients\x18\x02 \x03(\x02\x12\x13\n\x0b\x64imensionId\x18\x03 \x02(\t\x12\r\n\x05limit\x18\x04 \x02(\x02\x12!\n\x12\x63heckStandingState\x18\x05 \x01(\x08:\x05\x66\x61lse\"\xd4\x03\n\x05Model\x12\x30\n\ndimensions\x18\x01 \x02(\x0b\x32\x1c.IVR8.DimensionConfiguration\x12!\n\tlocations\x18\x02 \x03(\x0b\x32\x0e.IVR8.Location\x12\x17\n\x04jobs\x18\x03 \x03(\x0b\x32\t.IVR8.Job\x12\x1f\n\x08vehicles\x18\x04 \x03(\x0b\x32\r.IVR8.Vehicle\x12*\n\x0evehicleClasses\x18\x05 \x03(\x0b\x32\x12.IVR8.VehicleClass\x12\x32\n\x12vehicleCostClasses\x18\x06 \x03(\x0b\x32\x16.IVR8.VehicleCostClass\x12\'\n\x0ctransitRules\x18\x07 \x03(\x0b\x32\x11.IVR8.TransitRule\x12\x31\n\x11transitGenerators\x18\x08 \x03(\x0b\x32\x16.IVR8.TransitGenerator\x12(\n\x0ctaskSequence\x18\t \x03(\x0b\x32\x12.IVR8.TaskSequence\x12\'\n\x0c\x63ompartments\x18\n \x03(\x0b\x32\x11.IVR8.Compartment\x12-\n\x0f\x63ompartmentSets\x18\x0b \x03(\x0b\x32\x14.IVR8.CompartmentSet\"\xd3\x01\n\x0cSolveRequest\x12\x1a\n\x05model\x18\x01 \x01(\x0b\x32\x0b.IVR8.Model\x12\x0f\n\x07modelID\x18\x02 \x01(\t\x12\"\n\x06routes\x18\x03 \x03(\x0b\x32\x12.IVR8.TaskSequence\x12\x39\n\tsolveType\x18\x04 \x01(\x0e\x32\x1c.IVR8.SolveRequest.SolveType:\x08Optimise\"7\n\tSolveType\x12\x0c\n\x08Optimise\x10\x00\x12\x0c\n\x08\x45valuate\x10\x01\x12\x0e\n\nReOptimise\x10\x02\"\x9c\n\n\x10SolutionResponse\x12\x11\n\tobjective\x18\x01 \x02(\x02\x12,\n\x06routes\x18\x02 \x03(\x0b\x32\x1c.IVR8.SolutionResponse.Route\x12=\n\x0finfeasibilities\x18\x03 \x03(\x0b\x32$.IVR8.SolutionResponse.Infeasibility\x1a\xa0\x01\n\rStopAttribute\x12\r\n\x05\x64imId\x18\x01 \x02(\t\x12\x12\n\nstartValue\x18\x02 \x02(\x02\x12\x10\n\x08\x65ndValue\x18\x03 \x02(\x02\x12\x0c\n\x04\x63ost\x18\x04 \x02(\x02\x12\x12\n\nslackValue\x18\x05 \x02(\x02\x12\x11\n\tslackCost\x18\x06 \x02(\x02\x12\x12\n\ntardyValue\x18\x07 \x02(\x02\x12\x11\n\ttardyCost\x18\x08 \x02(\x02\x1aW\n\x12InterStopAttribute\x12\r\n\x05\x64imId\x18\x01 \x02(\t\x12\x12\n\nstartValue\x18\x02 \x02(\x02\x12\x10\n\x08\x65ndValue\x18\x03 \x02(\x02\x12\x0c\n\x04\x63ost\x18\x04 \x02(\x02\x1a\xa8\x01\n\x04Stop\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x10\n\x08sequence\x18\x02 \x02(\x05\x12\x12\n\nlocationId\x18\x03 \x02(\t\x12\x0e\n\x06taskId\x18\x04 \x02(\t\x12\r\n\x05jobId\x18\x05 \x02(\t\x12\x38\n\nattributes\x18\x06 \x03(\x0b\x32$.IVR8.SolutionResponse.StopAttribute\x12\x15\n\rcompartmentId\x18\x07 \x01(\t\x1a\x96\x01\n\tInterStop\x12\x12\n\nfromStopId\x18\x01 \x02(\x05\x12\x10\n\x08toStopId\x18\x02 \x02(\x05\x12=\n\nattributes\x18\x03 \x03(\x0b\x32).IVR8.SolutionResponse.InterStopAttribute\x12$\n\rrouteSegments\x18\x04 \x03(\x0b\x32\r.IVR8.Geocode\x1a\x8f\x01\n\x14TransitRuleAttribute\x12\x0e\n\x06ruleId\x18\x01 \x02(\t\x12\r\n\x05\x64imId\x18\x02 \x02(\t\x12\x12\n\nfromStopId\x18\x03 \x02(\x05\x12\x10\n\x08toStopId\x18\x04 \x02(\x05\x12\x12\n\nstartValue\x18\x05 \x02(\x02\x12\x10\n\x08\x65ndValue\x18\x06 \x02(\x02\x12\x0c\n\x04\x63ost\x18\x07 \x02(\x02\x1a\xdb\x01\n\x05Route\x12\x11\n\tvehicleId\x18\x01 \x02(\t\x12*\n\x05stops\x18\x02 \x03(\x0b\x32\x1b.IVR8.SolutionResponse.Stop\x12\x34\n\ninterStops\x18\x03 \x03(\x0b\x32 .IVR8.SolutionResponse.InterStop\x12\x11\n\tfixedCost\x18\x04 \x03(\x02\x12J\n\x15transitRuleAttributes\x18\x05 \x03(\x0b\x32+.IVR8.SolutionResponse.TransitRuleAttribute\x1a\xd7\x01\n\rInfeasibility\x12\x0e\n\x06taskId\x18\x01 \x02(\t\x12\x44\n\x11infeasibilityInfo\x18\x02 \x03(\x0b\x32).IVR8.SolutionResponse.Infeasibility.Info\x1ap\n\x04Info\x12\x0f\n\x07message\x18\x01 \x02(\t\x12\r\n\x05\x64imId\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x02\x12\r\n\x05value\x18\x04 \x01(\x02\x12\r\n\x05\x63ount\x18\x05 \x01(\x03\x12\x1b\n\x13\x63onstrainingTaskIds\x18\x06 \x03(\t')
+  serialized_options=_b('\n\016icepackai.IVR8'),
+  serialized_pb=_b('\n\x17ivr8-yni1c9k2swof.proto\x12\x04IVR8\"\xea\x01\n\x11InternalDimension\x12\n\n\x02id\x18\x01 \x02(\t\x12\x41\n\x0fmeasurementUnit\x18\x02 \x02(\x0e\x32(.IVR8.InternalDimension.eMeasurementUnit\x12\x13\n\x08slackMax\x18\x03 \x01(\x02:\x01\x30\x12\x13\n\x08tardyMax\x18\x04 \x01(\x02:\x01\x30\"\\\n\x10\x65MeasurementUnit\x12\x0b\n\x07SECONDS\x10\x00\x12\x0b\n\x07MINUTES\x10\x01\x12\t\n\x05HOURS\x10\x02\x12\x08\n\x04\x44\x41YS\x10\x03\x12\x0e\n\nKILOMETRES\x10\x04\x12\t\n\x05MILES\x10\x05\"X\n\x11\x43\x61pacityDimension\x12\n\n\x02id\x18\x01 \x02(\t\x12\r\n\x05units\x18\x02 \x02(\t\x12\x13\n\x08slackMax\x18\x03 \x01(\x02:\x01\x30\x12\x13\n\x08tardyMax\x18\x04 \x01(\x02:\x01\x30\"\xab\x01\n\x16\x44imensionConfiguration\x12+\n\ntimeConfig\x18\x01 \x01(\x0b\x32\x17.IVR8.InternalDimension\x12/\n\x0e\x64istanceConfig\x18\x02 \x01(\x0b\x32\x17.IVR8.InternalDimension\x12\x33\n\x12\x63\x61pacityDimensions\x18\x03 \x03(\x0b\x32\x17.IVR8.CapacityDimension\".\n\x07Geocode\x12\x11\n\tlongitude\x18\x01 \x02(\x02\x12\x10\n\x08latitude\x18\x02 \x02(\x02\"\x84\x01\n\x06Window\x12\r\n\x05start\x18\x01 \x02(\x02\x12\x0b\n\x03\x65nd\x18\x02 \x02(\x02\x12\x18\n\rslackCostCoef\x18\x03 \x01(\x02:\x01\x30\x12\x18\n\rtardyCostCoef\x18\x04 \x01(\x02:\x01\x30\x12\x14\n\x08slackMax\x18\x05 \x01(\x02:\x02-1\x12\x14\n\x08tardyMax\x18\x06 \x01(\x02:\x02-1\"\xfa\x01\n\x08Location\x12\n\n\x02id\x18\x01 \x02(\t\x12\x1e\n\x07geocode\x18\x02 \x01(\x0b\x32\r.IVR8.Geocode\x12,\n\nattributes\x18\x03 \x03(\x0b\x32\x18.IVR8.Location.Attribute\x1a\x93\x01\n\tAttribute\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x11\n\tvehicleId\x18\x02 \x01(\t\x12\x10\n\x08quantity\x18\x03 \x01(\x02\x12$\n\x0e\x61rrivalWindows\x18\x04 \x03(\x0b\x32\x0c.IVR8.Window\x12&\n\x10\x64\x65partureWindows\x18\x05 \x03(\x0b\x32\x0c.IVR8.Window\"\xc8\x07\n\x03Job\x12\n\n\x02id\x18\x01 \x02(\t\x12\"\n\npickupTask\x18\x02 \x01(\x0b\x32\x0e.IVR8.Job.Task\x12#\n\x0b\x64ropoffTask\x18\x03 \x01(\x0b\x32\x0e.IVR8.Job.Task\x12\x0f\n\x07penalty\x18\x04 \x02(\x02\x12\x33\n\x10vehicleRelations\x18\x05 \x01(\x0b\x32\x19.IVR8.Job.VehicleRelation\x12;\n\x14\x63ompartmentRelations\x18\x06 \x01(\x0b\x32\x1d.IVR8.Job.CompartmentRelation\x1ay\n\x0fVehicleRelation\x12,\n\x04type\x18\x01 \x02(\x0e\x32\x1e.IVR8.Job.VehicleRelation.Type\x12\x12\n\nvehicleIds\x18\x02 \x03(\t\"$\n\x04Type\x12\r\n\tINCLUSIVE\x10\x00\x12\r\n\tEXCLUSIVE\x10\x01\x1a\x85\x01\n\x13\x43ompartmentRelation\x12\x30\n\x04type\x18\x01 \x02(\x0e\x32\".IVR8.Job.CompartmentRelation.Type\x12\x16\n\x0e\x63ompartmentIds\x18\x02 \x03(\t\"$\n\x04Type\x12\r\n\tINCLUSIVE\x10\x00\x12\r\n\tEXCLUSIVE\x10\x01\x1a\xe5\x03\n\x04Task\x12\x0e\n\x06taskId\x18\x01 \x02(\t\x12\x12\n\nlocationId\x18\x02 \x02(\t\x12,\n\nattributes\x18\x03 \x03(\x0b\x32\x18.IVR8.Job.Task.Attribute\x12\x36\n\x0ftripConstraints\x18\x04 \x03(\x0e\x32\x1d.IVR8.Job.Task.TripConstraint\x12\x31\n\x0cpredecessors\x18\x05 \x01(\x0b\x32\x1b.IVR8.Job.Task.TaskRelation\x12/\n\nsuccessors\x18\x06 \x01(\x0b\x32\x1b.IVR8.Job.Task.TaskRelation\x1aQ\n\tAttribute\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x02\x12\x1d\n\x07windows\x18\x03 \x03(\x0b\x32\x0c.IVR8.Window\x1au\n\x0cTaskRelation\x12.\n\x04type\x18\x01 \x02(\x0e\x32 .IVR8.Job.Task.TaskRelation.Type\x12\x0f\n\x07taskIds\x18\x02 \x03(\t\"$\n\x04Type\x12\r\n\tINCLUSIVE\x10\x00\x12\r\n\tEXCLUSIVE\x10\x01\"%\n\x0eTripConstraint\x12\t\n\x05\x46IRST\x10\x00\x12\x08\n\x04LAST\x10\x01\"z\n\nTransitSet\x12/\n\x08transits\x18\x01 \x03(\x0b\x32\x1d.IVR8.TransitSet.TransitValue\x1a;\n\x0cTransitValue\x12\x0e\n\x06\x66romId\x18\x01 \x02(\t\x12\x0c\n\x04toId\x18\x02 \x02(\t\x12\r\n\x05value\x18\x03 \x02(\x02\"W\n\x10TransitGenerator\x12\n\n\x02id\x18\x01 \x02(\t\x12\x11\n\trequestId\x18\x02 \x01(\t\x12$\n\ntransitSet\x18\x03 \x01(\x0b\x32\x10.IVR8.TransitSet\"\xf9\x01\n\x0cVehicleClass\x12\n\n\x02id\x18\x01 \x02(\t\x12\x30\n\nattributes\x18\x02 \x03(\x0b\x32\x1c.IVR8.VehicleClass.Attribute\x12\x16\n\x0etransitRuleIds\x18\x03 \x03(\t\x12\x18\n\x10\x63ompartmentSetId\x18\x04 \x01(\t\x1ay\n\tAttribute\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x1a\n\x12transitGeneratorId\x18\x02 \x01(\t\x12\x13\n\x0btransitCoef\x18\x03 \x01(\x02\x12\x10\n\x08taskCoef\x18\x04 \x01(\x02\x12\x14\n\x0clocationCoef\x18\x05 \x01(\x02\"\x81\x02\n\x10VehicleCostClass\x12\n\n\x02id\x18\x01 \x02(\t\x12\x11\n\tfixedCost\x18\x02 \x02(\x02\x12\x34\n\nattributes\x18\x03 \x03(\x0b\x32 .IVR8.VehicleCostClass.Attribute\x1a\x97\x01\n\tAttribute\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x17\n\x0ftransitCostCoef\x18\x02 \x01(\x02\x12\x14\n\x0ctaskCostCoef\x18\x03 \x01(\x02\x12\x18\n\x10locationCostCoef\x18\x04 \x01(\x02\x12\x15\n\rslackCostCoef\x18\x05 \x01(\x02\x12\x15\n\rtardyCostCoef\x18\x06 \x01(\x02\"\xe9\x03\n\x07Vehicle\x12\n\n\x02id\x18\x01 \x02(\t\x12\x0f\n\x07\x63lassId\x18\x02 \x02(\t\x12\x13\n\x0b\x63ostClassId\x18\x03 \x02(\t\x12\"\n\x05shift\x18\x04 \x02(\x0b\x32\x13.IVR8.Vehicle.Shift\x12*\n\ncapacities\x18\x05 \x03(\x0b\x32\x16.IVR8.Vehicle.Capacity\x12\x16\n\x0etransitRuleIds\x18\x06 \x03(\t\x12\x18\n\x10\x63ompartmentSetId\x18\x07 \x01(\t\x1a\x9f\x01\n\x04Task\x12\x12\n\nlocationId\x18\x01 \x02(\t\x12\x30\n\nattributes\x18\x02 \x03(\x0b\x32\x1c.IVR8.Vehicle.Task.Attribute\x1aQ\n\tAttribute\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x02\x12\x1d\n\x07windows\x18\x03 \x03(\x0b\x32\x0c.IVR8.Window\x1aU\n\x05Shift\x12&\n\nshiftStart\x18\x01 \x02(\x0b\x32\x12.IVR8.Vehicle.Task\x12$\n\x08shiftEnd\x18\x02 \x01(\x0b\x32\x12.IVR8.Vehicle.Task\x1a\x31\n\x08\x43\x61pacity\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x10\n\x08\x63\x61pacity\x18\x02 \x02(\x02\"H\n\x0cTaskSequence\x12\x11\n\tvehicleId\x18\x01 \x02(\t\x12\x0e\n\x06taskId\x18\x02 \x03(\t\x12\x15\n\rcompartmentId\x18\x03 \x03(\t\"\xdd\x01\n\x0bTransitRule\x12\n\n\x02id\x18\x01 \x02(\t\x12\x13\n\x0b\x64imensionId\x18\x02 \x02(\t\x12\x1e\n\x10useStandingState\x18\x03 \x01(\x08:\x04true\x12\x1e\n\x0fuseTransitState\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x14\n\x0cruleIdPrefix\x18\x05 \x02(\t\x12+\n\x08triggers\x18\x06 \x03(\x0b\x32\x19.IVR8.TransitRule.Trigger\x1a*\n\x07Trigger\x12\r\n\x05value\x18\x01 \x02(\x02\x12\x10\n\x08quantity\x18\x02 \x02(\x02\"|\n\x0b\x43ompartment\x12\n\n\x02id\x18\x01 \x02(\t\x12.\n\ncapacities\x18\x02 \x03(\x0b\x32\x1a.IVR8.Compartment.Capacity\x1a\x31\n\x08\x43\x61pacity\x12\x13\n\x0b\x64imensionId\x18\x01 \x02(\t\x12\x10\n\x08\x63\x61pacity\x18\x02 \x02(\x02\"\xee\x01\n\x0e\x43ompartmentSet\x12\n\n\x02id\x18\x01 \x02(\t\x12\x16\n\x0e\x63ompartmentIds\x18\x02 \x03(\t\x12\x34\n\x0bgroupLimits\x18\x03 \x03(\x0b\x32\x1f.IVR8.CompartmentSet.GroupLimit\x1a\x81\x01\n\nGroupLimit\x12\x16\n\x0e\x63ompartmentIds\x18\x01 \x03(\t\x12\x14\n\x0c\x63oefficients\x18\x02 \x03(\x02\x12\x13\n\x0b\x64imensionId\x18\x03 \x02(\t\x12\r\n\x05limit\x18\x04 \x02(\x02\x12!\n\x12\x63heckStandingState\x18\x05 \x01(\x08:\x05\x66\x61lse\"\xd4\x03\n\x05Model\x12\x30\n\ndimensions\x18\x01 \x02(\x0b\x32\x1c.IVR8.DimensionConfiguration\x12!\n\tlocations\x18\x02 \x03(\x0b\x32\x0e.IVR8.Location\x12\x17\n\x04jobs\x18\x03 \x03(\x0b\x32\t.IVR8.Job\x12\x1f\n\x08vehicles\x18\x04 \x03(\x0b\x32\r.IVR8.Vehicle\x12*\n\x0evehicleClasses\x18\x05 \x03(\x0b\x32\x12.IVR8.VehicleClass\x12\x32\n\x12vehicleCostClasses\x18\x06 \x03(\x0b\x32\x16.IVR8.VehicleCostClass\x12\'\n\x0ctransitRules\x18\x07 \x03(\x0b\x32\x11.IVR8.TransitRule\x12\x31\n\x11transitGenerators\x18\x08 \x03(\x0b\x32\x16.IVR8.TransitGenerator\x12(\n\x0ctaskSequence\x18\t \x03(\x0b\x32\x12.IVR8.TaskSequence\x12\'\n\x0c\x63ompartments\x18\n \x03(\x0b\x32\x11.IVR8.Compartment\x12-\n\x0f\x63ompartmentSets\x18\x0b \x03(\x0b\x32\x14.IVR8.CompartmentSet\"\xd3\x01\n\x0cSolveRequest\x12\x1a\n\x05model\x18\x01 \x01(\x0b\x32\x0b.IVR8.Model\x12\x0f\n\x07modelID\x18\x02 \x01(\t\x12\"\n\x06routes\x18\x03 \x03(\x0b\x32\x12.IVR8.TaskSequence\x12\x39\n\tsolveType\x18\x04 \x01(\x0e\x32\x1c.IVR8.SolveRequest.SolveType:\x08Optimise\"7\n\tSolveType\x12\x0c\n\x08Optimise\x10\x00\x12\x0c\n\x08\x45valuate\x10\x01\x12\x0e\n\nReOptimise\x10\x02\"\x9c\n\n\x10SolutionResponse\x12\x11\n\tobjective\x18\x01 \x02(\x02\x12,\n\x06routes\x18\x02 \x03(\x0b\x32\x1c.IVR8.SolutionResponse.Route\x12=\n\x0finfeasibilities\x18\x03 \x03(\x0b\x32$.IVR8.SolutionResponse.Infeasibility\x1a\xa0\x01\n\rStopAttribute\x12\r\n\x05\x64imId\x18\x01 \x02(\t\x12\x12\n\nstartValue\x18\x02 \x02(\x02\x12\x10\n\x08\x65ndValue\x18\x03 \x02(\x02\x12\x0c\n\x04\x63ost\x18\x04 \x02(\x02\x12\x12\n\nslackValue\x18\x05 \x02(\x02\x12\x11\n\tslackCost\x18\x06 \x02(\x02\x12\x12\n\ntardyValue\x18\x07 \x02(\x02\x12\x11\n\ttardyCost\x18\x08 \x02(\x02\x1aW\n\x12InterStopAttribute\x12\r\n\x05\x64imId\x18\x01 \x02(\t\x12\x12\n\nstartValue\x18\x02 \x02(\x02\x12\x10\n\x08\x65ndValue\x18\x03 \x02(\x02\x12\x0c\n\x04\x63ost\x18\x04 \x02(\x02\x1a\xa8\x01\n\x04Stop\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x10\n\x08sequence\x18\x02 \x02(\x05\x12\x12\n\nlocationId\x18\x03 \x02(\t\x12\x0e\n\x06taskId\x18\x04 \x02(\t\x12\r\n\x05jobId\x18\x05 \x02(\t\x12\x38\n\nattributes\x18\x06 \x03(\x0b\x32$.IVR8.SolutionResponse.StopAttribute\x12\x15\n\rcompartmentId\x18\x07 \x01(\t\x1a\x96\x01\n\tInterStop\x12\x12\n\nfromStopId\x18\x01 \x02(\x05\x12\x10\n\x08toStopId\x18\x02 \x02(\x05\x12=\n\nattributes\x18\x03 \x03(\x0b\x32).IVR8.SolutionResponse.InterStopAttribute\x12$\n\rrouteSegments\x18\x04 \x03(\x0b\x32\r.IVR8.Geocode\x1a\x8f\x01\n\x14TransitRuleAttribute\x12\x0e\n\x06ruleId\x18\x01 \x02(\t\x12\r\n\x05\x64imId\x18\x02 \x02(\t\x12\x12\n\nfromStopId\x18\x03 \x02(\x05\x12\x10\n\x08toStopId\x18\x04 \x02(\x05\x12\x12\n\nstartValue\x18\x05 \x02(\x02\x12\x10\n\x08\x65ndValue\x18\x06 \x02(\x02\x12\x0c\n\x04\x63ost\x18\x07 \x02(\x02\x1a\xdb\x01\n\x05Route\x12\x11\n\tvehicleId\x18\x01 \x02(\t\x12*\n\x05stops\x18\x02 \x03(\x0b\x32\x1b.IVR8.SolutionResponse.Stop\x12\x34\n\ninterStops\x18\x03 \x03(\x0b\x32 .IVR8.SolutionResponse.InterStop\x12\x11\n\tfixedCost\x18\x04 \x03(\x02\x12J\n\x15transitRuleAttributes\x18\x05 \x03(\x0b\x32+.IVR8.SolutionResponse.TransitRuleAttribute\x1a\xd7\x01\n\rInfeasibility\x12\x0e\n\x06taskId\x18\x01 \x02(\t\x12\x44\n\x11infeasibilityInfo\x18\x02 \x03(\x0b\x32).IVR8.SolutionResponse.Infeasibility.Info\x1ap\n\x04Info\x12\x0f\n\x07message\x18\x01 \x02(\t\x12\r\n\x05\x64imId\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x02\x12\r\n\x05value\x18\x04 \x01(\x02\x12\r\n\x05\x63ount\x18\x05 \x01(\x03\x12\x1b\n\x13\x63onstrainingTaskIds\x18\x06 \x03(\tB\x10\n\x0eicepackai.IVR8')
 )
 
 
@@ -106,6 +106,28 @@ _JOB_COMPARTMENTRELATION_TYPE = _descriptor.EnumDescriptor(
 )
 _sym_db.RegisterEnumDescriptor(_JOB_COMPARTMENTRELATION_TYPE)
 
+_JOB_TASK_TASKRELATION_TYPE = _descriptor.EnumDescriptor(
+  name='Type',
+  full_name='IVR8.Job.Task.TaskRelation.Type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='INCLUSIVE', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='EXCLUSIVE', index=1, number=1,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1279,
+  serialized_end=1315,
+)
+_sym_db.RegisterEnumDescriptor(_JOB_TASK_TASKRELATION_TYPE)
+
 _JOB_TASK_TRIPCONSTRAINT = _descriptor.EnumDescriptor(
   name='TripConstraint',
   full_name='IVR8.Job.Task.TripConstraint',
@@ -123,8 +145,8 @@ _JOB_TASK_TRIPCONSTRAINT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1683,
-  serialized_end=1720,
+  serialized_start=1902,
+  serialized_end=1939,
 )
 _sym_db.RegisterEnumDescriptor(_JOB_TASK_TRIPCONSTRAINT)
 
@@ -149,8 +171,8 @@ _SOLVEREQUEST_SOLVETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4232,
-  serialized_end=4287,
+  serialized_start=4451,
+  serialized_end=4506,
 )
 _sym_db.RegisterEnumDescriptor(_SOLVEREQUEST_SOLVETYPE)
 
@@ -628,8 +650,46 @@ _JOB_TASK_ATTRIBUTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1600,
-  serialized_end=1681,
+  serialized_start=1700,
+  serialized_end=1781,
+)
+
+_JOB_TASK_TASKRELATION = _descriptor.Descriptor(
+  name='TaskRelation',
+  full_name='IVR8.Job.Task.TaskRelation',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='type', full_name='IVR8.Job.Task.TaskRelation.type', index=0,
+      number=1, type=14, cpp_type=8, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='taskIds', full_name='IVR8.Job.Task.TaskRelation.taskIds', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _JOB_TASK_TASKRELATION_TYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1783,
+  serialized_end=1900,
 )
 
 _JOB_TASK = _descriptor.Descriptor(
@@ -667,10 +727,24 @@ _JOB_TASK = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='predecessors', full_name='IVR8.Job.Task.predecessors', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='successors', full_name='IVR8.Job.Task.successors', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_JOB_TASK_ATTRIBUTE, ],
+  nested_types=[_JOB_TASK_ATTRIBUTE, _JOB_TASK_TASKRELATION, ],
   enum_types=[
     _JOB_TASK_TRIPCONSTRAINT,
   ],
@@ -681,7 +755,7 @@ _JOB_TASK = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1454,
-  serialized_end=1720,
+  serialized_end=1939,
 )
 
 _JOB = _descriptor.Descriptor(
@@ -746,7 +820,7 @@ _JOB = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=971,
-  serialized_end=1720,
+  serialized_end=1939,
 )
 
 
@@ -790,8 +864,8 @@ _TRANSITSET_TRANSITVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1785,
-  serialized_end=1844,
+  serialized_start=2004,
+  serialized_end=2063,
 )
 
 _TRANSITSET = _descriptor.Descriptor(
@@ -820,8 +894,8 @@ _TRANSITSET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1722,
-  serialized_end=1844,
+  serialized_start=1941,
+  serialized_end=2063,
 )
 
 
@@ -865,8 +939,8 @@ _TRANSITGENERATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1846,
-  serialized_end=1933,
+  serialized_start=2065,
+  serialized_end=2152,
 )
 
 
@@ -924,8 +998,8 @@ _VEHICLECLASS_ATTRIBUTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2064,
-  serialized_end=2185,
+  serialized_start=2283,
+  serialized_end=2404,
 )
 
 _VEHICLECLASS = _descriptor.Descriptor(
@@ -975,8 +1049,8 @@ _VEHICLECLASS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1936,
-  serialized_end=2185,
+  serialized_start=2155,
+  serialized_end=2404,
 )
 
 
@@ -1041,8 +1115,8 @@ _VEHICLECOSTCLASS_ATTRIBUTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2294,
-  serialized_end=2445,
+  serialized_start=2513,
+  serialized_end=2664,
 )
 
 _VEHICLECOSTCLASS = _descriptor.Descriptor(
@@ -1085,8 +1159,8 @@ _VEHICLECOSTCLASS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2188,
-  serialized_end=2445,
+  serialized_start=2407,
+  serialized_end=2664,
 )
 
 
@@ -1130,8 +1204,8 @@ _VEHICLE_TASK_ATTRIBUTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1600,
-  serialized_end=1681,
+  serialized_start=1700,
+  serialized_end=1781,
 )
 
 _VEHICLE_TASK = _descriptor.Descriptor(
@@ -1167,8 +1241,8 @@ _VEHICLE_TASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2640,
-  serialized_end=2799,
+  serialized_start=2859,
+  serialized_end=3018,
 )
 
 _VEHICLE_SHIFT = _descriptor.Descriptor(
@@ -1204,8 +1278,8 @@ _VEHICLE_SHIFT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2801,
-  serialized_end=2886,
+  serialized_start=3020,
+  serialized_end=3105,
 )
 
 _VEHICLE_CAPACITY = _descriptor.Descriptor(
@@ -1241,8 +1315,8 @@ _VEHICLE_CAPACITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2888,
-  serialized_end=2937,
+  serialized_start=3107,
+  serialized_end=3156,
 )
 
 _VEHICLE = _descriptor.Descriptor(
@@ -1313,8 +1387,8 @@ _VEHICLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2448,
-  serialized_end=2937,
+  serialized_start=2667,
+  serialized_end=3156,
 )
 
 
@@ -1358,8 +1432,8 @@ _TASKSEQUENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2939,
-  serialized_end=3011,
+  serialized_start=3158,
+  serialized_end=3230,
 )
 
 
@@ -1396,8 +1470,8 @@ _TRANSITRULE_TRIGGER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3193,
-  serialized_end=3235,
+  serialized_start=3412,
+  serialized_end=3454,
 )
 
 _TRANSITRULE = _descriptor.Descriptor(
@@ -1461,8 +1535,8 @@ _TRANSITRULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3014,
-  serialized_end=3235,
+  serialized_start=3233,
+  serialized_end=3454,
 )
 
 
@@ -1499,8 +1573,8 @@ _COMPARTMENT_CAPACITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2888,
-  serialized_end=2937,
+  serialized_start=3107,
+  serialized_end=3156,
 )
 
 _COMPARTMENT = _descriptor.Descriptor(
@@ -1536,8 +1610,8 @@ _COMPARTMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3237,
-  serialized_end=3361,
+  serialized_start=3456,
+  serialized_end=3580,
 )
 
 
@@ -1595,8 +1669,8 @@ _COMPARTMENTSET_GROUPLIMIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3473,
-  serialized_end=3602,
+  serialized_start=3692,
+  serialized_end=3821,
 )
 
 _COMPARTMENTSET = _descriptor.Descriptor(
@@ -1639,8 +1713,8 @@ _COMPARTMENTSET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3364,
-  serialized_end=3602,
+  serialized_start=3583,
+  serialized_end=3821,
 )
 
 
@@ -1740,8 +1814,8 @@ _MODEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3605,
-  serialized_end=4073,
+  serialized_start=3824,
+  serialized_end=4292,
 )
 
 
@@ -1793,8 +1867,8 @@ _SOLVEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4076,
-  serialized_end=4287,
+  serialized_start=4295,
+  serialized_end=4506,
 )
 
 
@@ -1873,8 +1947,8 @@ _SOLUTIONRESPONSE_STOPATTRIBUTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4439,
-  serialized_end=4599,
+  serialized_start=4658,
+  serialized_end=4818,
 )
 
 _SOLUTIONRESPONSE_INTERSTOPATTRIBUTE = _descriptor.Descriptor(
@@ -1924,8 +1998,8 @@ _SOLUTIONRESPONSE_INTERSTOPATTRIBUTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4601,
-  serialized_end=4688,
+  serialized_start=4820,
+  serialized_end=4907,
 )
 
 _SOLUTIONRESPONSE_STOP = _descriptor.Descriptor(
@@ -1996,8 +2070,8 @@ _SOLUTIONRESPONSE_STOP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4691,
-  serialized_end=4859,
+  serialized_start=4910,
+  serialized_end=5078,
 )
 
 _SOLUTIONRESPONSE_INTERSTOP = _descriptor.Descriptor(
@@ -2047,8 +2121,8 @@ _SOLUTIONRESPONSE_INTERSTOP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4862,
-  serialized_end=5012,
+  serialized_start=5081,
+  serialized_end=5231,
 )
 
 _SOLUTIONRESPONSE_TRANSITRULEATTRIBUTE = _descriptor.Descriptor(
@@ -2119,8 +2193,8 @@ _SOLUTIONRESPONSE_TRANSITRULEATTRIBUTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5015,
-  serialized_end=5158,
+  serialized_start=5234,
+  serialized_end=5377,
 )
 
 _SOLUTIONRESPONSE_ROUTE = _descriptor.Descriptor(
@@ -2177,8 +2251,8 @@ _SOLUTIONRESPONSE_ROUTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5161,
-  serialized_end=5380,
+  serialized_start=5380,
+  serialized_end=5599,
 )
 
 _SOLUTIONRESPONSE_INFEASIBILITY_INFO = _descriptor.Descriptor(
@@ -2242,8 +2316,8 @@ _SOLUTIONRESPONSE_INFEASIBILITY_INFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5486,
-  serialized_end=5598,
+  serialized_start=5705,
+  serialized_end=5817,
 )
 
 _SOLUTIONRESPONSE_INFEASIBILITY = _descriptor.Descriptor(
@@ -2279,8 +2353,8 @@ _SOLUTIONRESPONSE_INFEASIBILITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5383,
-  serialized_end=5598,
+  serialized_start=5602,
+  serialized_end=5817,
 )
 
 _SOLUTIONRESPONSE = _descriptor.Descriptor(
@@ -2323,8 +2397,8 @@ _SOLUTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4290,
-  serialized_end=5598,
+  serialized_start=4509,
+  serialized_end=5817,
 )
 
 _INTERNALDIMENSION.fields_by_name['measurementUnit'].enum_type = _INTERNALDIMENSION_EMEASUREMENTUNIT
@@ -2345,8 +2419,13 @@ _JOB_COMPARTMENTRELATION.containing_type = _JOB
 _JOB_COMPARTMENTRELATION_TYPE.containing_type = _JOB_COMPARTMENTRELATION
 _JOB_TASK_ATTRIBUTE.fields_by_name['windows'].message_type = _WINDOW
 _JOB_TASK_ATTRIBUTE.containing_type = _JOB_TASK
+_JOB_TASK_TASKRELATION.fields_by_name['type'].enum_type = _JOB_TASK_TASKRELATION_TYPE
+_JOB_TASK_TASKRELATION.containing_type = _JOB_TASK
+_JOB_TASK_TASKRELATION_TYPE.containing_type = _JOB_TASK_TASKRELATION
 _JOB_TASK.fields_by_name['attributes'].message_type = _JOB_TASK_ATTRIBUTE
 _JOB_TASK.fields_by_name['tripConstraints'].enum_type = _JOB_TASK_TRIPCONSTRAINT
+_JOB_TASK.fields_by_name['predecessors'].message_type = _JOB_TASK_TASKRELATION
+_JOB_TASK.fields_by_name['successors'].message_type = _JOB_TASK_TASKRELATION
 _JOB_TASK.containing_type = _JOB
 _JOB_TASK_TRIPCONSTRAINT.containing_type = _JOB_TASK
 _JOB.fields_by_name['pickupTask'].message_type = _JOB_TASK
@@ -2503,6 +2582,13 @@ Job = _reflection.GeneratedProtocolMessageType('Job', (_message.Message,), dict(
       # @@protoc_insertion_point(class_scope:IVR8.Job.Task.Attribute)
       ))
     ,
+
+    TaskRelation = _reflection.GeneratedProtocolMessageType('TaskRelation', (_message.Message,), dict(
+      DESCRIPTOR = _JOB_TASK_TASKRELATION,
+      __module__ = 'ivr8_yni1c9k2swof_pb2'
+      # @@protoc_insertion_point(class_scope:IVR8.Job.Task.TaskRelation)
+      ))
+    ,
     DESCRIPTOR = _JOB_TASK,
     __module__ = 'ivr8_yni1c9k2swof_pb2'
     # @@protoc_insertion_point(class_scope:IVR8.Job.Task)
@@ -2517,6 +2603,7 @@ _sym_db.RegisterMessage(Job.VehicleRelation)
 _sym_db.RegisterMessage(Job.CompartmentRelation)
 _sym_db.RegisterMessage(Job.Task)
 _sym_db.RegisterMessage(Job.Task.Attribute)
+_sym_db.RegisterMessage(Job.Task.TaskRelation)
 
 TransitSet = _reflection.GeneratedProtocolMessageType('TransitSet', (_message.Message,), dict(
 
@@ -2747,4 +2834,5 @@ _sym_db.RegisterMessage(SolutionResponse.Infeasibility)
 _sym_db.RegisterMessage(SolutionResponse.Infeasibility.Info)
 
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)
