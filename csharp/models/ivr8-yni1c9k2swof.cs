@@ -338,6 +338,12 @@ namespace Ivr8
             [global::ProtoBuf.ProtoMember(4)]
             public global::System.Collections.Generic.List<TripConstraint> tripConstraints { get; } = new global::System.Collections.Generic.List<TripConstraint>();
 
+            [global::ProtoBuf.ProtoMember(5, Name = @"predecessors")]
+            public TaskRelation Predecessors { get; set; }
+
+            [global::ProtoBuf.ProtoMember(6, Name = @"successors")]
+            public TaskRelation Successors { get; set; }
+
             [global::ProtoBuf.ProtoContract()]
             public partial class Attribute : global::ProtoBuf.IExtensible
             {
@@ -360,6 +366,30 @@ namespace Ivr8
 
                 [global::ProtoBuf.ProtoMember(3, Name = @"windows")]
                 public global::System.Collections.Generic.List<Window> Windows { get; } = new global::System.Collections.Generic.List<Window>();
+
+            }
+
+            [global::ProtoBuf.ProtoContract()]
+            public partial class TaskRelation : global::ProtoBuf.IExtensible
+            {
+                private global::ProtoBuf.IExtension __pbn__extensionData;
+                global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+                    => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+                [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+                public Type type { get; set; }
+
+                [global::ProtoBuf.ProtoMember(2)]
+                public global::System.Collections.Generic.List<string> taskIds { get; } = new global::System.Collections.Generic.List<string>();
+
+                [global::ProtoBuf.ProtoContract()]
+                public enum Type
+                {
+                    [global::ProtoBuf.ProtoEnum(Name = @"INCLUSIVE")]
+                    Inclusive = 0,
+                    [global::ProtoBuf.ProtoEnum(Name = @"EXCLUSIVE")]
+                    Exclusive = 1,
+                }
 
             }
 
