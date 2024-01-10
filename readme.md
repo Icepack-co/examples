@@ -1,11 +1,13 @@
 # Icepack api usage examples
 
-This repo has a series of examples in different langauges of implementations of different model requests against the icepack api.
+This Repo has a series of examples which show how model requests and responses to the Icepack API can be constructed and interpreted using a few different languages.
 
-This repo should be used in conjunction with the documentation on [docs.icepack.ai](https://docs.icepack.ai) which provide technical descriptions of the interpretation and use cases for each of the model fields.
+Read these examples in conjunction with the documentation on [docs.icepack.ai](https://docs.icepack.ai), which provides detailed technical descriptions and use cases for each model field.
 
-The schemas for examples in `java`, `csharp` and `python` are all precomiled. The `R` examples require installing the [r-package](https://github.com/icepack-co/iceR) (and consequently, `protoc` if you're on Linux or Mac) which handles the compilation of the schemas and some very fast parsing of geometries into [sf](https://github.com/r-spatial/sf) for plots using `ggplot` and `sf`.
+The schemas for examples in Java, C# and Python have been precompiled. 
 
-In order to run the examples you'll require an api-key which can be obtained by registering a free account on the icepack [client-portal](https://portal.icepack.ai). There are limits on free tier accounts but free accounts are sufficient to run the examples herein. See the specific readme file for each of the language samples for more information.
+The R examples require installing the [iceR](https://github.com/icepack-co/iceR) R package (and consequently, [protoc](https://grpc.io/docs/protoc-installation/) if you're on Linux or Mac), which handles the compilation of the schemas and very fast parsing of solution reponse route geometries into [sf](https://github.com/r-spatial/sf) for plots using ggplot2.
 
-If you're looking to compile the schemas from source for your own language implementations check out the [model-schemas](https://github.com/icepack-co/model-schemas) repo.
+To run the examples, you'll require an api-key. There are limits on free tier accounts, but they are sufficient to run the examples herein. See the specific readme file for each language sample for more information.
+
+If you want to compile the schemas from source for your language implementations, check out the [model-schemas](https://github.com/icepack-co/model-schemas) repo.
