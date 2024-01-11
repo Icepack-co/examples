@@ -11,3 +11,21 @@ The R examples require installing the [iceR](https://github.com/icepack-co/iceR)
 To run the examples, you'll require an api-key. There are limits on free tier accounts, but they are sufficient to run the examples herein. See the specific readme file for each language sample for more information.
 
 If you want to compile the schemas from source for your language implementations, check out the [model-schemas](https://github.com/icepack-co/model-schemas) repo.
+
+# Catalog of Model Examples
+
+## TSP Model
+
+## TSPTW Model
+
+## CVRP Model
+
+## IVR7 Model
+
+## IVR8 Model
+
+## NS3 Model
+
+## NVD Model
+
+## Matrix Model
