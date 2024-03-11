@@ -31,7 +31,7 @@ model$vehicles <- make_vehicle_cap("vehicle_1", 'vc1', 'vcc1',
                                    7*60,  # 7 AM
                                    18*60) # 6 PM
 
-# lets pretend for a moment that we have a vehicle which is layed out as follows:
+# let's pretend for a moment that we have a vehicle which is layed out as follows:
 #  Top Rack    [ ] [ ] [ ] [ ]  100kg per "compartment"  c1, c2, c3, c4
 #  Lower Rack  [ ] [ ] [ ] [ ]  400kg per "compartment"  c5, c6, c7, c8
 100*4 + 400*4 # adds up to the 2 ton total limit on a vehicle (if every compartment could be filled to max)

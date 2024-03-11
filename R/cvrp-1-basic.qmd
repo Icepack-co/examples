@@ -1,0 +1,150 @@
+---
+title: "Basic CVRP Example (R)"
+format:
+  html: 
+    page-layout: full
+    embed-resources: true
+    output: ./output/cvrp-1-basic.html
+    code-copy: true
+editor: visual
+papersize: a4
+execute:
+  echo: false
+---
+
+This example is for the CVRP (Capacitated Vehicle Routing Problem) model. It is essentially a TSP with a capacity constraint on the maximum capacity of any one vehicle.
+
+A classic CVRP has a heterogeneous fleet. This means we need only specify the size of the vehicle and the number of vehicles available. The other aspect of this model is to include the location of the depot. The classic CVRP aims to minimise the number of vehicles, then the total distance travelled.
+
+### Data 
+
+```{r}
+
+data <- read.csv('../sample_data/publist_orders.csv')[1:10,]
+
+number_pubs <- nrow(data)
+
+```
+
+The data used in this example is a list of `r number_pubs` pubs in Dublin, Ireland with their associated X and Y coordinates and quantities (amount added to a vehicle at each location).
+
+```{r}
+#| echo: false
+#| output: false
+library("tidyverse")
+library("kableExtra")
+```
+
+```{r}
+data <- data %>% select(-c(pickupTime,dropoffTime))
+
+kable(data, col.names = c("Pub Name (id)",
+                           "X-Coordinate (X)",
+                           "Y-Coordinate (Y)",
+                           "Quantity (quantity)"))
+```
+
+
+### Running the example
+|
+The example uses the **iceR** package which will first need to be installed (see information [here](https://github.com/Icepack-co/iceR)) and then loaded.
+
+```{r}
+#| echo: true
+#| output: false
+library(iceR)
+```
+
+
+Execute the example as follows:
+
+1. Create an api-helper object with the model type you'd like to solve.
+
+```{r}
+#| echo: true
+#| output: false
+api <- new("apiHelper", modelType = 'cvrp-jkfdoctmp51n', configFile = '../config.json')
+```
+
+
+2. Create the model and add some data to it.
+
+```{r}
+#| echo: true
+#| output: false
+
+# Create the model
+sr <- new (CVRP.SolveRequest)
+sr$model <- new (CVRP.CVRP)
+
+# Load the data
+data <- read.csv('../sample_data/publist_orders.csv')[1:10,]
+
+# Add the data to the model
+makePoint <- function(i){
+  g <- new (CVRP.Geocode)
+  g$id <- data$id[i]
+  g$x <- data$X[i]
+  g$y <- data$Y[i]
+  g$quantity <- data$quantity[i] # zero by default
+  return (g)
+}
+
+# NOTE: quantity in Geocode above is zero by default. 
+# In this example, the quantity is provided with the data but can be set for each point here too.
+# For example, each point can be set to take up 20 units. If the maximum capacity of the vehicle is set to 100
+# we know that we don't need more than 2 vehicles but also that we can't use less than 2 vehicles.
+# data$quantity <- 20
+
+sr$model$points <-sapply(2:nrow(data), makePoint)
+
+# Make the first location the depot (and the balance of the locations will be the visit points)
+sr$model$depot <- makePoint(1)
+
+# Set the other relevant information
+sr$model$NumberOfVehicles <- 5
+sr$model$VehicleCapacity <- 100
+sr$solveType <- 0 # 0 for optimise, 1 for evaluate, 2 for reoptimise
+
+# Set the distance type to use the road network
+sr$model$distancetype <- 1 # 1 for road network, 2 for euclidean, 3 for haversine
+
+# View the model in plain-text format (string or JSON)
+sr$model$toString() %>% cat
+sr$model$toJSON() %>% cat
+
+```
+
+3. Submit the model to the API
+
+```{r}
+#| echo: true
+#| output: false
+requestID <- api %>% postSolveRequest(sr)  
+```
+
+
+4. Retrieve the model response
+
+```{r}
+#| echo: true
+#| output: false
+resp <- api %>% getResponse(requestID)
+```
+
+
+5. Visualise the result
+
+```{r}
+#| echo: true
+#| output: true
+
+# Tabulate the data in native-R format
+tab <- resp %>% tabulate(sr)
+tab$edges %>% head # just inspect the head of the output
+
+# Plot the data (ggplot or leaflet)
+resp %>% plotResponse(sr) # ggplot                       
+resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)
+```
+ 

@@ -28,23 +28,23 @@ ggplot() + geom_point(data = data, aes(x = X, y = Y)) + theme_bw()
 sr$model$dimensions <- make_distance_time_cap_dims() # this is a common configuration. See ivr7-model-helper.R for details
 sr$model$dimensions$toString() %>% cat            # looks nice. 3 dimensions we're going to measure for each vehicle.
 
-# lets pretend the first point is where vehicles are going to begin and end each day.
+# let's pretend the first point is where vehicles are going to begin and end each day.
 
 # unlike the tsp/cvrp/pdp models, the ivr7 requires that you specify the unique locations
 # that are going to be used in the model as a separate entity. The reason for this is that you
-# can then specify the locations once, and reference those locations by id for other entities (such and vehicles/jobs/tasks)
+# can then specify the locations once, and reference those locations by id for other entities (such as vehicles/jobs/tasks)
 sr$model$locations <- make_locations(data)
 sr$model$locations[[1]]$toString() %>% cat
 
 # that then takes care of creating a unique location for each item in our dataset.
 # type "make_locations" for the details of how the pbf was constructed
 
-# lets build the jobs as well
+# let's build the jobs as well
 sr$model$jobs <- make_job_time_cap(data, src = rep(1, nrow(data) - 1), dest = 2:nrow(data))
 sr$model$jobs[[1]]$toString() %>% cat
 # so we've constructed some jobs with pickups and dropoffs, loading and offload times, as well as the
-# contribution to the capacity dimension. In this example, we're pickup up all orders at the guiness storehouse
-# and delivering at the list of customers. 'make_job_time_cap' is just a simple function to create this
+# contribution to the capacity dimension. In this example, we're picking up all orders at the Guiness Storehouse
+# and delivering to the list of customers. 'make_job_time_cap' is just a simple function to create this
 # particular style of request, but you can make your own.
 
 # we're going to do the vehicle-configuration now.
@@ -54,7 +54,7 @@ sr$model$vehicleCostClasses <- make_vcc_simple('vcc1', 1000, 0.01, 0.01, 0.01, 1
 
 sr$model$vehicleCostClasses[[1]]$toString() %>% cat # so we're costing the vehicle, time at 0.01 units per minute, and distance at 3 units per km.
 
-# lets make the vehicle class. A vehicle class describes how the vehicle MOVES through the network.
+# let's make the vehicle class. A vehicle class describes how the vehicle MOVES through the network.
 # so in other words, we can use the standard network travel speeds, or we could make the vehicle
 # move slower/faster relative to the road network. We could also attach transit rules here which are
 # great for modelling lunch breaks, refueling stops etc. (i.e. conditional triggers on the cumul values
@@ -64,7 +64,7 @@ sr$model$vehicleClasses <- make_vc_simple('vc1', 1, 1, 1, 1)
 sr$model$vehicleClasses[[1]]$toString() %>% cat
 
 # now we can just specify the vehicles.
-# lets provide 2 x 2 ton vehicles. Although this is probably more than we need.
+# let's provide 2 x 2 ton vehicles. Although this is probably more than we need.
 # the reason for this is that we're modelling a full-blown pickup+dropoff model, so if there's
 # time to reload, a vehicle can return to the depot and grab more goodies!
 

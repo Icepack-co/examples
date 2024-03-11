@@ -32,7 +32,7 @@ model$vehicles <- lapply(1:4, function(i){
                     18*60) # 6 PM
 })
 
-# okay, so that's a basic model. Lets now use the objects, but submit them to the api
+# okay, so that's a basic model. Let's now use the objects, but submit them to the api
 # through a different mechanism.
 data_api <- new("apiHelper", modelType = 'ivrdata-o43e0dvs78zq', configFile = '../config.json')
 # so the data api allows us to push just the data, without anything else.
@@ -40,7 +40,7 @@ data_model <- new (IVRData.CachedModel)
 data_model$model <- model$serialize(NULL) # epic: we just saved our model as a byte stream
 # into this data payload.
 
-# lets push the model data to the api and see what happens.
+# let's push the model data to the api and see what happens.
 modelID <-  data_api %>% postSolveRequest(data_model)
 # if you get an error at this point, just enable the ivr-data services on the client-portal.
 # the modelID is now a guid reference to model we can reference in a solve request.
@@ -56,7 +56,7 @@ tab <- resp %>% tabulate(sr)
 
 # this also means that because we have a model which is versioned separately from the
 # solve request, we can use the solve request with the task-sequence and have that apply
-# to a model. So lets extract the task sequence from the solved model.
+# to a model. So let's extract the task sequence from the solved model.
 
 sr$routes <- list() # note, in the intermediate example we used the model$taskSequence.
 # we're going to use sr$routes here (because it's outside the $model)

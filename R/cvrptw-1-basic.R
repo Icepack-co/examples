@@ -14,10 +14,8 @@ sr$model <- new (CVRPTW.CVRPTW)
 # The cvrptw has time windows on each point. In this schema, we allow you to omit windows from 
 # points if needed.
 
-# lets make the first location the depot, and the balance of the locations the visit points.
+# let's make the first location the depot, and the balance of the locations the visit points.
 data <- read.csv('../sample_data/publist_orders.csv')[1:10,]
-data$id %<>% as.character()
-data$quantity <- 0
 makePoint <- function(i){
   g <- new (CVRPTW.Geocode)
   g$id <- data$id[i]
@@ -30,13 +28,15 @@ sr$model$depot <- makePoint(1) # we're not going to add any windows on the depot
 #sr$model$toString() %>% cat  
 #sr$model$toJSON() %>% cat # if you prefer the look and feel of json
 
-# now we just need to select some quantities for the points.
-# lets make each point take up 20 units, and we'll set the maximum capacity of the vehicle to 100
-# that way we know that we don't need more than 2 vehicles but also that we can't use less than 2 vehicles.
-data$quantity <- 20
+# NOTE: quantity in Geocode above is zero by default. 
+# In this example, the quantity is provided with the data but can be set for each point here too.
+# For example, each point can be set to take up 20 units. If the maximum capacity of the vehicle is set to 100
+# we know that we don't need more than 2 vehicles but also that we can't use less than 2 vehicles.
+# data$quantity <- 20
+
 sr$model$points <-sapply(2:nrow(data), makePoint)
-# lets add windows just using a traditional loop
-# lets randomly split the windows into "morning" and "afternoon" windows
+# let's add windows just using a traditional loop
+# let's randomly split the windows into "morning" and "afternoon" windows
 # note that the windows are measured in minutes in this schema.
 
 morning <- c(8*60, 12*60) #08:00 to 12:00

@@ -62,12 +62,12 @@ if(dataUpload){
     tv$value <- 0
     ts$transits<- append(ts$transits, tv)
   }
-  # lets upload this transit set.
+  # let's upload this transit set.
   data_api <- new("apiHelper", modelType = 'ivrdata-o43e0dvs78zq', configFile = '../config.json')
   data_model <- new (IVRData.CachedTransitSet)
   data_model$transitSet <-ts
   rm(ts) # delete this to illustrate the point
-  # lets push the model data to the api and see what happens.
+  # let's push the model data to the api and see what happens.
   modelID <-  data_api %>% postSolveRequest(data_model)
 }else{
   # we can pop the transit-set directly in the model.

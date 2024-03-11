@@ -35,7 +35,7 @@ model$vehicles <- make_vehicle_cap("vehicle_1", 'vc1', 'vcc1',
 data$quantity %>% sum # the sum of quantity here is actually less than the size of the vehicle (in aggregate)
                       # but! does it meet our compartment constraints?
 
-# lets pretend for a moment that we have a vehicle which is layed out as follows:
+# let's pretend for a moment that we have a vehicle which is layed out as follows:
 #  Top Rack    [ ] [ ] [ ] [ ]  100kg per "compartment"  c1, c2, c3, c4
 #  Lower Rack  [ ] [ ] [ ] [ ]  400kg per "compartment"  c5, c6, c7, c8
 100*4 + 400*4 # adds up to the 2 ton total limit on a vehicle (if every compartment could be filled to max)
@@ -91,7 +91,7 @@ tab$compartmentSummary # ivr8 produces a nice summary
 # are 8 jobs, i.e. 8 pickups, 8 dropoffs. So after each pickup we can see the state of the load on
 # the vehicle. It's maximum weight is at stop.8 => 1800 units.
 
-# now lets try somethign that's infeasible (by design) and see what happens.
+# now let's try somethign that's infeasible (by design) and see what happens.
 # we're going to clear the compartments, populate a new list and run the model.
 sr$model$compartments <- list()
 for(i in 1:8){

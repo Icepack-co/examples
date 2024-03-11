@@ -40,7 +40,7 @@ tab <- resp %>% tabulate(sr)
 
 # so we can do a few things here, we can add constraints which weren't in the original
 # model, evaluate the same sequence and see if any constraints are broken?
-# sure, this sounds like fun. Lets add some time windows to all the locations and see
+# sure, this sounds like fun. Let's add some time windows to all the locations and see
 # what that does.
 
 for(i in 1:length(sr$model$locations)){
@@ -98,7 +98,7 @@ tabeval$infeasibilities %>% head
 # vehicle is late. we can check the arrival time of the task to verify this:
 
 # we know that we set all the location windows to be between 08:00 and 14:00
-# filter on all tasks which appear in the infeasibility set and lets check their windows.
+# filter on all tasks which appear in the infeasibility set and let's check their windows.
 tabeval$nodes %>% filter(taskId %in% tabeval$infeasibilities$taskId) %>%
   select(time_start) %>% mutate(windowBroken = time_start > 14*60)
 # well that's cool. So all the tasks flagged by the infeasibilities table correspond
@@ -123,7 +123,7 @@ tabeval$infeasibilities %>% head
 # this is because there's a relation between the pickup and dropoff and either they're BOTH scheduled
 # or BOTH unscheduled. Having one task assigned to a vehicle in the schedule without the other breaks
 # a bunch of constraints.
-# so lets apply the same trick and remove these stops.
+# so let's apply the same trick and remove these stops.
 
 for(i in 1:length(sr$model$taskSequence)){
   ts <- sr$model$taskSequence[[i]]$taskId

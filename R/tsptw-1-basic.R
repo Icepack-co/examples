@@ -14,11 +14,11 @@ data <- read.csv('../sample_data/publist.csv')[1:10,]
 # there are many ways to build protobuf. This is one simple way using old-school R functions.
 rupper <- 2500
 data <- data[sample(1:nrow(data), size = nrow(data), replace = F),]
-# just randomly shuffle the selected points. We're making somwhat-random windows below
+# just randomly shuffle the selected points. We're making somewhat random windows below
 # and if you run the script again you'll want to see a different result
 
 data$WindowStart <- runif(nrow(data), 0, rupper)
-                      #this creates some random time windows, with starts in  [0,2500] and ends in
+                      #this creates some random time windows, with starts in [0,2500] and ends in
                       # [0,5000]. These are hard windows that have to be respected in terms of arrival
                       # so a "vehicle" will wait for the window to start if it arrives early at a location.
 
@@ -53,7 +53,7 @@ resp <- api %>% getResponse(requestID)            # retrieve the model response
 tab <- resp %>% tabulate(sr)                    # tabulate the data in native-R format.
 tab$edges %>% arrange(sequence)
 # What can happen now, which doesn't with a tsp, is that we may end up with unsatisfiable
-# windows. In orderwords, try and execute all these orders, but the windows don't permit it
+# windows. In other words, try to execute all these orders, but the windows don't permit it
 # to be done within the constraints. In this situation, we do as many of the stops as possible.
 # Just randomise the data again if this happens.
 resp$arrivalTimes
@@ -62,7 +62,7 @@ tab$nodes %>% head                              # just inspect the head of the o
 tab$edges %>% head                              # just inspect the head of the output data
 
 resp %>% plotResponse(sr)                       # plot the data using ggplot. always looks nice.
-resp %>% plotResponseLeaflet(sr)                # plot the data using leaflet (assuming it's map-able)
+resp %>% plotResponseLeaflet(sr)                # plot the data using leaflet (assuming it's mappable)
 
 # because of the time windows, some stops may be ommitted (infeasible) and the sequence is probably
 # not going to be the shortest in distance, but will be the shortest in time.

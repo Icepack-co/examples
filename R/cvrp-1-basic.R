@@ -7,15 +7,13 @@ api <- new("apiHelper", modelType = 'cvrp-jkfdoctmp51n', configFile = '../config
 sr <- new (CVRP.SolveRequest)
 sr$model <- new (CVRP.CVRP)
 
-# so a classic cvrp has a heterogeneous fleet. This means we need only specify the size of the
+# A classic cvrp has a heterogeneous fleet. This means we need only specify the size of the
 # vehicle and the number of vehicles available. The other aspect of this model is to include
 # the location of the depot.
 
-# lets make the first location the depot, and the balance of the locations the visit points.
+# let's make the first location the depot, and the balance of the locations the visit points.
 
 data <- read.csv('../sample_data/publist_orders.csv')[1:10,]
-data$id %<>% as.character()
-data$quantity <- 0
 makePoint <- function(i){
   g <- new (CVRP.Geocode)
   g$id <- data$id[i]
@@ -27,10 +25,12 @@ makePoint <- function(i){
 sr$model$depot <- makePoint(1)
 #sr$model$toString() %>% cat  # or sr$model$toJSON() %>% cat # if you prefer the look and feel of json
 
-# now we just need to select some quantities for the points.
-# lets make each point take up 20 units, and we'll set the maximum capacity of the vehicle to 100
-# that way we know that we don't need more than 2 vehicles but also that we can't use less than 2 vehicles.
-data$quantity <- 20
+# NOTE: quantity in Geocode above is zero by default. 
+# In this example, the quantity is provided with the data but can be set for each point here too.
+# For example, each point can be set to take up 20 units. If the maximum capacity of the vehicle is set to 100
+# we know that we don't need more than 2 vehicles but also that we can't use less than 2 vehicles.
+# data$quantity <- 20
+
 sr$model$points <-sapply(2:nrow(data), makePoint)
 # sr$model$toString() %>% cat # if you want to display what the model looks like at this point.
 

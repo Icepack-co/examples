@@ -46,7 +46,7 @@ for(i in 1:4){
 # now we can go back through the tasks and allocate them to allowable compartments
 # this is normal in fuel delivery systems where you have diesel/petrol constraints.
 # we're just going to decide on which jobs may go in which compartments based on the
-# index, and lets see if that's feasible. Obviously, you'll create it using proper logic
+# index, and let's see if that's feasible. Obviously, you'll create it using proper logic
 # based on the business rules.
 
 for(i in 1:length(model$jobs)){
@@ -85,7 +85,7 @@ tab <- resp %>% tabulate(sr)
 tab$compartmentSummary
 # so the compartment summary is nice - but it doesn't tell us whether we stuck to the constraints
 # around the relations for each of the jobs.
-# so lets just build a data-frame of allowable compartments per job and join it to the normal response
+# so let's just build a data-frame of allowable compartments per job and join it to the normal response
 jdata<- do.call(rbind, lapply(sr$model$jobs,
               function(i){data.frame(id = i$id,
                           allowableCompartments =

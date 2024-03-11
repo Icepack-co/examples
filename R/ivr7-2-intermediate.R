@@ -32,7 +32,7 @@ sr$model$dimensions$toString() %>% cat              # looks nice. 3 dimensions w
 
 sr$model$locations <- make_locations(data)
 sr$model$locations[[1]]$toString() %>% cat
-# lets add arrival windows to all locations from 08:00 -> 14:00
+# let's add arrival windows to all locations from 08:00 -> 14:00
 # we're going to do this by simply modifying the location objects already constructed
 la <- new (IVR7.Location.Attribute)
 la$dimensionId <- 'time'
@@ -51,7 +51,7 @@ rm(la, w)
 sr$model$locations[[1]]$toString() %>% cat # tada
 
 
-# lets build the jobs as well - same as the basic example
+# let's build the jobs as well - same as the basic example
 sr$model$jobs <- make_job_time_cap(data, src = rep(1, nrow(data) - 1), dest = 2:nrow(data))
 sr$model$jobs[[1]]$toString() %>% cat
 
@@ -71,7 +71,7 @@ sr$model$vehicleClasses <- make_vc_simple('vc1', 1, 1, 1, 1)
 sr$model$vehicleClasses[[1]]$toString() %>% cat
 
 # now we can just specify the vehicles.
-# lets provide 2 x 2 ton vehicles and 2 x 3 ton vehicles. 
+# let's provide 2 x 2 ton vehicles and 2 x 3 ton vehicles. 
 # the reason for this is that we're modelling a full-blown pickup+dropoff model, so if there's
 # time to reload, a vehicle can return to the depot and grab more goodies!
 

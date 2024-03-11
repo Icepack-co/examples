@@ -22,11 +22,11 @@ d %>% nrow
 
 api <- new("apiHelper", modelType = 'ns3-tbfvuwtge2iq', configFile = '../config.json')
 
-#lets instantiate a model container so that we can build out a model
+#let's instantiate a model container so that we can build out a model
 m <- new (NS3.Model)
 
 # we're going to employ the model helper here
-# lets use a single dimension for this model of weight.
+# let's use a single dimension for this model of weight.
 m$dimensions<- make_distance_time_user_dimensions("weight")
 m$dimensions$toString() %>% cat
 
@@ -41,16 +41,16 @@ d_nodes <- make_nodes(demandNodes)
 p_nodes %>% display # so we've just defined the Guiness storehouse
 w_nodes %>% display # and here we have to warehouses, one in gallway, one in limerick
 
-#lets assume we can go factory-direct or through a warehouse!
+#let's assume we can go factory-direct or through a warehouse!
 sources <- d %>% filter(demand < 0) %>% select(id) %>% unlist() %>% as.character()
 
-# lets continue to make some alterations.
+# let's continue to make some alterations.
 # we know that demand nodes require us to fulfill the demand at the node.
-# lets assume we have no production constraints
+# let's assume we have no production constraints
 
 # we have a reasonably even demand profile - something tells us this data-set is not real! :-) 
 # demandNodes$demand %>% hist
-# in order to specify which demands we should satisfy, lets place a flow requirement at each node.
+# in order to specify which demands we should satisfy, let's place a flow requirement at each node.
 
 for(i in 1:length(d_nodes)){
   pf <- new (NS3.Node.ProductFlow)

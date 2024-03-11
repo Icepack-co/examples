@@ -23,7 +23,7 @@ sr$model$points <- apply(X = data,
                                           g$y <- as.numeric(i['Y'])
                                           return(g)
                                         })
-sr$model$distancetype <- 1      # set the distance type to use the road-network
+sr$model$distancetype <- 1      # set the distance type to use the road network
 
 # if you'd like to view the model in plain-text format simply
 sr$model$toString() %>% cat
@@ -38,4 +38,4 @@ tab$edges %>% head
 #tab$edges %>% head                              # just inspect the head of the output data
 
 resp %>% plotResponse(sr)                       # plot the data using ggplot. always looks nice.
-resp %>% plotResponseLeaflet(sr)                # plot the data using leaflet (assuming it's map-able)
+resp %>% plotResponseLeaflet(sr)                # plot the data using leaflet (assuming it's mappable)

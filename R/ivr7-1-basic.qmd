@@ -1,0 +1,209 @@
+---
+title: "Basic IVR7 Example (R)"
+format:
+  html: 
+    page-layout: full
+    embed-resources: true
+    output: ./output/ivr7-1-basic.html
+    code-copy: true
+editor: visual
+papersize: a4
+execute:
+  echo: false
+---
+
+This example is for the IVR7 (Icepack Vehicle Router 7) model. 
+
+### Data 
+
+```{r}
+
+data <- read.csv('../sample_data/publist_orders.csv')
+
+number_pubs <- nrow(data)
+
+```
+
+The data used in this example is a list of `r number_pubs` pubs in Dublin, Ireland with their associated X and Y coordinates and quantities (amount added to a vehicle at each location).
+
+```{r}
+#| echo: false
+#| output: false
+library("tidyverse")
+library("kableExtra")
+```
+
+```{r}
+data <- data %>% select(-c(pickupTime,dropoffTime))
+
+kable(data, col.names = c("Pub Name (id)",
+                           "X-Coordinate (X)",
+                           "Y-Coordinate (Y)",
+                           "Quantity (quantity)"))
+```
+
+
+### Running the example
+|
+The example uses the **iceR** package which will first need to be installed (see information [here](https://github.com/Icepack-co/iceR)) and then loaded. Helper functions are also provided in a separate file and need to be read in.
+
+```{r}
+#| echo: true
+#| output: false
+library(iceR)
+
+source('ivr7-model-helper.R')
+
+```
+
+
+Execute the example as follows:
+
+1. Create an api-helper object with the model type you'd like to solve.
+
+```{r}
+#| echo: true
+#| output: false
+api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../config.json')
+```
+
+
+2. Create the model and add some data to it.
+
+```{r}
+#| echo: true
+#| output: false
+
+# Create the model
+sr <- new (IVR7.SolveRequest)
+sr$model <- new (IVR7.Model)
+
+# Load the data
+data <- read.csv('../sample_data/publist_orders.csv')
+
+# View the loaded data (if desired)
+ggplot() + geom_point(data = data, aes(x = X, y = Y)) + theme_bw()
+
+# Configure the model and add the data to it (See ivr7-model-helper.R for details around some of the methods used below)
+
+# (a) Dimension configuration - decide which dimensional quantities to model in this example.
+# For this example we're going to model the distance, time, and capacity of the vehicle (a common configuration).
+sr$model$dimensions <- make_distance_time_cap_dims()
+sr$model$dimensions$toString() %>% cat            
+
+# (b) Locations
+# For this example, assume that the first point is where vehicles are going to begin and end each day.
+# Unlike the TSP/CVRP/PDP models, the IVR7 model requires that you specify the unique locations
+# that are going to be used in the model as a separate entity. The reason for this is so that you
+# can specify the locations once and reference those locations by id for other entities (such as vehicles/jobs/tasks).
+sr$model$locations <- make_locations(data)
+sr$model$locations[[1]]$toString() %>% cat
+
+# (c) Jobs
+sr$model$jobs <- make_job_time_cap(data, src = rep(1, nrow(data) - 1), dest = 2:nrow(data))
+sr$model$jobs[[1]]$toString() %>% cat
+# We've constructed some jobs with pickups and dropoffs, loading and offload times, as well as the
+# contribution to the capacity dimension. In this example, we're picking up all orders at the 
+# Guiness Storehouse and delivering to the list of customers. 
+# 'make_job_time_cap' is just a simple function to create this particular style of request, but you can make your own.
+
+# (d) Vehicles, Vehicle Classes and Vehicle Cost Classes
+# We need to specify the cost classes available, the vehicle classes available and then the individual vehicles.
+# We're going to create one of each to keep things simple. 
+# We're costing the vehicle, time at 0.01 units per minute, and distance at 3 units per km.
+sr$model$vehicleCostClasses <- make_vcc_simple('vcc1', 1000, 0.01, 0.01, 0.01, 1, 3)
+sr$model$vehicleCostClasses[[1]]$toString() %>% cat
+
+# A vehicle class describes how the vehicle MOVES through the network.
+# In other words, we can use the standard network travel speeds or we could make the vehicle
+# move slower/faster relative to the road network. We could also attach transit rules here which 
+# are great for modelling lunch breaks, refueling stops etc. (i.e. conditional triggers on the 
+# cumul values of the dimension).
+sr$model$vehicleClasses <- make_vc_simple('vc1', 1, 1, 1, 1)
+sr$model$vehicleClasses[[1]]$toString() %>% cat
+
+# Now we can just specify the vehicles.
+# We will provide 2x 2 ton vehicles (although this is probably more than we need).
+# The reason for this is that we're modelling a full-blown pickup+dropoff model, so if there's
+# time to reload, a vehicle can return to the depot and grab more goodies!
+for(i in 1:2){
+  sr$model$vehicles[[i]] <- make_vehicle_cap( paste0("vehicle_", i), 'vc1', 'vcc1',
+                                              2000, # the vehicle capacity
+                                              data$id[1], # start location
+                                              data$id[1], # end location
+                                              7*60,  # 7 AM
+                                              18*60) # 6 PM
+}
+
+# Set the other relevant information
+sr$solveType <- 0 # 0 for optimise, 1 for evaluate, 2 for reoptimise
+
+# View the model in plain-text format (string or JSON)
+sr$model$toString() %>% cat
+sr$model$toJSON() %>% cat
+
+```
+
+3. Submit the model to the API
+
+```{r}
+#| echo: true
+#| output: false
+requestID <- api %>% postSolveRequest(sr)  
+```
+
+
+4. Retrieve the model response
+
+```{r}
+#| echo: true
+#| output: false
+resp <- api %>% getResponse(requestID)
+```
+
+
+5. Visualise the result
+
+```{r}
+#| echo: true
+#| output: true
+
+# Tabulate the data in native-R format
+tab <- resp %>% tabulate(sr)
+tab$edges %>% head # just inspect the head of the output
+
+# Plot the data (ggplot or leaflet)
+resp %>% plotResponse(sr) # ggplot                       
+resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)
+```
+ 
+6. Additional options
+
+```{r}
+#| echo: true
+#| output: true
+
+transits <- tab$edges
+transits$geometry <- NULL # just remove the geometries for this section so that the dataframe collapses nicely.
+transits %>%
+  mutate(TotalDistanceTravelled = distance_end - distance_start,
+         TotalDriveTime = time_end - time_start) %>%
+  group_by(vehicleId) %>%
+  summarise(TotalDistance = sum(TotalDistanceTravelled),
+                                TravelTimeHrs = sum(TotalDriveTime)/60,
+                                DistanceCost = sum(distance_cost),
+                                TravelTimeCost = sum(time_cost))
+stops <- tab$nodes
+
+stops %>%
+  mutate(StopTime = time_end - time_start,
+       DropoffStop = capacity_end < capacity_start) %>%
+  group_by(vehicleId) %>%
+  summarise(TotalStopTime = sum(StopTime),
+            MaxLoad = max(capacity_start),
+            StopTimeCost = sum(time_cost),
+            CustomerVisits = sum(DropoffStop))
+
+# This is useful to verify that the capacity constraint on the vehicle hasn't been broken. 
+# i.e. the maximum load amount on the vehicle at any point on its route was <= 2000.
+```
