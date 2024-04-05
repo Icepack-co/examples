@@ -1,7 +1,7 @@
 # CVRPTW sample script
 library(iceR)
 
-# # create an api-helper object with the model type you'd like to solve.
+# # create an apiHelper object with the model type you'd like to solve.
 api <- new("apiHelper", modelType = 'cvrptw-acyas3nzweqb', '../config.json')
 sr <- new (CVRPTW.SolveRequest)
 sr$model <- new (CVRPTW.CVRPTW)
@@ -59,7 +59,7 @@ sr$model$distancetype <- 1 # 1 for road network, 2 for euclidean, 3 for haversin
 
 sr$solveType <- 0  # 0 for optimise, 1 for evaluate, 2 for reoptimise
 
-requestID <- api %>% postSolveRequest(sr)         # submit the model to the api
+requestID <- api %>% postSolveRequest(sr)         # submit the model to the API
 resp <- api %>% getResponse(requestID)            # retrieve the model response
 
 tab <- resp %>% tabulate(sr)                      # tabulate the data in native-R format.

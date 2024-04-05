@@ -1,4 +1,4 @@
-### An easy example of how to use the matrix api to generate distance/time matricies
+### An easy example of how to use the matrix API to generate distance/time matrices
 library(iceR)
 
 api <- new("apiHelper", modelType = 'matrix-vyv95n7wchpl', configFile = '../config.json')
@@ -24,7 +24,7 @@ model$distanceUnit <- 0
 model$durationUnit <- 2
 model$toString() %>% cat
 
-requestID <- api %>% postSolveRequest(model)         # submit the model to the api
+requestID <- api %>% postSolveRequest(model)         # submit the model to the API
 resp <- api %>% getResponse(requestID)               # retrieve the model response. Takes around a minute to solve
 resp$toString() %>% cat                              # the pbf in string format.
 tab <- resp %>% tabulate(model)   # this tabulates the response data into a native r-format.

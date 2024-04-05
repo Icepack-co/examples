@@ -31,17 +31,25 @@ The data used in this example is a list of `r number_pubs` pubs in Dublin, Irela
 ```{r}
 #| echo: false
 #| output: false
-library("tidyverse")
-library("kableExtra")
+
+if(!("pacman" %in% rownames(installed.packages()))){
+  install.packages("pacman")
+}
+
+library(pacman)
+p_load(tidyverse)
+p_load(DT)
+p_load(dplyr)
 ```
 
 ```{r}
-data <- data %>% select(-c(pickupTime,dropoffTime))
+data <- data %>% select(-c(pickupTime,dropoffTime)) %>% mutate(across(2:3, ~ format(round(.x, digits=5), nsmall = 5))) 
 
-kable(data, col.names = c("Pub Name (id)",
+datatable(data, colnames = c("Pub Name (id)",
                            "X-Coordinate (X)",
                            "Y-Coordinate (Y)",
-                           "Quantity (quantity)"))
+                           "Quantity (quantity)")
+                           , options = list(dom = 't', scrollY = "200px", pageLength=nrow(data), columnDefs = list(list(className = 'dt-right', targets = 2:4))))
 ```
 
 
@@ -58,7 +66,7 @@ library(iceR)
 
 Execute the example as follows:
 
-1. Create an api-helper object with the model type you'd like to solve.
+1. Create an apiHelper object with the model type you'd like to solve.
 
 ```{r}
 #| echo: true

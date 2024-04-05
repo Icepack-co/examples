@@ -7,7 +7,7 @@ rm(list= ls())
 library(iceR)
 
 source('ivr8-model-helper.R')
-# create an api-helper object with the model type you'd like to solve.
+# create an apiHelper object with the model type you'd like to solve.
 api <- new("apiHelper", modelType = 'ivr8-yni1c9k2swof', configFile = '../config.json')
 
 model <- new (IVR8.Model)
@@ -94,7 +94,7 @@ jdata<- do.call(rbind, lapply(sr$model$jobs,
 
 tab$nodes %>% select(taskId, compartmentId, jobId) %>% left_join(jdata, by = c('jobId' = 'id'))
 # so that's nice, we can see that at each task assignment we only used compartments
-# which were in the allowable set we provided the api.
+# which were in the allowable set we provided the API.
 # it's probably worth noting that the default is all compartments in a compartment-set are allowed
 # so you can either specify an inclusive sub-set, or excluded sub-set.
 # if all compartments are excluded then it will let you know that there's no feasible allocation

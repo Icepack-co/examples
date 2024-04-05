@@ -3,7 +3,7 @@
 ### We're moving one product "Beer" measured in the dimension "weight"
 ### How are movements in the network costed?
 ### - Same configuration as the intermediate-2 example:
-###   * We have two lane rates between our main production center and the two warehouses
+###   * We have two lane rates between our main production centre and the two warehouses
 ###   * and a distribution "Cost Model" between the sources (proudction + 2 x warehouses) and consumption nodes
 ###   * Lane rates between Production and Intermediate nodes are costed on a cost per km basis.
 ###   * Cost models to distribute the quantities further is also based on a (more expensive) cost per km.
@@ -11,7 +11,7 @@
 ###   * And that smaller vehicles handle the secondary distribution (at a higher cost per ton)
 ###   * adding a fixed cost trigger for using a warehouse
 ###   * the allows modelling selecting between the two warehouses, or potentially using both.
-### - We're going to add a constraint where deliveries from the guiness storehouse may only be 
+### - We're going to add a constraint where deliveries from the Guinness Storehouse may only be 
 ###   made withing a radius of 50 km's. This is typical when you need to restrict a fleet to 
 ###   a vehicle type (like a secondary delivery vehicle) which you don't want leaving a major city
 ### - we're also going to add a constraint where only 90% of the volume can be serviced by the production
@@ -60,8 +60,8 @@ for(i in 1:length(w_nodes)){
 
 d_nodes <- make_nodes(demandNodes)
 
-p_nodes %>% display # so we've just defined the Guiness storehouse
-w_nodes %>% display # and here we have to warehouses, one in gallway, one in limerick
+p_nodes %>% display # so we've just defined the Guinness Storehouse
+w_nodes %>% display # and here we have to warehouses, one in Galway, one in Limerick
 
 #let's assume we can go factory-direct or through a warehouse!
 sources <- d %>% filter(demand < 0) %>% select(id) %>% unlist() %>% as.character()
@@ -70,7 +70,7 @@ sources <- d %>% filter(demand < 0) %>% select(id) %>% unlist() %>% as.character
 # we know that demand nodes require us to fulfill the demand at the node.
 # let's assume we have no production constraints
 
-# we have a reasonably even demand profile - something tells us this data-set is not real! :-) 
+# we have a reasonably even demand profile - something tells us this dataset is not real! :-) 
 # demandNodes$demand %>% hist
 # in order to specify which demands we should satisfy, let's place a flow requirement at each node.
 
@@ -107,8 +107,8 @@ for(i in 1:length(p_nodes)){
 
 m$nodes <- c(p_nodes, w_nodes, d_nodes)
 
-# so  Guiness Storehouse -> Limerick
-# and Guinnes Storehouse -> Galway
+# so  Guinness Storehouse -> Limerick
+# and Guinness Storehouse -> Galway
 # each costed at 0.1 monetary units per km.
 m$laneRates <- c(make_lane_rate_distance(sources[1], sources[2], 0.1),
                  make_lane_rate_distance(sources[1], sources[3], 0.1))

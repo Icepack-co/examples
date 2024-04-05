@@ -28,12 +28,28 @@ number_pubs <- nrow(data)
 The data used in this example is a list of `r number_pubs` pubs in Dublin, Ireland with their associated X and Y coordinates.
 
 ```{r}
+#| echo: false
+#| output: false
 
-library("kableExtra")
+if(!("pacman" %in% rownames(installed.packages()))){
+  install.packages("pacman")
+}
 
-kable(data, col.names = c("Pub Name (id)",
+library(pacman)
+p_load(tidyverse)
+p_load(DT)
+p_load(dplyr)
+```
+
+```{r}
+
+data <- data %>% mutate_if(is.numeric, round, digits=5) %>% format(nsmall=5)
+
+datatable(data, colnames = c("Pub Name (id)",
                            "X-Coordinate (X)",
-                           "Y-Coordinate (Y)"))
+                           "Y-Coordinate (Y)")
+                           , options = list(dom = 't', scrollY = "200px", pageLength=nrow(data), columnDefs = list(list(className = 'dt-right', targets = 2:3))))
+
 ```
 
 
@@ -50,7 +66,7 @@ library(iceR)
 |
 Execute the example as follows:
 
-1. Create an api-helper object with the model type you'd like to solve.
+1. Create an apiHelper object with the model type you'd like to solve.
 
 ```{r}
 #| echo: true

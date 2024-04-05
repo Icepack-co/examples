@@ -2,7 +2,7 @@
 # this example uses a publist for the input data.
 
 library(iceR)
-# create an api-helper object with the model type you'd like to solve.
+# create an apiHelper object with the model type you'd like to solve.
 api <- new("apiHelper", modelType = 'tsp-mcvfz472gty6', configFile = '../config.json')
 
 # create your model
@@ -29,7 +29,7 @@ sr$model$distancetype <- 1      # set the distance type to use the road network
 sr$model$toString() %>% cat
 sr$model$toJSON() %>% cat
 
-requestID <- api %>% postSolveRequest(sr)         # submit the model to the api
+requestID <- api %>% postSolveRequest(sr)         # submit the model to the API
 resp <- api %>% getResponse(requestID)            # retrieve the model response
 
 tab <- resp %>% tabulate(sr)                # tabulate the data in native-R format.

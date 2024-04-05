@@ -2,7 +2,7 @@
 # devtools::load_all()
 library(iceR)
 
-# create an api-helper object with the model type you'd like to solve.
+# create an apiHelper object with the model type you'd like to solve.
 api <- new("apiHelper", modelType = 'tsptw-kcxbievqo879', configFile = '../config.json')
 
 # create your model
@@ -42,7 +42,7 @@ sr$model$distancetype <- 1      # set the distance type to use the road-network
 # if you'd like to view the model in plain-text format simply
 sr$model$toString() %>% cat
 
-requestID <- api %>% postSolveRequest(sr)         # submit the model to the api
+requestID <- api %>% postSolveRequest(sr)         # submit the model to the API
 
 resp <- api %>% getResponse(requestID)            # retrieve the model response
 

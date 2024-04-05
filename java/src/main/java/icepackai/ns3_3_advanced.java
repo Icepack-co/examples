@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 //   * And that smaller vehicles handle the secondary distribution (at a higher cost per ton)
 //   * adding a fixed cost trigger for using a warehouse
 //   * the allows modelling selecting between the two warehouses, or potentially using both.
-// - We're going to add a constraint where deliveries from the guiness storehouse may only be
+// - We're going to add a constraint where deliveries from the Guinness Storehouse may only be
 //   made withing a radius of 50 km's. This is typical when you need to restrict a fleet to
 //   a vehicle type (like a secondary delivery vehicle) which you don't want leaving a major city
 // - we're also going to add a constraint where only 90% of the volume can be serviced by the
@@ -104,7 +104,7 @@ public class ns3_3_advanced {
       pf.setProductId("Beer").addDimensionRanges(ns3helper.make_dimension_range(
           "weight", demandNodes.get(i).quantity, demandNodes.get(i).quantity));
 
-      // we're only going to allow the source Guiness Storehouse if it's within 50km's (as the crow
+      // we're only going to allow the source Guinness Storehouse if it's within 50km's (as the crow
       // flies) from the location of the node.
       List<String> allowableSources = new ArrayList<String>();
       for (int w = 0; w < warehouseNodes.size(); w++) {

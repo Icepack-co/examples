@@ -2,7 +2,7 @@
 # Purpose: illustrate the usage of the data-upload as well as model versioning.
 # * Builds a simple pickup/dropoff (similar to the basic model).
 # * Illustrates how to use the parent solve-request container for evaluate requests against a versioned model
-# ** This is a quicker manner in which to run evaluate requests against the api where a large chunk
+# ** This is a quicker manner in which to run evaluate requests against the API where a large chunk
 #    of model content is required to define the model. Send it once, then just run requests against that model,
 #    and we'll handle moving the data around on our side.
 
@@ -32,15 +32,15 @@ model$vehicles <- lapply(1:4, function(i){
                     18*60) # 6 PM
 })
 
-# okay, so that's a basic model. Let's now use the objects, but submit them to the api
+# okay, so that's a basic model. Let's now use the objects, but submit them to the API
 # through a different mechanism.
 data_api <- new("apiHelper", modelType = 'ivrdata-o43e0dvs78zq', configFile = '../config.json')
-# so the data api allows us to push just the data, without anything else.
+# so the data API allows us to push just the data, without anything else.
 data_model <- new (IVRData.CachedModel)
 data_model$model <- model$serialize(NULL) # epic: we just saved our model as a byte stream
 # into this data payload.
 
-# let's push the model data to the api and see what happens.
+# let's push the model data to the API and see what happens.
 modelID <-  data_api %>% postSolveRequest(data_model)
 # if you get an error at this point, just enable the ivr-data services on the client-portal.
 # the modelID is now a guid reference to model we can reference in a solve request.

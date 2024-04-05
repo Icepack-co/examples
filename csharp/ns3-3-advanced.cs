@@ -12,7 +12,7 @@
 //   * And that smaller vehicles handle the secondary distribution (at a higher cost per ton)
 //   * adding a fixed cost trigger for using a warehouse
 //   * the allows modelling selecting between the two warehouses, or potentially using both.
-// - We're going to add a constraint where deliveries from the guiness storehouse may only be 
+// - We're going to add a constraint where deliveries from the Guinness Storehouse may only be 
 //   made withing a radius of 50 km's. This is typical when you need to restrict a fleet to 
 //   a vehicle type (like a secondary delivery vehicle) which you don't want leaving a major city
 // - we're also going to add a constraint where only 90% of the volume can be serviced by the production
@@ -95,7 +95,7 @@ class ns3advanced : IRunner
     // we know that demand nodes require us to fulfill the demand at the node.
     // lets assume we have no production constraints
 
-    // we have a reasonably even demand profile - something tells us this data-set is not real! :-) 
+    // we have a reasonably even demand profile - something tells us this dataset is not real! :-) 
     // demandNodes$demand %>% hist
     // in order to specify which demands we should satisfy, lets place a flow requirement at each node.
     for (int i = 0; i < d_nodes.Count; i++)
@@ -110,7 +110,7 @@ class ns3advanced : IRunner
         dimensionRanges = { ns3helper.make_dimension_range("weight", demandNodes[i].quanity, demandNodes[i].quanity) }
       }
       );
-      // we're only going to allow the source Guiness Storehouse if it's within 50km's (as the crow flies)
+      // we're only going to allow the source Guinness Storehouse if it's within 50km's (as the crow flies)
       // from the location of the node.
       var allowableSources = warehouseNodes.Select(t => t.id).ToList();
       if (GreatCircleDistance(p_nodes[0], d_nodes[i]) < 50)
@@ -141,8 +141,8 @@ class ns3advanced : IRunner
     m.Nodes.AddRange(w_nodes);
     m.Nodes.AddRange(d_nodes);
 
-    // so  Guiness Storehouse -> Limerick
-    // and Guinnes Storehouse -> Galway
+    // so  Guinness Storehouse -> Limerick
+    // and Guinness Storehouse -> Galway
     // each costed at 0.1 monetary units per km.
     m.laneRates.Add(ns3helper.make_lane_rate_distance(sources[0], sources[1], 0.1f));
     m.laneRates.Add(ns3helper.make_lane_rate_distance(sources[0], sources[2], 0.1f));

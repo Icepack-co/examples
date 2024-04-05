@@ -8,7 +8,7 @@ rm(list= ls())
 library(iceR)
 
 source('ivr8-model-helper.R')
-# create an api-helper object with the model type you'd like to solve.
+# create an apiHelper object with the model type you'd like to solve.
 api <- new("apiHelper", modelType = 'ivr8-yni1c9k2swof', configFile = '../config.json')
 
 model <- new (IVR8.Model)

@@ -2333,7 +2333,7 @@ public final class IvrdataO43E0Dvs78Zq {
   /**
    * <pre>
    * Uploading a common model which can then be used for multiple request types.
-   * Simplest use-case is to upload the model, then submit a optimise request.
+   * Simplest use case is to upload the model, then submit a optimise request.
    * Followed by a series of eval requests (when users modify the target routes)
    * </pre>
    *
@@ -2597,7 +2597,7 @@ public final class IvrdataO43E0Dvs78Zq {
     /**
      * <pre>
      * Uploading a common model which can then be used for multiple request types.
-     * Simplest use-case is to upload the model, then submit a optimise request.
+     * Simplest use case is to upload the model, then submit a optimise request.
      * Followed by a series of eval requests (when users modify the target routes)
      * </pre>
      *

@@ -76,7 +76,7 @@ make_job_time_cap <- function(jobdata, src, dest){
     # this is useful is you're trying to model the trade-off between opportunity cost and
     # actual cost if these are known. In general, it's acceptable to make this a large number
     # so that if there are errors in the data you can still get a feasible solution, with the
-    # infeasibilities assessed by the api.
+    # infeasibilities assessed by the API.
     d[[length(d) + 1]] <- j
   }
   return (d)

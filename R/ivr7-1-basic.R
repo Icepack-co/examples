@@ -13,7 +13,7 @@ library(iceR)
 
 source('ivr7-model-helper.R')
 
-# create an api-helper object with the model type you'd like to solve.
+# create an apiHelper object with the model type you'd like to solve.
 api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../config.json')
 
 sr <- new (IVR7.SolveRequest)
@@ -43,7 +43,7 @@ sr$model$locations[[1]]$toString() %>% cat
 sr$model$jobs <- make_job_time_cap(data, src = rep(1, nrow(data) - 1), dest = 2:nrow(data))
 sr$model$jobs[[1]]$toString() %>% cat
 # so we've constructed some jobs with pickups and dropoffs, loading and offload times, as well as the
-# contribution to the capacity dimension. In this example, we're picking up all orders at the Guiness Storehouse
+# contribution to the capacity dimension. In this example, we're picking up all orders at the Guinness Storehouse
 # and delivering to the list of customers. 'make_job_time_cap' is just a simple function to create this
 # particular style of request, but you can make your own.
 
@@ -80,7 +80,7 @@ for(i in 1:2){
 # now just configure the solve request to the solve type
 sr$solveType <- 0 #0 optimise, 1 evaluate, 2 reoptimise
 
-requestID <- api %>% postSolveRequest(sr)         # submit the model to the api
+requestID <- api %>% postSolveRequest(sr)         # submit the model to the API
 resp <- api %>% getResponse(requestID)            # retrieve the model response
 
 tab <- tabulate(resp, sr)

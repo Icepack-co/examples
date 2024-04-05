@@ -41,7 +41,7 @@ public class ivr7_1_basic {
 
     // so we've constructed some jobs with pickups and dropoffs, loading and offload
     // times, as well as the contribution to the capacity dimension. In this
-    // example, we're pickup up all orders at the guiness storehouse and delivering
+    // example, we're pickup up all orders at the Guinness Storehouse and delivering
     // at the list of customers. 'make_job_time_cap' is just a simple function to
     // create this particular style of request, but you can make your own.
     ivr7helper.makeJobTimeCap(

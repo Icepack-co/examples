@@ -12,7 +12,8 @@ execute:
   echo: false
 ---
 
-This example is for the IVR7 (Icepack Vehicle Router 7) model. 
+This example is for the IVR7 (Icepack Vehicle Router 7) model. IVR7 is an advanced vehicle routing problem solver that is easily customisable to most use cases like pickup and dropoff, multi-depot, multiple time windows and fleet mix problems.
+
 
 ### Data 
 
@@ -29,19 +30,27 @@ The data used in this example is a list of `r number_pubs` pubs in Dublin, Irela
 ```{r}
 #| echo: false
 #| output: false
-library("tidyverse")
-library("kableExtra")
+
+if(!("pacman" %in% rownames(installed.packages()))){
+  install.packages("pacman")
+}
+
+library(pacman)
+p_load(tidyverse)
+p_load(DT)
+p_load(dplyr)
 ```
 
 ```{r}
-data <- data %>% select(-c(pickupTime,dropoffTime))
+data <- data %>% select(-c(pickupTime,dropoffTime)) %>% mutate(across(2:3, ~ format(round(.x, digits=5), nsmall = 5))) 
 
-kable(data, col.names = c("Pub Name (id)",
+datatable(data, colnames = c("Pub Name (id)",
                            "X-Coordinate (X)",
                            "Y-Coordinate (Y)",
-                           "Quantity (quantity)"))
-```
+                           "Quantity (quantity)")
+                           , options = list(dom = 't', scrollY = "200px", pageLength=nrow(data), columnDefs = list(list(className = 'dt-right', targets = 2:4))))
 
+```
 
 ### Running the example
 |
@@ -59,7 +68,7 @@ source('ivr7-model-helper.R')
 
 Execute the example as follows:
 
-1. Create an api-helper object with the model type you'd like to solve.
+1. Create an apiHelper object with the model type you'd like to solve.
 
 ```{r}
 #| echo: true
@@ -72,7 +81,7 @@ api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../config
 
 ```{r}
 #| echo: true
-#| output: false
+#| output: true
 
 # Create the model
 sr <- new (IVR7.SolveRequest)
@@ -84,9 +93,14 @@ data <- read.csv('../sample_data/publist_orders.csv')
 # View the loaded data (if desired)
 ggplot() + geom_point(data = data, aes(x = X, y = Y)) + theme_bw()
 
+```
+```{r}
+#| echo: true
+#| output: false
+
 # Configure the model and add the data to it (See ivr7-model-helper.R for details around some of the methods used below)
 
-# (a) Dimension configuration - decide which dimensional quantities to model in this example.
+# (a) Dimensions - decide which dimensional quantities to model in this example.
 # For this example we're going to model the distance, time, and capacity of the vehicle (a common configuration).
 sr$model$dimensions <- make_distance_time_cap_dims()
 sr$model$dimensions$toString() %>% cat            
@@ -104,7 +118,7 @@ sr$model$jobs <- make_job_time_cap(data, src = rep(1, nrow(data) - 1), dest = 2:
 sr$model$jobs[[1]]$toString() %>% cat
 # We've constructed some jobs with pickups and dropoffs, loading and offload times, as well as the
 # contribution to the capacity dimension. In this example, we're picking up all orders at the 
-# Guiness Storehouse and delivering to the list of customers. 
+# Guinness Storehouse and delivering to the list of customers. 
 # 'make_job_time_cap' is just a simple function to create this particular style of request, but you can make your own.
 
 # (d) Vehicles, Vehicle Classes and Vehicle Cost Classes

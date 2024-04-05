@@ -33,7 +33,7 @@ sr$model$vehicles <- lapply(1:4, function(i){
 
 # now just configure the solve request to the solve type
 sr$solveType <- 0  # 0 optimise, 1 evaluate, 2 reoptimise
-requestID <- api %>% postSolveRequest(sr)         # submit the model to the api
+requestID <- api %>% postSolveRequest(sr)         # submit the model to the API
 resp <- api %>% getResponse(requestID)            # retrieve the model response
 
 tab <- resp %>% tabulate(sr)
@@ -83,7 +83,7 @@ sr$model$taskSequence[[1]]$toString() %>% cat
 
 sr$solveType <- 1 # 1 for Evaluate
 
-requestID <- api %>% postSolveRequest(sr)             # submit the evaluate model to the api
+requestID <- api %>% postSolveRequest(sr)             # submit the evaluate model to the API
 evalresp <- api %>% getResponse(requestID)            # save the response elsewhere so we can refer back
 
 tabeval <- evalresp %>% tabulate(sr)
@@ -114,7 +114,7 @@ for(i in 1:length(sr$model$taskSequence)){
 # just the dropoffs that were a problem. So now we have pickups without a dropoff?
 # what will happen?
 
-requestID <- api %>% postSolveRequest(sr)             # submit the evaluate model to the api
+requestID <- api %>% postSolveRequest(sr)             # submit the evaluate model to the API
 evalresp <- api %>% getResponse(requestID)            # save the response elsewhere so we can refer back
 tabeval <- evalresp %>% tabulate(sr)
 tabeval$infeasibilities %>% head
@@ -131,7 +131,7 @@ for(i in 1:length(sr$model$taskSequence)){
   # just remove any tasks seen in the tabeval$infeasibilities set.
 }
 
-requestID <- api %>% postSolveRequest(sr)             # submit the evaluate model to the api
+requestID <- api %>% postSolveRequest(sr)             # submit the evaluate model to the API
 evalresp <- api %>% getResponse(requestID)            # save the response elsewhere so we can refer back
 tabeval <- evalresp %>% tabulate(sr)
 
@@ -160,7 +160,7 @@ evalresp %>%  plotResponseLeaflet(sr) # this is just the feasible subset with th
 sr$model$taskSequence <- list()
 
 sr$solveType <- 0 # switching back to the optimise request.
-requestID <- api %>% postSolveRequest(sr)                 # submit the evaluate model to the api
+requestID <- api %>% postSolveRequest(sr)                 # submit the evaluate model to the API
 window_constrained_resp <- api %>% getResponse(requestID) # save the response
 wtab <- window_constrained_resp %>% tabulate(sr)
 

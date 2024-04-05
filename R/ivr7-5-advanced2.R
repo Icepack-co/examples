@@ -20,7 +20,7 @@ data$id %<>% as.character()
 
 # We want "Open Routing" which basically means that if a vehicle finishes it's day at any node,
 # it is then not supposed to cost the return trip home. So as a start, we need to separate the
-# depot (Guiness Storehouse) from the vehicle-home location by name - it's okay if it's at the
+# depot (Guinness Storehouse) from the vehicle-home location by name - it's okay if it's at the
 # same point (long/lat), but we're going to separate the identifier so we can control the
 # distance/time matrix nicely.
 
@@ -30,7 +30,7 @@ sr$model$locations <- make_locations(data)
 # add the vehicle-home location
 sr$model$locations[[length(sr$model$locations) + 1]] <- sr$model$locations[[1]]
 sr$model$locations[[length(sr$model$locations)]]$id <- "vehicle-site"
-# okay, so this just coppies the guiness storehouse object and creates a new id.
+# okay, so this just coppies the Guinness Storehouse object and creates a new id.
 
 sr$model$jobs <- make_job_time_cap(data, src = rep(1, nrow(data) - 1), dest = 2:nrow(data))
 sr$model$vehicleCostClasses <- make_vcc_simple('vcc1', 1000, 0.01, 0.01, 0.01, 1, 3)
@@ -49,7 +49,7 @@ sr$model$vehicles <- lapply(1:4, function(i){
 # do complete line-haul outsourcing-style modelling, you could also do this for "vehicle-site"
 # TO all alocations. For now, we'll just demonstrate the open routing case.
 
-# you have two ways of doing this. Upload it via the data-api, or upload it as part of the model.
+# you have two ways of doing this. Upload it via the data API, or upload it as part of the model.
 
 dataUpload <- TRUE # it's nice to illustrate this if you've enabled the services on your key
 # but you can set this to false to get a feel for the other code path if needed.
@@ -67,7 +67,7 @@ if(dataUpload){
   data_model <- new (IVRData.CachedTransitSet)
   data_model$transitSet <-ts
   rm(ts) # delete this to illustrate the point
-  # let's push the model data to the api and see what happens.
+  # let's push the model data to the API and see what happens.
   modelID <-  data_api %>% postSolveRequest(data_model)
 }else{
   # we can pop the transit-set directly in the model.
@@ -123,7 +123,7 @@ sr$model$vehicleClasses[[1]]$attributes<- append(sr$model$vehicleClasses[[1]]$at
 sr$model$vehicleClasses[[1]]$toString() %>% cat
 # so now we have a roadnetwork distance + time generator
 # followed by a custom time and custom distance generator.
-# the api will execute the transit generators in the order they appear and will
+# the API will execute the transit generators in the order they appear and will
 # override previous values with new values (if they exist). So in this case, it will
 # build a transit matrix using the road network, then overlay the custom matrix which
 # was uploaded with our data.
@@ -131,7 +131,7 @@ sr$model$vehicleClasses[[1]]$toString() %>% cat
 # now just configure the solve request to the solve type
 sr$solveType <- 0  # 0 optimise, 1 evaluate, 2 reoptimise
 
-requestID <- api %>% postSolveRequest(sr)         # submit the model to the api
+requestID <- api %>% postSolveRequest(sr)         # submit the model to the API
 resp <- api %>% getResponse(requestID)            # retrieve the model response
 
 tab <- resp %>% tabulate(sr)

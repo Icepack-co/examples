@@ -3,7 +3,7 @@ rm(list =ls())
 library(iceR)
 library(gridExtra) # just for the plots at the end.
 
-# create an api-helper object with the model type you'd like to solve.
+# create an apiHelper object with the model type you'd like to solve.
 api <- new("apiHelper", modelType = 'nvd-hap0j2y4zlm1', configFile = '../config.json')
 
 data <- read.csv('../sample_data/publist_orders.csv', stringsAsFactors = F)
@@ -18,7 +18,7 @@ data$visitTime <- round(runif(n = nrow(data), 60, 120),0)
 
 periodLength <- 20
 weekLength <- 5
-repHomeLocation <- 'My Sales Rep (@Guiness)'
+repHomeLocation <- 'My Sales Rep (@Guinness)'
 data$id[1] <- repHomeLocation
 
 m <- new (NVD.Model)
@@ -82,7 +82,7 @@ sr <- new (NVD.SolveRequest)
 sr$model <- m
 sr$solveType <- 0
 
-requestID <- api %>% postSolveRequest(sr)         # submit the model to the api
+requestID <- api %>% postSolveRequest(sr)         # submit the model to the API
 resp <- api %>% getResponse(requestID)            # retrieve the model response. Takes around a minute to solve
 
 tab <- tabulate(resp, sr) # you'll notice this tabulates the Pareto frontier here, since

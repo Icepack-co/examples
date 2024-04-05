@@ -17,7 +17,7 @@ library(iceR)
 # just up some pre-defined functions which wrap the data into pbf
 source('ivr7-model-helper.R')
 
-# create an api-helper object with the model type you'd like to solve.
+# create an apiHelper object with the model type you'd like to solve.
 api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../config.json')
 
 sr <- new (IVR7.SolveRequest)
@@ -102,7 +102,7 @@ sr$model$vehicleClasses[[1]]$transitRuleIds <- 'lunch_break_rule' # hence all ve
 # now just configure the solve request to the solve type
 sr$solveType <- 0 #0 optimise, 1 evaluate, 2 reoptimise
 
-requestID <- api %>% postSolveRequest(sr)         # submit the model to the api
+requestID <- api %>% postSolveRequest(sr)         # submit the model to the API
 resp <- api %>% getResponse(requestID)            # retrieve the model response
 
 tab <- tabulate(resp, sr)
