@@ -1,19 +1,17 @@
-# Simple TSP model. Visit all point in such a way as to minimise the distance.
-# this example uses a publist for the input data.
+# TSP EXAMPLE SCRIPT
 
 library(iceR)
-# create an apiHelper object with the model type you'd like to solve.
+
+# Create an apiHelper object with the model type you'd like to solve
 api <- new("apiHelper", modelType = 'tsp-mcvfz472gty6', configFile = '../config.json')
 
-# create your model
+# Create your model
 sr <- new (TSP.SolveRequest)
-
 sr$model <- new (TSP.TSP)
 
-# add some data to the model
+# Add some data to the model
 data <- read.csv('../sample_data/publist.csv', stringsAsFactors = F)
 
-# there are many ways to build protobuf. This is one simple way using old-school R functions.
 sr$model$points <- apply(X = data,
                          MARGIN = 1,
                          FUN = function(i){
@@ -22,20 +20,26 @@ sr$model$points <- apply(X = data,
                                           g$x <- as.numeric(i['X'])
                                           g$y <- as.numeric(i['Y'])
                                           return(g)
-                                        })
-sr$model$distancetype <- 1      # set the distance type to use the road network
+                                        }) # there are many ways to build protobuf. This is one simple way using old-school R functions.
 
-# if you'd like to view the model in plain-text format simply
+# Set the distance type to use the road network
+sr$model$distancetype <- 1 # 1 for road network, 2 for euclidean, 3 for haversine      
+
+# View the model in plain-text format (string or JSON)
 sr$model$toString() %>% cat
 sr$model$toJSON() %>% cat
 
-requestID <- api %>% postSolveRequest(sr)         # submit the model to the API
-resp <- api %>% getResponse(requestID)            # retrieve the model response
+# Submit the model to the API
+requestID <- api %>% postSolveRequest(sr)    
 
-tab <- resp %>% tabulate(sr)                # tabulate the data in native-R format.
-tab$edges %>% head
-#tab$nodes %>% head                              # just inspect the head of the output data
-#tab$edges %>% head                              # just inspect the head of the output data
+# Retrieve the model response
+resp <- api %>% getResponse(requestID)            
 
-resp %>% plotResponse(sr)                       # plot the data using ggplot. always looks nice.
-resp %>% plotResponseLeaflet(sr)                # plot the data using leaflet (assuming it's mappable)
+# Tabulate the data in native-R format
+tab <- resp %>% tabulate(sr)               
+tab$nodes %>% head # just inspect the head of the output
+tab$edges %>% head # just inspect the head of the output
+
+# Plot the data 
+resp %>% plotResponse(sr) # ggplot
+resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)

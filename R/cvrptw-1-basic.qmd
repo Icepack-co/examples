@@ -54,7 +54,9 @@ datatable(data, colnames = c("Pub Name (id)",
 
 
 ### Running the example
-|
+
+An R script with all the lines needed to run the example can be found [here](https://github.com/Icepack-co/examples/blob/master/R/cvrptw-1-basic.R).
+
 The example uses the **iceR** package which will first need to be installed (see information [here](https://github.com/Icepack-co/iceR)) and then loaded.
 
 ```{r}
@@ -165,10 +167,10 @@ resp <- api %>% getResponse(requestID)
 
 # Tabulate the data in native-R format
 tab <- resp %>% tabulate(sr)
+tab$nodes %>% head # just inspect the head of the output
 tab$edges %>% head # just inspect the head of the output
 
 # Plot the data (ggplot or leaflet)
 resp %>% plotResponse(sr) # ggplot                       
 resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)
 ```
- 

@@ -53,7 +53,9 @@ datatable(data, colnames = c("Pub Name (id)",
 
 
 ### Running the example
-|
+
+An R script with all the lines needed to run the example can be found [here](https://github.com/Icepack-co/examples/blob/master/R/tsptw-1-basic.R).
+
 The example uses the **iceR** package which will first need to be installed (see information [here](https://github.com/Icepack-co/iceR)) and then loaded.
 
 ```{r}
@@ -160,6 +162,7 @@ requestID <- api %>% postSolveRequest(sr)
 #| echo: true
 #| output: false
 resp <- api %>% getResponse(requestID)
+resp$arrivalTimes
 ```
 
 
@@ -171,6 +174,9 @@ resp <- api %>% getResponse(requestID)
 
 # Tabulate the data in native-R format
 tab <- resp %>% tabulate(sr)
+tab$nodes %>% head # just inspect the head of the output
+tab$edges %>% head # just inspect the head of the output
+
 tab$edges %>% arrange(sequence)
 ```
 
@@ -184,6 +190,5 @@ What can happen now, which doesn't with a TSP, is that we may end up with unsati
 resp %>% plotResponse(sr) # ggplot                       
 resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)
 ```
-
 
 Because of the time windows, some stops may be ommitted (infeasible) and the sequence is probably not going to be the shortest in distance, but will be the shortest in time.
