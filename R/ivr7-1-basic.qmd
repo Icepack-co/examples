@@ -14,6 +14,8 @@ execute:
 
 This example is for the IVR7 (Icepack Vehicle Router 7) model. IVR7 is an advanced vehicle routing problem solver that is easily customisable to most use cases like pickup and dropoff, multi-depot, multiple time windows and fleet mix problems.
 
+The example illustrates using time, distance and a single capacity dimension. It involves some locations, some pickup-dropoff tasks (with task times), a single vehicle class, a single vehicle-cost class and multiple (two) vehicles.
+
 
 ### Data 
 
@@ -53,7 +55,9 @@ datatable(data, colnames = c("Pub Name (id)",
 ```
 
 ### Running the example
-|
+
+An R script with all the lines needed to run the example can be found [here](https://github.com/Icepack-co/examples/blob/master/R/ivr7-1-basic.R).
+
 The example uses the **iceR** package which will first need to be installed (see information [here](https://github.com/Icepack-co/iceR)) and then loaded. Helper functions are also provided in a separate file and need to be read in.
 
 ```{r}
@@ -68,7 +72,7 @@ source('ivr7-model-helper.R')
 
 Execute the example as follows:
 
-1. Create an apiHelper object with the model type you'd like to solve.
+1. Create an apiHelper object with the model type you'd like to solve
 
 ```{r}
 #| echo: true
@@ -77,7 +81,7 @@ api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../config
 ```
 
 
-2. Create the model and add some data to it.
+2. Create the model and add some data to it
 
 ```{r}
 #| echo: true
@@ -184,6 +188,7 @@ resp <- api %>% getResponse(requestID)
 
 # Tabulate the data in native-R format
 tab <- resp %>% tabulate(sr)
+tab$nodes %>% head # just inspect the head of the output
 tab$edges %>% head # just inspect the head of the output
 
 # Plot the data (ggplot or leaflet)

@@ -1,49 +1,54 @@
-rm(list =ls())
-# test script
-library(iceR)
-library(gridExtra) # just for the plots at the end.
+# NVD EXAMPLE SCRIPT (BASIC)
 
-# create an apiHelper object with the model type you'd like to solve.
+library(iceR)
+library(gridExtra)
+
+# Create an apiHelper object with the model type you'd like to solve
 api <- new("apiHelper", modelType = 'nvd-hap0j2y4zlm1', configFile = '../config.json')
 
+# Create the model
+sr <- new (NVD.SolveRequest)
+sr$model <- new (NVD.Model)
+
+
+# Add some data to the model
 data <- read.csv('../sample_data/publist_orders.csv', stringsAsFactors = F)
+
+# View the loaded data (if desired)
 ggplot() + geom_point(data = data, aes(x = X, y = Y)) + theme_bw()
 
 set.seed(123)
 data$Frequency <- sample(x = c(4,2,1), size = nrow(data),replace = T)
 data$visitTime <- round(runif(n = nrow(data), 60, 120),0)
-                      # assume that each visit takes somewhere between 1 and 2 hours.
-                      # This would normally be a function of the input data.
-                      # if you've ever been to an Irish pub, you'll know its tough to visit for less than an hour.
-
-periodLength <- 20
-weekLength <- 5
+                    
 repHomeLocation <- 'My Sales Rep (@Guinness)'
 data$id[1] <- repHomeLocation
 
-m <- new (NVD.Model)
-m$configuration <- new (NVD.Configuration)
-m$configuration$timeUnit <- 1
-m$configuration$timeCoef <- 1
-m$configuration$timeCostCoef <- 0
-m$configuration$distanceUnit <- 4
-m$configuration$distanceCostCoef <- 1
-m$configuration$intraTerritoryBalance <- 1
-m$configuration$interTerritoryBalance <- 1
-m$configuration$weekLength = weekLength
-m$configuration$periodLength = periodLength
-m$configuration$toString() %>% cat
+periodLength <- 20
+weekLength <- 5
+
+sr$model$configuration <- new (NVD.Configuration)
+sr$model$configuration$timeUnit <- 1
+sr$model$configuration$timeCoef <- 1
+sr$model$configuration$timeCostCoef <- 0
+sr$model$configuration$distanceUnit <- 4
+sr$model$configuration$distanceCostCoef <- 1
+sr$model$configuration$intraTerritoryBalance <- 1
+sr$model$configuration$interTerritoryBalance <- 1
+sr$model$configuration$weekLength = weekLength
+sr$model$configuration$periodLength = periodLength
+sr$model$configuration$toString() %>% cat
+
 t <- new(NVD.Territory)
-    t$id <- repHomeLocation
-    t$dailyStartTime <- 0
-    t$dailyEndTime <- 400
-    t$location <- new (NVD.Geocode)
-    t$location$longitude <- data %>% filter(id == repHomeLocation) %>% select(X) %>% unlist()
-    t$location$latitude <- data %>% filter(id == repHomeLocation) %>% select(Y) %>% unlist()
-    t$dailyStartTime <- rep(0, periodLength)
-    t$dailyEndTime <- rep(440, periodLength)  # assuming a 6h40m hour work day, we don't want them overwhelmed
-                                                 # this can be modified quite easily on a day-to-day basis
-m$territories <- t
+t$id <- repHomeLocation
+t$dailyStartTime <- 0
+t$dailyEndTime <- 400
+t$location <- new (NVD.Geocode)
+t$location$longitude <- data %>% filter(id == repHomeLocation) %>% select(X) %>% unlist()
+t$location$latitude <- data %>% filter(id == repHomeLocation) %>% select(Y) %>% unlist()
+t$dailyStartTime <- rep(0, periodLength)
+t$dailyEndTime <- rep(440, periodLength)
+sr$model$territories <- t
 
 for(i in 2:nrow(data)){
   v <- new (NVD.Visit)
@@ -57,15 +62,6 @@ for(i in 2:nrow(data)){
   v$territoryRelations$type <- 0 # 0 INCLUSIVE, 1 EXCLUSIVE
   v$territoryRelations$territoryIds <- repHomeLocation
 
-  #   SEVEN_TIMES_A_WEEK = 1; #only applicable to a 7-day week
-  #   SIX_TIMES_A_WEEK = 2;   #only applicable to a 6-day week
-  #   FIVE_TIMES_A_WEEK = 3;
-  #   FOUR_TIMES_A_WEEK = 4;
-  #   THREE_TIMES_A_WEEK = 5;
-  #   TWICE_A_WEEK = 6;       # it is unusual to implement this profile as we normally want twice a week with a certain gap between days.
-  #   ONCE_A_WEEK = 7;        # frequency 4 in this example
-  #   EVERY_SECOND_WEEK = 8;  # frequency 2 in this example
-  #   ONCE_A_MONTH = 9;       # frequency 1 in this example
   if(s$Frequency == 4){
     v$profile$frequencyType =  7;
   }else if(s$Frequency == 2){
@@ -75,20 +71,36 @@ for(i in 2:nrow(data)){
   }else {
     stop()
   }
-  m$visits[[length(m$visits) + 1]]<- v
+  sr$model$visits[[length(sr$model$visits) + 1]]<- v
 }
 
-sr <- new (NVD.SolveRequest)
-sr$model <- m
-sr$solveType <- 0
+sr$solveType <- 0 # 0 for optimise, 1 for evaluate, 2 for reoptimise
 
-requestID <- api %>% postSolveRequest(sr)         # submit the model to the API
-resp <- api %>% getResponse(requestID)            # retrieve the model response. Takes around a minute to solve
+# View the model in plain-text format (string or JSON)
+sr$model$toString() %>% cat
+sr$model$toJSON() %>% cat
 
-tab <- tabulate(resp, sr) # you'll notice this tabulates the Pareto frontier here, since
-                          # so solution from the frontier has been selected yet.
+# Submit the model to the API
+requestID <- api %>% postSolveRequest(sr)
+
+# Retrieve the model response
+resp <- api %>% getResponse(requestID)
+
+# Tabulate the data in native-R format
+tab <- resp %>% tabulate(sr)     
+tab <- tabulate(resp, sr) 
 tab$frontier %>% head
-resp %>% plotResponse(sr)
+
+# Plot the data 
+resp %>% plotResponse(sr) # ggplot
+resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)
+
+
+
+
+
+
+
 
 # this is the cheapest solution
 instanceCheap <-  api %>% getSolutionInstance(sr, reps, solutionIndex = 1)

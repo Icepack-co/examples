@@ -1,11 +1,11 @@
-# CVRP EXAMPLE SCRIPT
+# CVRP EXAMPLE SCRIPT (BASIC)
 
 library(iceR)
 
 # Create an apiHelper object with the model type you'd like to solve
 api <- new("apiHelper", modelType = 'cvrp-jkfdoctmp51n', configFile = '../config.json')
 
-# Create your model
+# Create the model
 sr <- new (CVRP.SolveRequest)
 sr$model <- new (CVRP.CVRP)
 

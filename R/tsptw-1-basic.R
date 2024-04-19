@@ -1,11 +1,11 @@
-# TSPTW EXAMPLE SCRIPT
+# TSPTW EXAMPLE SCRIPT (BASIC)
 
 library(iceR)
 
 # Create an apiHelper object with the model type you'd like to solve
 api <- new("apiHelper", modelType = 'tsptw-kcxbievqo879', configFile = '../config.json')
 
-# Create your model
+# Create the model
 sr <- new (TSPTW.SolveRequest)
 sr$model <- new (TSPTW.TSP)
 

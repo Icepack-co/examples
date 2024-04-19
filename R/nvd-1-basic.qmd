@@ -49,7 +49,9 @@ datatable(data, colnames = c("Pub Name (id)",
 ```
 
 ### Running the example
-|
+
+An R script with all the lines needed to run the example can be found [here](https://github.com/Icepack-co/examples/blob/master/R/nvd-1-basic.R).
+
 The example uses the **iceR** package which will first need to be installed (see information [here](https://github.com/Icepack-co/iceR)) and then loaded, along with the gridExtra package to help with plotting the results.
 
 ```{r}
@@ -63,7 +65,7 @@ library(gridExtra)
 
 Execute the example as follows:
 
-1. Create an apiHelper object with the model type you'd like to solve.
+1. Create an apiHelper object with the model type you'd like to solve
 
 ```{r}
 #| echo: true
@@ -72,7 +74,7 @@ api <- new("apiHelper", modelType = 'nvd-hap0j2y4zlm1', configFile = '../config.
 ```
 
 
-2. Create the model and add some data to it.
+2. Create the model and add some data to it
 
 ```{r}
 #| echo: true
@@ -121,15 +123,15 @@ sr$model$configuration$periodLength = periodLength
 sr$model$configuration$toString() %>% cat
 
 t <- new(NVD.Territory)
-    t$id <- repHomeLocation
-    t$dailyStartTime <- 0
-    t$dailyEndTime <- 400
-    t$location <- new (NVD.Geocode)
-    t$location$longitude <- data %>% filter(id == repHomeLocation) %>% select(X) %>% unlist()
-    t$location$latitude <- data %>% filter(id == repHomeLocation) %>% select(Y) %>% unlist()
-    t$dailyStartTime <- rep(0, periodLength)
-    t$dailyEndTime <- rep(440, periodLength)  # assuming a 6h40m hour work day, we don't want them overwhelmed
-                                                 # this can be modified quite easily on a day-to-day basis
+t$id <- repHomeLocation
+t$dailyStartTime <- 0
+t$dailyEndTime <- 400
+t$location <- new (NVD.Geocode)
+t$location$longitude <- data %>% filter(id == repHomeLocation) %>% select(X) %>% unlist()
+t$location$latitude <- data %>% filter(id == repHomeLocation) %>% select(Y) %>% unlist()
+t$dailyStartTime <- rep(0, periodLength)
+t$dailyEndTime <- rep(440, periodLength)  # assuming a 6h40m hour work day, we don't want them overwhelmed
+                                          # this can be modified quite easily on a day-to-day basis
 sr$model$territories <- t
 
 for(i in 2:nrow(data)){
@@ -162,7 +164,7 @@ for(i in 2:nrow(data)){
   }else {
     stop()
   }
-  m$visits[[length(m$visits) + 1]]<- v
+  sr$model$visits[[length(sr$model$visits) + 1]]<- v
 }
 
 # Set the other relevant information
@@ -185,6 +187,7 @@ requestID <- api %>% postSolveRequest(sr)
 
 4. Retrieve the model response
 
+NOTE: It takes about a minute to solve
 ```{r}
 #| echo: true
 #| output: false
@@ -198,7 +201,9 @@ resp <- api %>% getResponse(requestID)
 #| output: true
 
 # Tabulate the data in native-R format
-tab <- resp %>% tabulate(sr)
+tab <- resp %>% tabulate(sr) 
+# You'll notice this tabulates the Pareto frontier here, since
+# no solution from the frontier has been selected yet.
 tab$frontier %>% head
 
 # Plot the data (ggplot or leaflet)

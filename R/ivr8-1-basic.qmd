@@ -12,7 +12,10 @@ execute:
   echo: false
 ---
 
-This example is for the IVR8 (Icepack Vehicle Router 8) model. IVR8 is an extension to IVR7 with compartment modelling added. This is useful for tanker fleets or axel load-constraint modelling. In this example, we'll use a simple two-rack compartment configuration to illustrate the workings.
+This example is for the IVR8 (Icepack Vehicle Router 8) model. IVR8 is an extension to IVR7 with compartment modelling added. This is useful for tanker fleets or axel load-constraint modelling. 
+
+In this example, we'll use a simple two-rack compartment configuration and a single vehicle to illustrate the workings.
+
 
 ### Data 
 
@@ -55,7 +58,9 @@ datatable(data, colnames = c("Pub Name (id)",
 ```
 
 ### Running the example
-|
+
+An R script with all the lines needed to run the example can be found [here](https://github.com/Icepack-co/examples/blob/master/R/ivr8-1-basic.R).
+
 The example uses the **iceR** package which will first need to be installed (see information [here](https://github.com/Icepack-co/iceR)) and then loaded. Helper functions are also provided in a separate file and need to be read in.
 
 ```{r}
@@ -70,7 +75,7 @@ source('ivr8-model-helper.R')
 
 Execute the example as follows:
 
-1. Create an apiHelper object with the model type you'd like to solve.
+1. Create an apiHelper object with the model type you'd like to solve
 
 ```{r}
 #| echo: true
@@ -79,7 +84,7 @@ api <- new("apiHelper", modelType = 'ivr8-yni1c9k2swof', configFile = '../config
 ```
 
 
-2. Create the model and add some data to it.
+2. Create the model and add some data to it
 
 ```{r}
 #| echo: true
@@ -190,8 +195,8 @@ resp$objective
 
 # Tabulate the data in native-R format
 tab <- resp %>% tabulate(sr)
-tab$edges %>% head # just inspect the head of the output
 tab$nodes %>% select(taskId, compartmentId, jobId)
+tab$edges %>% head # just inspect the head of the output
 
 # View the produced summary
 tab$compartmentSummary
@@ -263,8 +268,9 @@ resp$objective
 
 # Tabulate the data in native-R format
 tab <- resp %>% tabulate(sr)
-tab$edges %>% head # just inspect the head of the output
 tab$nodes %>% select(taskId, compartmentId, jobId)
+tab$edges %>% head # just inspect the head of the output
+
 
 # View the produced summary and the infeasibilities
 tab$compartmentSummary

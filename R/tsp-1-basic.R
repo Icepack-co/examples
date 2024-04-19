@@ -1,11 +1,11 @@
-# TSP EXAMPLE SCRIPT
+# TSP EXAMPLE SCRIPT (BASIC)
 
 library(iceR)
 
 # Create an apiHelper object with the model type you'd like to solve
 api <- new("apiHelper", modelType = 'tsp-mcvfz472gty6', configFile = '../config.json')
 
-# Create your model
+# Create the model
 sr <- new (TSP.SolveRequest)
 sr$model <- new (TSP.TSP)
 

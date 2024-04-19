@@ -1,11 +1,11 @@
-# CVRPTW EXAMPLE SCRIPT
+# CVRPTW EXAMPLE SCRIPT (BASIC)
 
 library(iceR)
 
 # Create an apiHelper object with the model type you'd like to solve
 api <- new("apiHelper", modelType = 'cvrptw-acyas3nzweqb', configFile = '../config.json')
 
-# Create your model
+# Create the model
 sr <- new (CVRPTW.SolveRequest)
 sr$model <- new (CVRPTW.CVRPTW)
 
