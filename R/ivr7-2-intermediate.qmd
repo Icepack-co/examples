@@ -1,0 +1,271 @@
+---
+title: "Intermediate IVR7 Example 1 (R)"
+format:
+  html: 
+    page-layout: full
+    embed-resources: true
+    output: ./output/ivr7-2-intermediate.html
+    code-copy: true
+editor: visual
+papersize: a4
+execute:
+  echo: false
+---
+
+This example is for the IVR7 (Icepack Vehicle Router 7) model. IVR7 is an advanced vehicle routing problem solver that is easily customisable to most use cases like pickup and dropoff, multi-depot, multiple time windows and fleet mix problems.
+
+The example illustrates using time, distance and a single capacity dimension. It involves some locations with windows (08:00 -> 14:00), some pickup-dropoff tasks (with task times), a single vehicle class, two vehicle-cost classes, multiple (four) vehicles, a heterogeneous fleet (2x2 tonne and 2x3 tonne capacity) and lunch breaks (1 hour break around 12:00).
+
+
+### Data 
+
+```{r}
+
+data <- read.csv('../sample_data/publist_orders.csv')
+
+number_pubs <- nrow(data)
+
+```
+
+The data used in this example is a list of `r number_pubs` pubs in Dublin, Ireland with their associated X and Y coordinates and quantities (amount added to a vehicle at each location).
+
+```{r}
+#| echo: false
+#| output: false
+
+if(!("pacman" %in% rownames(installed.packages()))){
+  install.packages("pacman")
+}
+
+library(pacman)
+p_load(tidyverse)
+p_load(DT)
+p_load(dplyr)
+```
+
+```{r}
+data <- data %>% select(-c(pickupTime,dropoffTime)) %>% mutate(across(2:3, ~ format(round(.x, digits=5), nsmall = 5))) 
+
+datatable(data, colnames = c("Pub Name (id)",
+                           "X-Coordinate (X)",
+                           "Y-Coordinate (Y)",
+                           "Quantity (quantity)")
+                           , options = list(dom = 't', scrollY = "200px", pageLength=nrow(data), columnDefs = list(list(className = 'dt-right', targets = 2:4))))
+
+```
+
+### Running the example
+
+An R script with all the lines needed to run the example can be found [here](https://github.com/Icepack-co/examples/blob/master/R/ivr7-2-intermediate.R).
+
+The example uses the **iceR** package which will first need to be installed (see information [here](https://github.com/Icepack-co/iceR)) and then loaded. Helper functions are also provided in a separate file and need to be read in.
+
+```{r}
+#| echo: true
+#| output: false
+library(iceR)
+
+source('ivr7-model-helper.R')
+
+```
+
+
+Execute the example as follows:
+
+1. Create an apiHelper object with the model type you'd like to solve
+
+```{r}
+#| echo: true
+#| output: false
+api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../config.json')
+```
+
+
+2. Create the model and add some data to it
+
+```{r}
+#| echo: true
+#| output: true
+
+# Create the model
+sr <- new (IVR7.SolveRequest)
+sr$model <- new (IVR7.Model)
+
+# Load the data
+data <- read.csv('../sample_data/publist_orders.csv')
+
+# View the loaded data (if desired)
+ggplot() + geom_point(data = data, aes(x = X, y = Y)) + theme_bw()
+
+```
+```{r}
+#| echo: true
+#| output: false
+
+# Configure the model and add the data to it (See ivr7-model-helper.R for details around some of the methods used below)
+
+# (a) Dimensions - decide which dimensional quantities to model in this example.
+# For this example we're going to model the distance, time, and capacity of the vehicle (a common configuration).
+sr$model$dimensions <- make_distance_time_cap_dims()
+sr$model$dimensions$toString() %>% cat            
+
+# (b) Locations
+# For this example, assume that the first point is where vehicles are going to begin and end each day.
+# Unlike the TSP/CVRP/PDP models, the IVR7 model requires that you specify the unique locations
+# that are going to be used in the model as a separate entity. The reason for this is so that you
+# can specify the locations once and reference those locations by id for other entities (such as vehicles/jobs/tasks).
+sr$model$locations <- make_locations(data)
+sr$model$locations[[1]]$toString() %>% cat
+
+# We're going to add arrival windows to all locations from 08:00 -> 14:00
+# by simply modifying the location objects already constructed
+la <- new (IVR7.Location.Attribute)
+la$dimensionId <- 'time'
+la$quantity <- 0
+w <- new (IVR7.Window)
+w$start <- 8*60 # 08:00 in our world, because we're measuring in minutes
+w$end <- 14*60  # 14:00
+la$arrivalWindows <- w  # Adding this as an arrival window. We could also add it as a departure window
+                        # in which case it would be required to leave the location within the assigned
+                        # window
+la$toString() %>% cat # This is what is being added to all locations.
+for(i in 1:length(sr$model$locations)){
+  sr$model$locations[[i]]$attributes <- la
+}
+rm(la, w)
+sr$model$locations[[1]]$toString() %>% cat 
+
+# (c) Jobs
+sr$model$jobs <- make_job_time_cap(data, src = rep(1, nrow(data) - 1), dest = 2:nrow(data))
+sr$model$jobs[[1]]$toString() %>% cat
+# We've constructed some jobs with pickups and dropoffs, loading and offload times, as well as the
+# contribution to the capacity dimension. In this example, we're picking up all orders at the 
+# Guinness Storehouse and delivering to the list of customers. 
+# 'make_job_time_cap' is just a simple function to create this particular style of request, but you can make your own.
+
+# (d) Vehicles, Vehicle Classes and Vehicle Cost Classes
+# We need to specify the cost classes available, the vehicle classes available and then the individual vehicles.
+# We're going to have two vehicle cost classes, one which is cheaper on time, 
+# one which is cheaper on distance, one which is more expensive if used (1000 vs 1200)
+sr$model$vehicleCostClasses <- c(make_vcc_simple('vcc1', 1000, 0.01, 0.01, 0.01, 1, 3),
+                                 make_vcc_simple('vcc2', 1200, 0.1, 0.1, 0.1, 0.6, 2.5))
+sr$model$vehicleCostClasses[[1]]$toString() %>% cat
+sr$model$vehicleCostClasses[[2]]$toString() %>% cat
+
+# We're going to use the same vehicle class as in the basic example
+sr$model$vehicleClasses <- make_vc_simple('vc1', 1, 1, 1, 1)
+sr$model$vehicleClasses[[1]]$toString() %>% cat
+
+# Now we can just specify the vehicles.
+# We will provide 2x 2 tonne vehicles and 2x 3 tonne vehicles. 
+# The reason for this is that we're modelling a full-blown pickup+dropoff model, so if there's
+# time to reload, a vehicle can return to the depot and grab more goodies!
+for(i in 1:4){
+  vcc <- 'vcc1'
+  vcap <- 2000
+  if(i >= 3){ # make 2x 2 tonne vehicles and 2x 3 tonne vehicles.
+    vcc <- 'vcc2'
+    vcap <- 3000
+  }
+  sr$model$vehicles[[i]] <- make_vehicle_cap(paste0("vehicle_", i), 'vc1', vcc,
+                                              vcap, # the vehicle capacity
+                                              data$id[1], # start location
+                                              data$id[1], # end location
+                                              7*60,  # 7 AM
+                                              18*60) # 6 PM
+}
+
+# We need to configure the lunch breaks.
+# This is a little bit more complex. We want to link our transit-rule to the time
+# dimension and when a certain amount has accumulated on the dimension, we then trigger the rule.
+sr$model$transitRules <- make_lunch_break_rule('lunch_break_rule', 'lunchy_munchy_',
+                                               12*60, 60 ) # add the transit rule definition to the model
+# now link the transit rule to the vehicle classes
+sr$model$vehicleClasses[[1]]$transitRuleIds <- 'lunch_break_rule' # hence all vehicles (provided at the class level)
+
+# Set the other relevant information
+sr$solveType <- 0 # 0 for optimise, 1 for evaluate, 2 for reoptimise
+
+# View the model in plain-text format (string or JSON)
+sr$model$toString() %>% cat
+sr$model$toJSON() %>% cat
+
+```
+
+3. Submit the model to the API
+
+```{r}
+#| echo: true
+#| output: false
+requestID <- api %>% postSolveRequest(sr)  
+```
+
+
+4. Retrieve the model response
+
+```{r}
+#| echo: true
+#| output: false
+resp <- api %>% getResponse(requestID)
+```
+
+
+5. Visualise the result
+
+```{r}
+#| echo: true
+#| output: true
+
+# Tabulate the data in native-R format
+tab <- resp %>% tabulate(sr)
+tab$nodes %>% head # just inspect the head of the output
+tab$edges %>% head # just inspect the head of the output
+
+tab$transitRules
+# This gives a tabulation of the transit rules that are being applied to the vehicles.
+# Where the fromStop == toStop this implies that the lunch break is performed at the stop.
+# Where the fromStop != toStop this implies the lunch break is taken en-route.
+# If it may only occur at stops, then feel free to disable the "inTransit" definition on the route,
+# or vice-versa.
+
+tab$infeasibilities # should be empty because all orders are completed.
+
+# Plot the data (ggplot or leaflet)
+resp %>% plotResponse(sr) # ggplot                       
+resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)
+```
+ 
+6. Additional options
+
+```{r}
+#| echo: true
+#| output: true
+
+transits <- tab$edges
+transits$geometry <- NULL # just remove the geometries for this section so that the dataframe collapses nicely.
+transits %>%
+  mutate(TotalDistanceTravelled = distance_end - distance_start,
+         TotalDriveTime = time_end - time_start) %>%
+  group_by(vehicleId) %>%
+  summarise(TotalDistance = sum(TotalDistanceTravelled),
+                                TravelTimeHrs = sum(TotalDriveTime)/60,
+                                DistanceCost = sum(distance_cost),
+                                TravelTimeCost = sum(time_cost))
+
+stops <- tab$nodes
+stops %>% filter(time_start < 8*60)  # Only pickups here, none of the delivery nodes (which is correct)
+                                     # since the vehicle starts at the depot, so it's not changing location.
+                                     # If we wanted the window check to apply here, we would place the vehicles
+                                     # at a different location (which may have the same geocode) to the depot.
+stops %>% filter(time_start > 14*60) # only vehicle-return nodes are allowed to be after 14:00
+stops %>%
+  mutate(StopTime = time_end - time_start,
+       DropoffStop = capacity_end < capacity_start) %>%
+  group_by(vehicleId) %>%
+  summarise(TotalStopTime = sum(StopTime),
+            MaxLoad = max(capacity_start),
+            StopTimeCost = sum(time_cost),
+            CustomerVisits = sum(DropoffStop))
+
+# We need 4 vehicles to perform all the visits feasibly.
+```

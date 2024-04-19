@@ -140,8 +140,6 @@ resp$toString() %>% cat
 
 # Tabulate the data in native-R format
 tab <- resp %>% tabulate(model)
-# There are 20 elements, which is 5*(5-1) (because the diagonal is always zero)
-# tab$elements %>% nrow 
 tab$elements %>% head # just inspect the head of the output
 tab$elements %>% nrow # we get 20 elements back, which is 5*(5-1) (because the diagonal is always zero)
 
@@ -154,7 +152,7 @@ tab$elements %>% nrow # we get 20 elements back, which is 5*(5-1) (because the d
 #| echo: true
 #| output: false
 #| 
-#Install reshape2 if not installed and then load
+# Install reshape2 if not installed and then load
 library("reshape2")
 ```
 
@@ -166,7 +164,7 @@ tab$elements$fromId %>% unique
 tab$elements$toId %>% unique
 tab$elements %>% reshape2::dcast(fromId ~ toId, value.var = 'distance', fill = 0) # distance matrix 
 tab$elements %>% reshape2::dcast(fromId ~ toId, value.var = 'duration', fill = 0) # time matrix
-#NOTE: if you leave the fill=0 off, you'll get NA's on the diagonal, which may or may not be what you want.
+# NOTE: if you leave the fill=0 off, you'll get NA's on the diagonal, which may or may not be what you want.
 
 ```
 

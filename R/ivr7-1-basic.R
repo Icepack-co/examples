@@ -73,8 +73,8 @@ transits %>%
                                 TravelTimeHrs = sum(TotalDriveTime)/60,
                                 DistanceCost = sum(distance_cost),
                                 TravelTimeCost = sum(time_cost))
-stops <- tab$nodes
 
+stops <- tab$nodes
 stops %>%
   mutate(StopTime = time_end - time_start,
        DropoffStop = capacity_end < capacity_start) %>%
