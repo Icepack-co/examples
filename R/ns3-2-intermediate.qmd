@@ -128,7 +128,7 @@ for(i in 1:length(w_nodes)){
 d_nodes <- make_nodes(demandNodes)
 
 p_nodes %>% display # Guinness Storehouse
-w_nodes %>% display # two warehouses, one in Galway and one in Limerick
+w_nodes %>% display # Two warehouses, one in Galway and one in Limerick
 
 # (c) Define the sources
 sources <- data %>% filter(demand < 0) %>% select(id) %>% unlist() %>% as.character()
@@ -137,7 +137,7 @@ sources <- data %>% filter(demand < 0) %>% select(id) %>% unlist() %>% as.charac
 # (d) Configure the nodes and assign them to the model
 
 # We know that demand nodes require us to fulfill the demand at the node.
-# Let's assume we have no production constraints
+# Let's assume we have no production constraints.
 # We have a reasonably even demand profile (demandNodes$demand %>% hist) - something tells us this dataset is not real! :-) 
 # In order to specify which demands we should satisfy, let's place a flow requirement at each node.
 

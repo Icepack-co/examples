@@ -1,0 +1,217 @@
+---
+title: "Advanced IVR8 Example (R)"
+format:
+  html: 
+    page-layout: full
+    embed-resources: true
+    output: ./output/ivr8-3-advanced.html
+    code-copy: true
+editor: visual
+papersize: a4
+execute:
+  echo: false
+---
+
+This example is for the IVR8 (Icepack Vehicle Router 8) model. IVR8 is an extension to IVR7 with compartment modelling added. This is useful for tanker fleets or axel load-constraint modelling. 
+
+In this example, we'll use a simple one-rack compartment configuration and a single vehicle with added allowable-compartment assignments (i.e. which jobs may be assigned to which compartments) to demonstrate how to use compartment constraints on a particular model.
+
+### Data 
+
+```{r}
+
+data <- read.csv('../sample_data/publist_orders.csv')[1:9, ] 
+
+number_pubs <- nrow(data)
+
+```
+
+The data used in this example is a list of `r number_pubs` pubs in Dublin, Ireland with their associated X and Y coordinates, pickup and dropoff times, and quantities (amount added to a vehicle at each location). There are 8 pickups and 8 dropoffs.
+
+```{r}
+#| echo: false
+#| output: false
+
+if(!("pacman" %in% rownames(installed.packages()))){
+  install.packages("pacman")
+}
+
+library(pacman)
+p_load(tidyverse)
+p_load(DT)
+p_load(dplyr)
+```
+
+```{r}
+
+data <- data %>% mutate(across(2:3, ~ format(round(.x, digits=5), nsmall = 5))) 
+
+datatable(data, colnames = c("Pub Name (id)",
+                           "X-Coordinate (X)",
+                           "Y-Coordinate (Y)",
+                           "Pickup Time (pickupTime)",
+                           "Dropoff Time (dropoffTime)",
+                           "Quantity (quantity)")
+                           , options = list(dom = 't', scrollY = "200px", pageLength=nrow(data), columnDefs = list(list(className = 'dt-right', targets = 2:6))))
+
+```
+
+### Running the example
+
+An R script with all the lines needed to run the example can be found [here](https://github.com/Icepack-co/examples/blob/master/R/ivr8-3-advanced.R).
+
+The example uses the **iceR** package which will first need to be installed (see information [here](https://github.com/Icepack-co/iceR)) and then loaded. Helper functions are also provided in a separate file and need to be read in.
+
+```{r}
+#| echo: true
+#| output: false
+library(iceR)
+
+source('ivr8-model-helper.R')
+
+```
+
+
+Execute the example as follows:
+
+1. **Create an apiHelper object with the model type you'd like to solve**
+
+```{r}
+#| echo: true
+#| output: false
+api <- new("apiHelper", modelType = 'ivr8-yni1c9k2swof', configFile = '../config.json')
+```
+
+
+2. **Create the model and add some data to it**
+
+```{r}
+#| echo: true
+#| output: false
+
+# Create the model
+sr <- new (IVR8.SolveRequest)
+sr$model <- new (IVR8.Model)
+
+# Load the data (we're going to use location 1 as the depot and locations 2 to 9 as the stops)
+data <- read.csv('../sample_data/publist_orders.csv')[1:9, ]
+
+# Configure the model and add the data to it (See ivr8-model-helper.R for details around some of the methods used below)
+
+# (a) Dimensions, Locations, Jobs, Vehicles, Vehicle Classes and Vehicle Cost Classes (see the IVR7 example for more details around this)
+sr$model$dimensions <- make_distance_time_cap_dims()
+sr$model$locations <- make_locations(data)
+sr$model$jobs <- make_job_time_cap(data, src = rep(1, nrow(data) - 1), dest = 2:nrow(data))
+sr$model$vehicleCostClasses <- make_vcc_simple('vcc1', 1000, 0.01, 0.01, 0.01, 1, 3)
+sr$model$vehicleClasses <- make_vc_simple('vc1', 1, 1, 1, 1)
+sr$model$vehicles <- make_vehicle_cap("vehicle_1", 'vc1', 'vcc1',
+                                   2000, # the vehicle capacity
+                                   data$id[1], # start location
+                                   data$id[1], # end location
+                                   7*60,  # 7 AM
+                                   18*60) # 6 PM
+
+# (b) Compartments and Compartment Sets
+# We're going to assume that we have a vehicle which is layed out as follows:
+#  Lower Rack  [ ] [ ] [ ] [ ]  500kg per "compartment"  c1, c2, c3, c4
+
+sr$model$compartments <- list()
+for(i in 1:4){
+  comp <- new (IVR8.Compartment)
+  comp$id <- paste0("c", i)
+  comp$capacities <- new (IVR8.Compartment.Capacity)
+  comp$capacities[[1]]$dimensionId <- "capacity"
+  comp$capacities[[1]]$capacity <- 500 # top rack
+  sr$model$compartments  <- append(sr$model$compartments, comp)
+}
+
+# Now we can go back through the tasks and allocate them to allowable compartments.
+# This is normal in fuel delivery systems where you have diesel/petrol constraints.
+# We're just going to decide on which jobs may go in which compartments based on the
+# index, and let's see if that's feasible. Obviously, you'll create it using proper logic
+# based on the business rules.
+
+for(i in 1:length(sr$model$jobs)){
+  relations <- new (IVR8.Job.CompartmentRelation)
+  relations$type <- 0  # 0 for inclusions, 1 for exclusions
+  if(i %% 2 == 0){ # just an alternating pattern
+    relations$compartmentIds <- paste0("c", c(1,3))
+  }else{
+    relations$compartmentIds <- paste0("c", c(2,4))
+  }
+  sr$model$jobs[[i]]$compartmentRelations <- relations # Set the compartment relation on the job
+}
+
+sr$model$jobs[[1]]$toString() %>% cat # Here you can see we have c2 and c4 as allowable compartments
+
+# Now we can define a compartment set (a container for the individual compartments)
+# which is attached to a vehicle.
+cset <- new (IVR8.CompartmentSet)
+cset$id <- 'tanker'
+cset$compartmentIds <- paste0('c', 1:4) # Indicates that this compartment set has c1:c4 available
+sr$model$compartmentSets <- cset # add it to the model
+
+# Then we assign the "tanker" compartment set to the vehicle class.
+# NOTE: We could have added it to each vehicle but this is easier.
+sr$model$vehicleClasses[[1]]$compartmentSetId <- 'tanker'
+
+# Set the other relevant information
+sr$solveType <- 0 # 0 for optimise, 1 for evaluate, 2 for reoptimise
+
+# View the model in plain-text format (string or JSON)
+sr$model$toString() %>% cat
+sr$model$toJSON() %>% cat
+
+```
+
+3. **Submit the model to the API**
+
+```{r}
+#| echo: true
+#| output: false
+requestID <- api %>% postSolveRequest(sr)  
+```
+
+
+4. **Retrieve the model response**
+
+```{r}
+#| echo: true
+#| output: false
+resp <- api %>% getResponse(requestID)
+```
+
+5. **Visualise the result**
+
+```{r}
+#| echo: true
+#| output: true
+
+resp$objective
+
+# Tabulate the data in native-R format
+tab <- resp %>% tabulate(sr)
+
+# View the produced summary
+tab$compartmentSummary
+
+# The compartment summary is nice but it doesn't tell us whether we stuck to the constraints
+# around the relations for each of the jobs.
+# So let's build a dataframe of allowable compartments per job and join it to the normal response.
+jdata<- do.call(rbind, lapply(sr$model$jobs,
+              function(i){data.frame(id = i$id,
+                          allowableCompartments =
+                            paste0(i$compartmentRelations$compartmentIds, collapse = ','),
+                          stringsAsFactors = F)}))
+
+tab$nodes %>% select(taskId, compartmentId, jobId) %>% left_join(jdata, by = c('jobId' = 'id'))
+# We can see that at each task assignment we only used compartments
+# which were in the allowable set we provided to the API.
+# It's probably worth noting that the default is all compartments in a compartment set are allowed
+# so you can either specify an inclusive sub-set, or excluded sub-set.
+# If all compartments are excluded then it will let you know that there's no feasible allocation.
+
+# Plot the data (ggplot or leaflet)
+resp %>% plotResponse(sr) # ggplot                       
+resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)
+```
