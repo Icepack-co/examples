@@ -63,6 +63,7 @@ for(i in 1:length(sources)){
 sr$model$costModels %>% display
 
 sr$geometryOutput <- 1
+
 sr$solveType <- 0 # 0 for optimise, 1 for evaluate, 2 for reoptimise
 
 # Submit the model to the API

@@ -26,6 +26,7 @@ sr$model$depot <- makePoint(1)
 
 sr$model$NumberOfVehicles <- 5
 sr$model$VehicleCapacity <- 100
+
 sr$solveType <- 0  # 0 for optimise, 1 for evaluate, 2 for reoptimise
 
 # Set the distance type to use the road network

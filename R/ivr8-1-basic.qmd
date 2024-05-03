@@ -75,7 +75,7 @@ source('ivr8-model-helper.R')
 
 Execute the example as follows:
 
-1. Create an apiHelper object with the model type you'd like to solve
+1. **Create an apiHelper object with the model type you'd like to solve**
 
 ```{r}
 #| echo: true
@@ -84,7 +84,7 @@ api <- new("apiHelper", modelType = 'ivr8-yni1c9k2swof', configFile = '../config
 ```
 
 
-2. Create the model and add some data to it
+2. **Create the model and add some data to it**
 
 ```{r}
 #| echo: true
@@ -168,7 +168,7 @@ sr$model$toJSON() %>% cat
 
 ```
 
-3. Submit the model to the API
+3. **Submit the model to the API**
 
 ```{r}
 #| echo: true
@@ -177,7 +177,7 @@ requestID <- api %>% postSolveRequest(sr)
 ```
 
 
-4. Retrieve the model response
+4. **Retrieve the model response**
 
 ```{r}
 #| echo: true
@@ -185,7 +185,7 @@ requestID <- api %>% postSolveRequest(sr)
 resp <- api %>% getResponse(requestID)
 ```
 
-5. Visualise the result
+5. **Visualise the result**
 
 ```{r}
 #| echo: true
@@ -216,7 +216,9 @@ resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)
  
 ### Looking at an infeasible example
 
-1. Use the model from the above example, but clear the compartments and create a new list with slightly reduced capacity for the bottom rack compartments.
+Here we will use the model from the above example, but clear the compartments and create a new list with slightly reduced capacity for the bottom rack compartments.
+
+1. **Update the model**
 
 
 ```{r}
@@ -240,7 +242,7 @@ for(i in 1:8){
 
 ```
 
-2. Submit the model to the API
+2. **Submit the model to the API**
 
 ```{r}
 #| echo: true
@@ -249,7 +251,7 @@ requestID <- api %>% postSolveRequest(sr)
 ```
 
 
-3. Retrieve the model response
+3. **Retrieve the model response**
 
 ```{r}
 #| echo: true
@@ -258,7 +260,7 @@ resp <- api %>% getResponse(requestID)
 ```
 
 
-4. Visualise the result
+4. **Visualise the result**
 
 ```{r}
 #| echo: true

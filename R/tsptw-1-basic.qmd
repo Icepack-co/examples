@@ -67,7 +67,7 @@ library(iceR)
 |
 Execute the example as follows:
 
-1. Create an apiHelper object with the model type you'd like to solve
+1. **Create an apiHelper object with the model type you'd like to solve**
 
 ```{r}
 #| echo: true
@@ -76,7 +76,7 @@ api <- new("apiHelper", modelType = 'tsptw-kcxbievqo879', configFile = '../confi
 ```
 
 
-2. Create the model and add some data to it
+2. **Create the model and add some data to it**
 
 ```{r}
 #| echo: true
@@ -147,7 +147,7 @@ sr$model$toJSON() %>% cat
 
 ```
 
-3. Submit the model to the API
+3. **Submit the model to the API**
 
 ```{r}
 #| echo: true
@@ -156,7 +156,7 @@ requestID <- api %>% postSolveRequest(sr)
 ```
 
 
-4. Retrieve the model response
+4. **Retrieve the model response**
 
 ```{r}
 #| echo: true
@@ -166,7 +166,7 @@ resp$arrivalTimes
 ```
 
 
-5. Visualise the result
+5. **Visualise the result**
 
 ```{r}
 #| echo: true
@@ -190,5 +190,6 @@ What can happen now, which doesn't with a TSP, is that we may end up with unsati
 resp %>% plotResponse(sr) # ggplot                       
 resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)
 ```
+&nbsp;
 
 Because of the time windows, some stops may be ommitted (infeasible) and the sequence is probably not going to be the shortest in distance, but will be the shortest in time.
