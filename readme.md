@@ -99,9 +99,9 @@ If you want to compile the schemas from source for your language implementations
 
 * [Basic](https://github.com/Icepack-co/examples/blob/master/R/ivr7-1-basic.qmd)
 * [Intermediate-1](https://github.com/Icepack-co/examples/blob/master/R/ivr7-2-intermediate.qmd)
-* [Intermediate-2](https://github.com/Icepack-co/examples/blob/master/R/ivr7-3-intermediate2.R)
-* [Advanced-1](https://github.com/Icepack-co/examples/blob/master/R/ivr7-4-advanced.R)
-* [Advanced-2](https://github.com/Icepack-co/examples/blob/master/R/ivr7-5-advanced2.R)
+* [Intermediate-2](https://github.com/Icepack-co/examples/blob/master/R/ivr7-3-intermediate2.qmd)
+* [Advanced-1](https://github.com/Icepack-co/examples/blob/master/R/ivr7-4-advanced.qmd)
+* [Advanced-2](https://github.com/Icepack-co/examples/blob/master/R/ivr7-5-advanced2.qmd)
 
 ### C#
 
@@ -134,7 +134,7 @@ If you want to compile the schemas from source for your language implementations
 
 * [Basic](https://github.com/Icepack-co/examples/blob/master/R/ivr8-1-basic.qmd)
 * [Intermediate](https://github.com/Icepack-co/examples/blob/master/R/ivr8-2-intermediate.qmd)
-* [Advanced](https://github.com/Icepack-co/examples/blob/master/R/ivr8-3-advanced.R)
+* [Advanced](https://github.com/Icepack-co/examples/blob/master/R/ivr8-3-advanced.qmd)
 
 ### C#
 
@@ -161,7 +161,7 @@ If you want to compile the schemas from source for your language implementations
 
 * [Basic](https://github.com/Icepack-co/examples/blob/master/R/ns3-1-basic.qmd)
 * [Intermediate](https://github.com/Icepack-co/examples/blob/master/R/ns3-2-intermediate.qmd)
-* [Advanced](https://github.com/Icepack-co/examples/blob/master/R/ns3-3-advanced.R)
+* [Advanced](https://github.com/Icepack-co/examples/blob/master/R/ns3-3-advanced.qmd)
 
 ### C#
 

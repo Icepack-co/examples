@@ -110,6 +110,7 @@ model$vehicles <- lapply(1:4, function(i){
 })
 
 # Upload/submit the model via the data upload API (this API allows us to push just the data without anything else)
+# NOTE: The data upload service will need to be enabled on your key
 data_api <- new("apiHelper", modelType = 'ivrdata-o43e0dvs78zq', configFile = '../config.json')
 data_model <- new (IVRData.CachedModel)
 data_model$model <- model$serialize(NULL) # we just saved our model as a byte stream into this data payload

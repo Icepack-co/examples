@@ -25,7 +25,6 @@ demandNodes <- data %>% filter(demand > 0)
 p_nodes <- make_nodes(productionNodes)
 w_nodes <- make_nodes(warehouseNodes)
 
-# here is where we add the fixed costs to the warehouse nodes.
 for(i in 1:length(w_nodes)){
   w_nodes[[i]]$flow <- new (NS3.Node.Flow)
   w_nodes[[i]]$flow$FixedDimensionCosts <- new (NS3.FixedDimensionCost)
