@@ -8,7 +8,7 @@ The schemas for examples in Java, C# and Python have been precompiled.
 
 The R examples require installing the [iceR](https://github.com/icepack-co/iceR) R package (and consequently, [protoc](https://grpc.io/docs/protoc-installation/) if you're on Linux or Mac), which handles the compilation of the schemas and very fast parsing of solution reponse route geometries into [sf](https://github.com/r-spatial/sf) for plots using ggplot2.
 
-To run the examples, you'll require an API key. There are limits on free tier accounts, but they are sufficient to run the examples herein. See the specific readme file for each language sample for more information.
+To run the examples, you'll require an API key which needs to be added to the config.json file (as the value for the apiToken key) in the home directory of this repo. There are limits on free tier accounts, but they are sufficient to run the examples herein. See the specific readme file for each language sample for more information.
 
 If you want to compile the schemas from source for your language implementations, check out the [model-schemas](https://github.com/icepack-co/model-schemas) repo.
 

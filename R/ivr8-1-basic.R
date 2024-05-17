@@ -71,6 +71,9 @@ resp <- api %>% getResponse(requestID)
 resp$objective
 resp$routes[[1]]$stops
 
+# Get the solve time
+solveTime <- api %>% getSolveTime(requestID)
+
 # Tabulate the data in native-R format
 tab <- resp %>% tabulate(sr)
 tab$nodes %>% select(taskId, compartmentId, jobId)

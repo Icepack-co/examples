@@ -217,7 +217,7 @@ requestID <- api %>% postSolveRequest(sr)
 resp <- api %>% getResponse(requestID)
 ```
 
-5. **Visualise the result**
+5. **Look at the result**
 
 ```{r}
 #| echo: true

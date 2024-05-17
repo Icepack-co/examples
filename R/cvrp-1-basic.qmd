@@ -143,7 +143,17 @@ resp <- api %>% getResponse(requestID)
 ```
 
 
-5. **Visualise the result**
+5. **Look at the result**
+
+```{r}
+#| echo: true
+#| output: false
+
+# Get the solve time
+solveTime <- api %>% getSolveTime(requestID)
+```
+
+Solve time: `r solveTime`
 
 ```{r}
 #| echo: true

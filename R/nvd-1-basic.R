@@ -10,7 +10,6 @@ api <- new("apiHelper", modelType = 'nvd-hap0j2y4zlm1', configFile = '../config.
 sr <- new (NVD.SolveRequest)
 sr$model <- new (NVD.Model)
 
-
 # Add some data to the model
 data <- read.csv('../sample_data/publist_orders.csv', stringsAsFactors = F)
 

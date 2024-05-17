@@ -14,8 +14,7 @@ execute:
 
 This example is for the simple TSP (Traveling Salesman Problem) model. The aim is to visit all points/locations in the dataset in such a way as to minimise the distance.
 
-
-### Data 
+### Data
 
 ```{r}
 
@@ -52,7 +51,6 @@ datatable(data, colnames = c("Pub Name (id)",
 
 ```
 
-
 ### Running the example
 
 An R script with all the lines needed to run the example can be found [here](https://github.com/Icepack-co/examples/blob/master/R/tsp-1-basic.R).
@@ -65,10 +63,9 @@ The example uses the **iceR** package which will first need to be installed (see
 library(iceR)
 ```
 
-|
 Execute the example as follows:
 
-1. **Create an apiHelper object with the model type you'd like to solve**
+1.  **Create an apiHelper object with the model type you'd like to solve**
 
 ```{r}
 #| echo: true
@@ -76,8 +73,7 @@ Execute the example as follows:
 api <- new("apiHelper", modelType = 'tsp-mcvfz472gty6', configFile = '../config.json')
 ```
 
-
-2. **Create the model and add some data to it**
+2.  **Create the model and add some data to it**
 
 ```{r}
 #| echo: true
@@ -110,7 +106,7 @@ sr$model$toJSON() %>% cat
 
 ```
 
-3. **Submit the model to the API**
+3.  **Submit the model to the API**
 
 ```{r}
 #| echo: true
@@ -118,8 +114,7 @@ sr$model$toJSON() %>% cat
 requestID <- api %>% postSolveRequest(sr)  
 ```
 
-
-4. **Retrieve the model response**
+4.  **Retrieve the model response**
 
 ```{r}
 #| echo: true
@@ -127,8 +122,17 @@ requestID <- api %>% postSolveRequest(sr)
 resp <- api %>% getResponse(requestID)
 ```
 
+5.  **Look at the result**
 
-5. **Visualise the result**
+```{r}
+#| echo: true
+#| output: false
+
+# Get the solve time
+solveTime <- api %>% getSolveTime(requestID)
+```
+
+Solve time: `r solveTime`
 
 ```{r}
 #| echo: true

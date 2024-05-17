@@ -194,7 +194,7 @@ NOTE: It takes about a minute to solve
 resp <- api %>% getResponse(requestID)
 ```
 
-5. **Visualise the result**
+5. **Look at the result**
 
 ```{r}
 #| echo: true

@@ -74,6 +74,9 @@ requestID <- api %>% postSolveRequest(sr)
 resp <- api %>% getResponse(requestID)
 resp$objective
 
+# Get the solve time
+solveTime <- api %>% getSolveTime(requestID)
+
 # Tabulate the data in native-R format
 tab <- resp %>% tabulate(sr)
 
