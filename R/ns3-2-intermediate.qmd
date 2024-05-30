@@ -212,6 +212,16 @@ resp <- api %>% getResponse(requestID)
 
 ```{r}
 #| echo: true
+#| output: false
+
+# Get the solve time
+solveTime <- api %>% getSolveTime(requestID)
+```
+
+Solve time: `r solveTime`
+
+```{r}
+#| echo: true
 #| output: true
 
 # Tabulate the data in native-R format

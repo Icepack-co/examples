@@ -36,6 +36,9 @@ requestID <- api %>% postSolveRequest(model)
 resp <- api %>% getResponse(requestID)
 resp$toString() %>% cat # the pbf in string format
 
+# Get the solve time
+solveTime <- api %>% getSolveTime(requestID)
+
 # Tabulate the data in native-R format
 tab <- resp %>% tabulate(model)     
 tab$elements %>% head
