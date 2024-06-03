@@ -1,0 +1,3 @@
+# Welcome {.unnumbered}
+
+Welcome to the R examples book!

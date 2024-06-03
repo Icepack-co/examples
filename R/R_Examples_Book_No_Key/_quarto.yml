@@ -1,0 +1,44 @@
+project:
+  type: book
+
+book:
+  title: "R Examples (no key)"
+  chapters:
+    - index.qmd
+
+    - intro.qmd
+
+    - part: "TSP"
+      chapters:
+        - tsp-1-basic-book.qmd
+
+    - part: "TSPTW"
+      chapters:
+        - tsptw-1-basic-book.qmd
+
+    - part: "CVRP"
+      chapters:
+        - cvrp-1-basic-book.qmd
+
+    - part: "CVRPTW"
+      chapters:
+        - cvrptw-1-basic-book.qmd
+  sidebar: 
+    style: docked
+
+bibliography: references.bib
+
+format:
+  html:
+    grid:
+      sidebar-width: 350px
+      body-width: 1000px
+    page-layout: full
+    theme: 
+      - cosmo
+      - examples.scss
+  pdf:
+    documentclass: scrreprt
+
+
+

@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>R Examples - 4&nbsp; Basic CVRPTW Example</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./cvrp-1-basic-book.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="site_libs/datatables-binding-0.32/datatables.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-binding-2.2.0/leaflet.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cvrptw-1-basic-book.html">CVRPTW</a></li><li class="breadcrumb-item"><a href="./cvrptw-1-basic-book.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Basic CVRPTW Example</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R Examples</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">TSP</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tsp-1-basic-book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Basic TSP Example</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">TSPTW</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tsptw-1-basic-book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic TSPTW Example</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">CVRP</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cvrp-1-basic-book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic CVRP Example</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">CVRPTW</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cvrptw-1-basic-book.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Basic CVRPTW Example</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data"><span class="header-section-number">4.1</span> Data</a></li>
+  <li><a href="#running-the-example" id="toc-running-the-example" class="nav-link" data-scroll-target="#running-the-example"><span class="header-section-number">4.2</span> Running the example</a>
+  <ul class="collapse">
+  <li><a href="#create-an-apihelper-object-with-the-model-type-youd-like-to-solve" id="toc-create-an-apihelper-object-with-the-model-type-youd-like-to-solve" class="nav-link" data-scroll-target="#create-an-apihelper-object-with-the-model-type-youd-like-to-solve"><span class="header-section-number">4.2.1</span> Create an apiHelper object with the model type you’d like to solve</a></li>
+  <li><a href="#create-the-model-and-add-some-data-to-it" id="toc-create-the-model-and-add-some-data-to-it" class="nav-link" data-scroll-target="#create-the-model-and-add-some-data-to-it"><span class="header-section-number">4.2.2</span> Create the model and add some data to it</a></li>
+  <li><a href="#submit-the-model-to-the-api" id="toc-submit-the-model-to-the-api" class="nav-link" data-scroll-target="#submit-the-model-to-the-api"><span class="header-section-number">4.2.3</span> Submit the model to the API</a></li>
+  <li><a href="#retrieve-the-model-response" id="toc-retrieve-the-model-response" class="nav-link" data-scroll-target="#retrieve-the-model-response"><span class="header-section-number">4.2.4</span> Retrieve the model response</a></li>
+  <li><a href="#look-at-the-result" id="toc-look-at-the-result" class="nav-link" data-scroll-target="#look-at-the-result"><span class="header-section-number">4.2.5</span> Look at the result</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cvrptw-1-basic-book.html">CVRPTW</a></li><li class="breadcrumb-item"><a href="./cvrptw-1-basic-book.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Basic CVRPTW Example</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Basic CVRPTW Example</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This example is for the CVRPTW (Capacitated Vehicle Routing Problem with Time Windows) model.</p>
+<p>A classic CVRPTW has a heterogeneous fleet. This means we need only specify the size of the vehicle and the number of vehicles available. The other aspect of this model is to include the location of the depot. The CVRPTW is costed differently to the CVRP. The objective is still to minimise the number of vehicles used, but also to minimise the total time. The classic CVRP aims to minimise the number of vehicles, then the total distance travelled. The CVRPTW has time windows on each point. In this schema, we allow you to omit windows from points if needed.</p>
+<section id="data" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="data"><span class="header-section-number">4.1</span> Data</h2>
+<p>The data used in this example is a list of 10 pubs in Dublin, Ireland with their associated X and Y coordinates and quantities (amount added to a vehicle at each location).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7da8349ed4293b96f7ea" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-7da8349ed4293b96f7ea">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10"],["Guinness Storehouse","The Oval Bar Dublin","The Confession Box","Kehoes Pub","The Brazen Head","The Long Hall","Nearys","McDaids","Johnnie Fox's Pub","Davy Byrne's pub"],["-6.28681","-6.26030","-6.25840","-6.25943","-6.27633","-6.26530","-6.26119","-6.26100","-6.21920","-6.25934"],["53.34161","53.34846","53.35034","53.34116","53.34493","53.34185","53.34075","53.34122","53.22171","53.34185"],[0,100,100,200,100,400,400,400,100,100]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Pub Name (id)<\/th>\n      <th>X-Coordinate (X)<\/th>\n      <th>Y-Coordinate (Y)<\/th>\n      <th>Quantity (quantity)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","scrollY":"200px","pageLength":10,"columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"id","targets":1},{"name":"X","targets":2},{"name":"Y","targets":3},{"name":"quantity","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="running-the-example" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="running-the-example"><span class="header-section-number">4.2</span> Running the example</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(iceR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Execute the example as follows:</p>
+<section id="create-an-apihelper-object-with-the-model-type-youd-like-to-solve" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="create-an-apihelper-object-with-the-model-type-youd-like-to-solve"><span class="header-section-number">4.2.1</span> Create an apiHelper object with the model type you’d like to solve</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>api <span class="ot">&lt;-</span> <span class="fu">new</span>(<span class="st">"apiHelper"</span>, <span class="at">modelType =</span> <span class="st">'cvrptw-acyas3nzweqb'</span>, <span class="st">'../../config.json'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="create-the-model-and-add-some-data-to-it" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="create-the-model-and-add-some-data-to-it"><span class="header-section-number">4.2.2</span> Create the model and add some data to it</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the model</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sr <span class="ot">&lt;-</span> <span class="fu">new</span> (CVRPTW.SolveRequest)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model <span class="ot">&lt;-</span> <span class="fu">new</span> (CVRPTW.CVRPTW)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'../../sample_data/publist_orders.csv'</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the data to the model</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>makePoint <span class="ot">&lt;-</span> <span class="cf">function</span>(i){</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  g <span class="ot">&lt;-</span> <span class="fu">new</span> (CVRPTW.Geocode)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  g<span class="sc">$</span>id <span class="ot">&lt;-</span> data<span class="sc">$</span>id[i]</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  g<span class="sc">$</span>x <span class="ot">&lt;-</span> data<span class="sc">$</span>X[i]</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  g<span class="sc">$</span>y <span class="ot">&lt;-</span> data<span class="sc">$</span>Y[i]</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  g<span class="sc">$</span>quantity <span class="ot">&lt;-</span> data<span class="sc">$</span>quantity[i] <span class="co"># zero by default</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (g)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: quantity in Geocode above is zero by default. </span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># In this example, the quantity is provided with the data but can be set for each point here too.</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># For example, each point can be set to take up 20 units. If the maximum capacity of the vehicle is set to 100</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># we know that we don't need more than 2 vehicles but also that we can't use less than 2 vehicles.</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># data$quantity &lt;- 20</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span>points <span class="ot">&lt;-</span><span class="fu">sapply</span>(<span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(data), makePoint)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the first location the depot (and the balance of the locations will be the visit points)</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span>depot <span class="ot">&lt;-</span> <span class="fu">makePoint</span>(<span class="dv">1</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Add windows to the data (just using a traditional loop)</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># The windows are randomly split into "morning" and "afternoon" windows.</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that the windows are measured in minutes in this schema.</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>morning <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span><span class="sc">*</span><span class="dv">60</span>, <span class="dv">12</span><span class="sc">*</span><span class="dv">60</span>) <span class="co">#08:00 to 12:00</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>afternoon <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span><span class="sc">*</span><span class="dv">60</span>, <span class="dv">16</span> <span class="sc">*</span> <span class="dv">60</span>) <span class="co">#12:00 to 16:00</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sr<span class="sc">$</span>model<span class="sc">$</span>points)){</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(i <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    sr<span class="sc">$</span>model<span class="sc">$</span>points[[i]]<span class="sc">$</span>windowStart <span class="ot">&lt;-</span>morning[<span class="dv">1</span>]</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    sr<span class="sc">$</span>model<span class="sc">$</span>points[[i]]<span class="sc">$</span>windowEnd <span class="ot">&lt;-</span> morning[<span class="dv">2</span>]</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    sr<span class="sc">$</span>model<span class="sc">$</span>points[[i]]<span class="sc">$</span>windowStart <span class="ot">&lt;-</span>afternoon[<span class="dv">1</span>]</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    sr<span class="sc">$</span>model<span class="sc">$</span>points[[i]]<span class="sc">$</span>windowEnd <span class="ot">&lt;-</span> afternoon[<span class="dv">2</span>]</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the other relevant information</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span>NumberOfVehicles <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span>VehicleCapacity <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>solveType <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co"># 0 for optimise, 1 for evaluate, 2 for reoptimise</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the distance type to use the road network</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span>distancetype <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># 1 for road network, 2 for euclidean, 3 for haversine</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="co"># View the model in plain-text format (string or JSON)</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span><span class="fu">toString</span>() <span class="sc">%&gt;%</span> cat</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span><span class="fu">toJSON</span>() <span class="sc">%&gt;%</span> cat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="submit-the-model-to-the-api" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="submit-the-model-to-the-api"><span class="header-section-number">4.2.3</span> Submit the model to the API</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>requestID <span class="ot">&lt;-</span> api <span class="sc">%&gt;%</span> <span class="fu">postSolveRequest</span>(sr)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="retrieve-the-model-response" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="retrieve-the-model-response"><span class="header-section-number">4.2.4</span> Retrieve the model response</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>resp <span class="ot">&lt;-</span> api <span class="sc">%&gt;%</span> <span class="fu">getResponse</span>(requestID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="look-at-the-result" class="level3" data-number="4.2.5">
+<h3 data-number="4.2.5" class="anchored" data-anchor-id="look-at-the-result"><span class="header-section-number">4.2.5</span> Look at the result</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the solve time</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>solveTime <span class="ot">&lt;-</span> api <span class="sc">%&gt;%</span> <span class="fu">getSolveTime</span>(requestID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Solve time: 0.007s</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabulate the data in native-R format</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> resp <span class="sc">%&gt;%</span> <span class="fu">tabulate</span>(sr)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>tab<span class="sc">$</span>nodes <span class="sc">%&gt;%</span> head <span class="co"># just inspect the head of the output</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           locationId quantity arrivalTime vehicleId sequence         x
+1 Guinness Storehouse        0       0.000         1        1 -6.286811
+2 The Oval Bar Dublin      100     720.000         1        2 -6.260296
+3 Guinness Storehouse      100     722.781         1        3 -6.286811
+4 Guinness Storehouse        0       0.000         2        1 -6.286811
+5     The Brazen Head      100     480.000         2        2 -6.276332
+6 Guinness Storehouse      100     481.433         2        3 -6.286811
+         y
+1 53.34161
+2 53.34846
+3 53.34161
+4 53.34161
+5 53.34493
+6 53.34161</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tab<span class="sc">$</span>edges <span class="sc">%&gt;%</span> head <span class="co"># just inspect the head of the output</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 6 features and 8 fields
+Geometry type: LINESTRING
+Dimension:     XY
+Bounding box:  xmin: -6.288402 ymin: 53.33631 xmax: -6.253628 ymax: 53.34833
+CRS:           NA
+               fromId                toId distance vehicleId        fx       fy
+1 Guinness Storehouse The Oval Bar Dublin    5.560         1 -6.286811 53.34161
+2 The Oval Bar Dublin Guinness Storehouse    6.080         1 -6.260296 53.34846
+3 Guinness Storehouse     The Brazen Head    2.483         2 -6.286811 53.34161
+4     The Brazen Head Guinness Storehouse    2.858         2 -6.276332 53.34493
+5 Guinness Storehouse    Davy Byrne's pub    8.138         3 -6.286811 53.34161
+6    Davy Byrne's pub Guinness Storehouse   10.151         3 -6.259340 53.34185
+         tx       ty                       geometry
+1 -6.260296 53.34846 LINESTRING (-6.286813 53.34...
+2 -6.286811 53.34161 LINESTRING (-6.260239 53.34...
+3 -6.276332 53.34493 LINESTRING (-6.286813 53.34...
+4 -6.286811 53.34161 LINESTRING (-6.276116 53.34...
+5 -6.259340 53.34185 LINESTRING (-6.286813 53.34...
+6 -6.286811 53.34161 LINESTRING (-6.259172 53.34...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the data (ggplot or leaflet)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>resp <span class="sc">%&gt;%</span> <span class="fu">plotResponse</span>(sr) <span class="co"># ggplot                       </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cvrptw-1-basic-book_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>resp <span class="sc">%&gt;%</span> <span class="fu">plotResponseLeaflet</span>(sr) <span class="co"># leaflet (if it's mappable)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-886866dfc6b222c1085c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-886866dfc6b222c1085c">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[53.34161376953125,53.34846496582031,53.34161376953125,53.34161376953125,53.34493255615234,53.34161376953125,53.34161376953125,53.34185028076172,53.34161376953125],[-6.286810874938965,-6.260295867919922,-6.286810874938965,-6.286810874938965,-6.276332378387451,-6.286810874938965,-6.286810874938965,-6.259339809417725,-6.286810874938965],5,null,null,{"interactive":true,"className":"","stroke":true,"color":"black","weight":5,"opacity":0.5,"fill":true,"fillColor":"black","fillOpacity":0.2},null,null,["Vehicle: 1<br>Stop: 1","Vehicle: 1<br>Stop: 2","Vehicle: 1<br>Stop: 3","Vehicle: 2<br>Stop: 1","Vehicle: 2<br>Stop: 2","Vehicle: 2<br>Stop: 3","Vehicle: 3<br>Stop: 1","Vehicle: 3<br>Stop: 2","Vehicle: 3<br>Stop: 3"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPolylines","args":[[[[{"lng":[-6.286812782287598,-6.28626823425293,-6.28518009185791,-6.283913135528564,-6.283901214599609,-6.28386402130127,-6.283757209777832,-6.28301477432251,-6.282129764556885,-6.281642913818359,-6.281521797180176,-6.281360149383545,-6.281211853027344,-6.281102180480957,-6.280792236328125,-6.280243873596191,-6.279837131500244,-6.279558181762695,-6.279116153717041,-6.27849817276001,-6.278176784515381,-6.277966976165771,-6.277750015258789,-6.277626991271973,-6.277536869049072,-6.277414798736572,-6.277181148529053,-6.277103900909424,-6.276924133300781,-6.276169776916504,-6.276062965393066,-6.275981903076172,-6.275812149047852,-6.275527954101562,-6.275248050689697,-6.275084018707275,-6.274898052215576,-6.274731159210205,-6.274486064910889,-6.274033069610596,-6.27398681640625,-6.273783206939697,-6.273509979248047,-6.272305965423584,-6.272071838378906,-6.272013187408447,-6.271974086761475,-6.271763801574707,-6.271762847900391,-6.271769046783447,-6.271796226501465,-6.271798133850098,-6.271807193756104,-6.27183723449707,-6.271835803985596,-6.271810054779053,-6.271810054779053,-6.271822929382324,-6.271830081939697,-6.271848201751709,-6.271859169006348,-6.271923065185547,-6.272119045257568,-6.272119998931885,-6.272157192230225,-6.272195816040039,-6.272212982177734,-6.271696090698242,-6.271230220794678,-6.270808219909668,-6.270176887512207,-6.269824028015137,-6.267868041992188,-6.26685619354248,-6.265703201293945,-6.265148162841797,-6.265056133270264,-6.264667987823486,-6.26433277130127,-6.264101028442383,-6.263865947723389,-6.263414859771729,-6.263219833374023,-6.261596202850342,-6.261025905609131,-6.260657787322998,-6.260057926177979,-6.259552001953125,-6.259377002716064,-6.259379863739014,-6.259404182434082,-6.259422779083252,-6.259439945220947,-6.259725093841553,-6.25974178314209,-6.259751796722412,-6.259891033172607,-6.259923934936523,-6.259947776794434,-6.260239124298096],"lat":[53.34156036376953,53.341552734375,53.3415412902832,53.34151458740234,53.34172058105469,53.34226608276367,53.3433952331543,53.34335327148438,53.34330368041992,53.34325790405273,53.34324264526367,53.34321594238281,53.34318542480469,53.34316253662109,53.34309768676758,53.34298706054688,53.34291839599609,53.34287261962891,53.34281158447266,53.34279251098633,53.3427848815918,53.3427848815918,53.34278869628906,53.34279632568359,53.34280395507812,53.34282302856445,53.34286499023438,53.34288024902344,53.34291839599609,53.34306716918945,53.3431282043457,53.34314727783203,53.34319305419922,53.34326553344727,53.34332275390625,53.34336090087891,53.3433723449707,53.3433837890625,53.3433952331543,53.34331893920898,53.34331130981445,53.3432731628418,53.34322738647461,53.34299850463867,53.34296798706055,53.34296035766602,53.34295654296875,53.34295272827148,53.34303283691406,53.34310531616211,53.34322357177734,53.34326934814453,53.34335708618164,53.34354019165039,53.34357833862305,53.34383010864258,53.34392166137695,53.34407806396484,53.34412002563477,53.34416961669922,53.34420394897461,53.34436416625977,53.34497451782227,53.34504699707031,53.34527206420898,53.34550476074219,53.34554290771484,53.34557342529297,53.34562301635742,53.34568023681641,53.34576416015625,53.3458137512207,53.34606552124023,53.34614562988281,53.34625625610352,53.34630966186523,53.34631729125977,53.34635543823242,53.34639358520508,53.34642791748047,53.34647369384766,53.34657669067383,53.34662246704102,53.34699630737305,53.34712219238281,53.34721374511719,53.34736251831055,53.34748458862305,53.34752655029297,53.34753036499023,53.34756088256836,53.34758758544922,53.34762573242188,53.3482666015625,53.34830474853516,53.34832763671875,53.34831237792969,53.34830856323242,53.34830474853516,53.34827423095703]}]],[[{"lng":[-6.260239124298096,-6.260276794433594,-6.261742115020752,-6.262957096099854,-6.263440132141113,-6.26361083984375,-6.263637065887451,-6.263644218444824,-6.263416767120361,-6.263394832611084,-6.265015125274658,-6.265261173248291,-6.265914916992188,-6.266379833221436,-6.267467975616455,-6.268056869506836,-6.267868041992188,-6.267848014831543,-6.267754077911377,-6.267645835876465,-6.267630100250244,-6.268948078155518,-6.269989013671875,-6.270276069641113,-6.270993232727051,-6.272119045257568,-6.275383949279785,-6.275643825531006,-6.275778770446777,-6.275852203369141,-6.2760009765625,-6.27609395980835,-6.276192188262939,-6.276266098022461,-6.276339054107666,-6.276357173919678,-6.276327133178711,-6.276216983795166,-6.2760329246521,-6.275978088378906,-6.275872230529785,-6.275465965270996,-6.275134086608887,-6.275033950805664,-6.274898052215576,-6.274876117706299,-6.275203227996826,-6.275454998016357,-6.27594518661499,-6.27603006362915,-6.276169776916504,-6.276924133300781,-6.277103900909424,-6.277181148529053,-6.277414798736572,-6.277536869049072,-6.277626991271973,-6.277750015258789,-6.277966976165771,-6.278176784515381,-6.27849817276001,-6.279116153717041,-6.279558181762695,-6.279837131500244,-6.280243873596191,-6.280792236328125,-6.281102180480957,-6.281211853027344,-6.281360149383545,-6.281521797180176,-6.281642913818359,-6.282129764556885,-6.28301477432251,-6.283757209777832,-6.284296035766602,-6.284580230712891,-6.284855842590332,-6.285422801971436,-6.285973072052002,-6.286281108856201,-6.28665018081665,-6.286881923675537,-6.286985874176025,-6.287442207336426,-6.287581920623779,-6.287918090820312,-6.288145065307617,-6.288352966308594,-6.288383960723877,-6.288384914398193,-6.288402080535889,-6.288401126861572,-6.288106918334961,-6.287984848022461,-6.287871837615967,-6.287740230560303,-6.287649154663086,-6.287603855133057,-6.287580013275146,-6.287576198577881,-6.286812782287598],"lat":[53.34827423095703,53.34827041625977,53.34811782836914,53.34798431396484,53.34793472290039,53.34791564941406,53.347900390625,53.34788131713867,53.34727096557617,53.34719467163086,53.34693908691406,53.34690093994141,53.34680557250977,53.34673690795898,53.3465690612793,53.34648132324219,53.34606552124023,53.34600067138672,53.34571075439453,53.34538269042969,53.34533309936523,53.3452262878418,53.34513092041016,53.34510803222656,53.34505081176758,53.34497451782227,53.34521865844727,53.34516906738281,53.34517288208008,53.34516525268555,53.3450813293457,53.34492492675781,53.34475708007812,53.3445930480957,53.34439086914062,53.34428024291992,53.34415054321289,53.34403228759766,53.3438835144043,53.34384155273438,53.34378814697266,53.34364318847656,53.34350204467773,53.34345626831055,53.3433723449707,53.3432731628418,53.34321975708008,53.34318161010742,53.34307861328125,53.34306716918945,53.34306716918945,53.34291839599609,53.34288024902344,53.34286499023438,53.34282302856445,53.34280395507812,53.34279632568359,53.34278869628906,53.3427848815918,53.3427848815918,53.34279251098633,53.34281158447266,53.34287261962891,53.34291839599609,53.34298706054688,53.34309768676758,53.34316253662109,53.34318542480469,53.34321594238281,53.34324264526367,53.34325790405273,53.34330368041992,53.34335327148438,53.3433952331543,53.34342575073242,53.34345245361328,53.34347915649414,53.34352111816406,53.34356307983398,53.34355926513672,53.34354019165039,53.34352874755859,53.34352493286133,53.343505859375,53.34349822998047,53.34348297119141,53.34347152709961,53.34346389770508,53.34302520751953,53.34297943115234,53.34244155883789,53.3424072265625,53.34237289428711,53.34234237670898,53.34231567382812,53.34224319458008,53.34217071533203,53.34212493896484,53.34204864501953,53.34157180786133,53.34156036376953]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#0000FF","weight":5,"opacity":0.5,"fill":false,"fillColor":"#0000FF","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPolylines","args":[[[[{"lng":[-6.286812782287598,-6.28626823425293,-6.28518009185791,-6.283913135528564,-6.283901214599609,-6.28386402130127,-6.283757209777832,-6.28301477432251,-6.282129764556885,-6.281642913818359,-6.281521797180176,-6.281360149383545,-6.281211853027344,-6.281102180480957,-6.280792236328125,-6.280243873596191,-6.279837131500244,-6.279558181762695,-6.279116153717041,-6.27849817276001,-6.278176784515381,-6.277966976165771,-6.277750015258789,-6.277626991271973,-6.277536869049072,-6.277414798736572,-6.277181148529053,-6.277103900909424,-6.276924133300781,-6.276169776916504,-6.276062965393066,-6.275981903076172,-6.275812149047852,-6.275796890258789,-6.275791168212891,-6.275435924530029,-6.275393009185791,-6.275650024414062,-6.275872230529785,-6.275978088378906,-6.2760329246521,-6.276216983795166,-6.276327133178711,-6.276357173919678,-6.276339054107666,-6.276266098022461,-6.276192188262939,-6.276115894317627],"lat":[53.34156036376953,53.341552734375,53.3415412902832,53.34151458740234,53.34172058105469,53.34226608276367,53.3433952331543,53.34335327148438,53.34330368041992,53.34325790405273,53.34324264526367,53.34321594238281,53.34318542480469,53.34316253662109,53.34309768676758,53.34298706054688,53.34291839599609,53.34287261962891,53.34281158447266,53.34279251098633,53.3427848815918,53.3427848815918,53.34278869628906,53.34279632568359,53.34280395507812,53.34282302856445,53.34286499023438,53.34288024902344,53.34291839599609,53.34306716918945,53.3431282043457,53.34314727783203,53.34319305419922,53.34323883056641,53.34325790405273,53.34347915649414,53.34350967407227,53.3436393737793,53.34378814697266,53.34384155273438,53.3438835144043,53.34403228759766,53.34415054321289,53.34428024291992,53.34439086914062,53.3445930480957,53.34475708007812,53.34488677978516]}]],[[{"lng":[-6.276115894317627,-6.276192188262939,-6.276266098022461,-6.276339054107666,-6.276357173919678,-6.276327133178711,-6.276216983795166,-6.2760329246521,-6.275978088378906,-6.275872230529785,-6.275465965270996,-6.275134086608887,-6.275033950805664,-6.274898052215576,-6.274876117706299,-6.275203227996826,-6.275454998016357,-6.27594518661499,-6.27603006362915,-6.276169776916504,-6.276924133300781,-6.277103900909424,-6.277181148529053,-6.277414798736572,-6.277536869049072,-6.277626991271973,-6.277750015258789,-6.277966976165771,-6.278176784515381,-6.27849817276001,-6.279116153717041,-6.279558181762695,-6.279837131500244,-6.280243873596191,-6.280792236328125,-6.281102180480957,-6.281211853027344,-6.281360149383545,-6.281521797180176,-6.281642913818359,-6.282129764556885,-6.28301477432251,-6.283757209777832,-6.284296035766602,-6.284580230712891,-6.284855842590332,-6.285422801971436,-6.285973072052002,-6.286281108856201,-6.28665018081665,-6.286881923675537,-6.286985874176025,-6.287442207336426,-6.287581920623779,-6.287918090820312,-6.288145065307617,-6.288352966308594,-6.288383960723877,-6.288384914398193,-6.288402080535889,-6.288401126861572,-6.288106918334961,-6.287984848022461,-6.287871837615967,-6.287740230560303,-6.287649154663086,-6.287603855133057,-6.287580013275146,-6.287576198577881,-6.286812782287598],"lat":[53.34488677978516,53.34475708007812,53.3445930480957,53.34439086914062,53.34428024291992,53.34415054321289,53.34403228759766,53.3438835144043,53.34384155273438,53.34378814697266,53.34364318847656,53.34350204467773,53.34345626831055,53.3433723449707,53.3432731628418,53.34321975708008,53.34318161010742,53.34307861328125,53.34306716918945,53.34306716918945,53.34291839599609,53.34288024902344,53.34286499023438,53.34282302856445,53.34280395507812,53.34279632568359,53.34278869628906,53.3427848815918,53.3427848815918,53.34279251098633,53.34281158447266,53.34287261962891,53.34291839599609,53.34298706054688,53.34309768676758,53.34316253662109,53.34318542480469,53.34321594238281,53.34324264526367,53.34325790405273,53.34330368041992,53.34335327148438,53.3433952331543,53.34342575073242,53.34345245361328,53.34347915649414,53.34352111816406,53.34356307983398,53.34355926513672,53.34354019165039,53.34352874755859,53.34352493286133,53.343505859375,53.34349822998047,53.34348297119141,53.34347152709961,53.34346389770508,53.34302520751953,53.34297943115234,53.34244155883789,53.3424072265625,53.34237289428711,53.34234237670898,53.34231567382812,53.34224319458008,53.34217071533203,53.34212493896484,53.34204864501953,53.34157180786133,53.34156036376953]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#7F007F","weight":5,"opacity":0.5,"fill":false,"fillColor":"#7F007F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPolylines","args":[[[[{"lng":[-6.286812782287598,-6.28626823425293,-6.28518009185791,-6.283913135528564,-6.28386402130127,-6.283771991729736,-6.283677101135254,-6.282426834106445,-6.282279968261719,-6.281853199005127,-6.281813144683838,-6.281782150268555,-6.281850814819336,-6.281891822814941,-6.281947135925293,-6.281998157501221,-6.282098770141602,-6.282023906707764,-6.281947135925293,-6.281864166259766,-6.281706809997559,-6.281356811523438,-6.281188011169434,-6.281070232391357,-6.280664920806885,-6.28055477142334,-6.280386924743652,-6.280290126800537,-6.280121803283691,-6.28003978729248,-6.27998685836792,-6.279812812805176,-6.279720783233643,-6.279483795166016,-6.279226779937744,-6.278849124908447,-6.27869987487793,-6.278073787689209,-6.277835845947266,-6.277297019958496,-6.276587009429932,-6.276040077209473,-6.275715827941895,-6.275498867034912,-6.275317192077637,-6.275117874145508,-6.274971008300781,-6.274827003479004,-6.27473783493042,-6.274490833282471,-6.273629188537598,-6.273469924926758,-6.273221015930176,-6.272829055786133,-6.272774219512939,-6.272686958312988,-6.272506237030029,-6.272292137145996,-6.272188186645508,-6.271988868713379,-6.271196842193604,-6.270664215087891,-6.27019214630127,-6.269495010375977,-6.269298076629639,-6.268950939178467,-6.268639087677002,-6.26845121383667,-6.268062114715576,-6.267767906188965,-6.267553806304932,-6.266973972320557,-6.266357898712158,-6.266132831573486,-6.265797138214111,-6.265688896179199,-6.265491962432861,-6.26456880569458,-6.263686180114746,-6.262755870819092,-6.262607097625732,-6.262549877166748,-6.262506008148193,-6.262407779693604,-6.262190818786621,-6.261127948760986,-6.260031223297119,-6.258833885192871,-6.257918834686279,-6.257547855377197,-6.25743579864502,-6.257339000701904,-6.257172107696533,-6.257085800170898,-6.256893157958984,-6.25665807723999,-6.256326198577881,-6.256064891815186,-6.255971908569336,-6.255916118621826,-6.255858898162842,-6.255585193634033,-6.255582809448242,-6.255620002746582,-6.255699157714844,-6.255859851837158,-6.256604194641113,-6.25675106048584,-6.256882190704346,-6.256930828094482,-6.257162094116211,-6.25717306137085,-6.257967948913574,-6.258058071136475,-6.258218765258789,-6.258419990539551,-6.258666038513184,-6.25872802734375,-6.258760929107666,-6.258771896362305,-6.258760929107666,-6.258676052093506,-6.258594036102295,-6.258588790893555,-6.258573055267334,-6.258500099182129,-6.258431911468506,-6.258362770080566,-6.258293151855469,-6.258262157440186,-6.258244037628174,-6.258129119873047,-6.258114814758301,-6.258895874023438,-6.258931159973145,-6.259147167205811,-6.259171962738037],"lat":[53.34156036376953,53.341552734375,53.3415412902832,53.34151458740234,53.34148025512695,53.34145736694336,53.34145355224609,53.34145736694336,53.34145736694336,53.34145736694336,53.34145736694336,53.34145355224609,53.34132766723633,53.34124755859375,53.34118270874023,53.34111785888672,53.34103393554688,53.34101104736328,53.34099578857422,53.34099578857422,53.34098052978516,53.34097290039062,53.34093475341797,53.34076309204102,53.34019470214844,53.34003829956055,53.33984375,53.33970260620117,53.33946990966797,53.33939743041992,53.33935546875,53.339111328125,53.3389778137207,53.33865737915039,53.3387336730957,53.33878326416016,53.33879470825195,53.33880233764648,53.33880996704102,53.3388557434082,53.33889007568359,53.33890151977539,53.33891677856445,53.33892822265625,53.3389778137207,53.33905029296875,53.33913803100586,53.33928680419922,53.33938217163086,53.33933258056641,53.33916854858398,53.33913421630859,53.33907699584961,53.3389778137207,53.33896255493164,53.33893203735352,53.33885192871094,53.33878707885742,53.33875274658203,53.33868789672852,53.33844757080078,53.33832931518555,53.33825302124023,53.33820724487305,53.33815002441406,53.33797454833984,53.33781433105469,53.33776092529297,53.33767700195312,53.33765029907227,53.33762359619141,53.33760452270508,53.33759689331055,53.33760452270508,53.33761215209961,53.337646484375,53.33765029907227,53.33764266967773,53.33763885498047,53.337646484375,53.33764266967773,53.33764266967773,53.33763122558594,53.33761596679688,53.3375244140625,53.33724594116211,53.33695220947266,53.33663558959961,53.33639144897461,53.33631134033203,53.33631896972656,53.33636093139648,53.33647155761719,53.33650970458984,53.33675003051758,53.33703994750977,53.33744049072266,53.3377571105957,53.33786773681641,53.33793258666992,53.3380012512207,53.3383674621582,53.3384895324707,53.33854293823242,53.33860015869141,53.33865737915039,53.33883285522461,53.33887481689453,53.33894729614258,53.33896255493164,53.33902359008789,53.33902740478516,53.3392448425293,53.33926773071289,53.33930969238281,53.33936309814453,53.33943176269531,53.33945083618164,53.33949661254883,53.33956909179688,53.33961486816406,53.33990097045898,53.34017562866211,53.34019088745117,53.34024429321289,53.34048843383789,53.34072113037109,53.34095001220703,53.3411865234375,53.34128952026367,53.34135055541992,53.34175109863281,53.34180068969727,53.34188079833984,53.34188461303711,53.3419075012207,53.34183120727539]}]],[[{"lng":[-6.259171962738037,-6.25928783416748,-6.259420871734619,-6.259018898010254,-6.258446216583252,-6.258362770080566,-6.258293151855469,-6.258262157440186,-6.258237838745117,-6.258203983306885,-6.258172988891602,-6.257171154022217,-6.257040977478027,-6.255417823791504,-6.255313873291016,-6.25543212890625,-6.255677223205566,-6.255785942077637,-6.255873203277588,-6.255960941314697,-6.256153106689453,-6.256514072418213,-6.256537914276123,-6.25616979598999,-6.255960941314697,-6.255613803863525,-6.2555251121521,-6.255291938781738,-6.2548508644104,-6.254660129547119,-6.254331111907959,-6.254179000854492,-6.253791809082031,-6.253627777099609,-6.2536940574646,-6.254108905792236,-6.254810810089111,-6.255608081817627,-6.255691051483154,-6.255771160125732,-6.255858898162842,-6.255585193634033,-6.255582809448242,-6.255620002746582,-6.255699157714844,-6.255859851837158,-6.256604194641113,-6.25675106048584,-6.256882190704346,-6.256930828094482,-6.257162094116211,-6.25717306137085,-6.257967948913574,-6.258058071136475,-6.258218765258789,-6.258419990539551,-6.258666038513184,-6.25872802734375,-6.258831024169922,-6.258957862854004,-6.259017944335938,-6.260087013244629,-6.260269165039062,-6.260450839996338,-6.2606201171875,-6.260776042938232,-6.26088285446167,-6.26100492477417,-6.261185169219971,-6.261269092559814,-6.261341094970703,-6.261364936828613,-6.261395931243896,-6.261441230773926,-6.261550903320312,-6.261699199676514,-6.262839794158936,-6.262728214263916,-6.263228893280029,-6.263465881347656,-6.263923168182373,-6.264020919799805,-6.263766765594482,-6.26383113861084,-6.263944149017334,-6.264193058013916,-6.264529228210449,-6.264768123626709,-6.265145778656006,-6.265614032745361,-6.266435146331787,-6.26704216003418,-6.267313957214355,-6.267426013946533,-6.267492771148682,-6.267855167388916,-6.268226146697998,-6.26844596862793,-6.268836975097656,-6.269009113311768,-6.269178867340088,-6.270054817199707,-6.270080089569092,-6.27008581161499,-6.270137786865234,-6.270140171051025,-6.270170211791992,-6.270236968994141,-6.271464824676514,-6.271695137023926,-6.272124767303467,-6.272219181060791,-6.272335052490234,-6.272333145141602,-6.272332191467285,-6.27231502532959,-6.272216796875,-6.272036075592041,-6.272127151489258,-6.272150039672852,-6.272164821624756,-6.272305965423584,-6.273100852966309,-6.273827075958252,-6.274155139923096,-6.274510860443115,-6.274716854095459,-6.274876117706299,-6.275203227996826,-6.275454998016357,-6.27594518661499,-6.27603006362915,-6.276169776916504,-6.276924133300781,-6.277103900909424,-6.277181148529053,-6.277414798736572,-6.277536869049072,-6.277626991271973,-6.277750015258789,-6.277966976165771,-6.278176784515381,-6.27849817276001,-6.279116153717041,-6.279558181762695,-6.279837131500244,-6.280243873596191,-6.280792236328125,-6.281102180480957,-6.281211853027344,-6.281360149383545,-6.281521797180176,-6.281642913818359,-6.282129764556885,-6.28301477432251,-6.283757209777832,-6.284296035766602,-6.284580230712891,-6.284855842590332,-6.285422801971436,-6.285973072052002,-6.286281108856201,-6.28665018081665,-6.286881923675537,-6.286985874176025,-6.287442207336426,-6.287581920623779,-6.287918090820312,-6.288145065307617,-6.288352966308594,-6.288383960723877,-6.288384914398193,-6.288402080535889,-6.288401126861572,-6.288106918334961,-6.287984848022461,-6.287871837615967,-6.287740230560303,-6.287649154663086,-6.287603855133057,-6.287580013275146,-6.287576198577881,-6.286812782287598],"lat":[53.34183120727539,53.34147262573242,53.341064453125,53.34102249145508,53.34095764160156,53.34095001220703,53.3411865234375,53.34128952026367,53.34128570556641,53.34128189086914,53.34127807617188,53.34116363525391,53.34114456176758,53.34083938598633,53.3408203125,53.34060287475586,53.34015655517578,53.33994293212891,53.33979415893555,53.33964920043945,53.33941650390625,53.33895492553711,53.33892440795898,53.33882522583008,53.33877182006836,53.33867645263672,53.33865356445312,53.33858489990234,53.33847045898438,53.33842086791992,53.33833312988281,53.33829116821289,53.33819198608398,53.3381462097168,53.33809280395508,53.33755493164062,53.33772659301758,53.33793640136719,53.33795547485352,53.33797454833984,53.3380012512207,53.3383674621582,53.3384895324707,53.33854293823242,53.33860015869141,53.33865737915039,53.33883285522461,53.33887481689453,53.33894729614258,53.33896255493164,53.33902359008789,53.33902740478516,53.3392448425293,53.33926773071289,53.33930969238281,53.33936309814453,53.33943176269531,53.33945083618164,53.33947372436523,53.33950805664062,53.33952331542969,53.33977890014648,53.33982849121094,53.33986282348633,53.33986282348633,53.33980941772461,53.33976364135742,53.33967590332031,53.33944320678711,53.33932876586914,53.33921813964844,53.33916091918945,53.33911895751953,53.33908843994141,53.33910369873047,53.339111328125,53.33931732177734,53.33949279785156,53.33959197998047,53.33964538574219,53.33974838256836,53.33977127075195,53.34015274047852,53.34023666381836,53.34029769897461,53.34041976928711,53.34056091308594,53.34057998657227,53.34061431884766,53.34067153930664,53.34074401855469,53.3408088684082,53.34083557128906,53.34083938598633,53.34085083007812,53.34077835083008,53.34071350097656,53.34067916870117,53.34061050415039,53.34060287475586,53.34059524536133,53.34057235717773,53.34106063842773,53.34134674072266,53.34139251708984,53.34139633178711,53.3414192199707,53.34145736694336,53.34147644042969,53.34148025512695,53.34148788452148,53.34148788452148,53.34148788452148,53.34161376953125,53.34169006347656,53.34222030639648,53.34238052368164,53.34260559082031,53.34275436401367,53.34279251098633,53.34281921386719,53.34292221069336,53.34307861328125,53.34319305419922,53.34324645996094,53.34328460693359,53.34327697753906,53.3432731628418,53.34321975708008,53.34318161010742,53.34307861328125,53.34306716918945,53.34306716918945,53.34291839599609,53.34288024902344,53.34286499023438,53.34282302856445,53.34280395507812,53.34279632568359,53.34278869628906,53.3427848815918,53.3427848815918,53.34279251098633,53.34281158447266,53.34287261962891,53.34291839599609,53.34298706054688,53.34309768676758,53.34316253662109,53.34318542480469,53.34321594238281,53.34324264526367,53.34325790405273,53.34330368041992,53.34335327148438,53.3433952331543,53.34342575073242,53.34345245361328,53.34347915649414,53.34352111816406,53.34356307983398,53.34355926513672,53.34354019165039,53.34352874755859,53.34352493286133,53.343505859375,53.34349822998047,53.34348297119141,53.34347152709961,53.34346389770508,53.34302520751953,53.34297943115234,53.34244155883789,53.3424072265625,53.34237289428711,53.34234237670898,53.34231567382812,53.34224319458008,53.34217071533203,53.34212493896484,53.34204864501953,53.34157180786133,53.34156036376953]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#FF0000","weight":5,"opacity":0.5,"fill":false,"fillColor":"#FF0000","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[53.33631134033203,53.34846496582031],"lng":[-6.288402080535889,-6.253627777099609]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./cvrp-1-basic-book.html" class="pagination-link" aria-label="Basic CVRP Example">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic CVRP Example</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,3 +1,0 @@
-# Introduction {.unnumbered}
-
-This is a book of R examples for the Icepack API.

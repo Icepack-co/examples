@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>R Examples - 3&nbsp; Basic CVRP Example</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./cvrptw-1-basic-book.html" rel="next">
+<link href="./tsptw-1-basic-book.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="site_libs/datatables-binding-0.32/datatables.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-binding-2.2.0/leaflet.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cvrp-1-basic-book.html">CVRP</a></li><li class="breadcrumb-item"><a href="./cvrp-1-basic-book.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic CVRP Example</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R Examples</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">TSP</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tsp-1-basic-book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Basic TSP Example</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">TSPTW</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tsptw-1-basic-book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic TSPTW Example</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">CVRP</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cvrp-1-basic-book.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic CVRP Example</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">CVRPTW</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cvrptw-1-basic-book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Basic CVRPTW Example</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data"><span class="header-section-number">3.1</span> Data</a></li>
+  <li><a href="#running-the-example" id="toc-running-the-example" class="nav-link" data-scroll-target="#running-the-example"><span class="header-section-number">3.2</span> Running the example</a>
+  <ul class="collapse">
+  <li><a href="#create-an-apihelper-object-with-the-model-type-youd-like-to-solve" id="toc-create-an-apihelper-object-with-the-model-type-youd-like-to-solve" class="nav-link" data-scroll-target="#create-an-apihelper-object-with-the-model-type-youd-like-to-solve"><span class="header-section-number">3.2.1</span> Create an apiHelper object with the model type you’d like to solve</a></li>
+  <li><a href="#create-the-model-and-add-some-data-to-it" id="toc-create-the-model-and-add-some-data-to-it" class="nav-link" data-scroll-target="#create-the-model-and-add-some-data-to-it"><span class="header-section-number">3.2.2</span> Create the model and add some data to it</a></li>
+  <li><a href="#submit-the-model-to-the-api" id="toc-submit-the-model-to-the-api" class="nav-link" data-scroll-target="#submit-the-model-to-the-api"><span class="header-section-number">3.2.3</span> Submit the model to the API</a></li>
+  <li><a href="#retrieve-the-model-response" id="toc-retrieve-the-model-response" class="nav-link" data-scroll-target="#retrieve-the-model-response"><span class="header-section-number">3.2.4</span> Retrieve the model response</a></li>
+  <li><a href="#look-at-the-result" id="toc-look-at-the-result" class="nav-link" data-scroll-target="#look-at-the-result"><span class="header-section-number">3.2.5</span> Look at the result</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cvrp-1-basic-book.html">CVRP</a></li><li class="breadcrumb-item"><a href="./cvrp-1-basic-book.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic CVRP Example</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic CVRP Example</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This example is for the CVRP (Capacitated Vehicle Routing Problem) model. It is essentially a TSP with a capacity constraint on the maximum capacity of any one vehicle.</p>
+<p>A classic CVRP has a heterogeneous fleet. This means we need only specify the size of the vehicle and the number of vehicles available. The other aspect of this model is to include the location of the depot. The classic CVRP aims to minimise the number of vehicles, then the total distance travelled.</p>
+<section id="data" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="data"><span class="header-section-number">3.1</span> Data</h2>
+<p>The data used in this example is a list of 10 pubs in Dublin, Ireland with their associated X and Y coordinates and quantities (amount added to a vehicle at each location).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-80302699be6726e2bd6b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-80302699be6726e2bd6b">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10"],["Guinness Storehouse","The Oval Bar Dublin","The Confession Box","Kehoes Pub","The Brazen Head","The Long Hall","Nearys","McDaids","Johnnie Fox's Pub","Davy Byrne's pub"],["-6.28681","-6.26030","-6.25840","-6.25943","-6.27633","-6.26530","-6.26119","-6.26100","-6.21920","-6.25934"],["53.34161","53.34846","53.35034","53.34116","53.34493","53.34185","53.34075","53.34122","53.22171","53.34185"],[0,100,100,200,100,400,400,400,100,100]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Pub Name (id)<\/th>\n      <th>X-Coordinate (X)<\/th>\n      <th>Y-Coordinate (Y)<\/th>\n      <th>Quantity (quantity)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","scrollY":"200px","pageLength":10,"columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"id","targets":1},{"name":"X","targets":2},{"name":"Y","targets":3},{"name":"quantity","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="running-the-example" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="running-the-example"><span class="header-section-number">3.2</span> Running the example</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(iceR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Execute the example as follows:</p>
+<section id="create-an-apihelper-object-with-the-model-type-youd-like-to-solve" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="create-an-apihelper-object-with-the-model-type-youd-like-to-solve"><span class="header-section-number">3.2.1</span> Create an apiHelper object with the model type you’d like to solve</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>api <span class="ot">&lt;-</span> <span class="fu">new</span>(<span class="st">"apiHelper"</span>, <span class="at">modelType =</span> <span class="st">'cvrp-jkfdoctmp51n'</span>, <span class="at">configFile =</span> <span class="st">'../../config.json'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="create-the-model-and-add-some-data-to-it" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="create-the-model-and-add-some-data-to-it"><span class="header-section-number">3.2.2</span> Create the model and add some data to it</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the model</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sr <span class="ot">&lt;-</span> <span class="fu">new</span> (CVRP.SolveRequest)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model <span class="ot">&lt;-</span> <span class="fu">new</span> (CVRP.CVRP)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'../../sample_data/publist_orders.csv'</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the data to the model</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>makePoint <span class="ot">&lt;-</span> <span class="cf">function</span>(i){</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  g <span class="ot">&lt;-</span> <span class="fu">new</span> (CVRP.Geocode)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  g<span class="sc">$</span>id <span class="ot">&lt;-</span> data<span class="sc">$</span>id[i]</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  g<span class="sc">$</span>x <span class="ot">&lt;-</span> data<span class="sc">$</span>X[i]</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  g<span class="sc">$</span>y <span class="ot">&lt;-</span> data<span class="sc">$</span>Y[i]</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  g<span class="sc">$</span>quantity <span class="ot">&lt;-</span> data<span class="sc">$</span>quantity[i] <span class="co"># zero by default</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (g)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: quantity in Geocode above is zero by default. </span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># In this example, the quantity is provided with the data but can be set for each point here too.</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># For example, each point can be set to take up 20 units. If the maximum capacity of the vehicle is set to 100</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># we know that we don't need more than 2 vehicles but also that we can't use less than 2 vehicles.</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># data$quantity &lt;- 20</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span>points <span class="ot">&lt;-</span><span class="fu">sapply</span>(<span class="dv">2</span><span class="sc">:</span><span class="fu">nrow</span>(data), makePoint)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the first location the depot (and the balance of the locations will be the visit points)</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span>depot <span class="ot">&lt;-</span> <span class="fu">makePoint</span>(<span class="dv">1</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the other relevant information</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span>NumberOfVehicles <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span>VehicleCapacity <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>solveType <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co"># 0 for optimise, 1 for evaluate, 2 for reoptimise</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the distance type to use the road network</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span>distancetype <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># 1 for road network, 2 for euclidean, 3 for haversine</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co"># View the model in plain-text format (string or JSON)</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span><span class="fu">toString</span>() <span class="sc">%&gt;%</span> cat</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>sr<span class="sc">$</span>model<span class="sc">$</span><span class="fu">toJSON</span>() <span class="sc">%&gt;%</span> cat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="submit-the-model-to-the-api" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="submit-the-model-to-the-api"><span class="header-section-number">3.2.3</span> Submit the model to the API</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>requestID <span class="ot">&lt;-</span> api <span class="sc">%&gt;%</span> <span class="fu">postSolveRequest</span>(sr)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="retrieve-the-model-response" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="retrieve-the-model-response"><span class="header-section-number">3.2.4</span> Retrieve the model response</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>resp <span class="ot">&lt;-</span> api <span class="sc">%&gt;%</span> <span class="fu">getResponse</span>(requestID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="look-at-the-result" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="look-at-the-result"><span class="header-section-number">3.2.5</span> Look at the result</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the solve time</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>solveTime <span class="ot">&lt;-</span> api <span class="sc">%&gt;%</span> <span class="fu">getSolveTime</span>(requestID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Solve time: 0.023s</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabulate the data in native-R format</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> resp <span class="sc">%&gt;%</span> <span class="fu">tabulate</span>(sr)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>tab<span class="sc">$</span>nodes <span class="sc">%&gt;%</span> head <span class="co"># just inspect the head of the output</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           locationId quantity vehicleId sequence         x        y
+1 Guinness Storehouse        0         1        1 -6.286811 53.34161
+2  The Confession Box      100         1        2 -6.258403 53.35034
+3 Guinness Storehouse      100         1        3 -6.286811 53.34161
+4 Guinness Storehouse        0         2        1 -6.286811 53.34161
+5 The Oval Bar Dublin      100         2        2 -6.260296 53.34846
+6 Guinness Storehouse      100         2        3 -6.286811 53.34161</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tab<span class="sc">$</span>edges <span class="sc">%&gt;%</span> head <span class="co"># just inspect the head of the output</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 6 features and 8 fields
+Geometry type: LINESTRING
+Dimension:     XY
+Bounding box:  xmin: -6.298288 ymin: 53.22149 xmax: -6.216326 ymax: 53.35303
+CRS:           NA
+               fromId                toId distance vehicleId        fx       fy
+1 Guinness Storehouse  The Confession Box    3.747         1 -6.286811 53.34161
+2  The Confession Box Guinness Storehouse    3.906         1 -6.258403 53.35034
+3 Guinness Storehouse The Oval Bar Dublin    2.527         2 -6.286811 53.34161
+4 The Oval Bar Dublin Guinness Storehouse    2.781         2 -6.260296 53.34846
+5 Guinness Storehouse   Johnnie Fox's Pub   16.699         3 -6.286811 53.34161
+6   Johnnie Fox's Pub Guinness Storehouse   17.044         3 -6.219199 53.22171
+         tx       ty                       geometry
+1 -6.258403 53.35034 LINESTRING (-6.286813 53.34...
+2 -6.286811 53.34161 LINESTRING (-6.258422 53.35...
+3 -6.260296 53.34846 LINESTRING (-6.286813 53.34...
+4 -6.286811 53.34161 LINESTRING (-6.260239 53.34...
+5 -6.219199 53.22171 LINESTRING (-6.286813 53.34...
+6 -6.286811 53.34161 LINESTRING (-6.219124 53.22...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the data (ggplot or leaflet)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>resp <span class="sc">%&gt;%</span> <span class="fu">plotResponse</span>(sr) <span class="co"># ggplot                       </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cvrp-1-basic-book_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>resp <span class="sc">%&gt;%</span> <span class="fu">plotResponseLeaflet</span>(sr) <span class="co"># leaflet (if it's mappable)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1a13fd526e777a6b4aae" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-1a13fd526e777a6b4aae">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[53.34161376953125,53.350341796875,53.34161376953125,53.34161376953125,53.34846496582031,53.34161376953125,53.34161376953125,53.22171020507812,53.34161376953125,53.34161376953125,53.34185028076172,53.34161376953125,53.34161376953125,53.34493255615234,53.34161376953125],[-6.286810874938965,-6.258402824401855,-6.286810874938965,-6.286810874938965,-6.260295867919922,-6.286810874938965,-6.286810874938965,-6.219199180603027,-6.286810874938965,-6.286810874938965,-6.259339809417725,-6.286810874938965,-6.286810874938965,-6.276332378387451,-6.286810874938965],5,null,null,{"interactive":true,"className":"","stroke":true,"color":"black","weight":5,"opacity":0.5,"fill":true,"fillColor":"black","fillOpacity":0.2},null,null,["Vehicle: 1<br>Stop: 1","Vehicle: 1<br>Stop: 2","Vehicle: 1<br>Stop: 3","Vehicle: 2<br>Stop: 1","Vehicle: 2<br>Stop: 2","Vehicle: 2<br>Stop: 3","Vehicle: 3<br>Stop: 1","Vehicle: 3<br>Stop: 2","Vehicle: 3<br>Stop: 3","Vehicle: 4<br>Stop: 1","Vehicle: 4<br>Stop: 2","Vehicle: 4<br>Stop: 3","Vehicle: 5<br>Stop: 1","Vehicle: 5<br>Stop: 2","Vehicle: 5<br>Stop: 3"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPolylines","args":[[[[{"lng":[-6.286812782287598,-6.28626823425293,-6.28518009185791,-6.283913135528564,-6.283901214599609,-6.28386402130127,-6.283757209777832,-6.28301477432251,-6.282129764556885,-6.281642913818359,-6.281521797180176,-6.281360149383545,-6.281211853027344,-6.281102180480957,-6.280792236328125,-6.280243873596191,-6.279837131500244,-6.279558181762695,-6.279116153717041,-6.27849817276001,-6.278176784515381,-6.277966976165771,-6.277750015258789,-6.277626991271973,-6.277536869049072,-6.277414798736572,-6.277181148529053,-6.277103900909424,-6.276924133300781,-6.276169776916504,-6.276062965393066,-6.275981903076172,-6.275812149047852,-6.275527954101562,-6.275248050689697,-6.275084018707275,-6.274898052215576,-6.274731159210205,-6.274486064910889,-6.274033069610596,-6.27398681640625,-6.273783206939697,-6.273509979248047,-6.272305965423584,-6.272071838378906,-6.272013187408447,-6.271974086761475,-6.271763801574707,-6.271762847900391,-6.271769046783447,-6.271796226501465,-6.271798133850098,-6.271807193756104,-6.27183723449707,-6.271835803985596,-6.271810054779053,-6.271810054779053,-6.271822929382324,-6.271830081939697,-6.271848201751709,-6.271859169006348,-6.271923065185547,-6.272119045257568,-6.272119998931885,-6.272157192230225,-6.272195816040039,-6.272212982177734,-6.271696090698242,-6.271230220794678,-6.270808219909668,-6.270176887512207,-6.269824028015137,-6.267868041992188,-6.26685619354248,-6.265703201293945,-6.265148162841797,-6.265056133270264,-6.264667987823486,-6.26433277130127,-6.264101028442383,-6.263865947723389,-6.263414859771729,-6.263219833374023,-6.261596202850342,-6.261025905609131,-6.260657787322998,-6.260057926177979,-6.259552001953125,-6.259377002716064,-6.259366035461426,-6.25931978225708,-6.259262084960938,-6.259100914001465,-6.258975982666016,-6.258624076843262,-6.2583909034729,-6.257666110992432,-6.257609844207764,-6.257379055023193,-6.257330894470215,-6.257113933563232,-6.255756855010986,-6.255171775817871,-6.255152225494385,-6.254948139190674,-6.25494909286499,-6.254946231842041,-6.254946231842041,-6.254899024963379,-6.2548508644104,-6.254827976226807,-6.254804134368896,-6.254757881164551,-6.254733085632324,-6.254714012145996,-6.254665851593018,-6.254440784454346,-6.254016876220703,-6.253919124603271,-6.253818035125732,-6.253765106201172,-6.25370979309082,-6.253858089447021,-6.254021167755127,-6.254374980926514,-6.254408836364746,-6.254485130310059,-6.254994869232178,-6.255570888519287,-6.256040096282959,-6.256227970123291,-6.256800174713135,-6.257377147674561,-6.257505893707275,-6.257923126220703,-6.258501052856445,-6.259130954742432,-6.259162902832031,-6.259117126464844,-6.258808135986328,-6.258681774139404,-6.258556842803955,-6.258450984954834,-6.258324146270752,-6.258370876312256,-6.258421897888184],"lat":[53.34156036376953,53.341552734375,53.3415412902832,53.34151458740234,53.34172058105469,53.34226608276367,53.3433952331543,53.34335327148438,53.34330368041992,53.34325790405273,53.34324264526367,53.34321594238281,53.34318542480469,53.34316253662109,53.34309768676758,53.34298706054688,53.34291839599609,53.34287261962891,53.34281158447266,53.34279251098633,53.3427848815918,53.3427848815918,53.34278869628906,53.34279632568359,53.34280395507812,53.34282302856445,53.34286499023438,53.34288024902344,53.34291839599609,53.34306716918945,53.3431282043457,53.34314727783203,53.34319305419922,53.34326553344727,53.34332275390625,53.34336090087891,53.3433723449707,53.3433837890625,53.3433952331543,53.34331893920898,53.34331130981445,53.3432731628418,53.34322738647461,53.34299850463867,53.34296798706055,53.34296035766602,53.34295654296875,53.34295272827148,53.34303283691406,53.34310531616211,53.34322357177734,53.34326934814453,53.34335708618164,53.34354019165039,53.34357833862305,53.34383010864258,53.34392166137695,53.34407806396484,53.34412002563477,53.34416961669922,53.34420394897461,53.34436416625977,53.34497451782227,53.34504699707031,53.34527206420898,53.34550476074219,53.34554290771484,53.34557342529297,53.34562301635742,53.34568023681641,53.34576416015625,53.3458137512207,53.34606552124023,53.34614562988281,53.34625625610352,53.34630966186523,53.34631729125977,53.34635543823242,53.34639358520508,53.34642791748047,53.34647369384766,53.34657669067383,53.34662246704102,53.34699630737305,53.34712219238281,53.34721374511719,53.34736251831055,53.34748458862305,53.34752655029297,53.34752655029297,53.34753799438477,53.34755325317383,53.34759140014648,53.34762191772461,53.34770584106445,53.34775924682617,53.3479118347168,53.34791946411133,53.34796142578125,53.34797286987305,53.34800720214844,53.34821319580078,53.34833526611328,53.34834289550781,53.34844589233398,53.34852981567383,53.34863662719727,53.34866333007812,53.34883117675781,53.34900283813477,53.34904098510742,53.34908676147461,53.34917068481445,53.34919738769531,53.34921264648438,53.3492546081543,53.34932327270508,53.34944915771484,53.34948348999023,53.34953308105469,53.34956741333008,53.3497200012207,53.34993743896484,53.35017776489258,53.35069274902344,53.35074234008789,53.3508415222168,53.35152816772461,53.35234451293945,53.35302734375,53.35298538208008,53.35286712646484,53.35274505615234,53.35271835327148,53.35263061523438,53.35251235961914,53.35238265991211,53.35237503051758,53.35226821899414,53.35153579711914,53.35123825073242,53.35094451904297,53.3506965637207,53.35039520263672,53.35038757324219,53.35037994384766]}]],[[{"lng":[-6.258421897888184,-6.258370876312256,-6.258324146270752,-6.258235931396484,-6.258212089538574,-6.258049011230469,-6.257864952087402,-6.257798194885254,-6.257643222808838,-6.257619857788086,-6.257598876953125,-6.257303237915039,-6.256853103637695,-6.25626802444458,-6.256031036376953,-6.255126953125,-6.255064010620117,-6.254940032958984,-6.254782199859619,-6.254733085632324,-6.254663944244385,-6.254456043243408,-6.254395008087158,-6.253858089447021,-6.253561973571777,-6.25347900390625,-6.2533278465271,-6.253210067749023,-6.252924919128418,-6.252651214599609,-6.252307891845703,-6.25189208984375,-6.251845836639404,-6.251601219177246,-6.251529216766357,-6.251520156860352,-6.251526832580566,-6.251546859741211,-6.251554012298584,-6.251564025878906,-6.251562118530273,-6.251564979553223,-6.251664161682129,-6.251748085021973,-6.251839160919189,-6.25186014175415,-6.251884937286377,-6.251918792724609,-6.251954078674316,-6.253555774688721,-6.253899097442627,-6.254668235778809,-6.254995822906494,-6.255506038665771,-6.255955219268799,-6.256367206573486,-6.256659030914307,-6.257002830505371,-6.257154941558838,-6.257223129272461,-6.257277965545654,-6.257328987121582,-6.257946968078613,-6.2586350440979,-6.258791923522949,-6.258945941925049,-6.259062767028809,-6.259109973907471,-6.259343147277832,-6.259933948516846,-6.260077953338623,-6.260336875915527,-6.260592937469482,-6.260734081268311,-6.260934829711914,-6.261144161224365,-6.261765003204346,-6.261885166168213,-6.262612819671631,-6.262955188751221,-6.263473033905029,-6.263896942138672,-6.264977931976318,-6.265103816986084,-6.266496181488037,-6.267630100250244,-6.268948078155518,-6.269989013671875,-6.270276069641113,-6.270993232727051,-6.272119045257568,-6.275383949279785,-6.275643825531006,-6.275778770446777,-6.275852203369141,-6.2760009765625,-6.27609395980835,-6.276192188262939,-6.276266098022461,-6.276339054107666,-6.276357173919678,-6.276327133178711,-6.276216983795166,-6.2760329246521,-6.275978088378906,-6.275872230529785,-6.275465965270996,-6.275134086608887,-6.275033950805664,-6.274898052215576,-6.274876117706299,-6.275203227996826,-6.275454998016357,-6.27594518661499,-6.27603006362915,-6.276169776916504,-6.276924133300781,-6.277103900909424,-6.277181148529053,-6.277414798736572,-6.277536869049072,-6.277626991271973,-6.277750015258789,-6.277966976165771,-6.278176784515381,-6.27849817276001,-6.279116153717041,-6.279558181762695,-6.279837131500244,-6.280243873596191,-6.280792236328125,-6.281102180480957,-6.281211853027344,-6.281360149383545,-6.281521797180176,-6.281642913818359,-6.282129764556885,-6.28301477432251,-6.283757209777832,-6.284296035766602,-6.284580230712891,-6.284855842590332,-6.285422801971436,-6.285973072052002,-6.286281108856201,-6.28665018081665,-6.286881923675537,-6.286985874176025,-6.287442207336426,-6.287581920623779,-6.287918090820312,-6.288145065307617,-6.288352966308594,-6.288383960723877,-6.288384914398193,-6.288402080535889,-6.288401126861572,-6.288106918334961,-6.287984848022461,-6.287871837615967,-6.287740230560303,-6.287649154663086,-6.287603855133057,-6.287580013275146,-6.287576198577881,-6.286812782287598],"lat":[53.35037994384766,53.35038757324219,53.35039520263672,53.35018920898438,53.35013198852539,53.34975814819336,53.34931182861328,53.34915924072266,53.34880447387695,53.34875106811523,53.3487548828125,53.34880065917969,53.34886169433594,53.34896087646484,53.3489990234375,53.34915924072266,53.34917449951172,53.34919738769531,53.34919738769531,53.34919738769531,53.34919357299805,53.34918975830078,53.34919357299805,53.34933853149414,53.34939575195312,53.34940338134766,53.34942245483398,53.34943389892578,53.34945678710938,53.34944534301758,53.34939575195312,53.34915924072266,53.3491325378418,53.34897994995117,53.34880447387695,53.34867858886719,53.3485221862793,53.34836196899414,53.34830093383789,53.34823226928711,53.34816360473633,53.34813690185547,53.34781646728516,53.34762954711914,53.34748458862305,53.34746551513672,53.34744644165039,53.34742736816406,53.3474235534668,53.34746170043945,53.34746551513672,53.34748077392578,53.34748458862305,53.34749984741211,53.34748840332031,53.34746170043945,53.3474235534668,53.34737777709961,53.34734725952148,53.34733581542969,53.34732437133789,53.34731292724609,53.34718704223633,53.3470458984375,53.34700775146484,53.34697341918945,53.34694671630859,53.3469352722168,53.34688186645508,53.34674453735352,53.34671020507812,53.34664916992188,53.34658813476562,53.3465576171875,53.34651184082031,53.34646224975586,53.34631729125977,53.34628677368164,53.34612655639648,53.3460578918457,53.34594345092773,53.34588241577148,53.34572219848633,53.34570693969727,53.34550094604492,53.34533309936523,53.3452262878418,53.34513092041016,53.34510803222656,53.34505081176758,53.34497451782227,53.34521865844727,53.34516906738281,53.34517288208008,53.34516525268555,53.3450813293457,53.34492492675781,53.34475708007812,53.3445930480957,53.34439086914062,53.34428024291992,53.34415054321289,53.34403228759766,53.3438835144043,53.34384155273438,53.34378814697266,53.34364318847656,53.34350204467773,53.34345626831055,53.3433723449707,53.3432731628418,53.34321975708008,53.34318161010742,53.34307861328125,53.34306716918945,53.34306716918945,53.34291839599609,53.34288024902344,53.34286499023438,53.34282302856445,53.34280395507812,53.34279632568359,53.34278869628906,53.3427848815918,53.3427848815918,53.34279251098633,53.34281158447266,53.34287261962891,53.34291839599609,53.34298706054688,53.34309768676758,53.34316253662109,53.34318542480469,53.34321594238281,53.34324264526367,53.34325790405273,53.34330368041992,53.34335327148438,53.3433952331543,53.34342575073242,53.34345245361328,53.34347915649414,53.34352111816406,53.34356307983398,53.34355926513672,53.34354019165039,53.34352874755859,53.34352493286133,53.343505859375,53.34349822998047,53.34348297119141,53.34347152709961,53.34346389770508,53.34302520751953,53.34297943115234,53.34244155883789,53.3424072265625,53.34237289428711,53.34234237670898,53.34231567382812,53.34224319458008,53.34217071533203,53.34212493896484,53.34204864501953,53.34157180786133,53.34156036376953]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#0000FF","weight":5,"opacity":0.5,"fill":false,"fillColor":"#0000FF","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPolylines","args":[[[[{"lng":[-6.286812782287598,-6.28626823425293,-6.28518009185791,-6.283913135528564,-6.283901214599609,-6.28386402130127,-6.283757209777832,-6.28301477432251,-6.282129764556885,-6.281642913818359,-6.281521797180176,-6.281360149383545,-6.281211853027344,-6.281102180480957,-6.280792236328125,-6.280243873596191,-6.279837131500244,-6.279558181762695,-6.279116153717041,-6.27849817276001,-6.278176784515381,-6.277966976165771,-6.277750015258789,-6.277626991271973,-6.277536869049072,-6.277414798736572,-6.277181148529053,-6.277103900909424,-6.276924133300781,-6.276169776916504,-6.276062965393066,-6.275981903076172,-6.275812149047852,-6.275527954101562,-6.275248050689697,-6.275084018707275,-6.274898052215576,-6.274731159210205,-6.274486064910889,-6.274033069610596,-6.27398681640625,-6.273783206939697,-6.273509979248047,-6.272305965423584,-6.272071838378906,-6.272013187408447,-6.271974086761475,-6.271763801574707,-6.271762847900391,-6.271769046783447,-6.271796226501465,-6.271798133850098,-6.271807193756104,-6.27183723449707,-6.271835803985596,-6.271810054779053,-6.271810054779053,-6.271822929382324,-6.271830081939697,-6.271848201751709,-6.271859169006348,-6.271923065185547,-6.272119045257568,-6.272119998931885,-6.272157192230225,-6.272195816040039,-6.272212982177734,-6.271696090698242,-6.271230220794678,-6.270808219909668,-6.270176887512207,-6.269824028015137,-6.267868041992188,-6.26685619354248,-6.265703201293945,-6.265148162841797,-6.265056133270264,-6.264667987823486,-6.26433277130127,-6.264101028442383,-6.263865947723389,-6.263414859771729,-6.263219833374023,-6.261596202850342,-6.261025905609131,-6.260657787322998,-6.260057926177979,-6.259552001953125,-6.259377002716064,-6.259379863739014,-6.259404182434082,-6.259422779083252,-6.259439945220947,-6.259725093841553,-6.25974178314209,-6.259751796722412,-6.259891033172607,-6.259923934936523,-6.259947776794434,-6.260239124298096],"lat":[53.34156036376953,53.341552734375,53.3415412902832,53.34151458740234,53.34172058105469,53.34226608276367,53.3433952331543,53.34335327148438,53.34330368041992,53.34325790405273,53.34324264526367,53.34321594238281,53.34318542480469,53.34316253662109,53.34309768676758,53.34298706054688,53.34291839599609,53.34287261962891,53.34281158447266,53.34279251098633,53.3427848815918,53.3427848815918,53.34278869628906,53.34279632568359,53.34280395507812,53.34282302856445,53.34286499023438,53.34288024902344,53.34291839599609,53.34306716918945,53.3431282043457,53.34314727783203,53.34319305419922,53.34326553344727,53.34332275390625,53.34336090087891,53.3433723449707,53.3433837890625,53.3433952331543,53.34331893920898,53.34331130981445,53.3432731628418,53.34322738647461,53.34299850463867,53.34296798706055,53.34296035766602,53.34295654296875,53.34295272827148,53.34303283691406,53.34310531616211,53.34322357177734,53.34326934814453,53.34335708618164,53.34354019165039,53.34357833862305,53.34383010864258,53.34392166137695,53.34407806396484,53.34412002563477,53.34416961669922,53.34420394897461,53.34436416625977,53.34497451782227,53.34504699707031,53.34527206420898,53.34550476074219,53.34554290771484,53.34557342529297,53.34562301635742,53.34568023681641,53.34576416015625,53.3458137512207,53.34606552124023,53.34614562988281,53.34625625610352,53.34630966186523,53.34631729125977,53.34635543823242,53.34639358520508,53.34642791748047,53.34647369384766,53.34657669067383,53.34662246704102,53.34699630737305,53.34712219238281,53.34721374511719,53.34736251831055,53.34748458862305,53.34752655029297,53.34753036499023,53.34756088256836,53.34758758544922,53.34762573242188,53.3482666015625,53.34830474853516,53.34832763671875,53.34831237792969,53.34830856323242,53.34830474853516,53.34827423095703]}]],[[{"lng":[-6.260239124298096,-6.260276794433594,-6.261742115020752,-6.262957096099854,-6.263440132141113,-6.26361083984375,-6.263637065887451,-6.263644218444824,-6.263416767120361,-6.263394832611084,-6.265015125274658,-6.265261173248291,-6.265914916992188,-6.266379833221436,-6.267467975616455,-6.268056869506836,-6.267868041992188,-6.267848014831543,-6.267754077911377,-6.267645835876465,-6.267630100250244,-6.268948078155518,-6.269989013671875,-6.270276069641113,-6.270993232727051,-6.272119045257568,-6.275383949279785,-6.275643825531006,-6.275778770446777,-6.275852203369141,-6.2760009765625,-6.27609395980835,-6.276192188262939,-6.276266098022461,-6.276339054107666,-6.276357173919678,-6.276327133178711,-6.276216983795166,-6.2760329246521,-6.275978088378906,-6.275872230529785,-6.275465965270996,-6.275134086608887,-6.275033950805664,-6.274898052215576,-6.274876117706299,-6.275203227996826,-6.275454998016357,-6.27594518661499,-6.27603006362915,-6.276169776916504,-6.276924133300781,-6.277103900909424,-6.277181148529053,-6.277414798736572,-6.277536869049072,-6.277626991271973,-6.277750015258789,-6.277966976165771,-6.278176784515381,-6.27849817276001,-6.279116153717041,-6.279558181762695,-6.279837131500244,-6.280243873596191,-6.280792236328125,-6.281102180480957,-6.281211853027344,-6.281360149383545,-6.281521797180176,-6.281642913818359,-6.282129764556885,-6.28301477432251,-6.283757209777832,-6.284296035766602,-6.284580230712891,-6.284855842590332,-6.285422801971436,-6.285973072052002,-6.286281108856201,-6.28665018081665,-6.286881923675537,-6.286985874176025,-6.287442207336426,-6.287581920623779,-6.287918090820312,-6.288145065307617,-6.288352966308594,-6.288383960723877,-6.288384914398193,-6.288402080535889,-6.288401126861572,-6.288106918334961,-6.287984848022461,-6.287871837615967,-6.287740230560303,-6.287649154663086,-6.287603855133057,-6.287580013275146,-6.287576198577881,-6.286812782287598],"lat":[53.34827423095703,53.34827041625977,53.34811782836914,53.34798431396484,53.34793472290039,53.34791564941406,53.347900390625,53.34788131713867,53.34727096557617,53.34719467163086,53.34693908691406,53.34690093994141,53.34680557250977,53.34673690795898,53.3465690612793,53.34648132324219,53.34606552124023,53.34600067138672,53.34571075439453,53.34538269042969,53.34533309936523,53.3452262878418,53.34513092041016,53.34510803222656,53.34505081176758,53.34497451782227,53.34521865844727,53.34516906738281,53.34517288208008,53.34516525268555,53.3450813293457,53.34492492675781,53.34475708007812,53.3445930480957,53.34439086914062,53.34428024291992,53.34415054321289,53.34403228759766,53.3438835144043,53.34384155273438,53.34378814697266,53.34364318847656,53.34350204467773,53.34345626831055,53.3433723449707,53.3432731628418,53.34321975708008,53.34318161010742,53.34307861328125,53.34306716918945,53.34306716918945,53.34291839599609,53.34288024902344,53.34286499023438,53.34282302856445,53.34280395507812,53.34279632568359,53.34278869628906,53.3427848815918,53.3427848815918,53.34279251098633,53.34281158447266,53.34287261962891,53.34291839599609,53.34298706054688,53.34309768676758,53.34316253662109,53.34318542480469,53.34321594238281,53.34324264526367,53.34325790405273,53.34330368041992,53.34335327148438,53.3433952331543,53.34342575073242,53.34345245361328,53.34347915649414,53.34352111816406,53.34356307983398,53.34355926513672,53.34354019165039,53.34352874755859,53.34352493286133,53.343505859375,53.34349822998047,53.34348297119141,53.34347152709961,53.34346389770508,53.34302520751953,53.34297943115234,53.34244155883789,53.3424072265625,53.34237289428711,53.34234237670898,53.34231567382812,53.34224319458008,53.34217071533203,53.34212493896484,53.34204864501953,53.34157180786133,53.34156036376953]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#3F00BF","weight":5,"opacity":0.5,"fill":false,"fillColor":"#3F00BF","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPolylines","args":[[[[{"lng":[-6.286812782287598,-6.28626823425293,-6.28518009185791,-6.283913135528564,-6.28386402130127,-6.283771991729736,-6.283677101135254,-6.282426834106445,-6.282279968261719,-6.281853199005127,-6.281813144683838,-6.281782150268555,-6.281850814819336,-6.281891822814941,-6.281947135925293,-6.281998157501221,-6.282098770141602,-6.282023906707764,-6.281947135925293,-6.281864166259766,-6.281706809997559,-6.281356811523438,-6.281188011169434,-6.281070232391357,-6.280664920806885,-6.28055477142334,-6.280386924743652,-6.280290126800537,-6.280121803283691,-6.28003978729248,-6.27998685836792,-6.279812812805176,-6.279720783233643,-6.279483795166016,-6.279226779937744,-6.278849124908447,-6.27869987487793,-6.278073787689209,-6.277835845947266,-6.277297019958496,-6.276587009429932,-6.276040077209473,-6.275715827941895,-6.275498867034912,-6.275317192077637,-6.275117874145508,-6.274971008300781,-6.274827003479004,-6.27473783493042,-6.274490833282471,-6.273629188537598,-6.273469924926758,-6.273374080657959,-6.273294925689697,-6.273207187652588,-6.273136138916016,-6.272974967956543,-6.272891044616699,-6.272820949554443,-6.272731781005859,-6.272690773010254,-6.272662162780762,-6.272630214691162,-6.272590160369873,-6.272554874420166,-6.272506237030029,-6.272486209869385,-6.27248477935791,-6.27246618270874,-6.272443771362305,-6.272442817687988,-6.272420883178711,-6.272398948669434,-6.272397994995117,-6.272409915924072,-6.272421836853027,-6.272450923919678,-6.272482872009277,-6.272524833679199,-6.272590160369873,-6.272662162780762,-6.272723197937012,-6.272936820983887,-6.273008823394775,-6.273171901702881,-6.273283004760742,-6.273393154144287,-6.273562908172607,-6.273725032806396,-6.273748874664307,-6.273849010467529,-6.274149894714355,-6.27435302734375,-6.274511814117432,-6.274604797363281,-6.274784088134766,-6.274819850921631,-6.274902820587158,-6.275060176849365,-6.275074005126953,-6.275134086608887,-6.275217056274414,-6.275239944458008,-6.275249004364014,-6.275257110595703,-6.27524995803833,-6.275217056274414,-6.275207042694092,-6.275195121765137,-6.275172233581543,-6.275189876556396,-6.27521276473999,-6.27525520324707,-6.275271892547607,-6.275306224822998,-6.275322914123535,-6.275329113006592,-6.275335788726807,-6.27534818649292,-6.275353908538818,-6.275364875793457,-6.275451183319092,-6.275463104248047,-6.275468826293945,-6.275479793548584,-6.27548885345459,-6.275504112243652,-6.275506019592285,-6.275527000427246,-6.275571823120117,-6.275680065155029,-6.275774955749512,-6.275805950164795,-6.275891780853271,-6.275997161865234,-6.276216983795166,-6.276340007781982,-6.276363849639893,-6.276638984680176,-6.276742935180664,-6.276763916015625,-6.276786804199219,-6.277084827423096,-6.27711009979248,-6.277544975280762,-6.277682781219482,-6.277945995330811,-6.277908802032471,-6.277947902679443,-6.27798318862915,-6.278058052062988,-6.278075218200684,-6.278215885162354,-6.278255939483643,-6.278343200683594,-6.278359889984131,-6.278485774993896,-6.278534889221191,-6.278635025024414,-6.278730869293213,-6.279060840606689,-6.279109001159668,-6.279135227203369,-6.279294967651367,-6.279312133789062,-6.279370784759521,-6.279398918151855,-6.279352188110352,-6.279222965240479,-6.279192924499512,-6.279187202453613,-6.279139995574951,-6.279061794281006,-6.279014110565186,-6.278873920440674,-6.27884578704834,-6.278800964355469,-6.278797149658203,-6.278779983520508,-6.278771877288818,-6.27875280380249,-6.278765201568604,-6.278800010681152,-6.278809070587158,-6.278822898864746,-6.278855800628662,-6.278914928436279,-6.279105186462402,-6.279152870178223,-6.279157161712646,-6.278989791870117,-6.278885841369629,-6.278447151184082,-6.277934074401855,-6.277882099151611,-6.277788162231445,-6.277666091918945,-6.277181148529053,-6.277056217193604,-6.277040004730225,-6.27692699432373,-6.276830196380615,-6.27681303024292,-6.276768207550049,-6.276707172393799,-6.276648044586182,-6.276362895965576,-6.276145935058594,-6.276051998138428,-6.275909900665283,-6.275874137878418,-6.275714874267578,-6.275566101074219,-6.275458812713623,-6.275437831878662,-6.27519702911377,-6.275070190429688,-6.275039196014404,-6.274990081787109,-6.274956226348877,-6.27492094039917,-6.274899005889893,-6.274880886077881,-6.274835109710693,-6.274623870849609,-6.274602890014648,-6.274550914764404,-6.274299144744873,-6.274139881134033,-6.273902893066406,-6.273822784423828,-6.273777008056641,-6.273690223693848,-6.273653030395508,-6.273615837097168,-6.273573875427246,-6.273525238037109,-6.273468971252441,-6.273367881774902,-6.273252964019775,-6.272913932800293,-6.272807121276855,-6.27255392074585,-6.272221088409424,-6.271880149841309,-6.271565914154053,-6.271374225616455,-6.271265983581543,-6.271172046661377,-6.270430088043213,-6.270113945007324,-6.269844055175781,-6.269775867462158,-6.269696235656738,-6.269529819488525,-6.269306182861328,-6.269107818603516,-6.268852233886719,-6.268197059631348,-6.267787933349609,-6.2675461769104,-6.26739501953125,-6.267221927642822,-6.267131805419922,-6.267069816589355,-6.266990184783936,-6.266631126403809,-6.266548156738281,-6.266160011291504,-6.265904903411865,-6.265594959259033,-6.265431880950928,-6.265196800231934,-6.264823913574219,-6.26437520980835,-6.263898849487305,-6.263545989990234,-6.263288974761963,-6.263035774230957,-6.262331962585449,-6.262104988098145,-6.26127815246582,-6.260626792907715,-6.260127067565918,-6.259688854217529,-6.257999897003174,-6.257783889770508,-6.257311820983887,-6.257105827331543,-6.256931781768799,-6.256801128387451,-6.256639003753662,-6.256493091583252,-6.25629186630249,-6.255918979644775,-6.255695819854736,-6.255102157592773,-6.254848957061768,-6.25477409362793,-6.253820896148682,-6.253650188446045,-6.253559112548828,-6.253458976745605,-6.253344058990479,-6.25351095199585,-6.253593921661377,-6.253668785095215,-6.253736019134521,-6.253838062286377,-6.253881931304932,-6.254106044769287,-6.254140853881836,-6.25443696975708,-6.254471778869629,-6.25449800491333,-6.254476070404053,-6.25444221496582,-6.254396915435791,-6.254364013671875,-6.254193782806396,-6.254158973693848,-6.254159927368164,-6.254189968109131,-6.254350185394287,-6.254536151885986,-6.254597187042236,-6.254834175109863,-6.254825115203857,-6.254824161529541,-6.254796028137207,-6.25477409362793,-6.25468111038208,-6.252502918243408,-6.251969814300537,-6.251546859741211,-6.251014232635498,-6.250785827636719,-6.25065803527832,-6.250528812408447,-6.25047779083252,-6.250032901763916,-6.249255180358887,-6.248961925506592,-6.248223781585693,-6.248003005981445,-6.247757911682129,-6.247722148895264,-6.247029781341553,-6.246519088745117,-6.246348857879639,-6.246087074279785,-6.246125221252441,-6.24615478515625,-6.246269226074219,-6.246345043182373,-6.246366024017334,-6.246530055999756,-6.246603965759277,-6.246439933776855,-6.246321201324463,-6.246178150177002,-6.245913982391357,-6.24583911895752,-6.245785236358643,-6.245748043060303,-6.245727062225342,-6.245710849761963,-6.245697975158691,-6.245687007904053,-6.245677947998047,-6.245674133300781,-6.245667934417725,-6.245645999908447,-6.245631217956543,-6.245602130889893,-6.245555877685547,-6.24547815322876,-6.24537992477417,-6.245238780975342,-6.245190143585205,-6.244941234588623,-6.244927883148193,-6.244851112365723,-6.244797229766846,-6.244510173797607,-6.244297027587891,-6.244102001190186,-6.243933200836182,-6.24379301071167,-6.243690013885498,-6.243624210357666,-6.243538856506348,-6.24343204498291,-6.243377208709717,-6.243328094482422,-6.243299961090088,-6.243202209472656,-6.242946147918701,-6.242767810821533,-6.242613792419434,-6.242432117462158,-6.242125034332275,-6.241936206817627,-6.241621971130371,-6.24157190322876,-6.241459846496582,-6.241144180297852,-6.241038799285889,-6.24069881439209,-6.240540981292725,-6.240152835845947,-6.239709854125977,-6.239428997039795,-6.239355087280273,-6.239278793334961,-6.239045143127441,-6.238924980163574,-6.238763809204102,-6.238683223724365,-6.238420963287354,-6.238303184509277,-6.238228797912598,-6.238150119781494,-6.238000869750977,-6.237977981567383,-6.23779821395874,-6.237596035003662,-6.237283229827881,-6.237226963043213,-6.237077236175537,-6.23698616027832,-6.236763000488281,-6.236385822296143,-6.235945224761963,-6.235672950744629,-6.235119819641113,-6.234803199768066,-6.234485149383545,-6.234235763549805,-6.234124183654785,-6.234036922454834,-6.233789920806885,-6.233500003814697,-6.233374118804932,-6.232758045196533,-6.2325439453125,-6.23251485824585,-6.232315063476562,-6.232170104980469,-6.232075214385986,-6.232000827789307,-6.231807231903076,-6.231783866882324,-6.231722831726074,-6.231550216674805,-6.231400012969971,-6.231329917907715,-6.231238842010498,-6.231132984161377,-6.230937957763672,-6.230796813964844,-6.230288982391357,-6.230101108551025,-6.229876041412354,-6.229641914367676,-6.229554176330566,-6.229515075683594,-6.229514122009277,-6.229482173919678,-6.229456901550293,-6.229434013366699,-6.229386806488037,-6.229324817657471,-6.22924280166626,-6.22921895980835,-6.229158878326416,-6.229146003723145,-6.229075908660889,-6.228737831115723,-6.228715896606445,-6.228629112243652,-6.228598117828369,-6.228524208068848,-6.228501796722412,-6.228484153747559,-6.228458881378174,-6.228466033935547,-6.228489875793457,-6.228490829467773,-6.228514194488525,-6.22853422164917,-6.228618144989014,-6.228647232055664,-6.228694915771484,-6.228835105895996,-6.22898006439209,-6.229125022888184,-6.229132175445557,-6.229147911071777,-6.22922420501709,-6.229245185852051,-6.229248046875,-6.229238033294678,-6.229199886322021,-6.229184150695801,-6.229178905487061,-6.229176998138428,-6.229225158691406,-6.229241847991943,-6.229227066040039,-6.22922420501709,-6.229196071624756,-6.229146003723145,-6.229134082794189,-6.229054927825928,-6.22904109954834,-6.228983879089355,-6.228950023651123,-6.228940010070801,-6.228882789611816,-6.228579044342041,-6.228385925292969,-6.22825288772583,-6.228052139282227,-6.227542877197266,-6.227342128753662,-6.22720193862915,-6.227078914642334,-6.226960182189941,-6.226818084716797,-6.226607799530029,-6.226538181304932,-6.226410865783691,-6.226034164428711,-6.225954055786133,-6.225876808166504,-6.225543975830078,-6.225320816040039,-6.225158214569092,-6.225114822387695,-6.225035190582275,-6.224830150604248,-6.223927974700928,-6.223079204559326,-6.222289085388184,-6.221902847290039,-6.221368789672852,-6.221304893493652,-6.221227169036865,-6.221150875091553,-6.22108793258667,-6.221049785614014,-6.221043109893799,-6.221067905426025,-6.221121788024902,-6.221010208129883,-6.220846176147461,-6.220814228057861,-6.220707893371582,-6.220719814300537,-6.220767974853516,-6.220722198486328,-6.220643997192383,-6.220492839813232,-6.220365047454834,-6.220169067382812,-6.220146179199219,-6.220012187957764,-6.219663143157959,-6.21937084197998,-6.219305038452148,-6.219273090362549,-6.219247817993164,-6.21923303604126,-6.21923303604126,-6.219335079193115,-6.21938419342041,-6.219377040863037,-6.219295024871826,-6.219192028045654,-6.219161033630371,-6.21916389465332,-6.219178199768066,-6.219150066375732,-6.219058990478516,-6.218860149383545,-6.218782901763916,-6.218602180480957,-6.218492031097412,-6.218368053436279,-6.218064785003662,-6.217716217041016,-6.217357158660889,-6.216960906982422,-6.216701984405518,-6.216507911682129,-6.216326236724854,-6.216338157653809,-6.216432094573975,-6.216610908508301,-6.216763973236084,-6.216997146606445,-6.217273235321045,-6.217311859130859,-6.217610836029053,-6.217929840087891,-6.21808910369873,-6.218276023864746,-6.218564987182617,-6.218795776367188,-6.219328880310059,-6.220005035400391,-6.220298767089844,-6.220635890960693,-6.22101879119873,-6.221343994140625,-6.221347808837891,-6.221537113189697,-6.221613883972168,-6.221612930297852,-6.221578121185303,-6.221433162689209,-6.221398830413818,-6.221392154693604,-6.22138500213623,-6.221381187438965,-6.221380233764648,-6.221384048461914,-6.221436023712158,-6.221528053283691,-6.221714973449707,-6.221920967102051,-6.222021102905273,-6.222099781036377,-6.222195148468018,-6.222283840179443,-6.222336769104004,-6.222301959991455,-6.222165107727051,-6.222105026245117,-6.222068786621094,-6.222073078155518,-6.222231864929199,-6.222411155700684,-6.222434043884277,-6.222546100616455,-6.222549915313721,-6.222518920898438,-6.222415924072266,-6.222325801849365,-6.222296237945557,-6.222268104553223,-6.222250938415527,-6.222248077392578,-6.222228050231934,-6.222221851348877,-6.2221999168396,-6.222196102142334,-6.222183227539062,-6.222136974334717,-6.222030162811279,-6.222030162811279,-6.222030162811279,-6.222029209136963,-6.222042083740234,-6.222042083740234,-6.222015857696533,-6.221907138824463,-6.221821784973145,-6.221784114837646,-6.221774101257324,-6.221763134002686,-6.221743106842041,-6.221660137176514,-6.221582889556885,-6.221320152282715,-6.221298217773438,-6.221170902252197,-6.221169948577881,-6.221232891082764,-6.221549987792969,-6.22169017791748,-6.221784114837646,-6.221753120422363,-6.221724987030029,-6.22157096862793,-6.22150182723999,-6.221464157104492,-6.22121000289917,-6.221146106719971,-6.22109317779541,-6.221068859100342,-6.221054077148438,-6.221030235290527,-6.220998764038086,-6.220986843109131,-6.220964908599854,-6.22093677520752,-6.22099781036377,-6.221021175384521,-6.221043109893799,-6.221076965332031,-6.221094131469727,-6.221107006072998,-6.221108913421631,-6.221116065979004,-6.221129894256592,-6.221158027648926,-6.221187114715576,-6.221254825592041,-6.221263885498047,-6.221306800842285,-6.221273899078369,-6.221097946166992,-6.220788955688477,-6.220619201660156,-6.2205491065979,-6.220552921295166,-6.220481872558594,-6.220437049865723,-6.22040319442749,-6.220310211181641,-6.220152854919434,-6.220118999481201,-6.219978809356689,-6.21986722946167,-6.219840049743652,-6.219837188720703,-6.219878196716309,-6.219857215881348,-6.219728946685791,-6.219690799713135,-6.219601154327393,-6.219454765319824,-6.219257831573486,-6.219123840332031],"lat":[53.34156036376953,53.341552734375,53.3415412902832,53.34151458740234,53.34148025512695,53.34145736694336,53.34145355224609,53.34145736694336,53.34145736694336,53.34145736694336,53.34145736694336,53.34145355224609,53.34132766723633,53.34124755859375,53.34118270874023,53.34111785888672,53.34103393554688,53.34101104736328,53.34099578857422,53.34099578857422,53.34098052978516,53.34097290039062,53.34093475341797,53.34076309204102,53.34019470214844,53.34003829956055,53.33984375,53.33970260620117,53.33946990966797,53.33939743041992,53.33935546875,53.339111328125,53.3389778137207,53.33865737915039,53.3387336730957,53.33878326416016,53.33879470825195,53.33880233764648,53.33880996704102,53.3388557434082,53.33889007568359,53.33890151977539,53.33891677856445,53.33892822265625,53.3389778137207,53.33905029296875,53.33913803100586,53.33928680419922,53.33938217163086,53.33933258056641,53.33916854858398,53.33913421630859,53.33912658691406,53.33912658691406,53.3391227722168,53.33911895751953,53.33910369873047,53.33910369873047,53.33910751342773,53.33913040161133,53.33915328979492,53.33917236328125,53.3392219543457,53.33929824829102,53.33910751342773,53.33885192871094,53.33872604370117,53.33871841430664,53.33852767944336,53.33842086791992,53.33839416503906,53.33821105957031,53.33805847167969,53.33794021606445,53.33781814575195,53.33769989013672,53.33755493164062,53.33743286132812,53.33730316162109,53.3371467590332,53.33699035644531,53.33685684204102,53.3364372253418,53.33630752563477,53.33597183227539,53.33576202392578,53.33560562133789,53.33538436889648,53.33518600463867,53.33515548706055,53.33505249023438,53.33473205566406,53.33454132080078,53.33438873291016,53.33429718017578,53.33417510986328,53.33411026000977,53.33391571044922,53.33354568481445,53.33351135253906,53.3333625793457,53.33314514160156,53.33306884765625,53.33302688598633,53.33299255371094,53.33279800415039,53.33236312866211,53.33223724365234,53.33208847045898,53.33180236816406,53.33151626586914,53.33125686645508,53.33091735839844,53.33080291748047,53.33056259155273,53.33044815063477,53.33041000366211,53.33036041259766,53.33027648925781,53.33023834228516,53.33019256591797,53.32983779907227,53.32978820800781,53.32976913452148,53.32973098754883,53.32970428466797,53.32965469360352,53.32964706420898,53.32959365844727,53.32950973510742,53.3293342590332,53.32921981811523,53.32917785644531,53.32907104492188,53.32893753051758,53.32867431640625,53.32853317260742,53.32850646972656,53.32818984985352,53.32807159423828,53.32804870605469,53.32802200317383,53.32766342163086,53.32763671875,53.32711410522461,53.32693481445312,53.3265495300293,53.32649230957031,53.3264045715332,53.32627105712891,53.32621383666992,53.326171875,53.32570266723633,53.32554244995117,53.3251953125,53.32512664794922,53.32463073730469,53.32443618774414,53.32411575317383,53.32385635375977,53.32310104370117,53.322998046875,53.32293701171875,53.32256317138672,53.32251739501953,53.32236099243164,53.32221984863281,53.32167816162109,53.32122039794922,53.32116317749023,53.32114410400391,53.32103729248047,53.32089233398438,53.32080459594727,53.32051467895508,53.32045745849609,53.32028961181641,53.32026290893555,53.32012557983398,53.32004165649414,53.31987762451172,53.31976699829102,53.31950759887695,53.3194580078125,53.31936645507812,53.31920623779297,53.31904602050781,53.31869125366211,53.31859970092773,53.3185920715332,53.31848907470703,53.31842422485352,53.31813049316406,53.31777191162109,53.31772613525391,53.31764221191406,53.31751251220703,53.31698608398438,53.31685638427734,53.31682586669922,53.31661224365234,53.31643295288086,53.31640243530273,53.31631851196289,53.31616973876953,53.31603622436523,53.31543731689453,53.31500625610352,53.31483459472656,53.31456756591797,53.31450271606445,53.31421279907227,53.31391525268555,53.31371688842773,53.31368255615234,53.31326675415039,53.31302642822266,53.31294250488281,53.31277847290039,53.31264495849609,53.31249618530273,53.31240844726562,53.31235885620117,53.31227111816406,53.31198883056641,53.3119010925293,53.31179428100586,53.31148910522461,53.311279296875,53.31098937988281,53.31084823608398,53.31072616577148,53.3104133605957,53.31026077270508,53.31010437011719,53.30998992919922,53.30991363525391,53.30984497070312,53.30975723266602,53.3096923828125,53.30953216552734,53.30949020385742,53.30939102172852,53.30926132202148,53.30912780761719,53.30900192260742,53.30890274047852,53.30883026123047,53.30872344970703,53.30776596069336,53.30738067626953,53.30707931518555,53.30702209472656,53.30696868896484,53.30687713623047,53.30678558349609,53.30671310424805,53.30663299560547,53.30645751953125,53.30633163452148,53.30624389648438,53.30617523193359,53.30607604980469,53.3060188293457,53.30598449707031,53.30593872070312,53.30570220947266,53.3056526184082,53.30540466308594,53.30529022216797,53.3051872253418,53.30514526367188,53.30514144897461,53.30511093139648,53.30509948730469,53.30509185791016,53.3050537109375,53.30497741699219,53.30492782592773,53.30474090576172,53.30468368530273,53.30445098876953,53.30428314208984,53.30418014526367,53.30409622192383,53.30376434326172,53.3037223815918,53.30363464355469,53.30358505249023,53.30352401733398,53.30347061157227,53.30339050292969,53.30327606201172,53.30307006835938,53.30267333984375,53.30241775512695,53.30146026611328,53.30111312866211,53.30101013183594,53.29970550537109,53.29947280883789,53.29938125610352,53.29931640625,53.29927062988281,53.29912567138672,53.29903411865234,53.29894256591797,53.29884338378906,53.29865646362305,53.2985725402832,53.29814910888672,53.29808044433594,53.29754257202148,53.29745864868164,53.2973518371582,53.29718780517578,53.29703903198242,53.29684829711914,53.2967643737793,53.2965202331543,53.29642486572266,53.29633712768555,53.29623413085938,53.29594421386719,53.29563140869141,53.29553985595703,53.29520034790039,53.29515075683594,53.29509353637695,53.29504776000977,53.29501342773438,53.29492950439453,53.29453277587891,53.29443359375,53.29435348510742,53.29425811767578,53.29421615600586,53.29419326782227,53.29417037963867,53.29416275024414,53.29408264160156,53.29394149780273,53.29388809204102,53.29375457763672,53.2937126159668,53.29367065429688,53.29366683959961,53.29349899291992,53.29333114624023,53.29327774047852,53.29319000244141,53.29311752319336,53.29307174682617,53.29287338256836,53.29273986816406,53.29270553588867,53.29246520996094,53.2923583984375,53.29230880737305,53.29226684570312,53.2922248840332,53.29214859008789,53.2921142578125,53.29207611083984,53.29203796386719,53.29199981689453,53.29196166992188,53.29190063476562,53.29182434082031,53.2917366027832,53.29168701171875,53.29161071777344,53.29145050048828,53.29134368896484,53.29123687744141,53.2911376953125,53.29101943969727,53.29090118408203,53.29075622558594,53.29069519042969,53.29044723510742,53.29043579101562,53.29036712646484,53.29032516479492,53.29008483886719,53.28995132446289,53.28982925415039,53.28971481323242,53.28959655761719,53.28948593139648,53.28942108154297,53.28931427001953,53.2891731262207,53.28910446166992,53.28904342651367,53.28901290893555,53.28890609741211,53.2886848449707,53.28855895996094,53.2884635925293,53.28837203979492,53.28827667236328,53.28823089599609,53.28811264038086,53.28808975219727,53.28803253173828,53.28787612915039,53.2878303527832,53.28765487670898,53.28754806518555,53.28726577758789,53.28701782226562,53.28682708740234,53.28676986694336,53.28670883178711,53.28649139404297,53.28636169433594,53.28619003295898,53.28609466552734,53.28580474853516,53.28567504882812,53.28559112548828,53.28549957275391,53.28532028198242,53.28529739379883,53.28508377075195,53.28493118286133,53.2846794128418,53.28463363647461,53.28450393676758,53.2844123840332,53.28423309326172,53.2840576171875,53.2839241027832,53.28386688232422,53.28376388549805,53.2836799621582,53.28351211547852,53.28328323364258,53.28315353393555,53.28302764892578,53.28261184692383,53.28202438354492,53.28185272216797,53.28125,53.28104782104492,53.28102111816406,53.28079605102539,53.28049468994141,53.2802619934082,53.28007888793945,53.27946853637695,53.2794075012207,53.27925109863281,53.27880096435547,53.27846145629883,53.27821350097656,53.27802658081055,53.27786254882812,53.27763748168945,53.27751922607422,53.27712249755859,53.27696228027344,53.27669143676758,53.27633666992188,53.27614974975586,53.27602005004883,53.27600860595703,53.27577590942383,53.27561569213867,53.27547454833984,53.27526092529297,53.27497482299805,53.27459335327148,53.27447509765625,53.27416610717773,53.27412033081055,53.27389526367188,53.27313995361328,53.2730827331543,53.27279281616211,53.27268981933594,53.27240371704102,53.27229309082031,53.27216720581055,53.27192687988281,53.27166748046875,53.27144241333008,53.27128982543945,53.27117538452148,53.27106857299805,53.27065277099609,53.27053070068359,53.2703742980957,53.26993179321289,53.26953125,53.26911926269531,53.26907730102539,53.26899337768555,53.26874923706055,53.26859664916992,53.26843643188477,53.26824951171875,53.26787567138672,53.26768112182617,53.26705551147461,53.266845703125,53.26624298095703,53.26582336425781,53.26565933227539,53.2652587890625,53.26507186889648,53.26475143432617,53.26470947265625,53.26436996459961,53.26433563232422,53.26416015625,53.26411056518555,53.26409912109375,53.26405334472656,53.26381301879883,53.26365661621094,53.26353073120117,53.26333618164062,53.26288223266602,53.26255798339844,53.26211929321289,53.26160049438477,53.26137542724609,53.26118469238281,53.2609748840332,53.26092529296875,53.26083374023438,53.2606201171875,53.26057815551758,53.26054000854492,53.2603759765625,53.26026916503906,53.26019287109375,53.26017379760742,53.26013565063477,53.26005554199219,53.25952911376953,53.25878143310547,53.25801467895508,53.2576789855957,53.25733184814453,53.25735855102539,53.25736618041992,53.25735473632812,53.25732803344727,53.25728607177734,53.25724029541016,53.25719451904297,53.25716018676758,53.2569465637207,53.25670623779297,53.25666809082031,53.25659561157227,53.25653076171875,53.25644302368164,53.25633239746094,53.25608825683594,53.25554656982422,53.25515365600586,53.25473403930664,53.25468444824219,53.25445556640625,53.25403213500977,53.2536735534668,53.25352478027344,53.25344467163086,53.25338363647461,53.25325775146484,53.25315475463867,53.25288391113281,53.25270843505859,53.25259017944336,53.25244522094727,53.25227355957031,53.25213241577148,53.25201034545898,53.25183486938477,53.25168991088867,53.25154876708984,53.25127029418945,53.25113296508789,53.25065231323242,53.25041198730469,53.25013732910156,53.2495231628418,53.24898147583008,53.24856185913086,53.24816513061523,53.24784469604492,53.24754333496094,53.24710083007812,53.24683380126953,53.24664306640625,53.24645614624023,53.2463264465332,53.24612045288086,53.24592208862305,53.24589157104492,53.24573135375977,53.24554824829102,53.24544143676758,53.24531555175781,53.24517059326172,53.24510955810547,53.24504470825195,53.24495697021484,53.24493408203125,53.24492645263672,53.24492645263672,53.24486923217773,53.24486923217773,53.24480438232422,53.24468231201172,53.24458694458008,53.2444953918457,53.24423599243164,53.24407958984375,53.24395751953125,53.2437858581543,53.24364471435547,53.24362182617188,53.24338531494141,53.24328231811523,53.24319076538086,53.24306488037109,53.24298858642578,53.24292373657227,53.24287033081055,53.24277496337891,53.24266052246094,53.24243545532227,53.24204254150391,53.24158096313477,53.24137878417969,53.24116897583008,53.24098587036133,53.24053955078125,53.23991775512695,53.23981857299805,53.23956680297852,53.23947525024414,53.2393684387207,53.23918151855469,53.23897933959961,53.23889541625977,53.23873901367188,53.23860931396484,53.23858261108398,53.23842620849609,53.23838424682617,53.23821640014648,53.23819351196289,53.23811340332031,53.23798751831055,53.23760223388672,53.237548828125,53.23751449584961,53.23744964599609,53.23726654052734,53.23704147338867,53.23690414428711,53.23663711547852,53.23637390136719,53.23617935180664,53.23593139648438,53.23585510253906,53.23559188842773,53.23537445068359,53.23525238037109,53.23477172851562,53.23471450805664,53.23417282104492,53.23397827148438,53.23374557495117,53.23340225219727,53.23325729370117,53.2330436706543,53.23287200927734,53.23271942138672,53.23245620727539,53.23234939575195,53.23230361938477,53.23196792602539,53.2318000793457,53.23165512084961,53.23157501220703,53.23145294189453,53.23127365112305,53.2310791015625,53.23089599609375,53.230712890625,53.2304801940918,53.23017120361328,53.23003768920898,53.22994232177734,53.22977828979492,53.22968673706055,53.22956085205078,53.22953033447266,53.22941589355469,53.22919082641602,53.22900772094727,53.22886657714844,53.22856140136719,53.22847747802734,53.22807312011719,53.22791290283203,53.22741317749023,53.22672271728516,53.22636032104492,53.22610092163086,53.22592163085938,53.22544860839844,53.22506332397461,53.22461318969727,53.22429275512695,53.22374725341797,53.22368240356445,53.22331619262695,53.22296524047852,53.22283935546875,53.22263717651367,53.222412109375,53.22226715087891,53.22187423706055,53.22177124023438,53.22149276733398,53.22151184082031,53.22156524658203,53.22159576416016]}]],[[{"lng":[-6.219123840332031,-6.219257831573486,-6.219454765319824,-6.219601154327393,-6.219690799713135,-6.219728946685791,-6.219857215881348,-6.219878196716309,-6.219837188720703,-6.219840049743652,-6.21986722946167,-6.219978809356689,-6.220118999481201,-6.220152854919434,-6.220310211181641,-6.22040319442749,-6.220437049865723,-6.220481872558594,-6.220552921295166,-6.2205491065979,-6.220619201660156,-6.220788955688477,-6.221097946166992,-6.221273899078369,-6.221306800842285,-6.221263885498047,-6.221254825592041,-6.221187114715576,-6.221158027648926,-6.221129894256592,-6.221116065979004,-6.221108913421631,-6.221107006072998,-6.221094131469727,-6.221076965332031,-6.221043109893799,-6.221021175384521,-6.22099781036377,-6.22093677520752,-6.220964908599854,-6.220986843109131,-6.220998764038086,-6.221030235290527,-6.221054077148438,-6.221068859100342,-6.22109317779541,-6.221146106719971,-6.22121000289917,-6.221464157104492,-6.22150182723999,-6.22157096862793,-6.221724987030029,-6.221753120422363,-6.221784114837646,-6.22169017791748,-6.221549987792969,-6.221232891082764,-6.221169948577881,-6.221170902252197,-6.221298217773438,-6.221320152282715,-6.221582889556885,-6.221660137176514,-6.221743106842041,-6.221763134002686,-6.221774101257324,-6.221784114837646,-6.221821784973145,-6.221907138824463,-6.222015857696533,-6.222042083740234,-6.222042083740234,-6.222029209136963,-6.222030162811279,-6.222030162811279,-6.222030162811279,-6.222136974334717,-6.222183227539062,-6.222196102142334,-6.2221999168396,-6.222221851348877,-6.222228050231934,-6.222248077392578,-6.222250938415527,-6.222268104553223,-6.222296237945557,-6.222325801849365,-6.222415924072266,-6.222518920898438,-6.222549915313721,-6.222546100616455,-6.222434043884277,-6.222411155700684,-6.222231864929199,-6.222073078155518,-6.222068786621094,-6.222105026245117,-6.222165107727051,-6.222301959991455,-6.222336769104004,-6.222283840179443,-6.222195148468018,-6.222099781036377,-6.222021102905273,-6.221920967102051,-6.221714973449707,-6.221528053283691,-6.221436023712158,-6.221384048461914,-6.221380233764648,-6.221381187438965,-6.22138500213623,-6.221392154693604,-6.221398830413818,-6.221433162689209,-6.221578121185303,-6.221612930297852,-6.221613883972168,-6.221537113189697,-6.221347808837891,-6.221343994140625,-6.22101879119873,-6.220635890960693,-6.220298767089844,-6.220005035400391,-6.219328880310059,-6.218795776367188,-6.218564987182617,-6.218276023864746,-6.21808910369873,-6.217929840087891,-6.217610836029053,-6.217311859130859,-6.217273235321045,-6.216997146606445,-6.216763973236084,-6.216610908508301,-6.216432094573975,-6.216338157653809,-6.216326236724854,-6.216507911682129,-6.216701984405518,-6.216960906982422,-6.217357158660889,-6.217716217041016,-6.218064785003662,-6.218368053436279,-6.218492031097412,-6.218602180480957,-6.218782901763916,-6.218860149383545,-6.219058990478516,-6.219150066375732,-6.219178199768066,-6.21916389465332,-6.219161033630371,-6.219192028045654,-6.219295024871826,-6.219377040863037,-6.21938419342041,-6.219335079193115,-6.21923303604126,-6.21923303604126,-6.219247817993164,-6.219273090362549,-6.219305038452148,-6.21937084197998,-6.219663143157959,-6.220012187957764,-6.220146179199219,-6.220169067382812,-6.220365047454834,-6.220492839813232,-6.220643997192383,-6.220722198486328,-6.220767974853516,-6.220808982849121,-6.220808982849121,-6.220814228057861,-6.220846176147461,-6.221010208129883,-6.221121788024902,-6.221193790435791,-6.221271991729736,-6.221342086791992,-6.221394062042236,-6.221418857574463,-6.221409797668457,-6.221368789672852,-6.221902847290039,-6.222289085388184,-6.223079204559326,-6.223927974700928,-6.224830150604248,-6.225035190582275,-6.225114822387695,-6.225158214569092,-6.225320816040039,-6.225543975830078,-6.225876808166504,-6.225954055786133,-6.226034164428711,-6.226410865783691,-6.226538181304932,-6.226607799530029,-6.226818084716797,-6.226960182189941,-6.227078914642334,-6.22720193862915,-6.227342128753662,-6.227542877197266,-6.228052139282227,-6.22825288772583,-6.228385925292969,-6.228579044342041,-6.228882789611816,-6.228940010070801,-6.228950023651123,-6.228983879089355,-6.22904109954834,-6.229054927825928,-6.229134082794189,-6.229146003723145,-6.229196071624756,-6.22922420501709,-6.229227066040039,-6.229241847991943,-6.229225158691406,-6.229176998138428,-6.229178905487061,-6.229184150695801,-6.229199886322021,-6.229238033294678,-6.229248046875,-6.229245185852051,-6.22922420501709,-6.229147911071777,-6.229132175445557,-6.229125022888184,-6.22898006439209,-6.228835105895996,-6.228694915771484,-6.228647232055664,-6.228618144989014,-6.22853422164917,-6.228514194488525,-6.228490829467773,-6.228489875793457,-6.228466033935547,-6.228458881378174,-6.228484153747559,-6.228501796722412,-6.228524208068848,-6.228598117828369,-6.228629112243652,-6.228715896606445,-6.228737831115723,-6.229075908660889,-6.229146003723145,-6.229158878326416,-6.22921895980835,-6.22924280166626,-6.229324817657471,-6.229386806488037,-6.229434013366699,-6.229456901550293,-6.229482173919678,-6.229514122009277,-6.229515075683594,-6.229554176330566,-6.229641914367676,-6.229876041412354,-6.230101108551025,-6.230288982391357,-6.230796813964844,-6.230937957763672,-6.231132984161377,-6.231238842010498,-6.231329917907715,-6.231400012969971,-6.231550216674805,-6.231722831726074,-6.231783866882324,-6.231807231903076,-6.232000827789307,-6.232075214385986,-6.232170104980469,-6.232315063476562,-6.23251485824585,-6.2325439453125,-6.232758045196533,-6.233374118804932,-6.233500003814697,-6.233789920806885,-6.234036922454834,-6.234124183654785,-6.234235763549805,-6.234485149383545,-6.234803199768066,-6.235119819641113,-6.235672950744629,-6.235945224761963,-6.236385822296143,-6.236763000488281,-6.23698616027832,-6.237077236175537,-6.237226963043213,-6.237283229827881,-6.237596035003662,-6.23779821395874,-6.237977981567383,-6.238000869750977,-6.238150119781494,-6.238228797912598,-6.238303184509277,-6.238420963287354,-6.238683223724365,-6.238763809204102,-6.238924980163574,-6.239045143127441,-6.239278793334961,-6.239355087280273,-6.239428997039795,-6.239709854125977,-6.240152835845947,-6.240540981292725,-6.24069881439209,-6.241038799285889,-6.241144180297852,-6.241459846496582,-6.24157190322876,-6.241621971130371,-6.241936206817627,-6.242125034332275,-6.242432117462158,-6.242613792419434,-6.242767810821533,-6.242946147918701,-6.243202209472656,-6.243299961090088,-6.243328094482422,-6.243377208709717,-6.24343204498291,-6.243538856506348,-6.243624210357666,-6.243690013885498,-6.24379301071167,-6.243933200836182,-6.244102001190186,-6.244297027587891,-6.244510173797607,-6.244797229766846,-6.244851112365723,-6.244927883148193,-6.244941234588623,-6.245190143585205,-6.245238780975342,-6.24537992477417,-6.24547815322876,-6.245555877685547,-6.245602130889893,-6.245631217956543,-6.245645999908447,-6.245667934417725,-6.245674133300781,-6.245677947998047,-6.245687007904053,-6.245697975158691,-6.245710849761963,-6.245727062225342,-6.245748043060303,-6.245785236358643,-6.24583911895752,-6.245913982391357,-6.246178150177002,-6.246321201324463,-6.246439933776855,-6.246603965759277,-6.246530055999756,-6.246366024017334,-6.246345043182373,-6.246358871459961,-6.246376037597656,-6.246399879455566,-6.246401786804199,-6.246401786804199,-6.24642276763916,-6.246462821960449,-6.246519088745117,-6.247029781341553,-6.247722148895264,-6.247757911682129,-6.248003005981445,-6.248223781585693,-6.248961925506592,-6.249255180358887,-6.250032901763916,-6.25047779083252,-6.250528812408447,-6.25065803527832,-6.250785827636719,-6.251014232635498,-6.251546859741211,-6.251969814300537,-6.252502918243408,-6.25468111038208,-6.254971027374268,-6.254928112030029,-6.254879951477051,-6.254834175109863,-6.254597187042236,-6.254536151885986,-6.254350185394287,-6.254189968109131,-6.254159927368164,-6.254158973693848,-6.254193782806396,-6.254364013671875,-6.254396915435791,-6.25444221496582,-6.254476070404053,-6.25449800491333,-6.254471778869629,-6.25443696975708,-6.254140853881836,-6.254106044769287,-6.253881931304932,-6.253838062286377,-6.253736019134521,-6.253668785095215,-6.253593921661377,-6.25351095199585,-6.253344058990479,-6.253458976745605,-6.253559112548828,-6.253650188446045,-6.253820896148682,-6.25477409362793,-6.254848957061768,-6.255102157592773,-6.255695819854736,-6.255918979644775,-6.25629186630249,-6.256493091583252,-6.256639003753662,-6.256801128387451,-6.256931781768799,-6.257105827331543,-6.257311820983887,-6.257783889770508,-6.257999897003174,-6.259688854217529,-6.260127067565918,-6.260626792907715,-6.26127815246582,-6.262104988098145,-6.262331962585449,-6.263035774230957,-6.263288974761963,-6.263453006744385,-6.263731002807617,-6.26413106918335,-6.264749050140381,-6.265063762664795,-6.265244960784912,-6.265431880950928,-6.265594959259033,-6.265904903411865,-6.266160011291504,-6.266548156738281,-6.266631126403809,-6.266990184783936,-6.267069816589355,-6.267131805419922,-6.267221927642822,-6.26739501953125,-6.2675461769104,-6.267787933349609,-6.268197059631348,-6.268852233886719,-6.269107818603516,-6.269306182861328,-6.269529819488525,-6.269696235656738,-6.269775867462158,-6.269844055175781,-6.270113945007324,-6.270430088043213,-6.271172046661377,-6.271265983581543,-6.271374225616455,-6.271565914154053,-6.271880149841309,-6.272221088409424,-6.27255392074585,-6.272807121276855,-6.272913932800293,-6.273252964019775,-6.273367881774902,-6.273468971252441,-6.273525238037109,-6.273573875427246,-6.273615837097168,-6.273653030395508,-6.273690223693848,-6.273777008056641,-6.273822784423828,-6.273902893066406,-6.274139881134033,-6.274299144744873,-6.274550914764404,-6.274602890014648,-6.274623870849609,-6.274835109710693,-6.274880886077881,-6.274899005889893,-6.27492094039917,-6.274956226348877,-6.274990081787109,-6.275039196014404,-6.275070190429688,-6.27519702911377,-6.275437831878662,-6.275458812713623,-6.275566101074219,-6.275714874267578,-6.275874137878418,-6.275909900665283,-6.276051998138428,-6.276145935058594,-6.276362895965576,-6.276648044586182,-6.276707172393799,-6.276768207550049,-6.27681303024292,-6.276830196380615,-6.27692699432373,-6.277040004730225,-6.277056217193604,-6.277181148529053,-6.277666091918945,-6.277788162231445,-6.277882099151611,-6.277934074401855,-6.278447151184082,-6.278885841369629,-6.278989791870117,-6.279157161712646,-6.279266834259033,-6.279788970947266,-6.279929161071777,-6.280531883239746,-6.280826091766357,-6.281147956848145,-6.281189918518066,-6.281515121459961,-6.282084941864014,-6.282147884368896,-6.28248119354248,-6.282833099365234,-6.28296422958374,-6.283981800079346,-6.284451961517334,-6.284709930419922,-6.284748077392578,-6.285277843475342,-6.285453796386719,-6.285630226135254,-6.286029815673828,-6.286431789398193,-6.286587238311768,-6.286826133728027,-6.287107944488525,-6.287280082702637,-6.288131237030029,-6.288405895233154,-6.288649082183838,-6.288888931274414,-6.289432048797607,-6.289681911468506,-6.289842128753662,-6.289953231811523,-6.290550231933594,-6.290740013122559,-6.290902137756348,-6.291088104248047,-6.291128158569336,-6.291348934173584,-6.291429042816162,-6.2915358543396,-6.291580200195312,-6.291654109954834,-6.291670799255371,-6.29186487197876,-6.292213916778564,-6.292850971221924,-6.292901992797852,-6.293320178985596,-6.293344974517822,-6.293623924255371,-6.293818950653076,-6.29432201385498,-6.29445219039917,-6.29453706741333,-6.294744968414307,-6.294909954071045,-6.294944763183594,-6.295107841491699,-6.2953782081604,-6.295660972595215,-6.295896053314209,-6.296073913574219,-6.29609203338623,-6.296218872070312,-6.296295166015625,-6.296390056610107,-6.296767234802246,-6.297473907470703,-6.29773998260498,-6.29780101776123,-6.297908782958984,-6.298051834106445,-6.29813289642334,-6.298183917999268,-6.298261165618896,-6.298287868499756,-6.298211097717285,-6.298160076141357,-6.298161029815674,-6.29817008972168,-6.298192024230957,-6.298210144042969,-6.298208236694336,-6.298190116882324,-6.297484874725342,-6.297129154205322,-6.297104835510254,-6.296547889709473,-6.296245098114014,-6.295944213867188,-6.295415878295898,-6.29475212097168,-6.29437780380249,-6.294148921966553,-6.293904781341553,-6.293859004974365,-6.293770790100098,-6.293629169464111,-6.293529987335205,-6.293437957763672,-6.293191909790039,-6.293001174926758,-6.292753219604492,-6.292201042175293,-6.291920185089111,-6.291400909423828,-6.290975093841553,-6.290934085845947,-6.290719032287598,-6.290579795837402,-6.290380001068115,-6.290178775787354,-6.290058135986328,-6.2900071144104,-6.289927959442139,-6.289919853210449,-6.289667129516602,-6.289560794830322,-6.289466857910156,-6.289303779602051,-6.289052963256836,-6.289010047912598,-6.288832187652588,-6.288564205169678,-6.287788867950439,-6.287251949310303,-6.286462783813477,-6.286608219146729,-6.287137031555176,-6.287177085876465,-6.287192821502686,-6.287203788757324,-6.287200927734375,-6.287146091461182,-6.287121772766113,-6.287076950073242,-6.287045955657959,-6.286882877349854,-6.286800861358643,-6.286765098571777,-6.286725044250488,-6.286685943603516,-6.286728858947754,-6.287651062011719,-6.287605762481689,-6.287611961364746,-6.287604808807373,-6.287600994110107,-6.287576198577881,-6.286812782287598],"lat":[53.22159576416016,53.22156524658203,53.22151184082031,53.22149276733398,53.22177124023438,53.22187423706055,53.22226715087891,53.222412109375,53.22263717651367,53.22283935546875,53.22296524047852,53.22331619262695,53.22368240356445,53.22374725341797,53.22429275512695,53.22461318969727,53.22506332397461,53.22544860839844,53.22592163085938,53.22610092163086,53.22636032104492,53.22672271728516,53.22741317749023,53.22791290283203,53.22807312011719,53.22847747802734,53.22856140136719,53.22886657714844,53.22900772094727,53.22919082641602,53.22941589355469,53.22953033447266,53.22956085205078,53.22968673706055,53.22977828979492,53.22994232177734,53.23003768920898,53.23017120361328,53.2304801940918,53.230712890625,53.23089599609375,53.2310791015625,53.23127365112305,53.23145294189453,53.23157501220703,53.23165512084961,53.2318000793457,53.23196792602539,53.23230361938477,53.23234939575195,53.23245620727539,53.23271942138672,53.23287200927734,53.2330436706543,53.23325729370117,53.23340225219727,53.23374557495117,53.23397827148438,53.23417282104492,53.23471450805664,53.23477172851562,53.23525238037109,53.23537445068359,53.23559188842773,53.23585510253906,53.23593139648438,53.23617935180664,53.23637390136719,53.23663711547852,53.23690414428711,53.23704147338867,53.23726654052734,53.23744964599609,53.23751449584961,53.237548828125,53.23760223388672,53.23798751831055,53.23811340332031,53.23819351196289,53.23821640014648,53.23838424682617,53.23842620849609,53.23858261108398,53.23860931396484,53.23873901367188,53.23889541625977,53.23897933959961,53.23918151855469,53.2393684387207,53.23947525024414,53.23956680297852,53.23981857299805,53.23991775512695,53.24053955078125,53.24098587036133,53.24116897583008,53.24137878417969,53.24158096313477,53.24204254150391,53.24243545532227,53.24266052246094,53.24277496337891,53.24287033081055,53.24292373657227,53.24298858642578,53.24306488037109,53.24319076538086,53.24328231811523,53.24338531494141,53.24362182617188,53.24364471435547,53.2437858581543,53.24395751953125,53.24407958984375,53.24423599243164,53.2444953918457,53.24458694458008,53.24468231201172,53.24480438232422,53.24486923217773,53.24486923217773,53.24492645263672,53.24492645263672,53.24493408203125,53.24495697021484,53.24504470825195,53.24510955810547,53.24517059326172,53.24531555175781,53.24544143676758,53.24554824829102,53.24573135375977,53.24589157104492,53.24592208862305,53.24612045288086,53.2463264465332,53.24645614624023,53.24664306640625,53.24683380126953,53.24710083007812,53.24754333496094,53.24784469604492,53.24816513061523,53.24856185913086,53.24898147583008,53.2495231628418,53.25013732910156,53.25041198730469,53.25065231323242,53.25113296508789,53.25127029418945,53.25154876708984,53.25168991088867,53.25183486938477,53.25201034545898,53.25213241577148,53.25227355957031,53.25244522094727,53.25259017944336,53.25270843505859,53.25288391113281,53.25315475463867,53.25325775146484,53.25338363647461,53.25344467163086,53.25352478027344,53.2536735534668,53.25403213500977,53.25445556640625,53.25468444824219,53.25473403930664,53.25515365600586,53.25554656982422,53.25608825683594,53.25633239746094,53.25644302368164,53.25654602050781,53.25661087036133,53.25666809082031,53.25670623779297,53.2569465637207,53.25716018676758,53.25714111328125,53.25714111328125,53.25716018676758,53.25719833374023,53.25724029541016,53.25728988647461,53.25733184814453,53.2576789855957,53.25801467895508,53.25878143310547,53.25952911376953,53.26005554199219,53.26013565063477,53.26017379760742,53.26019287109375,53.26026916503906,53.2603759765625,53.26054000854492,53.26057815551758,53.2606201171875,53.26083374023438,53.26092529296875,53.2609748840332,53.26118469238281,53.26137542724609,53.26160049438477,53.26211929321289,53.26255798339844,53.26288223266602,53.26333618164062,53.26353073120117,53.26365661621094,53.26381301879883,53.26405334472656,53.26409912109375,53.26411056518555,53.26416015625,53.26433563232422,53.26436996459961,53.26470947265625,53.26475143432617,53.26507186889648,53.2652587890625,53.26565933227539,53.26582336425781,53.26624298095703,53.266845703125,53.26705551147461,53.26768112182617,53.26787567138672,53.26824951171875,53.26843643188477,53.26859664916992,53.26874923706055,53.26899337768555,53.26907730102539,53.26911926269531,53.26953125,53.26993179321289,53.2703742980957,53.27053070068359,53.27065277099609,53.27106857299805,53.27117538452148,53.27128982543945,53.27144241333008,53.27166748046875,53.27192687988281,53.27216720581055,53.27229309082031,53.27240371704102,53.27268981933594,53.27279281616211,53.2730827331543,53.27313995361328,53.27389526367188,53.27412033081055,53.27416610717773,53.27447509765625,53.27459335327148,53.27497482299805,53.27526092529297,53.27547454833984,53.27561569213867,53.27577590942383,53.27600860595703,53.27602005004883,53.27614974975586,53.27633666992188,53.27669143676758,53.27696228027344,53.27712249755859,53.27751922607422,53.27763748168945,53.27786254882812,53.27802658081055,53.27821350097656,53.27846145629883,53.27880096435547,53.27925109863281,53.2794075012207,53.27946853637695,53.28007888793945,53.2802619934082,53.28049468994141,53.28079605102539,53.28102111816406,53.28104782104492,53.28125,53.28185272216797,53.28202438354492,53.28261184692383,53.28302764892578,53.28315353393555,53.28328323364258,53.28351211547852,53.2836799621582,53.28376388549805,53.28386688232422,53.2839241027832,53.2840576171875,53.28423309326172,53.2844123840332,53.28450393676758,53.28463363647461,53.2846794128418,53.28493118286133,53.28508377075195,53.28529739379883,53.28532028198242,53.28549957275391,53.28559112548828,53.28567504882812,53.28580474853516,53.28609466552734,53.28619003295898,53.28636169433594,53.28649139404297,53.28670883178711,53.28676986694336,53.28682708740234,53.28701782226562,53.28726577758789,53.28754806518555,53.28765487670898,53.2878303527832,53.28787612915039,53.28803253173828,53.28808975219727,53.28811264038086,53.28823089599609,53.28827667236328,53.28837203979492,53.2884635925293,53.28855895996094,53.2886848449707,53.28890609741211,53.28901290893555,53.28904342651367,53.28910446166992,53.2891731262207,53.28931427001953,53.28942108154297,53.28948593139648,53.28959655761719,53.28971481323242,53.28982925415039,53.28995132446289,53.29008483886719,53.29032516479492,53.29036712646484,53.29043579101562,53.29044723510742,53.29069519042969,53.29075622558594,53.29090118408203,53.29101943969727,53.2911376953125,53.29123687744141,53.29134368896484,53.29145050048828,53.29161071777344,53.29168701171875,53.2917366027832,53.29182434082031,53.29190063476562,53.29196166992188,53.29199981689453,53.29203796386719,53.29207611083984,53.2921142578125,53.29214859008789,53.2922248840332,53.29226684570312,53.29230880737305,53.2923583984375,53.29246520996094,53.29270553588867,53.29273986816406,53.2928352355957,53.29296493530273,53.2930793762207,53.29313278198242,53.29317474365234,53.29322814941406,53.29328155517578,53.29333114624023,53.29349899291992,53.29366683959961,53.29367065429688,53.2937126159668,53.29375457763672,53.29388809204102,53.29394149780273,53.29408264160156,53.29416275024414,53.29417037963867,53.29419326782227,53.29421615600586,53.29425811767578,53.29435348510742,53.29443359375,53.29453277587891,53.29492950439453,53.29497909545898,53.2950439453125,53.29513549804688,53.29520034790039,53.29553985595703,53.29563140869141,53.29594421386719,53.29623413085938,53.29633712768555,53.29642486572266,53.2965202331543,53.2967643737793,53.29684829711914,53.29703903198242,53.29718780517578,53.2973518371582,53.29745864868164,53.29754257202148,53.29808044433594,53.29814910888672,53.2985725402832,53.29865646362305,53.29884338378906,53.29894256591797,53.29903411865234,53.29912567138672,53.29927062988281,53.29931640625,53.29938125610352,53.29947280883789,53.29970550537109,53.30101013183594,53.30111312866211,53.30146026611328,53.30241775512695,53.30267333984375,53.30307006835938,53.30327606201172,53.30339050292969,53.30347061157227,53.30352401733398,53.30358505249023,53.30363464355469,53.3037223815918,53.30376434326172,53.30409622192383,53.30418014526367,53.30428314208984,53.30445098876953,53.30468368530273,53.30474090576172,53.30492782592773,53.30497741699219,53.30498123168945,53.30501556396484,53.30503845214844,53.30504608154297,53.3050651550293,53.30509185791016,53.30514526367188,53.3051872253418,53.30529022216797,53.30540466308594,53.3056526184082,53.30570220947266,53.30593872070312,53.30598449707031,53.3060188293457,53.30607604980469,53.30617523193359,53.30624389648438,53.30633163452148,53.30645751953125,53.30663299560547,53.30671310424805,53.30678558349609,53.30687713623047,53.30696868896484,53.30702209472656,53.30707931518555,53.30738067626953,53.30776596069336,53.30872344970703,53.30883026123047,53.30890274047852,53.30900192260742,53.30912780761719,53.30926132202148,53.30939102172852,53.30949020385742,53.30953216552734,53.3096923828125,53.30975723266602,53.30984497070312,53.30991363525391,53.30998992919922,53.31010437011719,53.31026077270508,53.3104133605957,53.31072616577148,53.31084823608398,53.31098937988281,53.311279296875,53.31148910522461,53.31179428100586,53.3119010925293,53.31198883056641,53.31227111816406,53.31235885620117,53.31240844726562,53.31249618530273,53.31264495849609,53.31277847290039,53.31294250488281,53.31302642822266,53.31326675415039,53.31368255615234,53.31371688842773,53.31391525268555,53.31421279907227,53.31450271606445,53.31456756591797,53.31483459472656,53.31500625610352,53.31543731689453,53.31603622436523,53.31616973876953,53.31631851196289,53.31640243530273,53.31643295288086,53.31661224365234,53.31682586669922,53.31685638427734,53.31698608398438,53.31751251220703,53.31764221191406,53.31772613525391,53.31777191162109,53.31813049316406,53.31842422485352,53.31848907470703,53.3185920715332,53.31861877441406,53.31872177124023,53.31874847412109,53.31887435913086,53.31896209716797,53.31912231445312,53.319091796875,53.31887054443359,53.31847381591797,53.31843185424805,53.31819915771484,53.31795883178711,53.31791687011719,53.31771087646484,53.31764984130859,53.317626953125,53.31762313842773,53.31760025024414,53.31760025024414,53.31760025024414,53.31760787963867,53.31763076782227,53.31765365600586,53.31771850585938,53.31781005859375,53.31786727905273,53.31813430786133,53.31823348999023,53.3183479309082,53.31845855712891,53.31877517700195,53.31892776489258,53.31901931762695,53.31908798217773,53.31946182250977,53.31957244873047,53.31967163085938,53.31977844238281,53.31980133056641,53.31992721557617,53.31997680664062,53.32003784179688,53.32006454467773,53.32011032104492,53.32012176513672,53.32024765014648,53.32048416137695,53.32093048095703,53.32097244262695,53.32131195068359,53.32133102416992,53.32156753540039,53.32174682617188,53.32223510742188,53.32236862182617,53.32245635986328,53.32268905639648,53.32289505004883,53.32294464111328,53.32316589355469,53.32358551025391,53.32400512695312,53.3243522644043,53.32466888427734,53.32469940185547,53.32489776611328,53.32501983642578,53.32516860961914,53.32576370239258,53.32682418823242,53.32723236083984,53.32733154296875,53.3275032043457,53.32778930664062,53.32798385620117,53.32812881469727,53.32843017578125,53.32872772216797,53.32902145385742,53.32941818237305,53.32962417602539,53.32974624633789,53.32986068725586,53.32995986938477,53.33004379272461,53.33013153076172,53.33041763305664,53.33055114746094,53.33055877685547,53.3307991027832,53.33091735839844,53.33103561401367,53.33124160766602,53.33150100708008,53.33164978027344,53.33174133300781,53.33183670043945,53.33185577392578,53.33192825317383,53.33201599121094,53.33207702636719,53.33212661743164,53.33229064941406,53.33242034912109,53.33258819580078,53.33296966552734,53.33316040039062,53.33351516723633,53.33380508422852,53.33382797241211,53.33396148681641,53.33404541015625,53.33415985107422,53.33427810668945,53.33438873291016,53.33443450927734,53.33458709716797,53.33460235595703,53.33510208129883,53.3353271484375,53.33546829223633,53.33567047119141,53.33588790893555,53.33591842651367,53.33605194091797,53.33620834350586,53.33661270141602,53.33685302734375,53.33718490600586,53.33729553222656,53.33771514892578,53.33775329589844,53.33777618408203,53.33782577514648,53.337890625,53.33806991577148,53.338134765625,53.33824157714844,53.33832931518555,53.33873748779297,53.33898544311523,53.33909225463867,53.3392333984375,53.33940124511719,53.33940124511719,53.33940505981445,53.34039688110352,53.34076690673828,53.34090042114258,53.34099960327148,53.34157180786133,53.34156036376953]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#7F007F","weight":5,"opacity":0.5,"fill":false,"fillColor":"#7F007F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPolylines","args":[[[[{"lng":[-6.286812782287598,-6.28626823425293,-6.28518009185791,-6.283913135528564,-6.28386402130127,-6.283771991729736,-6.283677101135254,-6.282426834106445,-6.282279968261719,-6.281853199005127,-6.281813144683838,-6.281782150268555,-6.281850814819336,-6.281891822814941,-6.281947135925293,-6.281998157501221,-6.282098770141602,-6.282023906707764,-6.281947135925293,-6.281864166259766,-6.281706809997559,-6.281356811523438,-6.281188011169434,-6.281070232391357,-6.280664920806885,-6.28055477142334,-6.280386924743652,-6.280290126800537,-6.280121803283691,-6.28003978729248,-6.27998685836792,-6.279812812805176,-6.279720783233643,-6.279483795166016,-6.279226779937744,-6.278849124908447,-6.27869987487793,-6.278073787689209,-6.277835845947266,-6.277297019958496,-6.276587009429932,-6.276040077209473,-6.275715827941895,-6.275498867034912,-6.275317192077637,-6.275117874145508,-6.274971008300781,-6.274827003479004,-6.27473783493042,-6.274490833282471,-6.273629188537598,-6.273469924926758,-6.273221015930176,-6.272829055786133,-6.272774219512939,-6.272686958312988,-6.272506237030029,-6.272292137145996,-6.272188186645508,-6.271988868713379,-6.271196842193604,-6.270664215087891,-6.27019214630127,-6.269495010375977,-6.269298076629639,-6.268950939178467,-6.268639087677002,-6.26845121383667,-6.268062114715576,-6.267767906188965,-6.267553806304932,-6.266973972320557,-6.266357898712158,-6.266132831573486,-6.265797138214111,-6.265688896179199,-6.265491962432861,-6.26456880569458,-6.263686180114746,-6.262755870819092,-6.262607097625732,-6.262549877166748,-6.262506008148193,-6.262407779693604,-6.262190818786621,-6.261127948760986,-6.260031223297119,-6.258833885192871,-6.257918834686279,-6.257547855377197,-6.25743579864502,-6.257339000701904,-6.257172107696533,-6.257085800170898,-6.256893157958984,-6.25665807723999,-6.256326198577881,-6.256064891815186,-6.255971908569336,-6.255916118621826,-6.255858898162842,-6.255585193634033,-6.255582809448242,-6.255620002746582,-6.255699157714844,-6.255859851837158,-6.256604194641113,-6.25675106048584,-6.256882190704346,-6.256930828094482,-6.257162094116211,-6.25717306137085,-6.257967948913574,-6.258058071136475,-6.258218765258789,-6.258419990539551,-6.258666038513184,-6.25872802734375,-6.258760929107666,-6.258771896362305,-6.258760929107666,-6.258676052093506,-6.258594036102295,-6.258588790893555,-6.258573055267334,-6.258500099182129,-6.258431911468506,-6.258362770080566,-6.258293151855469,-6.258262157440186,-6.258244037628174,-6.258129119873047,-6.258114814758301,-6.258895874023438,-6.258931159973145,-6.259147167205811,-6.259171962738037],"lat":[53.34156036376953,53.341552734375,53.3415412902832,53.34151458740234,53.34148025512695,53.34145736694336,53.34145355224609,53.34145736694336,53.34145736694336,53.34145736694336,53.34145736694336,53.34145355224609,53.34132766723633,53.34124755859375,53.34118270874023,53.34111785888672,53.34103393554688,53.34101104736328,53.34099578857422,53.34099578857422,53.34098052978516,53.34097290039062,53.34093475341797,53.34076309204102,53.34019470214844,53.34003829956055,53.33984375,53.33970260620117,53.33946990966797,53.33939743041992,53.33935546875,53.339111328125,53.3389778137207,53.33865737915039,53.3387336730957,53.33878326416016,53.33879470825195,53.33880233764648,53.33880996704102,53.3388557434082,53.33889007568359,53.33890151977539,53.33891677856445,53.33892822265625,53.3389778137207,53.33905029296875,53.33913803100586,53.33928680419922,53.33938217163086,53.33933258056641,53.33916854858398,53.33913421630859,53.33907699584961,53.3389778137207,53.33896255493164,53.33893203735352,53.33885192871094,53.33878707885742,53.33875274658203,53.33868789672852,53.33844757080078,53.33832931518555,53.33825302124023,53.33820724487305,53.33815002441406,53.33797454833984,53.33781433105469,53.33776092529297,53.33767700195312,53.33765029907227,53.33762359619141,53.33760452270508,53.33759689331055,53.33760452270508,53.33761215209961,53.337646484375,53.33765029907227,53.33764266967773,53.33763885498047,53.337646484375,53.33764266967773,53.33764266967773,53.33763122558594,53.33761596679688,53.3375244140625,53.33724594116211,53.33695220947266,53.33663558959961,53.33639144897461,53.33631134033203,53.33631896972656,53.33636093139648,53.33647155761719,53.33650970458984,53.33675003051758,53.33703994750977,53.33744049072266,53.3377571105957,53.33786773681641,53.33793258666992,53.3380012512207,53.3383674621582,53.3384895324707,53.33854293823242,53.33860015869141,53.33865737915039,53.33883285522461,53.33887481689453,53.33894729614258,53.33896255493164,53.33902359008789,53.33902740478516,53.3392448425293,53.33926773071289,53.33930969238281,53.33936309814453,53.33943176269531,53.33945083618164,53.33949661254883,53.33956909179688,53.33961486816406,53.33990097045898,53.34017562866211,53.34019088745117,53.34024429321289,53.34048843383789,53.34072113037109,53.34095001220703,53.3411865234375,53.34128952026367,53.34135055541992,53.34175109863281,53.34180068969727,53.34188079833984,53.34188461303711,53.3419075012207,53.34183120727539]}]],[[{"lng":[-6.259171962738037,-6.25928783416748,-6.259420871734619,-6.259018898010254,-6.258446216583252,-6.258362770080566,-6.258293151855469,-6.258262157440186,-6.258237838745117,-6.258203983306885,-6.258172988891602,-6.257171154022217,-6.257040977478027,-6.255417823791504,-6.255313873291016,-6.25543212890625,-6.255677223205566,-6.255785942077637,-6.255873203277588,-6.255960941314697,-6.256153106689453,-6.256514072418213,-6.256537914276123,-6.25616979598999,-6.255960941314697,-6.255613803863525,-6.2555251121521,-6.255291938781738,-6.2548508644104,-6.254660129547119,-6.254331111907959,-6.254179000854492,-6.253791809082031,-6.253627777099609,-6.2536940574646,-6.254108905792236,-6.254810810089111,-6.255608081817627,-6.255691051483154,-6.255771160125732,-6.255858898162842,-6.255585193634033,-6.255582809448242,-6.255620002746582,-6.255699157714844,-6.255859851837158,-6.256604194641113,-6.25675106048584,-6.256882190704346,-6.256930828094482,-6.257162094116211,-6.25717306137085,-6.257967948913574,-6.258058071136475,-6.258218765258789,-6.258419990539551,-6.258666038513184,-6.25872802734375,-6.258831024169922,-6.258957862854004,-6.259017944335938,-6.260087013244629,-6.260269165039062,-6.260450839996338,-6.2606201171875,-6.260776042938232,-6.26088285446167,-6.26100492477417,-6.261185169219971,-6.261269092559814,-6.261341094970703,-6.261364936828613,-6.261395931243896,-6.261441230773926,-6.261550903320312,-6.261699199676514,-6.262839794158936,-6.262728214263916,-6.263228893280029,-6.263465881347656,-6.263923168182373,-6.264020919799805,-6.263766765594482,-6.26383113861084,-6.263944149017334,-6.264193058013916,-6.264529228210449,-6.264768123626709,-6.265145778656006,-6.265614032745361,-6.266435146331787,-6.26704216003418,-6.267313957214355,-6.267426013946533,-6.267492771148682,-6.267855167388916,-6.268226146697998,-6.26844596862793,-6.268836975097656,-6.269009113311768,-6.269178867340088,-6.270054817199707,-6.270080089569092,-6.27008581161499,-6.270137786865234,-6.270140171051025,-6.270170211791992,-6.270236968994141,-6.271464824676514,-6.271695137023926,-6.272124767303467,-6.272219181060791,-6.272335052490234,-6.272333145141602,-6.272332191467285,-6.27231502532959,-6.272216796875,-6.272036075592041,-6.272127151489258,-6.272150039672852,-6.272164821624756,-6.272305965423584,-6.273100852966309,-6.273827075958252,-6.274155139923096,-6.274510860443115,-6.274716854095459,-6.274876117706299,-6.275203227996826,-6.275454998016357,-6.27594518661499,-6.27603006362915,-6.276169776916504,-6.276924133300781,-6.277103900909424,-6.277181148529053,-6.277414798736572,-6.277536869049072,-6.277626991271973,-6.277750015258789,-6.277966976165771,-6.278176784515381,-6.27849817276001,-6.279116153717041,-6.279558181762695,-6.279837131500244,-6.280243873596191,-6.280792236328125,-6.281102180480957,-6.281211853027344,-6.281360149383545,-6.281521797180176,-6.281642913818359,-6.282129764556885,-6.28301477432251,-6.283757209777832,-6.284296035766602,-6.284580230712891,-6.284855842590332,-6.285422801971436,-6.285973072052002,-6.286281108856201,-6.28665018081665,-6.286881923675537,-6.286985874176025,-6.287442207336426,-6.287581920623779,-6.287918090820312,-6.288145065307617,-6.288352966308594,-6.288383960723877,-6.288384914398193,-6.288402080535889,-6.288401126861572,-6.288106918334961,-6.287984848022461,-6.287871837615967,-6.287740230560303,-6.287649154663086,-6.287603855133057,-6.287580013275146,-6.287576198577881,-6.286812782287598],"lat":[53.34183120727539,53.34147262573242,53.341064453125,53.34102249145508,53.34095764160156,53.34095001220703,53.3411865234375,53.34128952026367,53.34128570556641,53.34128189086914,53.34127807617188,53.34116363525391,53.34114456176758,53.34083938598633,53.3408203125,53.34060287475586,53.34015655517578,53.33994293212891,53.33979415893555,53.33964920043945,53.33941650390625,53.33895492553711,53.33892440795898,53.33882522583008,53.33877182006836,53.33867645263672,53.33865356445312,53.33858489990234,53.33847045898438,53.33842086791992,53.33833312988281,53.33829116821289,53.33819198608398,53.3381462097168,53.33809280395508,53.33755493164062,53.33772659301758,53.33793640136719,53.33795547485352,53.33797454833984,53.3380012512207,53.3383674621582,53.3384895324707,53.33854293823242,53.33860015869141,53.33865737915039,53.33883285522461,53.33887481689453,53.33894729614258,53.33896255493164,53.33902359008789,53.33902740478516,53.3392448425293,53.33926773071289,53.33930969238281,53.33936309814453,53.33943176269531,53.33945083618164,53.33947372436523,53.33950805664062,53.33952331542969,53.33977890014648,53.33982849121094,53.33986282348633,53.33986282348633,53.33980941772461,53.33976364135742,53.33967590332031,53.33944320678711,53.33932876586914,53.33921813964844,53.33916091918945,53.33911895751953,53.33908843994141,53.33910369873047,53.339111328125,53.33931732177734,53.33949279785156,53.33959197998047,53.33964538574219,53.33974838256836,53.33977127075195,53.34015274047852,53.34023666381836,53.34029769897461,53.34041976928711,53.34056091308594,53.34057998657227,53.34061431884766,53.34067153930664,53.34074401855469,53.3408088684082,53.34083557128906,53.34083938598633,53.34085083007812,53.34077835083008,53.34071350097656,53.34067916870117,53.34061050415039,53.34060287475586,53.34059524536133,53.34057235717773,53.34106063842773,53.34134674072266,53.34139251708984,53.34139633178711,53.3414192199707,53.34145736694336,53.34147644042969,53.34148025512695,53.34148788452148,53.34148788452148,53.34148788452148,53.34161376953125,53.34169006347656,53.34222030639648,53.34238052368164,53.34260559082031,53.34275436401367,53.34279251098633,53.34281921386719,53.34292221069336,53.34307861328125,53.34319305419922,53.34324645996094,53.34328460693359,53.34327697753906,53.3432731628418,53.34321975708008,53.34318161010742,53.34307861328125,53.34306716918945,53.34306716918945,53.34291839599609,53.34288024902344,53.34286499023438,53.34282302856445,53.34280395507812,53.34279632568359,53.34278869628906,53.3427848815918,53.3427848815918,53.34279251098633,53.34281158447266,53.34287261962891,53.34291839599609,53.34298706054688,53.34309768676758,53.34316253662109,53.34318542480469,53.34321594238281,53.34324264526367,53.34325790405273,53.34330368041992,53.34335327148438,53.3433952331543,53.34342575073242,53.34345245361328,53.34347915649414,53.34352111816406,53.34356307983398,53.34355926513672,53.34354019165039,53.34352874755859,53.34352493286133,53.343505859375,53.34349822998047,53.34348297119141,53.34347152709961,53.34346389770508,53.34302520751953,53.34297943115234,53.34244155883789,53.3424072265625,53.34237289428711,53.34234237670898,53.34231567382812,53.34224319458008,53.34217071533203,53.34212493896484,53.34204864501953,53.34157180786133,53.34156036376953]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#BF003F","weight":5,"opacity":0.5,"fill":false,"fillColor":"#BF003F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPolylines","args":[[[[{"lng":[-6.286812782287598,-6.28626823425293,-6.28518009185791,-6.283913135528564,-6.283901214599609,-6.28386402130127,-6.283757209777832,-6.28301477432251,-6.282129764556885,-6.281642913818359,-6.281521797180176,-6.281360149383545,-6.281211853027344,-6.281102180480957,-6.280792236328125,-6.280243873596191,-6.279837131500244,-6.279558181762695,-6.279116153717041,-6.27849817276001,-6.278176784515381,-6.277966976165771,-6.277750015258789,-6.277626991271973,-6.277536869049072,-6.277414798736572,-6.277181148529053,-6.277103900909424,-6.276924133300781,-6.276169776916504,-6.276062965393066,-6.275981903076172,-6.275812149047852,-6.275796890258789,-6.275791168212891,-6.275435924530029,-6.275393009185791,-6.275650024414062,-6.275872230529785,-6.275978088378906,-6.2760329246521,-6.276216983795166,-6.276327133178711,-6.276357173919678,-6.276339054107666,-6.276266098022461,-6.276192188262939,-6.276115894317627],"lat":[53.34156036376953,53.341552734375,53.3415412902832,53.34151458740234,53.34172058105469,53.34226608276367,53.3433952331543,53.34335327148438,53.34330368041992,53.34325790405273,53.34324264526367,53.34321594238281,53.34318542480469,53.34316253662109,53.34309768676758,53.34298706054688,53.34291839599609,53.34287261962891,53.34281158447266,53.34279251098633,53.3427848815918,53.3427848815918,53.34278869628906,53.34279632568359,53.34280395507812,53.34282302856445,53.34286499023438,53.34288024902344,53.34291839599609,53.34306716918945,53.3431282043457,53.34314727783203,53.34319305419922,53.34323883056641,53.34325790405273,53.34347915649414,53.34350967407227,53.3436393737793,53.34378814697266,53.34384155273438,53.3438835144043,53.34403228759766,53.34415054321289,53.34428024291992,53.34439086914062,53.3445930480957,53.34475708007812,53.34488677978516]}]],[[{"lng":[-6.276115894317627,-6.276192188262939,-6.276266098022461,-6.276339054107666,-6.276357173919678,-6.276327133178711,-6.276216983795166,-6.2760329246521,-6.275978088378906,-6.275872230529785,-6.275465965270996,-6.275134086608887,-6.275033950805664,-6.274898052215576,-6.274876117706299,-6.275203227996826,-6.275454998016357,-6.27594518661499,-6.27603006362915,-6.276169776916504,-6.276924133300781,-6.277103900909424,-6.277181148529053,-6.277414798736572,-6.277536869049072,-6.277626991271973,-6.277750015258789,-6.277966976165771,-6.278176784515381,-6.27849817276001,-6.279116153717041,-6.279558181762695,-6.279837131500244,-6.280243873596191,-6.280792236328125,-6.281102180480957,-6.281211853027344,-6.281360149383545,-6.281521797180176,-6.281642913818359,-6.282129764556885,-6.28301477432251,-6.283757209777832,-6.284296035766602,-6.284580230712891,-6.284855842590332,-6.285422801971436,-6.285973072052002,-6.286281108856201,-6.28665018081665,-6.286881923675537,-6.286985874176025,-6.287442207336426,-6.287581920623779,-6.287918090820312,-6.288145065307617,-6.288352966308594,-6.288383960723877,-6.288384914398193,-6.288402080535889,-6.288401126861572,-6.288106918334961,-6.287984848022461,-6.287871837615967,-6.287740230560303,-6.287649154663086,-6.287603855133057,-6.287580013275146,-6.287576198577881,-6.286812782287598],"lat":[53.34488677978516,53.34475708007812,53.3445930480957,53.34439086914062,53.34428024291992,53.34415054321289,53.34403228759766,53.3438835144043,53.34384155273438,53.34378814697266,53.34364318847656,53.34350204467773,53.34345626831055,53.3433723449707,53.3432731628418,53.34321975708008,53.34318161010742,53.34307861328125,53.34306716918945,53.34306716918945,53.34291839599609,53.34288024902344,53.34286499023438,53.34282302856445,53.34280395507812,53.34279632568359,53.34278869628906,53.3427848815918,53.3427848815918,53.34279251098633,53.34281158447266,53.34287261962891,53.34291839599609,53.34298706054688,53.34309768676758,53.34316253662109,53.34318542480469,53.34321594238281,53.34324264526367,53.34325790405273,53.34330368041992,53.34335327148438,53.3433952331543,53.34342575073242,53.34345245361328,53.34347915649414,53.34352111816406,53.34356307983398,53.34355926513672,53.34354019165039,53.34352874755859,53.34352493286133,53.343505859375,53.34349822998047,53.34348297119141,53.34347152709961,53.34346389770508,53.34302520751953,53.34297943115234,53.34244155883789,53.3424072265625,53.34237289428711,53.34234237670898,53.34231567382812,53.34224319458008,53.34217071533203,53.34212493896484,53.34204864501953,53.34157180786133,53.34156036376953]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#FF0000","weight":5,"opacity":0.5,"fill":false,"fillColor":"#FF0000","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[53.22149276733398,53.35302734375],"lng":[-6.298287868499756,-6.216326236724854]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./tsptw-1-basic-book.html" class="pagination-link" aria-label="Basic TSPTW Example">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic TSPTW Example</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./cvrptw-1-basic-book.html" class="pagination-link" aria-label="Basic CVRPTW Example">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Basic CVRPTW Example</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

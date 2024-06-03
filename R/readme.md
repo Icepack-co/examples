@@ -2,7 +2,7 @@
 
 ## Requirements
 
-* `iceR`: This is an R package that we've bundled for you which you can install using devtools. In R you can run the following (if you get any compilation errors, check the package installation instructions [here](https://github.com/Icepack-co/iceR).
+* `iceR`: This is an R package that we've bundled for you which you can install using devtools. In R you can run the following (if you get any compilation errors, check the package installation instructions [here](https://github.com/Icepack-co/iceR)).
 ```
 devtools::install_github("icepack-co/iceR")
 ```

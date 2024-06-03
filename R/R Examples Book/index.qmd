@@ -1,4 +1,0 @@
-# Welcome {.unnumbered}
-
-Welcome to this cool examples book!
-
