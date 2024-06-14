@@ -6,7 +6,7 @@ book:
   chapters:
     - index.qmd
 
-    - intro.qmd
+    - requirements.qmd
 
     - part: "TSP"
       chapters:

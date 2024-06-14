@@ -1,0 +1,3 @@
+# Overview {.unnumbered}
+
+The aim of a TSPTW (Traveling Salesman Problem with Time Windows) is to minimise the total time (compared to the TSP which attempts to minimise the total distance). This means that a slightly longer route might be taken in terms of km-distance in order to effectively use the available time.

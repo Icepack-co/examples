@@ -1,27 +1,7 @@
 /*-- scss:defaults --*/
 
-$primary: #0b0b0b!default;
+// $primary: #0b0b0b!default;
 $font-size-root: 18px !default;
-
-/*-- scss:rules --*/
-
-.sidebar-title {
-  color: #0b0b0b;
-}
-
-div.sidebar-item-container .active {
-  font-style: italic;
-}
-
-.sidebar-item-container .menu-text {
-    font-weight: bold;
-}
-    .chapter-number {
-        font-weight: normal;    
-    }
-    .chapter-title {
-        font-weight: normal;
-    }
 
 /* Headings ------------------------------------------------------ */
 
@@ -29,50 +9,20 @@ div.sidebar-item-container .active {
   margin-bottom: 0.5rem;
 }
 
-h1 {
-    font-size: 2.0rem;
-    font-weight: 600;
-    color:#0b0b0b;
-    // font-variant: small-caps;
+h1.title {
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
-h2 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color:#0b0b0b;
+h2.anchored {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
-h3 { 
-    margin-top: 1.5em; 
-    font-size: 1.2rem; 
-    font-weight: 600; 
-    color:#0b0b0b;
-}
-
-h4 { 
-    margin-top: 1.5em; 
-    font-size: 1.1rem; 
-}
-
-h5 { 
-    margin-top: 1.5em; 
-    font-size: 1rem; 
-}
-
-
-/* Code ------------------------------------------------ */
-
-code {
-  color: #373a3c;
-}
-
-code a:any-link {
-  text-decoration: underline;
-  text-decoration-color: #ccc;
-}
-
-pre {
-  background-image: linear-gradient(160deg,#f8f8f8 0,#f1f1f1 100%);
+h3.anchored { 
+  margin-top: 1.5em; 
+  font-size: 1.2rem; 
+  font-weight: 600; 
 }

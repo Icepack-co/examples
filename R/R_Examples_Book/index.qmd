@@ -1,4 +1,3 @@
-# Welcome {.unnumbered}
+# Introduction {.unnumbered}
 
-Welcome to the R examples book!
-
+This book contains a series of examples which show how model requests and responses to the Icepack API can be constructed and interpreted using R.
