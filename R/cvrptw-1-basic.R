@@ -1,47 +1,31 @@
-# CVRPTW sample script
+# CVRPTW EXAMPLE SCRIPT (BASIC)
+
 library(iceR)
 
-# # create an api-helper object with the model type you'd like to solve.
-api <- new("apiHelper", modelType = 'cvrptw-acyas3nzweqb', '../config.json')
+# Create an apiHelper object with the model type you'd like to solve
+api <- new("apiHelper", modelType = 'cvrptw-acyas3nzweqb', configFile = '../config.json')
+
+# Create the model
 sr <- new (CVRPTW.SolveRequest)
 sr$model <- new (CVRPTW.CVRPTW)
 
-# A classic cvrptw has a heterogeneous fleet. This means we need only specify the size of the
-# vehicle and the number of vehicles available. The other aspect of this model is to include
-# the location of the depot. The cvrptw is costed differently to the cvrp. The objective is still
-# to minimise the number of vehicles used, but also to minimise the total time. The classic cvrp
-# aims to minimise the number of vehicles, then the total distance travelled.
-# The cvrptw has time windows on each point. In this schema, we allow you to omit windows from 
-# points if needed.
-
-# lets make the first location the depot, and the balance of the locations the visit points.
+# Add some data to the model
 data <- read.csv('../sample_data/publist_orders.csv')[1:10,]
-data$id %<>% as.character()
-data$quantity <- 0
+
 makePoint <- function(i){
   g <- new (CVRPTW.Geocode)
   g$id <- data$id[i]
   g$x <- data$X[i]
   g$y <- data$Y[i]
-  g$quantity <- data$quantity[i] # this is just zero by default, we reuse the schema component but this isn't used
+  g$quantity <- data$quantity[i]
   return (g)
 }
-sr$model$depot <- makePoint(1) # we're not going to add any windows on the depot.
-#sr$model$toString() %>% cat  
-#sr$model$toJSON() %>% cat # if you prefer the look and feel of json
-
-# now we just need to select some quantities for the points.
-# lets make each point take up 20 units, and we'll set the maximum capacity of the vehicle to 100
-# that way we know that we don't need more than 2 vehicles but also that we can't use less than 2 vehicles.
-data$quantity <- 20
 sr$model$points <-sapply(2:nrow(data), makePoint)
-# lets add windows just using a traditional loop
-# lets randomly split the windows into "morning" and "afternoon" windows
-# note that the windows are measured in minutes in this schema.
 
-morning <- c(8*60, 12*60) #08:00 to 12:00
-afternoon <- c(12*60, 16 * 60) #12:00 to 16:00
+sr$model$depot <- makePoint(1) # we're not going to add any windows on the depot.
 
+morning <- c(8*60, 12*60)
+afternoon <- c(12*60, 16 * 60)
 for(i in 1:length(sr$model$points)){
   if(i %% 2 == 0){
     sr$model$points[[i]]$windowStart <-morning[1]
@@ -52,20 +36,32 @@ for(i in 1:length(sr$model$points)){
   }
 }
 
-# sr$model$toString() %>% cat # if you want to display what the model looks like at this point.
 sr$model$NumberOfVehicles <- 3
 sr$model$VehicleCapacity <- 100
-sr$model$distancetype <- 1 # 1 for road network, 2 for euclidean, 3 for haversine.
 
 sr$solveType <- 0  # 0 for optimise, 1 for evaluate, 2 for reoptimise
 
-requestID <- api %>% postSolveRequest(sr)         # submit the model to the api
-resp <- api %>% getResponse(requestID)            # retrieve the model response
+# Set the distance type to use the road network
+sr$model$distancetype <- 1 # 1 for road network, 2 for euclidean, 3 for haversine      
 
-tab <- resp %>% tabulate(sr)                      # tabulate the data in native-R format.
-tab$nodes
-tab$edges
+# View the model in plain-text format (string or JSON)
+sr$model$toString() %>% cat
+sr$model$toJSON() %>% cat
 
-resp %>% plotResponse(sr)
-resp %>% plotResponseLeaflet(sr)
+# Submit the model to the API
+requestID <- api %>% postSolveRequest(sr)   
 
+# Retrieve the model response
+resp <- api %>% getResponse(requestID) 
+
+# Get the solve time
+solveTime <- api %>% getSolveTime(requestID)
+
+# Tabulate the data in native-R format
+tab <- resp %>% tabulate(sr)               
+tab$nodes %>% head # just inspect the head of the output
+tab$edges %>% head # just inspect the head of the output
+
+# Plot the data 
+resp %>% plotResponse(sr) # ggplot
+resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)

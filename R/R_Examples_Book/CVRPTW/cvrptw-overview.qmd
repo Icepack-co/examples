@@ -1,0 +1,5 @@
+# Overview {.unnumbered}
+
+A classic CVRPTW (Capacitated Vehicle Routing Problem with Time Windows) has a heterogeneous fleet. This means we need only specify the size of the vehicle and the number of vehicles available. The other aspect of this model is to include the location of the depot. 
+
+The CVRPTW is costed differently to the CVRP. The objective is still to minimise the number of vehicles used, but also to minimise the total time. The classic CVRP aims to minimise the number of vehicles, then the total distance travelled. The CVRPTW has time windows on each point. In this schema, we allow you to omit windows from points if needed.

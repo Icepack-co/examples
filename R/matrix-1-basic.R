@@ -1,13 +1,15 @@
-### An easy example of how to use the matrix api to generate distance/time matricies
+# MATRIX EXAMPLE SCRIPT (BASIC)
+
 library(iceR)
 
+# Create an apiHelper object with the model type you'd like to solve
 api <- new("apiHelper", modelType = 'matrix-vyv95n7wchpl', configFile = '../config.json')
 
-data <- read.csv('../sample_data/publist.csv', stringsAsFactors = F)
-data<- data[1:5,] #just grab the first 5 locations for this example
-data$id %<>% as.character()
-
+# Create the model
 model <- new (Matrix.MatrixRequest)
+
+# Add some data to the model
+data <- read.csv('../sample_data/publist.csv', stringsAsFactors = F)[1:5,]
 
 model$locations <- apply(X = data,
                          MARGIN = 1,
@@ -19,24 +21,33 @@ model$locations <- apply(X = data,
                            return(l)
                          })
 
-model$sources <- data$id #note we don't specify the destinations, indicating we want all sources to sources.
+model$sources <- data$id
 model$distanceUnit <- 0
 model$durationUnit <- 2
+
+# View the model in plain-text format (string or JSON)
 model$toString() %>% cat
+model$toJSON() %>% cat
 
-requestID <- api %>% postSolveRequest(model)         # submit the model to the api
-resp <- api %>% getResponse(requestID)               # retrieve the model response. Takes around a minute to solve
-resp$toString() %>% cat                              # the pbf in string format.
-tab <- resp %>% tabulate(model)   # this tabulates the response data into a native r-format.
+# Submit the model to the API
+requestID <- api %>% postSolveRequest(model)
 
+# Retrieve the model response
+resp <- api %>% getResponse(requestID)
+resp$toString() %>% cat # the pbf in string format
+
+# Get the solve time
+solveTime <- api %>% getSolveTime(requestID)
+
+# Tabulate the data in native-R format
+tab <- resp %>% tabulate(model)     
 tab$elements %>% head
-tab$elements %>% nrow # we get 20 elements back, which is 5*(5-1) (because the diagonal is always zero.)
+tab$elements %>% nrow 
 
-# the response is tabulated in long form (i.e. "tidy").
-# You might want it in matrix-form (or a wide-ish form), just use reshape2 to do the heavy lifting here.
+# Visualise using reshape2
+library(reshape2)
+
 tab$elements$fromId %>% unique
 tab$elements$toId %>% unique
-tab$elements %>% reshape2::dcast(fromId ~ toId, value.var = 'distance', fill = 0) #distance matrix #install.packages("reshape2") if not installed.
-tab$elements %>% reshape2::dcast(fromId ~ toId, value.var = 'duration', fill = 0) #time matrix
-#Note, if you leave the fill=0 off, you'll get NA's on the diagonal, which may or may not be what you want.
-
+tab$elements %>% reshape2::dcast(fromId ~ toId, value.var = 'distance', fill = 0) 
+tab$elements %>% reshape2::dcast(fromId ~ toId, value.var = 'duration', fill = 0)

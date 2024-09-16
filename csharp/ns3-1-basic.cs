@@ -44,7 +44,7 @@ class ns3basic : IRunner
     // we know that demand nodes require us to fulfill the demand at the node.
     // lets assume we have no production constraints
 
-    // we have a reasonably even demand profile - something tells us this data-set is not real! :-) 
+    // we have a reasonably even demand profile - something tells us this dataset is not real! :-) 
     // demandNodes$demand %>% hist
     // in order to specify which demands we should satisfy, lets place a flow requirement at each node.
     for (int i = 0; i < d_nodes.Count; i++)
@@ -81,8 +81,8 @@ class ns3basic : IRunner
     m.Nodes.AddRange(w_nodes);
     m.Nodes.AddRange(d_nodes);
 
-    // so  Guiness Storehouse -> Limerick
-    // and Guinnes Storehouse -> Galway
+    // so  Guinness Storehouse -> Limerick
+    // and Guinness Storehouse -> Galway
     // each costed at 0.1 monetary units per km.
     m.laneRates.Add(ns3helper.make_lane_rate_distance(sources[0], sources[1], 0.1f));
     m.laneRates.Add(ns3helper.make_lane_rate_distance(sources[0], sources[2], 0.1f));

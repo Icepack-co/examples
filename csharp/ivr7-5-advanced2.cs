@@ -28,7 +28,7 @@ class ivr7advanced2 : IRunner
     // we're going to reuse the helpers described in the ivr7basic example. Please see that for an initial reference.
     // We want "Open Routing" which basically means that if a vehicle finishes it's day at any node,
     // it is then not supposed to cost the return trip home. So as a start, we need to separate the
-    // depot (Guiness Storehouse) from the vehicle-home location by name - it's okay if it's at the
+    // depot (Guinness Storehouse) from the vehicle-home location by name - it's okay if it's at the
     // same point (long/lat), but we're going to separate the identifier so we can control the
     // distance/time matrix nicely.
 
@@ -39,7 +39,7 @@ class ivr7advanced2 : IRunner
     m.Locations.Add(new Ivr7.Location
     {
       Id = "vehicle-site",
-      Geocode = m.Locations[0].Geocode  // use the geocode of the Guiness storehouse.
+      Geocode = m.Locations[0].Geocode  // use the geocode of the Guinness Storehouse.
     });
 
     ivr7helper.makeJobTimeCap(m, data, ivr7helper.Rep(0, data.Count - 1), ivr7helper.Seq(1, data.Count));

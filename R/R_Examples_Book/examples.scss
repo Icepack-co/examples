@@ -1,0 +1,28 @@
+/*-- scss:defaults --*/
+
+// $primary: #0b0b0b!default;
+$font-size-root: 18px !default;
+
+/* Headings ------------------------------------------------------ */
+
+#title-block-header.quarto-title-block.default .quarto-title h1.title {
+  margin-bottom: 0.5rem;
+}
+
+h1.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+h2.anchored {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h3.anchored { 
+  margin-top: 1.5em; 
+  font-size: 1.2rem; 
+  font-weight: 600; 
+}

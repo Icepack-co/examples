@@ -1,0 +1,107 @@
+project:
+  type: book
+
+book:
+  title: "R Examples"
+  chapters:
+    - index.qmd
+
+    - requirements.qmd
+
+    - part: "TSP"
+      chapters:
+        - TSP/tsp-overview.qmd
+        - TSP/tsp-example-basic-1.qmd
+        - TSP/tsp-key-insights.qmd
+        - TSP/tsp-common-questions.qmd
+        - TSP/tsp-dig-deeper.qmd
+
+    - part: "TSPTW"
+      chapters:
+        - TSPTW/tsptw-overview.qmd
+        - TSPTW/tsptw-example-basic-1.qmd
+        - TSPTW/tsptw-key-insights.qmd
+        - TSPTW/tsptw-common-questions.qmd
+        - TSPTW/tsptw-dig-deeper.qmd
+    - part: "CVRP"
+      chapters:
+        - CVRP/cvrp-overview.qmd
+        - CVRP/cvrp-example-basic-1.qmd
+        - CVRP/cvrp-key-insights.qmd
+        - CVRP/cvrp-common-questions.qmd
+        - CVRP/cvrp-dig-deeper.qmd
+    - part: "CVRPTW"
+      chapters:
+        - CVRPTW/cvrptw-overview.qmd
+        - CVRPTW/cvrptw-example-basic-1.qmd
+        - CVRPTW/cvrptw-key-insights.qmd
+        - CVRPTW/cvrptw-common-questions.qmd
+        - CVRPTW/cvrptw-dig-deeper.qmd
+    - part: "IVR7"
+      chapters:
+        - IVR7/ivr7-overview.qmd
+        - IVR7/ivr7-example-basic-1.qmd
+        - IVR7/ivr7-example-intermediate-1.qmd
+        - IVR7/ivr7-example-intermediate-2.qmd
+        - IVR7/ivr7-example-advanced-1.qmd
+        - IVR7/ivr7-example-advanced-2.qmd
+        - IVR7/ivr7-key-insights.qmd
+        - IVR7/ivr7-common-questions.qmd
+        - IVR7/ivr7-dig-deeper.qmd
+    - part: "IVR8"
+      chapters:
+        - IVR8/ivr8-overview.qmd
+        - IVR8/ivr8-example-basic-1.qmd
+        - IVR8/ivr8-example-intermediate-1.qmd
+        - IVR8/ivr8-example-advanced-1.qmd
+        - IVR8/ivr8-key-insights.qmd
+        - IVR8/ivr8-common-questions.qmd
+        - IVR8/ivr8-dig-deeper.qmd
+    - part: "NS3"
+      chapters:
+        - NS3/ns3-overview.qmd
+        - NS3/ns3-example-basic-1.qmd
+        - NS3/ns3-example-intermediate-1.qmd
+        - NS3/ns3-example-advanced-1.qmd
+        - NS3/ns3-key-insights.qmd
+        - NS3/ns3-common-questions.qmd
+        - NS3/ns3-dig-deeper.qmd
+    - part: "NVD"
+      chapters:
+        - NVD/nvd-overview.qmd
+        # - NVD/nvd-example-basic-1.qmd
+        - NVD/nvd-key-insights.qmd
+        - NVD/nvd-common-questions.qmd
+        - NVD/nvd-dig-deeper.qmd
+    - part: "Matrix"
+      chapters:
+        - MATRIX/matrix-overview.qmd
+        - MATRIX/matrix-example-basic-1.qmd
+        - MATRIX/matrix-example-intermediate-1.qmd
+        - MATRIX/matrix-key-insights.qmd
+        - MATRIX/matrix-common-questions.qmd
+        - MATRIX/matrix-dig-deeper.qmd
+  sidebar: 
+    style: docked
+    alignment: center  
+    collapse-level: 1
+
+bibliography: references.bib
+
+format:
+  html:
+    grid:
+      sidebar-width: 350px
+      body-width: 1000px
+    page-layout: full
+    theme: 
+      - cosmo
+      # - flatly
+      # - sandstone
+      # - yeti
+      - examples.scss 
+  pdf:
+    documentclass: scrreprt
+
+
+

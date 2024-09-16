@@ -149,8 +149,8 @@ public class ns3_2_intermediate {
     ns3helper.printSolution(solution);
     // So this is very interesting when contrast to the simple initial model.
     // Essentially, it would be cheaper to use the Limerick warehouse than the Galway warehouse
-    // So the model chooses to rather run the limerick warehouse (which it could have also closed)
-    // in conjunction with deliveries from the Guiness storehouse in Dublin.
+    // So the model chooses to rather run the Limerick warehouse (which it could have also closed)
+    // in conjunction with deliveries from the Guinness Storehouse in Dublin.
     // This is reflected in the node flow table - you'll notice the inflow and outflow for the
     // Galway warehouse is now zero.
 

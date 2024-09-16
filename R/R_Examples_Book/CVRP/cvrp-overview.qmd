@@ -1,0 +1,5 @@
+# Overview {.unnumbered}
+
+A CVRP (Capacitated Vehicle Routing Problem) is essentially a TSP with a capacity constraint on the maximum capacity of any one vehicle.
+
+A classic CVRP has a heterogeneous fleet. This means we need only specify the size of the vehicle and the number of vehicles available. The other aspect of this model is to include the location of the depot. The classic CVRP aims to minimise the number of vehicles, then the total distance travelled.

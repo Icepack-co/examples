@@ -32,7 +32,7 @@ public class ivr7_5_advanced2 {
     // see that for an initial reference.
     // We want "Open Routing" which basically means that if a vehicle finishes it's
     // day at any node, it is then not supposed to cost the return trip home. So as
-    // a start, we need to separate the depot (Guiness Storehouse) from the
+    // a start, we need to separate the depot (Guinness Storehouse) from the
     // vehicle-home location by name - it's okay if it's at the same point
     // (long/lat), but we're going to separate the identifier so we can control the
     // distance/time matrix nicely.
@@ -43,7 +43,7 @@ public class ivr7_5_advanced2 {
     ivr7helper.makeLocations(model, data);
 
     // we're going to add an exta location; the "vehicle-site"
-    // and use the geocode of the Guiness storehouse.
+    // and use the geocode of the Guinness Storehouse.
     model.addLocations(Ivr7Kt461V8Eoaif.Location.newBuilder()
                            .setId("vehicle-site")
                            .setGeocode(Ivr7Kt461V8Eoaif.Geocode.newBuilder()

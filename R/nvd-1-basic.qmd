@@ -1,0 +1,222 @@
+---
+title: "Basic NVD Example (R)"
+format:
+  html: 
+    page-layout: full
+    embed-resources: true
+    output: ./output/nvd-1-basic.html
+    code-copy: true
+editor: visual
+papersize: a4
+execute:
+  echo: false
+---
+
+### Data 
+
+```{r}
+
+data <- read.csv('../sample_data/publist_orders.csv', stringsAsFactors = F)
+
+number_pubs <- nrow(data)
+
+```
+
+The data used in this example is a list of `r number_pubs` pubs in Dublin, Ireland with their associated X and Y coordinates.
+
+```{r}
+#| echo: false
+#| output: false
+
+if(!("pacman" %in% rownames(installed.packages()))){
+  install.packages("pacman")
+}
+
+library(pacman)
+p_load(tidyverse)
+p_load(DT)
+p_load(dplyr)
+```
+
+```{r}
+data <- data %>% select(-c(pickupTime,dropoffTime, quantity)) %>% mutate(across(2:3, ~ format(round(.x, digits=5), nsmall = 5))) 
+
+datatable(data, colnames = c("Pub Name (id)",
+                           "X-Coordinate (X)",
+                           "Y-Coordinate (Y)")
+                           , options = list(dom = 't', scrollY = "200px", pageLength=nrow(data), columnDefs = list(list(className = 'dt-right', targets = 2:3))))
+
+```
+
+### Running the example
+
+An R script with all the lines needed to run the example can be found [here](https://github.com/Icepack-co/examples/blob/master/R/nvd-1-basic.R).
+
+The example uses the **iceR** package which will first need to be installed (see information [here](https://github.com/Icepack-co/iceR)) and then loaded, along with the gridExtra package to help with plotting the results.
+
+```{r}
+#| echo: true
+#| output: false
+library(iceR)
+library(gridExtra)
+
+```
+
+
+Execute the example as follows:
+
+1. **Create an apiHelper object with the model type you'd like to solve**
+
+```{r}
+#| echo: true
+#| output: false
+api <- new("apiHelper", modelType = 'nvd-hap0j2y4zlm1', configFile = '../config.json')
+```
+
+
+2. **Create the model and add some data to it**
+
+```{r}
+#| echo: true
+#| output: true
+
+# Create the model
+sr <- new (NVD.SolveRequest)
+sr$model <- new (NVD.Model)
+
+# Load the data
+data <- read.csv('../sample_data/publist_orders.csv', stringsAsFactors = F)
+
+# View the loaded data (if desired)
+ggplot() + geom_point(data = data, aes(x = X, y = Y)) + theme_bw()
+
+# Add some additional information to the data (this would normally be a function of the input data)
+set.seed(123)
+data$Frequency <- sample(x = c(4,2,1), size = nrow(data),replace = T)
+data$visitTime <- round(runif(n = nrow(data), 60, 120),0)
+# Assume that each visit takes somewhere between 1 and 2 hours (f you've ever been to an Irish pub, you'll know it's tough to visit for less than an hour!).
+
+repHomeLocation <- 'My Sales Rep (@Guinness)'
+data$id[1] <- repHomeLocation
+
+```
+
+```{r}
+#| echo: true
+#| output: false
+
+# Configure the model and add the data to it
+
+periodLength <- 20
+weekLength <- 5
+
+sr$model$configuration <- new (NVD.Configuration)
+sr$model$configuration$timeUnit <- 1
+sr$model$configuration$timeCoef <- 1
+sr$model$configuration$timeCostCoef <- 0
+sr$model$configuration$distanceUnit <- 4
+sr$model$configuration$distanceCostCoef <- 1
+sr$model$configuration$intraTerritoryBalance <- 1
+sr$model$configuration$interTerritoryBalance <- 1
+sr$model$configuration$weekLength = weekLength
+sr$model$configuration$periodLength = periodLength
+sr$model$configuration$toString() %>% cat
+
+t <- new(NVD.Territory)
+t$id <- repHomeLocation
+t$dailyStartTime <- 0
+t$dailyEndTime <- 400
+t$location <- new (NVD.Geocode)
+t$location$longitude <- data %>% filter(id == repHomeLocation) %>% select(X) %>% unlist()
+t$location$latitude <- data %>% filter(id == repHomeLocation) %>% select(Y) %>% unlist()
+t$dailyStartTime <- rep(0, periodLength)
+t$dailyEndTime <- rep(440, periodLength)  # assuming a 6h40m hour work day, we don't want them overwhelmed
+                                          # this can be modified quite easily on a day-to-day basis
+sr$model$territories <- t
+
+for(i in 2:nrow(data)){
+  v <- new (NVD.Visit)
+  s <- data[i,]
+  v$id <- as.character(s$id)
+  v$location <- new(NVD.Geocode)
+  v$location$longitude <- s$X
+  v$location$latitude <- s$Y
+  v$visitTime <- s$visitTime
+  v$territoryRelations <- new (NVD.Visit.TerritoryRelation)
+  v$territoryRelations$type <- 0 # 0 INCLUSIVE, 1 EXCLUSIVE
+  v$territoryRelations$territoryIds <- repHomeLocation
+
+  #   SEVEN_TIMES_A_WEEK = 1; #only applicable to a 7-day week
+  #   SIX_TIMES_A_WEEK = 2;   #only applicable to a 6-day week
+  #   FIVE_TIMES_A_WEEK = 3;
+  #   FOUR_TIMES_A_WEEK = 4;
+  #   THREE_TIMES_A_WEEK = 5;
+  #   TWICE_A_WEEK = 6;       # it is unusual to implement this profile as we normally want twice a week with a certain gap between days.
+  #   ONCE_A_WEEK = 7;        # frequency 4 in this example
+  #   EVERY_SECOND_WEEK = 8;  # frequency 2 in this example
+  #   ONCE_A_MONTH = 9;       # frequency 1 in this example
+  if(s$Frequency == 4){
+    v$profile$frequencyType =  7;
+  }else if(s$Frequency == 2){
+    v$profile$frequencyType = 8
+  } else if (s$Frequency <= 1){
+    v$profile$frequencyType = 9;
+  }else {
+    stop()
+  }
+  sr$model$visits[[length(sr$model$visits) + 1]]<- v
+}
+
+# Set the other relevant information
+sr$solveType <- 0 # 0 for optimise, 1 for evaluate, 2 for reoptimise
+
+# View the model in plain-text format (string or JSON)
+sr$model$toString() %>% cat
+sr$model$toJSON() %>% cat
+
+```
+
+3. **Submit the model to the API**
+
+```{r}
+#| echo: true
+#| output: false
+requestID <- api %>% postSolveRequest(sr)  
+```
+
+
+4. **Retrieve the model response**
+
+NOTE: It takes about a minute to solve
+```{r}
+#| echo: true
+#| output: false
+resp <- api %>% getResponse(requestID)
+```
+
+5. **Look at the result**
+
+```{r}
+#| echo: true
+#| output: false
+
+# Get the solve time
+solveTime <- api %>% getSolveTime(requestID)
+```
+
+Solve time: `r solveTime`
+
+```{r}
+#| echo: true
+#| output: true
+
+# Tabulate the data in native-R format
+tab <- resp %>% tabulate(sr) 
+# You'll notice this tabulates the Pareto frontier here, since
+# no solution from the frontier has been selected yet.
+tab$frontier %>% head
+
+# Plot the data (ggplot or leaflet)
+resp %>% plotResponse(sr) # ggplot                       
+resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)
+```

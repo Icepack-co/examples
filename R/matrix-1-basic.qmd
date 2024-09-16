@@ -1,0 +1,180 @@
+---
+title: "Basic Matrix Example (R)"
+format:
+  html: 
+    page-layout: full
+    embed-resources: true
+    output: ./output/matrix-1-basic.html
+    code-copy: true
+editor: visual
+papersize: a4
+execute:
+  echo: false
+---
+
+This example shows how to generate distance/time matrices using the matrix API.
+
+
+### Data 
+
+```{r}
+
+data <- read.csv('../sample_data/publist.csv', stringsAsFactors = F)[1:5,]
+
+number_pubs <- nrow(data)
+
+```
+
+The data used in this example is a list of `r number_pubs` pubs in Dublin, Ireland with their associated X and Y coordinates.
+
+```{r}
+#| echo: false
+#| output: false
+
+if(!("pacman" %in% rownames(installed.packages()))){
+  install.packages("pacman")
+}
+
+library(pacman)
+p_load(tidyverse)
+p_load(DT)
+p_load(dplyr)
+```
+
+```{r}
+
+data <- data %>% mutate(across(2:3, ~ format(round(.x, digits=5), nsmall = 5))) 
+
+datatable(data, colnames = c("Pub Name (id)",
+                           "X-Coordinate (X)",
+                           "Y-Coordinate (Y)")
+                           , options = list(dom = 't', scrollY = "200px", pageLength=nrow(data), columnDefs = list(list(className = 'dt-right', targets = 2:3))))
+
+```
+
+
+### Running the example
+
+An R script with all the lines needed to run the example can be found [here](https://github.com/Icepack-co/examples/blob/master/R/matrix-1-basic.R).
+
+The example uses the **iceR** package which will first need to be installed (see information [here](https://github.com/Icepack-co/iceR)) and then loaded.
+
+```{r}
+#| echo: true
+#| output: false
+library(iceR)
+```
+
+|
+Execute the example as follows:
+
+1. **Create an apiHelper object with the model type you'd like to solve**
+
+```{r}
+#| echo: true
+#| output: false
+api <- new("apiHelper", modelType = 'matrix-vyv95n7wchpl', configFile = '../config.json')
+```
+
+
+2. **Create the model and add some data to it**
+
+```{r}
+#| echo: true
+#| output: false
+
+# Create the model
+model <- new (Matrix.MatrixRequest)
+
+# Load the data
+data <- read.csv('../sample_data/publist.csv', stringsAsFactors = F)[1:5,]
+
+# Add the data to the model
+model$locations <- apply(X = data,
+                         MARGIN = 1,
+                         FUN = function(i){
+                           l <- new (Matrix.Location)
+                           l$id <- i['id']
+                           l$geocode$longitude <- as.numeric(i['X'])
+                           l$geocode$latitude <- as.numeric(i['Y'])
+                           return(l)
+                         })
+
+model$sources <- data$id # note we don't specify the destinations, indicating we want all sources to sources.
+model$distanceUnit <- 0
+model$durationUnit <- 2
+
+# View the model in plain-text format (string or JSON)
+model$toString() %>% cat
+model$toJSON() %>% cat
+
+```
+
+3. **Submit the model to the API**
+
+```{r}
+#| echo: true
+#| output: false
+requestID <- api %>% postSolveRequest(model)  
+```
+
+
+4. **Retrieve the model response**
+
+NOTE: It takes about a minute to solve
+```{r}
+#| echo: true
+#| output: false
+resp <- api %>% getResponse(requestID)
+```
+
+
+5. **Look at the result**
+
+```{r}
+#| echo: true
+#| output: false
+
+# Get the solve time
+solveTime <- api %>% getSolveTime(requestID)
+```
+
+Solve time: `r solveTime`
+
+```{r}
+#| echo: true
+#| output: true
+
+# Protobuf in string format
+resp$toString() %>% cat  
+
+# Tabulate the data in native-R format
+tab <- resp %>% tabulate(model)
+tab$elements %>% head # just inspect the head of the output
+tab$elements %>% nrow # we get 20 elements back, which is 5*(5-1) (because the diagonal is always zero)
+
+
+# The response is tabulated in long form (i.e. "tidy").
+# You might want it in matrix-form (or a wide-ish form). Just use reshape2 to do the heavy lifting here.
+```
+
+```{r}
+#| echo: true
+#| output: false
+#| 
+# Install reshape2 if not installed and then load
+library("reshape2")
+```
+
+```{r}
+#| echo: true
+#| output: true
+#| 
+tab$elements$fromId %>% unique
+tab$elements$toId %>% unique
+tab$elements %>% reshape2::dcast(fromId ~ toId, value.var = 'distance', fill = 0) # distance matrix 
+tab$elements %>% reshape2::dcast(fromId ~ toId, value.var = 'duration', fill = 0) # time matrix
+# NOTE: if you leave the fill=0 off, you'll get NA's on the diagonal, which may or may not be what you want.
+
+```
+

@@ -1,0 +1,234 @@
+# Example 5 (Advanced) {.unnumbered}
+
+This example illustrates the usage of the data upload API as well as model versioning. It shows how to reference matrix data in a (potentially) versioned model or load overriding elements on a particular matrix directly (one can provide a complete matrix in this manner too). For ths example, we build a simple pickup/dropoff (similar to the basic model) and configure "open routing". This means that if a vehicle finishes its day at any node, it is then not supposed to cost the return trip home. So as a start, we need to separate the depot (Guinness Storehouse) from the vehicle home location by name. It's okay if it's at the same point (long/lat), but we're going to separate the identifier so we can control the distance/time matrix nicely.
+
+## Data 
+
+```{r}
+#| echo: false
+#| output: false
+
+data <- read.csv('../../../sample_data/publist_orders.csv')
+
+number_pubs <- nrow(data)
+```
+
+The data used in this example is a list of `r number_pubs` pubs in Dublin, Ireland with their associated X and Y coordinates and quantities (amount added to a vehicle at each location).
+
+```{r}
+#| echo: false
+#| output: false
+
+if(!("pacman" %in% rownames(installed.packages()))){
+  install.packages("pacman")
+}
+
+library(pacman)
+p_load(tidyverse)
+p_load(DT)
+p_load(dplyr)
+```
+
+```{r}
+#| echo: false
+#| output: true
+
+data <- data %>% select(-c(pickupTime,dropoffTime)) %>% mutate(across(2:3, ~ format(round(.x, digits=5), nsmall = 5))) 
+
+datatable(data, colnames = c("Pub Name (id)",
+                           "X-Coordinate (X)",
+                           "Y-Coordinate (Y)",
+                           "Quantity (quantity)")
+                           , options = list(dom = 't', scrollY = "200px", pageLength=nrow(data), columnDefs = list(list(className = 'dt-right', targets = 2:4))))
+```
+
+## Running the example
+
+```{r}
+#| echo: true
+#| output: false
+library(iceR)
+
+source('ivr7-model-helper.R')
+```
+
+Execute the example as follows:
+
+### 1. Create an apiHelper object with the model type you'd like to solve
+
+```{r}
+#| echo: true
+#| output: false
+api <- new("apiHelper", modelType = 'ivr7-kt461v8eoaif', configFile = '../../../config.json')
+```
+
+### 2. Create the model, add some data to it and upload it (if preferred)
+
+```{r}
+#| echo: true
+#| output: false
+
+# Create the model
+sr <- new (IVR7.SolveRequest)
+model <- new (IVR7.Model)
+
+# Load the data
+data <- read.csv('../../../sample_data/publist_orders.csv')
+
+# Configure the model and add the data to it (See ivr7-model-helper.R for details around some of the methods used below)
+sr$model$dimensions <- make_distance_time_cap_dims()
+sr$model$locations <- make_locations(data)
+# Add the vehicle-home location
+sr$model$locations[[length(sr$model$locations) + 1]] <- sr$model$locations[[1]]
+sr$model$locations[[length(sr$model$locations)]]$id <- "vehicle-site"
+# This just copies the Guinness Storehouse object and creates a new id.
+
+sr$model$jobs <- make_job_time_cap(data, src = rep(1, nrow(data) - 1), dest = 2:nrow(data))
+sr$model$vehicleCostClasses <- make_vcc_simple('vcc1', 1000, 0.01, 0.01, 0.01, 1, 3)
+sr$model$vehicleClasses <- make_vc_simple('vc1', 1, 1, 1, 1)
+sr$model$vehicles <- lapply(1:4, function(i){
+  make_vehicle_cap(paste0("vehicle_", i), 'vc1', 'vcc1',
+                   2000, # the vehicle capacity
+                   "vehicle-site", # start location
+                   "vehicle-site", # end location
+                   7*60,  # 7 AM
+                   18*60) # 6 PM
+})
+# We've created vehicles which need to start/end at "vehicle-site". Now we can make
+# the last change which is to override the distance between locations and the "vehicle-site".
+# We're only going to modify the distances FROM locations TO "vehicle-site". If you wanted to
+# do complete line-haul outsourcing-style modelling, you could also do this for "vehicle-site"
+# TO all alocations. For now, we'll just demonstrate the open routing case.
+
+# Upload/submit the model via the data upload API (this API allows us to push just the data without anything else) OR upload it as part of the model
+# NOTE: The data upload service will need to be enabled on your key
+dataUpload <- TRUE # Set to FALSE if you don't want to use the data upload API
+if(dataUpload){
+  data_api <- new("apiHelper", modelType = 'ivrdata-o43e0dvs78zq', configFile = '../../../config.json')
+  ts <- new (IVRData.TransitSet)
+  for(i in 1:(length(sr$model$locations) - 1)){
+    tv <- new (IVRData.TransitSet.TransitValue)
+    tv$fromId <- sr$model$locations[[i]]$id
+    tv$toId <- "vehicle-site"
+    tv$value <- 0
+    ts$transits<- append(ts$transits, tv)
+  }
+  # Upload the transit set.
+  data_model <- new (IVRData.CachedTransitSet)
+  data_model$transitSet <-ts
+  rm(ts) # Delete it to illustrate the point
+  # Push the model data to the API
+  modelID <-  data_api %>% postSolveRequest(data_model)
+}else{
+  # Add the transit set directly in the model.
+  ts <-new (IVR7.TransitSet)
+  for(i in 1:(length(sr$model$locations) - 1)){
+    tv <- new (IVR7.TransitSet.TransitValue)
+    tv$fromId <- sr$model$locations[[i]]$id
+    tv$toId <- "vehicle-site"
+    tv$value <- 0
+    ts$transits<- append(ts$transits, tv)
+  }
+}
+
+# Add the new transit generators linked to those transit sets
+tgen_d <- new (IVR7.TransitGenerator)
+tgen_d$id <- 'custom_distance'
+tgen_t <- new (IVR7.TransitGenerator)
+tgen_t$id <- 'custom_time'
+if(dataUpload){
+  tgen_d$requestId <- modelID # Note, we're telling the API where to find the Transit-set data.
+  tgen_t$requestId <- modelID # We can use the same one here as before because it's all zero :-)
+  # We could upload another column of zeros, but there isn't much point.
+}else{
+  tgen_d$transitSet <- ts # Explicitly provide all the data.
+  tgen_t$transitSet <- ts
+}
+
+sr$model$transitGenerators <- c(tgen_d, tgen_t) # Add the custom transit generators
+
+# Tell the vehicles that they should use these transit generators.
+t_attr <- new (IVR7.VehicleClass.Attribute)
+t_attr$dimensionId <- "time"
+t_attr$transitGeneratorId <- 'custom_time'
+t_attr$transitCoef <- 1.0
+t_attr$locationCoef <- 1.0
+t_attr$taskCoef <- 1.0
+sr$model$vehicleClasses[[1]]$attributes<- append(sr$model$vehicleClasses[[1]]$attributes, t_attr)
+
+d_attr <- new (IVR7.VehicleClass.Attribute)
+d_attr$dimensionId <- "distance"
+d_attr$transitGeneratorId <- 'custom_distance'
+d_attr$transitCoef <- 1.0
+sr$model$vehicleClasses[[1]]$attributes<- append(sr$model$vehicleClasses[[1]]$attributes, d_attr)
+
+sr$model$vehicleClasses[[1]]$toString() %>% cat
+# We now have a road network distance + time generator followed by a custom time and custom distance generator.
+# The API will execute the transit generators in the order they appear and will override previous values with 
+# new values (if they exist). So in this case, it will build a transit matrix using the road network, then overlay 
+# the custom matrix which was uploaded with our data.
+
+# Set the other relevant information
+sr$solveType <- 0 # 0 for optimise, 1 for evaluate, 2 for reoptimise
+```
+
+### 3. Submit the model to the API
+
+```{r}
+#| echo: true
+#| output: false
+requestID <- api %>% postSolveRequest(sr)  
+```
+
+### 4. Retrieve the model response
+
+```{r}
+#| echo: true
+#| output: false
+resp <- api %>% getResponse(requestID)
+```
+
+### 5. Look at the result
+
+```{r}
+#| echo: true
+#| output: false
+
+# Get the solve time
+solveTime <- api %>% getSolveTime(requestID)
+```
+
+Solve time: `r solveTime`
+
+```{r}
+#| echo: true
+#| output: true
+
+# Tabulate the data in native-R format
+tab <- resp %>% tabulate(sr)
+tab$edges %>%
+  filter(toLocationId == 'vehicle-site') %>%
+  select(fromStopId, toStopId,
+         fromLocationId, toLocationId,
+         distance_start, distance_end,
+         time_start, time_end) %>%
+  mutate(distance_delta = distance_end - distance_start,
+         time_delta = time_end - time_start)
+
+# The distance and time from the last stop to the vehicle-end point is zero.
+# You'll notice there is, however, still a geometry associated with this movement, which is fine
+# since you know that you can ignore these in whatever visualisation you put together, like this:
+l <- tab
+l$edges$geometry[l$edges$toLocationId == 'vehicle-site'] <- NULL
+# Ee can probably highlight the first and last stops for each route too.
+stopColors <- rep('black', nrow(l$nodes))
+stopColors[l$edges$toStopId[l$edges$toLocationId == 'vehicle-site']] <- 'red'
+leaflet() %>%
+  addTiles() %>%
+  addCircleMarkers(data = l$nodes, lng = ~x, lat = ~y, color = stopColors, radius = 5) %>%
+  addPolylines(data = l$edges$geometry)
+
+# This makes sense because the stops which are farthest away from all the
+# other nodes are typically the points at which the route should end (because you're saving the
+# most in terms of distance and time). This is indicated by the red markers in this plot.
+```

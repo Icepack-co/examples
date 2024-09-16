@@ -37,7 +37,7 @@ class ivr7basic : IRunner
     ivr7helper.makeLocations(sr.Model, data);     // adds all the locations to the model
 
     // so we've constructed some jobs with pickups and dropoffs, loading and offload times, as well as the
-    // contribution to the capacity dimension. In this example, we're pickup up all orders at the guiness storehouse
+    // contribution to the capacity dimension. In this example, we're pickup up all orders at the Guinness Storehouse
     // and delivering at the list of customers. 'make_job_time_cap' is just a simple function to create this
     // particular style of request, but you can make your own.
     ivr7helper.makeJobTimeCap(sr.Model, data, ivr7helper.Rep(0, data.Count - 1), ivr7helper.Seq(1, data.Count));

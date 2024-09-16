@@ -1,0 +1,240 @@
+---
+title: "Intermediate NS3 Example (R)"
+format:
+  html: 
+    page-layout: full
+    embed-resources: true
+    output: ./output/ns3-2-intermediate.html
+    code-copy: true
+editor: visual
+papersize: a4
+execute:
+  echo: false
+---
+
+An intermediate network sourcing model uses one production, two intermediate and multiple consumption locations. In this example, we're moving one product, "beer", measured in the dimension "weight".
+
+How are movements in the network costed?
+
+The same configuartion as the basic example is used:
+
+* We have two lane rates between our main production centre and the two warehouses and a distribution "Cost Model" between the sources (proudction + 2 x warehouses) and consumption nodes.
+* Lane rates between production and intermediate nodes are costed on a cost per km basis.
+* Cost models to distribute the quantities further is also based on a (more expensive) cost per km.
+* It's typical that high utilisation vehicles move between warehouses (and typically larger vehicles, achieving a lower cost per km / cost per tonne) and that smaller vehicles handle the secondary distribution (at a higher cost per tonne).
+
+
+In this example we're adding a fixed cost trigger for using a warehouse. This allows the model to select between the two warehouses or potentially use both.
+
+### Data 
+
+```{r}
+
+data <- read.csv('../sample_data/publist_large.csv')[1:100,]
+
+number_pubs <- nrow(data)
+
+```
+
+The data used in this example is a list of `r number_pubs` pubs in Dublin, Ireland with their associated X and Y coordinates and demand.
+
+```{r}
+#| echo: false
+#| output: false
+
+if(!("pacman" %in% rownames(installed.packages()))){
+  install.packages("pacman")
+}
+
+library(pacman)
+p_load(tidyverse)
+p_load(DT)
+p_load(dplyr)
+```
+
+```{r}
+
+data <- data %>% mutate(across(3:4, ~ format(round(.x, digits=5), nsmall = 5))) 
+
+datatable(data, colnames = c("Pub ID (id)",
+                           "Pub Name (name)",
+                           "X-Coordinate (longitude)",
+                           "Y-Coordinate (latitude)",
+                           "Demand (demand)")
+                           , options = list(dom = 't', scrollY = "200px", pageLength=nrow(data), columnDefs = list(list(className = 'dt-right', targets = 3:5))))
+
+```
+
+### Running the example
+
+An R script with all the lines needed to run the example can be found [here](https://github.com/Icepack-co/examples/blob/master/R/ns3-2-intermediate.R).
+
+The example uses the **iceR** package which will first need to be installed (see information [here](https://github.com/Icepack-co/iceR)) and then loaded, along with the dplyr package. Helper functions are also provided in a separate file and need to be read in.
+
+```{r}
+#| echo: true
+#| output: false
+library(iceR)
+library(dplyr)
+
+source('ns3-model-helper.R')
+```
+
+
+Execute the example as follows:
+
+1. **Create an apiHelper object with the model type you'd like to solve**
+
+```{r}
+#| echo: true
+#| output: false
+api <- new("apiHelper", modelType = 'ns3-tbfvuwtge2iq', configFile = '../config.json')
+```
+
+
+2. **Create the model and add some data to it**
+
+```{r}
+#| echo: true
+#| output: false
+
+# Create the model
+sr <- new (NS3.SolveRequest)
+sr$model <- new (NS3.Model)
+
+# Load the data
+data <- read.csv('../sample_data/publist_large.csv')[1:100,]
+
+# Configure the model and add the data to it (See ns3-model-helper.R for details around some of the methods used below)
+
+# (a) Apply a single "weight" dimension
+sr$model$dimensions<- make_distance_time_user_dimensions("weight")
+
+# (b) Define the production, warehouse and demand nodes and add the fixed costs to the warehouse nodes
+productionNodes <- data %>% filter(demand == -1)
+warehouseNodes <-  data %>% filter(demand == -2)
+demandNodes <- data %>% filter(demand > 0)
+
+p_nodes <- make_nodes(productionNodes)
+w_nodes <- make_nodes(warehouseNodes)
+
+for(i in 1:length(w_nodes)){
+  w_nodes[[i]]$flow <- new (NS3.Node.Flow)
+  w_nodes[[i]]$flow$FixedDimensionCosts <- new (NS3.FixedDimensionCost)
+  w_nodes[[i]]$flow$FixedDimensionCosts[[1]]$dimensionIds <- 'weight'
+  w_nodes[[i]]$flow$FixedDimensionCosts[[1]]$fixedCost <- 10000
+}
+
+d_nodes <- make_nodes(demandNodes)
+
+p_nodes %>% display # Guinness Storehouse
+w_nodes %>% display # Two warehouses, one in Galway and one in Limerick
+
+# (c) Define the sources
+sources <- data %>% filter(demand < 0) %>% select(id) %>% unlist() %>% as.character()
+# we're assuming we can go factory-direct or through a warehouse
+
+# (d) Configure the nodes and assign them to the model
+
+# We know that demand nodes require us to fulfill the demand at the node.
+# Let's assume we have no production constraints.
+# We have a reasonably even demand profile (demandNodes$demand %>% hist) - something tells us this dataset is not real! :-) 
+# In order to specify which demands we should satisfy, let's place a flow requirement at each node.
+
+for(i in 1:length(d_nodes)){
+  pf <- new (NS3.Node.ProductFlow)
+  pf$productId <- "Beer"
+  # Each demand node must have the quantity demand[i] delivered, so the range here
+  # is actually [demand[i], demand[i]]. 
+  # Not meeting this range incurs a large penalty cost.
+  pf$dimensionRanges <- make_dimension_range("weight", demandNodes$demand[i], demandNodes$demand[i])
+  d_nodes[[i]]$consumption <-pf
+  d_nodes[[i]]$allowableSources <- sources # all sources are allowable.
+}
+
+for(i in 1:length(p_nodes)){
+  pf <- new (NS3.Node.ProductFlow)
+  pf$productId <- "Beer"
+  # The production node has no limit on the amount that can be produced. 
+  # We can simply set the upper bound to the sum of all demand, i.e. [0, sum(demands)].
+  # This way we know that the facility can produce enough to satisfy all the demand.
+  pf$dimensionRanges <-  make_dimension_range('weight', 0, sum(demandNodes$demand))
+  pf$dimensionRanges[[1]]$flowPenalty <- 0  
+  p_nodes[[i]]$production <- pf
+}
+
+sr$model$nodes <- c(p_nodes, w_nodes, d_nodes)
+
+# (e) Lane rates, product groups and cost models
+
+# Guinness Storehouse -> Limerick and Guinness Storehouse -> Galway each costed at 0.1 monetary units per km.
+sr$model$laneRates <- c(make_lane_rate_distance(sources[1], sources[2], 0.1),
+                 make_lane_rate_distance(sources[1], sources[3], 0.1))
+sr$model$laneRates %>% display
+
+sr$model$productGroups <- make_single_product_group("Beer", "weight")
+sr$model$productGroups %>% display
+
+sr$model$costModels <- list()
+for(i in 1:length(sources)){
+  sr$model$costModels <- append(sr$model$costModels, make_cost_model_distance(sources[i], 0.2))
+}
+sr$model$costModels %>% display
+
+# Set the other relevant information
+sr$geometryOutput <- 1
+sr$solveType <- 0 # 0 for optimise, 1 for evaluate, 2 for reoptimise
+
+# View the model in plain-text format (string or JSON)
+# sr$model$toString() %>% cat
+# sr$model$toJSON() %>% cat
+
+```
+
+3. **Submit the model to the API**
+
+```{r}
+#| echo: true
+#| output: false
+requestID <- api %>% postSolveRequest(sr)  
+```
+
+
+4. **Retrieve the model response**
+
+```{r}
+#| echo: true
+#| output: false
+resp <- api %>% getResponse(requestID)
+```
+
+5. **Look at the result**
+
+```{r}
+#| echo: true
+#| output: false
+
+# Get the solve time
+solveTime <- api %>% getSolveTime(requestID)
+```
+
+Solve time: `r solveTime`
+
+```{r}
+#| echo: true
+#| output: true
+
+# Tabulate the data in native-R format
+tab <- resp %>% tabulate(sr)
+tab$assignments %>% head
+tab$nodeFlow %>% head # here you can see there is no node flow for the Galway warehouse
+tab$nodeProductFlow %>% head
+tab$routes %>% head
+
+# Plot the data (ggplot or leaflet)
+resp %>% plotResponse(sr) # ggplot                       
+resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)
+```
+&nbsp;
+
+This is very interesting when contrasted to the simple initial model. Essentially, it would be cheaper to use the Limerick warehouse than the Galway warehouse. So the model chooses to rather run the Limerick warehouse (which it could have also closed) in conjunction with deliveries from the Guinness Storehouse in Dublin.

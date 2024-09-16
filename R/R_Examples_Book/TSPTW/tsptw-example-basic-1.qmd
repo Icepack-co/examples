@@ -1,0 +1,184 @@
+# Example 1 (Basic) {.unnumbered}
+
+## Data 
+
+```{r}
+#| echo: false
+#| output: false
+
+data <- read.csv('../../../sample_data/publist.csv')[1:10,]
+
+number_pubs <- nrow(data)
+```
+
+The data used in this example is a list of `r number_pubs` pubs in Dublin, Ireland with their associated X and Y coordinates.
+
+```{r}
+#| echo: false
+#| output: false
+
+if(!("pacman" %in% rownames(installed.packages()))){
+  install.packages("pacman")
+}
+
+library(pacman)
+p_load(tidyverse)
+p_load(DT)
+p_load(dplyr)
+```
+
+```{r}
+#| echo: false
+#| output: true
+
+data <- data %>% mutate_if(is.numeric, round, digits=5) %>% format(nsmall=5)
+
+datatable(data, colnames = c("Pub Name (id)",
+                           "X-Coordinate (X)",
+                           "Y-Coordinate (Y)")
+                           , options = list(dom = 't', scrollY = "200px", pageLength=nrow(data), columnDefs = list(list(className = 'dt-right', targets = 2:3))))
+```
+
+## Running the example
+
+```{r}
+#| echo: true
+#| output: false
+library(iceR)
+```
+
+Execute the example as follows:
+
+### 1. Create an apiHelper object with the model type you'd like to solve
+
+```{r}
+#| echo: true
+#| output: false
+api <- new("apiHelper", modelType = 'tsptw-kcxbievqo879', configFile = '../../../config.json')
+```
+
+### 2. Create the model and add some data to it
+
+```{r}
+#| echo: true
+#| output: false
+
+# Create the model
+sr <- new (TSPTW.SolveRequest)
+sr$model <- new (TSPTW.TSP)
+
+# Load the data
+data <- read.csv('../../../sample_data/publist.csv')[1:10,]
+
+# Add some random time windows to the data
+rupper <- 2500
+data <- data[sample(1:nrow(data), size = nrow(data), replace = F),]
+# Randomly shuffle the selected points first. We're making somewhat random windows below
+# and if you run the script again you'll want to see a different result.
+
+data$WindowStart <- runif(nrow(data), 0, rupper)
+# This creates some random time windows, with starts in  [0,2500] and ends in [0,5000].
+# These are hard windows that have to be respected in terms of arrival so a "vehicle" 
+# will wait for the window to start if it arrives early at a location.
+
+data$WindowEnd <- data$WindowStart + rupper
+# We don't accept backwards windows, so we'll just set these to some positive width upper amount.
+```
+
+The data with the added time window information is as follows.
+
+```{r}
+#| echo: false
+#| output: true
+
+data <- data %>% mutate(across(2:3, ~ format(round(.x, digits=5), nsmall = 5))) %>% mutate(across(4:5, ~ format(round(.x, digits=3), nsmall = 3))) 
+
+datatable(data, colnames = c("Pub Name (id)",
+                           "X-Coordinate (X)",
+                           "Y-Coordinate (Y)",
+                           "Window Start",
+                           "Window End")
+                           , options = list(dom = 't', scrollY = "200px", pageLength=nrow(data), columnDefs = list(list(className = 'dt-right', targets = 2:5))))
+```
+
+```{r}
+#| echo: true
+#| output: false
+ 
+# Add the data to the model
+sr$model$points <- apply(X = data,
+                         MARGIN = 1,
+                         FUN = function(i){
+                           g <- new (TSPTW.Geocode)
+                           g$id <- as.character(i['id'])
+                           g$x <- as.numeric(i['X'])
+                           g$y <- as.numeric(i['Y'])
+                           g$windowStart <- as.numeric(i['WindowStart'])
+                           g$windowEnd <- as.numeric(i['WindowEnd'])
+                           return(g)
+                         })
+
+sr$model$points[[1]]$windowStart <- sr$model$points[[1]]$windowEnd <- c()
+
+# Set the distance type to use the road network
+sr$model$distancetype <- 1 # 1 for road network, 2 for euclidean, 3 for haversine
+
+# View the model in plain-text format (string or JSON)
+sr$model$toString() %>% cat
+sr$model$toJSON() %>% cat
+```
+
+### 3. Submit the model to the API
+
+```{r}
+#| echo: true
+#| output: false
+requestID <- api %>% postSolveRequest(sr)  
+```
+
+### 4. Retrieve the model response
+
+```{r}
+#| echo: true
+#| output: false
+resp <- api %>% getResponse(requestID)
+resp$arrivalTimes
+```
+
+### 5. Look at the result
+
+```{r}
+#| echo: true
+#| output: false
+
+# Get the solve time
+solveTime <- api %>% getSolveTime(requestID)
+```
+
+Solve time: `r solveTime`
+
+```{r}
+#| echo: true
+#| output: true
+
+# Tabulate the data in native-R format
+tab <- resp %>% tabulate(sr)
+tab$nodes %>% head # just inspect the head of the output
+tab$edges %>% head # just inspect the head of the output
+
+tab$edges %>% arrange(sequence)
+```
+
+What can happen now, which doesn't with a TSP, is that we may end up with unsatisfiable windows. In other words, try to execute all these orders, but the windows don't permit it to be done within the constraints. In this situation, we do as many of the stops as possible. Just randomise the data again if this happens.
+
+```{r}
+#| echo: true
+#| output: true
+
+# Plot the data (ggplot or leaflet)
+resp %>% plotResponse(sr) # ggplot                       
+resp %>% plotResponseLeaflet(sr) # leaflet (if it's mappable)
+```
+&nbsp;
+
+Because of the time windows, some stops may be ommitted (infeasible) and the sequence is probably not going to be the shortest in distance, but will be the shortest in time.

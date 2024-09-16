@@ -1,0 +1,5 @@
+# Introduction {.unnumbered}
+
+This book contains a series of examples which show how model requests and responses to the Icepack API can be constructed and interpreted using R.
+
+Each example includes a description and view of the sample data, the R code required to run it and a visualisation of the output, without having to run the example itself which would require a key to access the API.

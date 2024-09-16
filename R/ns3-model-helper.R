@@ -91,6 +91,6 @@ make_cost_model_distance <- function(src, costperkm){
   cm$id <- paste0("costmodel: ", src, ":Beer")
   cm$source <- src
   cm$productGroupIds <- "Beer" # you can also leave this blank if all products can be used by this costmodel
-  cm$unitDimensionCost <- make_udc("distance", 1.0, costperkm)
+  cm$unitDimensionCosts <- make_udc("distance", 1.0, costperkm)
   return(cm)  
 }
