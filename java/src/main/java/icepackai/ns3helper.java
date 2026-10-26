@@ -6,7 +6,6 @@ import icepackai.NS3.Ns3Tbfvuwtge2Iq.InternalDimension.eMeasurementUnit;
 import icepackai.CVRP.CvrpJkfdoctmp51N.SolutionResponse;
 import icepackai.NS3.*;
 
-import dnl.utils.text.table.TextTable;
 
 // some helper functions for building ns3 models.
 public class ns3helper {

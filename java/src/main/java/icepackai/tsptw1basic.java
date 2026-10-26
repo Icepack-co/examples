@@ -8,7 +8,6 @@ import icepackai.TSPTW.TsptwKcxbievqo879.TSP.eDistanceType;
 
 import java.util.Random;
 
-import dnl.utils.text.table.TextTable;
 
 // A simple example of how to build and run a simple TSP model.
 public class tsptw1basic {

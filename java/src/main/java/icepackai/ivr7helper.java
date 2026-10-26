@@ -5,7 +5,6 @@ import java.util.*;
 import icepackai.IVR7.Ivr7Kt461V8Eoaif;
 import icepackai.IVR7.Ivr7Kt461V8Eoaif.InternalDimension.eMeasurementUnit;
 
-import dnl.utils.text.table.TextTable;
 
 // some helper functions for building ivr7 models.
 public class ivr7helper {
