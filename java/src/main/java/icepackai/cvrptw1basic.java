@@ -6,7 +6,6 @@ import icepackai.CVRPTW.CvrptwAcyas3Nzweqb.CVRPTW.eDistanceType;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import dnl.utils.text.table.TextTable;
 
 // A simple example of how to build and run a simple CVRPTW model.
 // A classic cvrptw has a heterogeneous fleet. This means we need only specify the size of the

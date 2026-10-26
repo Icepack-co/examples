@@ -5,7 +5,6 @@ import icepackai.TSP.TspMcvfz472Gty6.SolveRequest.SolveType;
 import icepackai.TSP.TspMcvfz472Gty6.TSP.eDistanceType;
 
 import java.util.*;
-import dnl.utils.text.table.TextTable;
 
 // A simple example of how to build and run a simple TSP model.
 public class tsp1basic {

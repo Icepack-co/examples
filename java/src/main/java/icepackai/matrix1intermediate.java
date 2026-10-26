@@ -7,7 +7,6 @@ import icepackai.Matrix.MatrixVyv95N7Wchpl.MatrixRequest.eDurationUnit;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import dnl.utils.text.table.TextTable;
 
 // An intermediate example of how to use the matrix api to generate distance/time matricies
 // creates a partial matrix with two sources and four destinations. (i.e. 8 elements = 2*4)
